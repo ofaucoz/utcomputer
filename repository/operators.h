@@ -4,6 +4,10 @@
 
 #include "repository_interface.h"
 
+/**
+ * Repository storing all the available operators of UTComputer.
+ * This repository is a hash map.
+ */
 class OperatorsRepository : public RepositoryInterface {
     // TODO
 };

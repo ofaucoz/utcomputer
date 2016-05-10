@@ -4,6 +4,10 @@
 
 #include "repository_interface.h"
 
+/**
+ * Repository storing the user variables.
+ * This repository is a hash map.
+ */
 class VariablesRepository : public RepositoryInterface {
     // TODO
 };

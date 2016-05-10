@@ -4,6 +4,10 @@
 
 #include "repository_interface.h"
 
+/**
+ * Repository storing the messages for the user.
+ * This repository is a stack.
+ */
 class MessagesRepository : public RepositoryInterface {
     // TODO
 };

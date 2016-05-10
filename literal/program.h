@@ -4,6 +4,11 @@
 
 #include "literal_interface.h"
 
+/*
+ * A program literal represents a string surrounded by brackets.
+ * For instance :
+ *      [ DUP 0 < NEG ]
+ */
 struct ProgramLiteral : public NumericLiteralInterface {
 private:
     std::string value;

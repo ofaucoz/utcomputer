@@ -4,6 +4,11 @@
 
 #include "literal_interface.h"
 
+/*
+ * A complex literal represents a complex number composed of two numeric literals.
+ * For instance :
+ *      1.4$3/4
+ */
 struct ComplexLiteral : public LiteralInterface {
 private:
     NumericLiteralInterface real;

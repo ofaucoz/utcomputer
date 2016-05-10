@@ -4,6 +4,11 @@
 
 #include "literal_interface.h"
 
+/*
+ * An integer literal represents a integer value (negative or positive).
+ * For instance :
+ *      -48
+ */
 struct IntLiteral : public NumericLiteralInterface {
 private:
     int value;

@@ -4,6 +4,11 @@
 
 #include "literal_interface.h"
 
+/*
+ * An expression literal represents a quoted expression that can be evaluated.
+ * For instance :
+ *      '3*X1+(3+TOTO)/-2'
+ */
 struct ExpressionLiteral : public NumericLiteralInterface {
 private:
     std::string value;

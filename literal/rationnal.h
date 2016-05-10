@@ -4,6 +4,11 @@
 
 #include "literal_interface.h"
 
+/*
+ * A rationnal literal represent a fraction value.
+ * For instance :
+ *      -3/4
+ */
 struct RationnalLiteral : public NumericLiteralInterface {
 private:
     int numerator;

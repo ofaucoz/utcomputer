@@ -4,6 +4,10 @@
 
 #include "repository_interface.h"
 
+/**
+ * Repository storing the user programs.
+ * This repository is a hash map.
+ */
 class ProgramsRepository : public RepositoryInterface {
     // TODO
 };

@@ -4,6 +4,11 @@
 
 #include "literal_interface.h"
 
+/*
+ * A real literal represent a real value.
+ * For instance :
+ *      -3.14
+ */
 struct RealLiteral : public NumericLiteralInterface {
 private:
     double value;

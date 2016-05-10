@@ -4,6 +4,11 @@
 
 #include "literal_interface.h"
 
+/*
+ * An atom literal represents a name (for avariable of a program for example).
+ * For instance :
+ *      MYVAR
+ */
 struct AtomLiteral : public LiteralInterface {
 private:
     std::string value;

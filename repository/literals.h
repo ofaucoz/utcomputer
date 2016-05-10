@@ -4,6 +4,10 @@
 
 #include "repository_interface.h"
 
+/**
+ * Repository storing the literals.
+ * This repository is a stack.
+ */
 class LiteralsRepository : public RepositoryInterface {
     // TODO
 };
