@@ -11,11 +11,11 @@
  */
 struct ComplexLiteral : public LiteralInterface {
 private:
-    NumericLiteralInterface real;
-    NumericLiteralInterface imaginary;
+    NumericLiteralInterface& real;
+    NumericLiteralInterface& imaginary;
 
 public:
-    ComplexLiteral(NumericLiteralInterface real, NumericLiteralInterface imaginary): real(real), imaginary(imaginary) {}
+    ComplexLiteral(NumericLiteralInterface& real, NumericLiteralInterface& imaginary): real(real), imaginary(imaginary) {}
 
     const NumericLiteralInterface &getReal() const {
         return real;
