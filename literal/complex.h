@@ -2,7 +2,7 @@
 #define LO21_LITERAL_COMPLEX_H
 
 
-#include "interface.h"
+#include "literal_interface.h"
 
 struct ComplexLiteral : public LiteralInterface {
 private:

@@ -2,7 +2,7 @@
 #define LO21_LITERAL_INT_H
 
 
-#include "interface.h"
+#include "literal_interface.h"
 
 struct IntLiteral : public NumericLiteralInterface {
 private:

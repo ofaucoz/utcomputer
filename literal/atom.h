@@ -2,7 +2,7 @@
 #define LO21_LITERAL_ATOM_H
 
 
-#include "interface.h"
+#include "literal_interface.h"
 
 struct AtomLiteral : public LiteralInterface {
 private:

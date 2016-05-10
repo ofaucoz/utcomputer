@@ -2,7 +2,7 @@
 #define LO21_LITERAL_EXPRESSION_H
 
 
-#include "interface.h"
+#include "literal_interface.h"
 
 struct ExpressionLiteral : public NumericLiteralInterface {
 private:

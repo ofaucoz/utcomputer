@@ -2,7 +2,7 @@
 #define LO21_LITERAL_RATIONNAL_H
 
 
-#include "interface.h"
+#include "literal_interface.h"
 
 struct RationnalLiteral : public NumericLiteralInterface {
 private:

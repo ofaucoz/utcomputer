@@ -3,5 +3,5 @@ project(LO21)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES main.cpp literal/interface.cpp literal/interface.h literal/int.cpp literal/int.h literal/rationnal.cpp literal/rationnal.h literal/real.cpp literal/real.h literal/complex.cpp literal/complex.h literal/expression.cpp literal/expression.h literal/program.cpp literal/program.h literal/atom.cpp literal/atom.h)
+set(SOURCE_FILES main.cpp literal/literal_interface.cpp literal/literal_interface.h literal/int.cpp literal/int.h literal/rationnal.cpp literal/rationnal.h literal/real.cpp literal/real.h literal/complex.cpp literal/complex.h literal/expression.cpp literal/expression.h literal/program.cpp literal/program.h literal/atom.cpp literal/atom.h repository/repository_interface.cpp repository/repository_interface.h repository/literals.cpp repository/literals.h repository/variables.cpp repository/variables.h repository/programs.cpp repository/programs.h repository/operators.cpp repository/operators.h repository/messages.cpp repository/messages.h)
 add_executable(LO21 ${SOURCE_FILES})
