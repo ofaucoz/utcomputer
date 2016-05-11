@@ -25,6 +25,10 @@ public:
         return denominator;
     }
 
+    std::string getName() const {
+        return "rationnal";
+    };
+
     std::string toString() const {
         return std::to_string(numerator) + "/" + std::to_string(denominator);
     };

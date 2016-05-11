@@ -20,6 +20,10 @@ public:
         return value;
     }
 
+    std::string getName() const {
+        return "atom";
+    };
+
     std::string toString() const {
         return value;
     };

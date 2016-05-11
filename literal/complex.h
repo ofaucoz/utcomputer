@@ -25,6 +25,10 @@ public:
         return imaginary;
     }
 
+    std::string getName() const {
+        return "complex";
+    };
+
     std::string toString() const {
         return real.toString() + "$" + imaginary.toString();
     };

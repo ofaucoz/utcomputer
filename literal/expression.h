@@ -20,6 +20,10 @@ public:
         return value;
     }
 
+    std::string getName() const {
+        return "expression";
+    };
+
     std::string toString() const {
         return value;
     };

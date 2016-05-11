@@ -20,6 +20,10 @@ public:
         return value;
     }
 
+    std::string getName() const {
+        return "real";
+    };
+
     std::string toString() const {
         return std::to_string(value);
     };

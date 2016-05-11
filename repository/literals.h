@@ -30,8 +30,13 @@ public:
         return internalStack.size();
     }
 
-    std::string dumpToString() const;
-    void loadFromString(std::string dumpedString);
+    std::string dumpToString() const {
+        return "";
+    }
+
+    void loadFromString(std::string dumpedString) {
+
+    }
 };
 
 

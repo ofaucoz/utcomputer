@@ -16,6 +16,7 @@
  * @see https://google.github.io/styleguide/cppguide.html#Structs_vs._Classes
  */
 struct LiteralInterface {
+    virtual std::string getName() const = 0;
     virtual std::string toString() const = 0;
 };
 
