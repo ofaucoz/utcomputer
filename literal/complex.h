@@ -24,6 +24,10 @@ public:
     const NumericLiteralInterface &getImaginary() const {
         return imaginary;
     }
+
+    std::string toString() const {
+        return real.toString() + "$" + imaginary.toString();
+    };
 };
 
 

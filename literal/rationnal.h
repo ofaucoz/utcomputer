@@ -24,6 +24,10 @@ public:
     int getDenominator() const {
         return denominator;
     }
+
+    std::string toString() const {
+        return std::to_string(numerator) + "/" + std::to_string(denominator);
+    };
 };
 
 

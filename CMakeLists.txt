@@ -36,13 +36,14 @@ set(SOURCE_FILES
         repository/operators.cpp
         repository/operators.h
         repository/messages.cpp
-        repository/messages.h)
+        repository/messages.h tests/literal/all.cpp)
 
 add_executable(LO21 ${SOURCE_FILES})
 
 # Tests
 set(TEST_FILES
         tests/main.cpp
+        tests/literal/all.cpp
         tests/repository/literals.cpp
         tests/repository/programs.cpp)
 

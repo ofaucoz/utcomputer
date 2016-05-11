@@ -20,7 +20,7 @@ public:
         return value;
     }
 
-    std::string toString() {
+    std::string toString() const {
         return std::to_string(value);
     };
 };

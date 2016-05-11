@@ -19,6 +19,10 @@ public:
     double getValue() const {
         return value;
     }
+
+    std::string toString() const {
+        return std::to_string(value);
+    };
 };
 
 
