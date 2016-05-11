@@ -13,7 +13,7 @@
  * Repositories are able to dump their content as string to be saved in files.
  */
 class RepositoryInterface {
-    virtual std::string dumpToString() = 0;
+    virtual std::string dumpToString() const = 0;
     virtual void loadFromString(std::string dumpedString) = 0;
 };
 
