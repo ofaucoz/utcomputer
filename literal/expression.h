@@ -19,6 +19,10 @@ public:
     const std::string &getValue() const {
         return value;
     }
+
+    std::string toString() {
+        return value;
+    };
 };
 
 
