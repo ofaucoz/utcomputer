@@ -40,7 +40,7 @@ set(SOURCE_FILES
         lib/repository/operators.cpp
         lib/repository/operators.h
         lib/repository/messages.cpp
-        lib/repository/messages.h lib/literal_definition/interface.cpp lib/literal_definition/interface.h lib/literal_definition/atom.cpp lib/literal_definition/atom.h lib/exception/invalid_syntax.cpp lib/exception/invalid_syntax.h lib/literal/whitespace.cpp lib/literal/whitespace.h lib/literal_definition/whitespace.cpp lib/literal_definition/whitespace.h)
+        lib/repository/messages.h lib/literal_definition/interface.cpp lib/literal_definition/interface.h lib/literal_definition/atom.cpp lib/literal_definition/atom.h lib/exception/invalid_syntax.cpp lib/exception/invalid_syntax.h lib/literal/whitespace.cpp lib/literal/whitespace.h lib/literal_definition/whitespace.cpp lib/literal_definition/whitespace.h lib/literal_definition/numeric.cpp lib/literal_definition/numeric.h)
 
 add_executable(LO21 ${SOURCE_FILES})
 

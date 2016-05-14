@@ -54,12 +54,12 @@ public:
 
             // We iterate over each literal definition trying to find one matching
             for (iterator = definitions.begin(); !definitionFound && iterator != definitions.end(); ++iterator) {
-
                 // The pattern is defined by the LiteralDefinition object
                 pattern = regex("^(" + (*iterator)->getPattern() + ")");
 
                 // If we found the right literal definition, we build a literal using it
                 if (regex_search(command, matchs, pattern)) {
+
                     match = matchs[1].str();
 
                     // We remove the matched element from the command
@@ -67,6 +67,8 @@ public:
 
                     // We create a literal using the definition
                     tokens.push_back((*iterator)->createInstance(match));
+
+
 
                     // Stop the for here
                     definitionFound = true;
