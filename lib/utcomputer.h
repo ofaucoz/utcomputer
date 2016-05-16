@@ -17,12 +17,12 @@ using namespace std;
  */
 class UTComputer {
 private:
-    Lexer& lexer;
-    Resolver& resolver;
-    Runner& runner;
+    Lexer lexer;
+    Resolver resolver;
+    Runner runner;
 
 public:
-    UTComputer(Lexer& lexer, Resolver& resolver, Runner& runner): lexer(lexer), resolver(resolver), runner(runner) {}
+    UTComputer(Lexer lexer, Resolver resolver, Runner runner): lexer(lexer), resolver(resolver), runner(runner) {}
 
     void execute(string command) {
         // rawLiterals = lexer.tokenize(command)

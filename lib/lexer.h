@@ -24,14 +24,6 @@ public:
         definitions = vector<LiteralDefinitionInterface*>();
     }
 
-    ~Lexer() {
-        vector<LiteralDefinitionInterface*>::iterator iterator;
-
-        for (iterator = definitions.begin(); iterator != definitions.end(); ++iterator) {
-            delete iterator.base();
-        }
-    }
-
     void addDefinition(LiteralDefinitionInterface& definition) {
         definitions.push_back(&definition);
     }
@@ -49,7 +41,6 @@ public:
 
         // While the command is not fully parsed
         while (command.size() > 0) {
-
             definitionFound = false;
 
             // We iterate over each literal definition trying to find one matching
@@ -68,19 +59,15 @@ public:
                     // We create a literal using the definition
                     tokens.push_back((*iterator)->createInstance(match));
 
-
-
                     // Stop the for here
                     definitionFound = true;
                 }
-
             }
 
             if (!definitionFound) {
                 // We found not literal definition matching the given string: invalid synthax
-                throw new InvalidSyntaxException(command);
+                throw InvalidSyntaxException(command);
             }
-
         }
 
         return tokens;

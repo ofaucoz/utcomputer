@@ -56,7 +56,9 @@ set(SOURCE_FILES
         lib/literal_definition/operator.cpp
         lib/literal_definition/operator.h
         lib/literal_definition/expression.cpp
-        lib/literal_definition/expression.h lib/literal_definition/program.cpp lib/literal_definition/program.h)
+        lib/literal_definition/expression.h
+        lib/literal_definition/program.cpp
+        lib/literal_definition/program.h)
 
 add_executable(LO21 ${SOURCE_FILES})
 

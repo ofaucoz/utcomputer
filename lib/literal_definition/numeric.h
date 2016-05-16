@@ -12,7 +12,7 @@
 using namespace std;
 
 /*
- * Definition of a numeric literal.
+ * Definition of an atom literal.
  */
 class NumericLiteralDefinition : public LiteralDefinitionInterface {
 private:
@@ -32,9 +32,9 @@ private:
      * This method is used by the definition to build numeric literals
      * given a string.
      */
-    queue<string> parse(string value) const {
-        queue<string> parsed;
-        string input = "";
+    queue<std::string> parse(string value) const {
+        queue<std::string> parsed;
+        std::string input = "";
 
         for (int i = 0; i < value.size(); i++) {
             if (value[i] != '$' && value[i] != '/') {
@@ -60,11 +60,11 @@ private:
 
 public:
     string getPattern() const {
-        return "([0-9]+/?[0-9]?+\\$?[0-9]?+/?[0-9]?+)";
+        return "-?[0-9]+/?-?[0-9]?+\\$?-?[0-9]?+/?-?[0-9]?+";
     }
 
     LiteralInterface *createInstance(string value) const {
-        queue<string> parsedString = parse(value);
+        queue<std::string> parsedString = parse(value);
 
         bool isRational = false;
         bool isComplex = false;
