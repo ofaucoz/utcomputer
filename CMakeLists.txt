@@ -17,6 +17,8 @@ set(SOURCE_FILES
         lib/resolver.h
         lib/runner.cpp
         lib/runner.h
+        lib/exception/invalid_syntax.cpp
+        lib/exception/invalid_syntax.h
         lib/literal/interface.cpp
         lib/literal/interface.h
         lib/literal/operator.cpp
@@ -29,6 +31,8 @@ set(SOURCE_FILES
         lib/literal/program.h
         lib/literal/atom.cpp
         lib/literal/atom.h
+        lib/literal/whitespace.cpp
+        lib/literal/whitespace.h
         lib/repository/interface.cpp
         lib/repository/interface.h
         lib/repository/literals.cpp
@@ -40,7 +44,15 @@ set(SOURCE_FILES
         lib/repository/operators.cpp
         lib/repository/operators.h
         lib/repository/messages.cpp
-        lib/repository/messages.h lib/literal_definition/interface.cpp lib/literal_definition/interface.h lib/literal_definition/atom.cpp lib/literal_definition/atom.h lib/exception/invalid_syntax.cpp lib/exception/invalid_syntax.h lib/literal/whitespace.cpp lib/literal/whitespace.h lib/literal_definition/whitespace.cpp lib/literal_definition/whitespace.h lib/literal_definition/numeric.cpp lib/literal_definition/numeric.h)
+        lib/repository/messages.h
+        lib/literal_definition/interface.cpp
+        lib/literal_definition/interface.h
+        lib/literal_definition/atom.cpp
+        lib/literal_definition/atom.h
+        lib/literal_definition/whitespace.cpp
+        lib/literal_definition/whitespace.h
+        lib/literal_definition/numeric.cpp
+        lib/literal_definition/numeric.h)
 
 add_executable(LO21 ${SOURCE_FILES})
 
@@ -48,6 +60,9 @@ add_executable(LO21 ${SOURCE_FILES})
 set(TEST_FILES
         lib/tests/main.cpp
         lib/tests/literal/all.cpp
+        lib/tests/literal_definition/atom.cpp
+        lib/tests/literal_definition/numeric.cpp
+        lib/tests/literal_definition/whitespace.cpp
         lib/tests/repository/literals.cpp
         lib/tests/lexer.cpp)
 

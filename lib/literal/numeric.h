@@ -40,10 +40,14 @@ public:
     }
 
     string toString() const {
-        string value = to_string(realNumerator);
+        string value = "0";
 
-        if (realDenominator != 1) {
-            value += "/" + to_string(realDenominator);
+        if (realNumerator != 0) {
+            value = to_string(realNumerator);
+
+            if (realDenominator != 1) {
+                value += "/" + to_string(realDenominator);
+            }
         }
 
         if (imaginaryNumerator != 0) {

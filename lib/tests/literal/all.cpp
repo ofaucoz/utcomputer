@@ -20,11 +20,20 @@ TEST(ExpressionLiteralTest, ConstructAndToString) {
 }
 
 TEST(NumericLiteral, ConstructAndToString) {
-    NumericLiteral numericLiteral(-4);
-    ASSERT_EQ("-4.000000", numericLiteral.toString());
+    NumericLiteral intLiteral(-4);
+    ASSERT_EQ("-4.000000", intLiteral.toString());
 
-    NumericLiteral numericLiteral2(3.14, 1, -3, 4);
-    ASSERT_EQ("3.140000$-3.000000/4.000000", numericLiteral2.toString());
+    NumericLiteral rationalLiteral(-4, 2);
+    ASSERT_EQ("-4.000000/2.000000", rationalLiteral.toString());
+
+    NumericLiteral complexIntLiteral(3.14, 1, -3, 1);
+    ASSERT_EQ("3.140000$-3.000000", complexIntLiteral.toString());
+
+    NumericLiteral complexRationalLiteral(3.14, 2, -3, 4);
+    ASSERT_EQ("3.140000/2.000000$-3.000000/4.000000", complexRationalLiteral.toString());
+
+    NumericLiteral imaginaryLiteral(0, 5, 1, 4);
+    ASSERT_EQ("0$1.000000/4.000000", imaginaryLiteral.toString());
 }
 
 TEST(OperatorLiteralTest, ConstructAndToString) {
