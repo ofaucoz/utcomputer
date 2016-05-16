@@ -15,7 +15,7 @@ using namespace std;
 class ExpressionLiteralDefinition : public LiteralDefinitionInterface {
 public:
     string getPattern() const {
-        return "'.*'";
+        return "'[^']*'";
     }
 
     LiteralInterface* createInstance(string value) const {

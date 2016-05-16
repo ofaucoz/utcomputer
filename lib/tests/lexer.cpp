@@ -5,6 +5,7 @@
 #include "../literal_definition/numeric.h"
 #include "../literal_definition/operator.h"
 #include "../literal_definition/expression.h"
+#include "../literal_definition/program.h"
 
 TEST(LexerTest, StackBehavior) {
     AtomLiteralDefinition atomLiteralDefinition;
@@ -12,6 +13,7 @@ TEST(LexerTest, StackBehavior) {
     NumericLiteralDefinition numLiteralDefinition;
     OperatorLiteralDefinition operatorLiteralDefinition;
     ExpressionLiteralDefinition expressionLiteralDefinition;
+    ProgramLiteralDefinition programLiteralDefinition;
 
     Lexer* lexer = new Lexer();
 
@@ -20,6 +22,7 @@ TEST(LexerTest, StackBehavior) {
     lexer->addDefinition(numLiteralDefinition);
     lexer->addDefinition(operatorLiteralDefinition);
     lexer->addDefinition(expressionLiteralDefinition);
+    lexer->addDefinition(programLiteralDefinition);
 
     lexer->tokenize("FOO BAR 98");
     lexer->tokenize("FOO BAR 35/5");
@@ -31,6 +34,7 @@ TEST(LexerTest, StackBehavior) {
     lexer->tokenize("FOO BAR 98 + 5*6 -58");
     lexer->tokenize("FOO BAR - 35/5");
     lexer->tokenize("'3+3*56' EVAL");
+    lexer->tokenize("[3+3*56]");
 
     ASSERT_TRUE(true);
 }
