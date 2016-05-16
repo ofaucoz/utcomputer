@@ -52,7 +52,9 @@ set(SOURCE_FILES
         lib/literal_definition/whitespace.cpp
         lib/literal_definition/whitespace.h
         lib/literal_definition/numeric.cpp
-        lib/literal_definition/numeric.h)
+        lib/literal_definition/numeric.h
+        lib/literal_definition/operator.cpp
+        lib/literal_definition/operator.h)
 
 add_executable(LO21 ${SOURCE_FILES})
 
@@ -62,6 +64,7 @@ set(TEST_FILES
         lib/tests/literal/all.cpp
         lib/tests/literal_definition/atom.cpp
         lib/tests/literal_definition/numeric.cpp
+        lib/tests/literal_definition/operator.cpp
         lib/tests/literal_definition/whitespace.cpp
         lib/tests/repository/literals.cpp
         lib/tests/lexer.cpp)
