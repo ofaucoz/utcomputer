@@ -17,23 +17,19 @@ using namespace std;
  */
 class Lexer {
 private:
-    vector<LiteralDefinitionInterface*> definitions;
+    LiteralDefinitionVector definitions;
 
 public:
-    Lexer() {
-        definitions = vector<LiteralDefinitionInterface*>();
-    }
-
     void addDefinition(LiteralDefinitionInterface& definition) {
         definitions.push_back(&definition);
     }
 
-    vector<LiteralInterface*> tokenize(string command) {
+    LiteralVector tokenize(string command) {
         // Vector of found tokens
-        vector<LiteralInterface*> tokens;
+        LiteralVector tokens;
 
         // Initialization of variables
-        vector<LiteralDefinitionInterface*>::iterator iterator;
+        LiteralDefinitionVector::iterator iterator;
         smatch matchs;
         string match;
         regex pattern;

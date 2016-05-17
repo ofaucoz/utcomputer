@@ -14,10 +14,10 @@ using namespace std;
  */
 class TokensDumper {
 public:
-    static void dump(ostream& stream, vector<LiteralInterface*> tokens) {
+    static void dump(ostream& stream, LiteralVector tokens) {
         int i = 0;
 
-        for (vector<LiteralInterface*>::iterator it = tokens.begin(); it != tokens.end(); ++it) {
+        for (LiteralVector::iterator it = tokens.begin(); it != tokens.end(); ++it) {
             stream << i << " : " << (*it)->toString() << endl;
             i++;
         }

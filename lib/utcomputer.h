@@ -32,7 +32,7 @@ public:
     UTComputer(Lexer lexer, Resolver resolver, Runner runner): lexer(lexer), resolver(resolver), runner(runner) {}
 
     void execute(string command) {
-        vector<LiteralInterface*> tokens = lexer.tokenize(command);
+        LiteralVector tokens = lexer.tokenize(command);
 
         TokensDumper::dump(cout, tokens);
 

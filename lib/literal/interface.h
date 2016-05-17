@@ -3,6 +3,7 @@
 
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -21,5 +22,6 @@ struct LiteralInterface {
     virtual string toString() const = 0;
 };
 
+typedef vector<LiteralInterface*> LiteralVector;
 
 #endif // LO21_LITERAL_INTERFACE_H

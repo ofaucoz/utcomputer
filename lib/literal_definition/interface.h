@@ -20,5 +20,7 @@ public:
     virtual LiteralInterface* createInstance(string value) const = 0;
 };
 
+typedef vector<LiteralDefinitionInterface*> LiteralDefinitionVector;
+
 
 #endif // LO21_LITERAL_DEFINITION_INTERFACE_H
