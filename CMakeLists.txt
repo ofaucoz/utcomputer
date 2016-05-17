@@ -33,18 +33,6 @@ set(SOURCE_FILES
         lib/literal/atom.h
         lib/literal/whitespace.cpp
         lib/literal/whitespace.h
-        lib/repository/interface.cpp
-        lib/repository/interface.h
-        lib/repository/literals.cpp
-        lib/repository/literals.h
-        lib/repository/variables.cpp
-        lib/repository/variables.h
-        lib/repository/programs.cpp
-        lib/repository/programs.h
-        lib/repository/operators.cpp
-        lib/repository/operators.h
-        lib/repository/messages.cpp
-        lib/repository/messages.h
         lib/literal_definition/interface.cpp
         lib/literal_definition/interface.h
         lib/literal_definition/atom.cpp
@@ -58,7 +46,25 @@ set(SOURCE_FILES
         lib/literal_definition/expression.cpp
         lib/literal_definition/expression.h
         lib/literal_definition/program.cpp
-        lib/literal_definition/program.h lib/debug/tokens_dumper.cpp lib/debug/tokens_dumper.h)
+        lib/literal_definition/program.h
+        lib/repository/stack.cpp
+        lib/repository/stack.h
+        lib/repository/hashmap.cpp
+        lib/repository/hashmap.h
+        lib/repository/interface.cpp
+        lib/repository/interface.h
+        lib/repository/literals.cpp
+        lib/repository/literals.h
+        lib/repository/variables.cpp
+        lib/repository/variables.h
+        lib/repository/programs.cpp
+        lib/repository/programs.h
+        lib/repository/operators.cpp
+        lib/repository/operators.h
+        lib/repository/messages.cpp
+        lib/repository/messages.h
+        lib/debug/tokens_dumper.cpp
+        lib/debug/tokens_dumper.h)
 
 add_executable(LO21 ${SOURCE_FILES})
 
@@ -72,6 +78,7 @@ set(TEST_FILES
         lib/tests/literal_definition/expression.cpp
         lib/tests/literal_definition/whitespace.cpp
         lib/tests/repository/literals.cpp
+        lib/tests/repository/messages.cpp
         lib/tests/lexer.cpp)
 
 add_executable(LO21tests ${TEST_FILES})
