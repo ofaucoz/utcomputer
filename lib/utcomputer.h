@@ -6,6 +6,13 @@
 #include "lexer.h"
 #include "resolver.h"
 #include "runner.h"
+#include "literal_definition/atom.h"
+#include "literal_definition/whitespace.h"
+#include "literal_definition/numeric.h"
+#include "literal_definition/operator.h"
+#include "literal_definition/expression.h"
+#include "literal_definition/program.h"
+#include "debug/tokens_dumper.h"
 
 using namespace std;
 
@@ -25,9 +32,12 @@ public:
     UTComputer(Lexer lexer, Resolver resolver, Runner runner): lexer(lexer), resolver(resolver), runner(runner) {}
 
     void execute(string command) {
-        // rawLiterals = lexer.tokenize(command)
-        // resolvedLiterals = resolver.resolve(rawLiterals)
-        // runner.applyChanges(resolvedLiterals)
+        vector<LiteralInterface*> tokens = lexer.tokenize(command);
+
+        TokensDumper::dump(cout, tokens);
+
+        // literals = resolver.resolve(tokens)
+        // runner.applyChanges(literals)
     }
 };
 
