@@ -4,6 +4,7 @@
 
 TEST(OperatorsRepositoryTest, HashmapBehavior) {
     PlusOperator plusOperator;
+
     OperatorsRepository repository;
 
     ASSERT_FALSE(repository.has("+"));
@@ -16,6 +17,7 @@ TEST(OperatorsRepositoryTest, HashmapBehavior) {
 
 TEST(OperatorsRepositoryTest, IteratorBehavior) {
     PlusOperator plusOperator;
+
     OperatorsRepository repository;
 
     repository.set("+", plusOperator);
@@ -28,10 +30,13 @@ TEST(OperatorsRepositoryTest, IteratorBehavior) {
         count++;
         ASSERT_EQ(plusOperator.getTokenValue(), (*iterator).second->getTokenValue());
     }
+
+    ASSERT_EQ(3, count);
 }
 
 TEST(OperatorsRepositoryTest, ThrowWhenNotFound) {
     PlusOperator plusOperator;
+
     OperatorsRepository repository;
 
     repository.set("+", plusOperator);

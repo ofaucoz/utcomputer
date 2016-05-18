@@ -82,6 +82,8 @@ set(TEST_FILES
         lib/tests/repository/literals.cpp
         lib/tests/repository/messages.cpp
         lib/tests/repository/operators.cpp
+        lib/tests/repository/programs.cpp
+        lib/tests/repository/variables.cpp
         lib/tests/lexer.cpp
         lib/tests/resolver.cpp)
 
