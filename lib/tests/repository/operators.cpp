@@ -26,7 +26,7 @@ TEST(OperatorsRepositoryTest, IteratorBehavior) {
 
     int count = 0;
 
-    for (OperatorsRepository::Iterator iterator = repository.begin(); iterator != repository.end(); ++iterator) {
+    for (OperatorsRepository::iterator iterator = repository.begin(); iterator != repository.end(); ++iterator) {
         count++;
         ASSERT_EQ(plusOperator.getTokenValue(), (*iterator).second->getTokenValue());
     }

@@ -33,7 +33,7 @@ TEST(ProgramsRepositoryTest, IteratorBehavior) {
 
     int count = 0;
 
-    for (ProgramsRepository::Iterator iterator = repository.begin(); iterator != repository.end(); ++iterator) {
+    for (ProgramsRepository::iterator iterator = repository.begin(); iterator != repository.end(); ++iterator) {
         count++;
     }
 

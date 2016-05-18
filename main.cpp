@@ -1,9 +1,13 @@
 #include <iostream>
 #include "lib/utcomputer.h"
+#include "lib/operator/plus.h"
 
 using namespace std;
 
 int main() {
+    /*
+     * Lexer
+     */
     AtomLiteralDefinition atomLiteralDefinition;
     WhitespaceLiteralDefinition whitespaceLiteralDefinition;
     NumericLiteralDefinition numLiteralDefinition;
@@ -19,13 +23,26 @@ int main() {
     lexer.addDefinition(programLiteralDefinition);
     lexer.addDefinition(atomLiteralDefinition);
 
-    Resolver resolver;
+    /*
+     * Resolver
+     */
+    OperatorsRepository operatorsRepository;
+    ProgramsRepository programsRepository;
+    VariablesRepository variablesRepository;
 
+    Resolver resolver(operatorsRepository, programsRepository, variablesRepository, operatorLiteralDefinition);
+
+    /*
+     * Runner
+     */
     Runner runner;
 
+    /*
+     * Application
+     */
     UTComputer computer(lexer, resolver, runner);
 
-    computer.execute("FOO 36 -2/4 6$4 98/2$-55/4 + - * / EVAL '3+3*56' [1 +]");
+    computer.execute("36 -2/4 + 6$4 * 98/2$-55/4 +");
 
     return 0;
 }

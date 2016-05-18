@@ -2,7 +2,7 @@
 #include "../resolver.h"
 #include "../operator/plus.h"
 #include "../literal/atom.h"
-#include "../debug/tokens_dumper.h"
+#include "../exception/undefined_atom.h"
 
 TEST(ResolverTest, Resolve) {
     NumericLiteral literal1(2);
@@ -11,6 +11,7 @@ TEST(ResolverTest, Resolve) {
     NumericLiteral literal4(4, 5);
     AtomLiteral literal5("BAR");
     OperatorLiteral literal6("+");
+    AtomLiteral literal7("PROG");
 
     // Operators repository
     PlusOperator plusOperator;
@@ -20,6 +21,14 @@ TEST(ResolverTest, Resolve) {
 
     // Programs repository
     ProgramsRepository programsRepository;
+
+    LiteralVector program;
+
+    program.push_back(&literal1);
+    program.push_back(&literal4);
+    program.push_back(&literal6);
+
+    programsRepository.set("PROG", program);
 
     // Variables repository
     VariablesRepository variablesRepository;
@@ -40,10 +49,32 @@ TEST(ResolverTest, Resolve) {
     vector.push_back(&literal4);
     vector.push_back(&literal5);
     vector.push_back(&literal6);
+    vector.push_back(&literal7);
 
     LiteralVector resolved = resolver.resolve(vector);
 
-    TokensDumper::dump(cout, resolved);
+    // Check the resolved tokens
+    ASSERT_TRUE(dynamic_cast<NumericLiteral*>(resolved[0]) != nullptr);
+    ASSERT_TRUE(dynamic_cast<NumericLiteral*>(resolved[1]) != nullptr);
+    ASSERT_TRUE(dynamic_cast<OperatorLiteral*>(resolved[2]) != nullptr);
+    ASSERT_TRUE(dynamic_cast<NumericLiteral*>(resolved[3]) != nullptr);
+    ASSERT_TRUE(dynamic_cast<NumericLiteral*>(resolved[4]) != nullptr);
+    ASSERT_TRUE(dynamic_cast<OperatorLiteral*>(resolved[5]) != nullptr);
+    ASSERT_TRUE(dynamic_cast<NumericLiteral*>(resolved[6]) != nullptr);
+    ASSERT_TRUE(dynamic_cast<NumericLiteral*>(resolved[7]) != nullptr);
+    ASSERT_TRUE(dynamic_cast<OperatorLiteral*>(resolved[8]) != nullptr);
+}
 
-    ASSERT_TRUE(true);
+TEST(ResolverTest, ResolveFailure) {
+    OperatorsRepository operatorsRepository;
+    ProgramsRepository programsRepository;
+    VariablesRepository variablesRepository;
+    OperatorLiteralDefinition operatorLiteralDefinition;
+
+    Resolver resolver(operatorsRepository, programsRepository, variablesRepository, operatorLiteralDefinition);
+
+    LiteralVector vector;
+    vector.push_back(new AtomLiteral("FOO"));
+
+    ASSERT_THROW(resolver.resolve(vector), UndefinedAtomException);
 }

@@ -1,5 +1,6 @@
 #include "resolver.h"
 #include "literal/atom.h"
+#include "exception/undefined_atom.h"
 
 LiteralVector Resolver::resolve(LiteralVector tokens) {
     LiteralVector resolved;
@@ -7,7 +8,6 @@ LiteralVector Resolver::resolve(LiteralVector tokens) {
     // For each atom token, replace it by its resolved components from the repositories
     for (LiteralVector::iterator iterator = tokens.begin(); iterator != tokens.end(); ++iterator) {
         if (AtomLiteral* atom = dynamic_cast<AtomLiteral*>(*iterator)) {
-
             if (operatorsRepository.has(atom->getValue())) {
                 // This atom is an operator
                 resolved.push_back(operatorLiteralDefinition.createInstance(atom->getValue()));
@@ -21,10 +21,13 @@ LiteralVector Resolver::resolve(LiteralVector tokens) {
                 for (LiteralVector::iterator programIt = program.begin(); programIt != program.end(); ++programIt) {
                     resolved.push_back(*programIt);
                 }
+            } else {
+                throw UndefinedAtomException(atom->getValue());
             }
-
-        } else {
-            resolved.push_back(*iterator);
+        } else if (NumericLiteral* numericLiteral = dynamic_cast<NumericLiteral*>(*iterator)) {
+            resolved.push_back(numericLiteral);
+        } else if (OperatorLiteral* operatorLiteral = dynamic_cast<OperatorLiteral*>(*iterator)) {
+            resolved.push_back(operatorLiteral);
         }
     }
 

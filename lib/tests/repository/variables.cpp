@@ -25,7 +25,7 @@ TEST(VariablesRepositoryTest, IteratorBehavior) {
 
     int count = 0;
 
-    for (VariablesRepository::Iterator iterator = repository.begin(); iterator != repository.end(); ++iterator) {
+    for (VariablesRepository::iterator iterator = repository.begin(); iterator != repository.end(); ++iterator) {
         count++;
         ASSERT_EQ(intLiteral.toString(), (*iterator).second->toString());
     }

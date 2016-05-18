@@ -14,7 +14,7 @@ protected:
     unordered_map<string, Type*> internalMap;
 
 public:
-    typedef typename unordered_map<string, Type*>::iterator Iterator;
+    typedef typename unordered_map<string, Type*>::iterator iterator;
 
     void set(string key, Type& value) {
         internalMap[key] = &value;
@@ -32,11 +32,11 @@ public:
         return internalMap.find(key) != internalMap.end();
     }
 
-    Iterator begin() {
+    iterator begin() {
         return internalMap.begin();
     }
 
-    Iterator end() {
+    iterator end() {
         return internalMap.end();
     }
 };

@@ -85,7 +85,7 @@ set(TEST_FILES
         lib/tests/repository/programs.cpp
         lib/tests/repository/variables.cpp
         lib/tests/lexer.cpp
-        lib/tests/resolver.cpp)
+        lib/tests/resolver.cpp lib/exception/undefined_atom.cpp lib/exception/undefined_atom.h)
 
 add_executable(LO21tests lib/tests/main.cpp ${SOURCE_FILES} ${TEST_FILES})
 target_link_libraries(LO21tests ${GTEST_LIBRARIES} pthread)

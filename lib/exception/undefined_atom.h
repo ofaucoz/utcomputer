@@ -1,5 +1,5 @@
-#ifndef LO21_EXCEPTION_INVALID_SYNTAX_H
-#define LO21_EXCEPTION_INVALID_SYNTAX_H
+#ifndef LO21_EXCEPTION_UNDEFINED_ATOM_H
+#define LO21_EXCEPTION_UNDEFINED_ATOM_H
 
 
 #include <iostream>
@@ -9,12 +9,12 @@ using namespace std;
 /*
  * Exception thrown when the syntax of the command is invalid.
  */
-struct InvalidSyntaxException {
+struct UndefinedAtomException {
 private:
     string value;
 
 public:
-    InvalidSyntaxException(const string &value) : value(value) { }
+    UndefinedAtomException(const string &value) : value(value) { }
 
     const string &getValue() const {
         return value;
@@ -22,4 +22,4 @@ public:
 };
 
 
-#endif // LO21_EXCEPTION_INVALID_SYNTAX_H
+#endif // LO21_EXCEPTION_UNDEFINED_ATOM_H

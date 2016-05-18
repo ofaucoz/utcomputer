@@ -22,7 +22,6 @@ LiteralVector Lexer::tokenize(string command) {
 
             // If we found the right literal definition, we build a literal using it
             if (regex_search(command, matchs, pattern)) {
-
                 match = matchs[1].str();
 
                 // We remove the matched element from the command

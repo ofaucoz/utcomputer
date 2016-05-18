@@ -13,6 +13,7 @@
 #include "literal_definition/expression.h"
 #include "literal_definition/program.h"
 #include "debug/tokens_dumper.h"
+#include "exception/undefined_atom.h"
 
 using namespace std;
 
@@ -32,9 +33,17 @@ public:
     UTComputer(Lexer lexer, Resolver resolver, Runner runner): lexer(lexer), resolver(resolver), runner(runner) {}
 
     void execute(string command) {
-        LiteralVector tokens = lexer.tokenize(command);
-
-        TokensDumper::dump(cout, tokens);
+        try {
+            LiteralVector tokens = lexer.tokenize(command);
+            LiteralVector resolved = resolver.resolve(tokens);
+            TokensDumper::dump(cout, resolved);
+        } catch (InvalidSyntaxException exception) {
+            cout << "Invalid syntax : " << exception.getValue() << endl;
+        } catch (UndefinedAtomException exception) {
+            cout << "Undefined atom : " << exception.getValue() << endl;
+        } catch (exception) {
+            cout << "Unknown error" << endl;
+        }
 
         // literals = resolver.resolve(tokens)
         // runner.applyChanges(literals)
