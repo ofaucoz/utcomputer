@@ -3,6 +3,9 @@
 
 
 #include <iostream>
+#include "repository/operators.h"
+#include "repository/programs.h"
+#include "repository/variables.h"
 
 using namespace std;
 
@@ -11,7 +14,22 @@ using namespace std;
  * to replace AtomLiterals by their equivalent numeric or operator literals.
  */
 class Resolver {
-    // TODO
+private:
+    OperatorsRepository operatorsRepository;
+    ProgramsRepository programsRepository;
+    VariablesRepository variablesRepository;
+
+public:
+    Resolver(const OperatorsRepository &operatorsRepository,
+             const ProgramsRepository &programsRepository,
+             const VariablesRepository &variablesRepository) :
+        operatorsRepository(operatorsRepository),
+        programsRepository(programsRepository),
+        variablesRepository(variablesRepository) { }
+
+    LiteralVector resolve(LiteralVector tokens) {
+        return tokens;
+    }
 };
 
 

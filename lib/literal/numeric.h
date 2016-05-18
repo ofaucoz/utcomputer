@@ -19,9 +19,14 @@ private:
     double imaginaryDenominator;
 
 public:
-    NumericLiteral(double realNumerator, double realDenominator = 1, double imaginaryNumerator = 0, double imaginaryDenominator = 1)
-            : realNumerator(realNumerator), realDenominator(realDenominator), imaginaryNumerator(imaginaryNumerator),
-              imaginaryDenominator(imaginaryDenominator) { }
+    NumericLiteral(double realNumerator,
+                   double realDenominator = 1,
+                   double imaginaryNumerator = 0,
+                   double imaginaryDenominator = 1) :
+        realNumerator(realNumerator),
+        realDenominator(realDenominator),
+        imaginaryNumerator(imaginaryNumerator),
+        imaginaryDenominator(imaginaryDenominator) { }
 
     double getRealNumerator() const {
         return realNumerator;
@@ -39,27 +44,7 @@ public:
         return imaginaryDenominator;
     }
 
-    string toString() const {
-        string value = "0";
-
-        if (realNumerator != 0) {
-            value = to_string(realNumerator);
-
-            if (realDenominator != 1) {
-                value += "/" + to_string(realDenominator);
-            }
-        }
-
-        if (imaginaryNumerator != 0) {
-            value += "$" + to_string(imaginaryNumerator);
-
-            if (imaginaryDenominator != 1) {
-                value += "/" + to_string(imaginaryDenominator);
-            }
-        }
-
-        return value;
-    };
+    string toString() const;
 };
 
 

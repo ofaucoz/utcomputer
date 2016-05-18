@@ -8,7 +8,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 # Application
 set(SOURCE_FILES
-        main.cpp
         lib/utcomputer.cpp
         lib/utcomputer.h
         lib/lexer.cpp
@@ -64,13 +63,16 @@ set(SOURCE_FILES
         lib/repository/messages.cpp
         lib/repository/messages.h
         lib/debug/tokens_dumper.cpp
-        lib/debug/tokens_dumper.h)
+        lib/debug/tokens_dumper.h
+        lib/operator/interface.cpp
+        lib/operator/interface.h
+        lib/operator/plus.cpp
+        lib/operator/plus.h)
 
-add_executable(LO21 ${SOURCE_FILES})
+add_executable(LO21 main.cpp ${SOURCE_FILES})
 
 # Tests
 set(TEST_FILES
-        lib/tests/main.cpp
         lib/tests/literal/all.cpp
         lib/tests/literal_definition/atom.cpp
         lib/tests/literal_definition/numeric.cpp
@@ -79,7 +81,9 @@ set(TEST_FILES
         lib/tests/literal_definition/whitespace.cpp
         lib/tests/repository/literals.cpp
         lib/tests/repository/messages.cpp
-        lib/tests/lexer.cpp)
+        lib/tests/repository/operators.cpp
+        lib/tests/lexer.cpp
+        lib/tests/resolver.cpp)
 
-add_executable(LO21tests ${TEST_FILES})
+add_executable(LO21tests lib/tests/main.cpp ${SOURCE_FILES} ${TEST_FILES})
 target_link_libraries(LO21tests ${GTEST_LIBRARIES} pthread)

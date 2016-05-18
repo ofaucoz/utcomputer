@@ -14,13 +14,17 @@ protected:
     unordered_map<string, Type*> internalMap;
 
 public:
-    typedef unordered_map<string, Type*>::iterator Iterator;
+    typedef typename unordered_map<string, Type*>::iterator Iterator;
 
     void set(string key, Type& value) {
-        internalMap[key] = value;
+        internalMap[key] = &value;
     }
 
-    Type get(string key) {
+    Type& get(string key) {
+        if (!has(key)) {
+            throw "Key does not exists in hash map";
+        }
+
         return *internalMap[key];
     }
 

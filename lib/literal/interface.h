@@ -8,7 +8,7 @@
 using namespace std;
 
 /*
- * Interface for all the literal.
+ * Interface for all the literals.
  *
  * A literal is the simple representation of an elmeent from a command to parse.
  * In the Parser-Lexer algorithm, literal are called tokens and they are created
@@ -19,6 +19,7 @@ using namespace std;
  * @see https://google.github.io/styleguide/cppguide.html#Structs_vs._Classes
  */
 struct LiteralInterface {
+public:
     virtual string toString() const = 0;
 };
 
