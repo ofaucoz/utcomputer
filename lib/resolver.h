@@ -6,6 +6,7 @@
 #include "repository/operators.h"
 #include "repository/programs.h"
 #include "repository/variables.h"
+#include "literal_definition/operator.h"
 
 using namespace std;
 
@@ -19,17 +20,19 @@ private:
     ProgramsRepository programsRepository;
     VariablesRepository variablesRepository;
 
+    OperatorLiteralDefinition operatorLiteralDefinition;
+
 public:
     Resolver(const OperatorsRepository &operatorsRepository,
              const ProgramsRepository &programsRepository,
-             const VariablesRepository &variablesRepository) :
+             const VariablesRepository &variablesRepository,
+             const OperatorLiteralDefinition &operatorLiteralDefinition) :
         operatorsRepository(operatorsRepository),
         programsRepository(programsRepository),
-        variablesRepository(variablesRepository) { }
+        variablesRepository(variablesRepository),
+        operatorLiteralDefinition(operatorLiteralDefinition) { }
 
-    LiteralVector resolve(LiteralVector tokens) {
-        return tokens;
-    }
+    LiteralVector resolve(LiteralVector tokens);
 };
 
 
