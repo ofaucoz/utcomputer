@@ -2,16 +2,35 @@
 #define LO21_REPOSITORY_MESSAGES_H
 
 
+#include <iostream>
+#include <stack>
+#include "../literal/interface.h"
 #include "interface.h"
 
 using namespace std;
 
 /**
- * Repository storing the messages for the user.
- * This repository is a stack.
+ * Stack of messages.
  */
 class MessagesRepository : public RepositoryInterface {
-    // TODO
+protected:
+    stack<string> internalStack;
+
+public:
+    void add(string value) {
+        internalStack.push(value);
+    }
+
+    string pop() {
+        string top = internalStack.top();
+        internalStack.pop();
+
+        return top;
+    }
+
+    unsigned long count() const {
+        return internalStack.size();
+    }
 };
 
 

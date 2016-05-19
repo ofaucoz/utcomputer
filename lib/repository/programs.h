@@ -2,7 +2,8 @@
 #define LO21_REPOSITORY_PROGRAMS_H
 
 
-#include "interface.h"
+#include "hashmap.h"
+#include "../literal/program.h"
 
 using namespace std;
 
@@ -10,9 +11,7 @@ using namespace std;
  * Repository storing the user programs.
  * This repository is a hash map.
  */
-class ProgramsRepository : public RepositoryInterface {
-    // TODO
-};
+class ProgramsRepository : public HashmapRepository<LiteralVector> {};
 
 
 #endif // LO21_REPOSITORY_PROGRAMS_H

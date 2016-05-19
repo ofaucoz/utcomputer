@@ -1,5 +1,5 @@
-#ifndef LO21_REPOSITORY_ABSTRACT_H
-#define LO21_REPOSITORY_ABSTRACT_H
+#ifndef LO21_REPOSITORY_INTERFACE_H
+#define LO21_REPOSITORY_INTERFACE_H
 
 
 #include <iostream>
@@ -14,10 +14,7 @@ using namespace std;
  *
  * Repositories are able to dump their content as string to be saved in files.
  */
-class RepositoryInterface {
-    virtual string dumpToString() const = 0;
-    virtual void loadFromString(string dumpedString) = 0;
-};
+class RepositoryInterface {};
 
 
-#endif // LO21_REPOSITORY_ABSTRACT_H
+#endif // LO21_REPOSITORY_INTERFACE_H

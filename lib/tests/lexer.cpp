@@ -24,7 +24,7 @@ TEST(LexerTest, Tokenize) {
     lexer.addDefinition(programLiteralDefinition);
     lexer.addDefinition(atomLiteralDefinition);
 
-    vector<LiteralInterface*> tokens = lexer.tokenize("FOO 36 -2/4 6$4 98/2$-55/4 + - * / EVAL '3+3*56' [1 +]");
+    LiteralVector tokens = lexer.tokenize("FOO 36 -2/4 6$4 98/2$-55/4 + - * / EVAL '3+3*56' [1 +]");
 
     // Check the built tokens
     ASSERT_TRUE(dynamic_cast<AtomLiteral*>(tokens[0]) != nullptr);
