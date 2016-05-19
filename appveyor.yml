@@ -1,0 +1,15 @@
+branches:
+    only:
+        - master
+
+environment:
+    matrix:
+        - GENERATOR: "Visual Studio 12"
+          CONFIG: Debug
+
+test_script:
+    - md build
+    - cd build
+    - cmake ..
+    - make LO21tests
+    - ./LO21tests
