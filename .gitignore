@@ -4,6 +4,7 @@ Makefile
 CMakeFiles
 LO21
 LO21tests
+build
 
 # Compiled Object files
 *.slo

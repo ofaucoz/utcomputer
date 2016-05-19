@@ -1,0 +1,22 @@
+language: cpp
+
+branches:
+    only:
+        - master
+
+install:
+    - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+    - sudo apt-get update
+    - sudo apt-get install libgtest-dev g++-4.9
+    - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
+    - export CXX="g++-4.9" CC="gcc-4.9"
+
+script:
+    - mkdir build
+    - cd build
+    - cmake ..
+    - make LO21tests
+    - ./LO21tests
+
+notifications:
+    email: false
