@@ -7,6 +7,8 @@
 #include <stack>
 #include <unordered_map>
 #include <memory>
+#include "../repository/map.h"
+#include "../repository/stack.h"
 
 using namespace std;
 
@@ -40,17 +42,17 @@ typedef vector<LiteralPointer> LiteralVector;
 /*
  * Literals stack
  */
-typedef stack<LiteralPointer> LiteralsStack;
+typedef ObservableStack<LiteralPointer> LiteralsStack;
 
 /*
  * Variables hashmap
  */
-typedef unordered_map<string, LiteralPointer> VariableMap;
+typedef ObservableMap<string, LiteralPointer> VariableMap;
 
 /*
  * Programs hashmap
  */
-typedef unordered_map<string, LiteralVector> ProgramMap;
+typedef ObservableMap<string, LiteralVector> ProgramMap;
 
 
 #endif // LO21_LITERAL_INTERFACE_H

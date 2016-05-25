@@ -48,8 +48,12 @@ set(SOURCE_FILES
         lib/literal_definition/expression.h
         lib/literal_definition/program.cpp
         lib/literal_definition/program.h
-        lib/messages/message.cpp
-        lib/messages/message.h
+        lib/repository/observable.cpp
+        lib/repository/observable.h
+        lib/repository/map.cpp
+        lib/repository/map.h
+        lib/repository/stack.cpp
+        lib/repository/stack.h
         lib/debug/tokens_dumper.cpp
         lib/debug/tokens_dumper.h
         lib/operator/interface.cpp
@@ -67,6 +71,8 @@ set(TEST_FILES
         lib/tests/literal_definition/operator.cpp
         lib/tests/literal_definition/expression.cpp
         lib/tests/literal_definition/whitespace.cpp
+        lib/tests/repository/map.cpp
+        lib/tests/repository/stack.cpp
         lib/tests/lexer.cpp
         lib/tests/resolver.cpp)
 
