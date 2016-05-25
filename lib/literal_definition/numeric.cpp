@@ -1,8 +1,8 @@
 #include "numeric.h"
 
-queue<std::string> NumericLiteralDefinition::parse(string value) const {
-    queue<std::string> parsed;
-    std::string input = "";
+queue<string> NumericLiteralDefinition::parse(string value) const {
+    queue<string> parsed;
+    string input = "";
 
     for (int i = 0; i < value.size(); i++) {
         if (value[i] != '$' && value[i] != '/') {
@@ -26,8 +26,8 @@ queue<std::string> NumericLiteralDefinition::parse(string value) const {
     return parsed;
 }
 
-LiteralInterface* NumericLiteralDefinition::createInstance(string value) const {
-    queue<std::string> parsedString = parse(value);
+LiteralPointer NumericLiteralDefinition::createInstance(string value) const {
+    queue<string> parsedString = parse(value);
 
     bool isRational = false;
     bool isComplex = false;
@@ -67,5 +67,5 @@ LiteralInterface* NumericLiteralDefinition::createInstance(string value) const {
         }
     }
 
-    return new NumericLiteral(realNumerator, realDenominator, imagNumerator, imagDenominator);
+    return LiteralPointer(new NumericLiteral(realNumerator, realDenominator, imagNumerator, imagDenominator));
 }

@@ -10,17 +10,17 @@ TEST(OperatorLiteralDefinitionTest, Construct) {
 TEST(OperatorLiteralDefinitionTest, CreateInstanceNative) {
     OperatorLiteralDefinition definition;
 
-    ASSERT_TRUE(dynamic_cast<OperatorLiteral*>(definition.createInstance("+")) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<OperatorLiteral>(definition.createInstance("+")) != nullptr);
 
-    LiteralInterface* literal = definition.createInstance("+");
+    LiteralPointer literal = definition.createInstance("+");
     ASSERT_EQ("+", literal->toString());
 }
 
 TEST(OperatorLiteralDefinitionTest, CreateInstance) {
     OperatorLiteralDefinition definition;
 
-    ASSERT_TRUE(dynamic_cast<OperatorLiteral*>(definition.createInstance("FOO")) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<OperatorLiteral>(definition.createInstance("FOO")) != nullptr);
 
-    LiteralInterface* literal = definition.createInstance("FOO");
+    LiteralPointer literal = definition.createInstance("FOO");
     ASSERT_EQ("FOO", literal->toString());
 }

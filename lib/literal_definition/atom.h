@@ -14,12 +14,12 @@ using namespace std;
  */
 class AtomLiteralDefinition : public LiteralDefinitionInterface {
 public:
-    string getPattern() const {
+    const string getPattern() const override {
         return "[A-Z][A-Z0-9]+";
     }
 
-    LiteralInterface* createInstance(string value) const {
-        return new AtomLiteral(value);
+    LiteralPointer createInstance(string value) const override {
+        return LiteralPointer(new AtomLiteral(value));
     }
 };
 

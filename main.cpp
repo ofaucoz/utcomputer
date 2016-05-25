@@ -1,6 +1,5 @@
 #include <iostream>
 #include "lib/utcomputer.h"
-#include "lib/operator/plus.h"
 
 using namespace std;
 

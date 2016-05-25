@@ -10,8 +10,8 @@ TEST(WhitespaceLiteralDefinitionTest, Construct) {
 TEST(WhitespaceLiteralDefinitionTest, CreateInstance) {
     WhitespaceLiteralDefinition definition;
 
-    ASSERT_TRUE(dynamic_cast<WhitespaceLiteral*>(definition.createInstance(" ")) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<WhitespaceLiteral>(definition.createInstance(" ")) != nullptr);
 
-    WhitespaceLiteral* literal = dynamic_cast<WhitespaceLiteral*>(definition.createInstance(" \t\n"));
+    LiteralPointer literal = dynamic_pointer_cast<WhitespaceLiteral>(definition.createInstance(" \t\n"));
     ASSERT_EQ(" ", literal->toString());
 }

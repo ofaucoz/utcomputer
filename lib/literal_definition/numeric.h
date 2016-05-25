@@ -35,11 +35,11 @@ private:
     queue<std::string> parse(string value) const;
 
 public:
-    string getPattern() const {
+    const string getPattern() const override {
         return "-?[0-9]+/?-?[0-9]?+\\$?-?[0-9]?+/?-?[0-9]?+";
     }
 
-    LiteralInterface* createInstance(string value) const;
+    LiteralPointer createInstance(string value) const override;
 };
 
 

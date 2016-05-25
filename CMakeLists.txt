@@ -18,6 +18,8 @@ set(SOURCE_FILES
         lib/runner.h
         lib/exception/invalid_syntax.cpp
         lib/exception/invalid_syntax.h
+        lib/exception/undefined_atom.cpp
+        lib/exception/undefined_atom.h
         lib/literal/interface.cpp
         lib/literal/interface.h
         lib/literal/operator.cpp
@@ -46,22 +48,8 @@ set(SOURCE_FILES
         lib/literal_definition/expression.h
         lib/literal_definition/program.cpp
         lib/literal_definition/program.h
-        lib/repository/stack.cpp
-        lib/repository/stack.h
-        lib/repository/hashmap.cpp
-        lib/repository/hashmap.h
-        lib/repository/interface.cpp
-        lib/repository/interface.h
-        lib/repository/literals.cpp
-        lib/repository/literals.h
-        lib/repository/variables.cpp
-        lib/repository/variables.h
-        lib/repository/programs.cpp
-        lib/repository/programs.h
-        lib/repository/operators.cpp
-        lib/repository/operators.h
-        lib/repository/messages.cpp
-        lib/repository/messages.h
+        lib/messages/message.cpp
+        lib/messages/message.h
         lib/debug/tokens_dumper.cpp
         lib/debug/tokens_dumper.h
         lib/operator/interface.cpp
@@ -79,13 +67,8 @@ set(TEST_FILES
         lib/tests/literal_definition/operator.cpp
         lib/tests/literal_definition/expression.cpp
         lib/tests/literal_definition/whitespace.cpp
-        lib/tests/repository/literals.cpp
-        lib/tests/repository/messages.cpp
-        lib/tests/repository/operators.cpp
-        lib/tests/repository/programs.cpp
-        lib/tests/repository/variables.cpp
         lib/tests/lexer.cpp
-        lib/tests/resolver.cpp lib/exception/undefined_atom.cpp lib/exception/undefined_atom.h)
+        lib/tests/resolver.cpp)
 
 add_executable(LO21tests lib/tests/main.cpp ${SOURCE_FILES} ${TEST_FILES})
 target_link_libraries(LO21tests ${GTEST_LIBRARIES} pthread)

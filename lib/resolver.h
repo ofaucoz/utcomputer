@@ -3,9 +3,8 @@
 
 
 #include <iostream>
-#include "repository/operators.h"
-#include "repository/programs.h"
-#include "repository/variables.h"
+#include "operator/interface.h"
+#include "literal/numeric.h"
 #include "literal_definition/operator.h"
 
 using namespace std;
@@ -16,23 +15,23 @@ using namespace std;
  */
 class Resolver {
 private:
-    OperatorsRepository operatorsRepository;
-    ProgramsRepository programsRepository;
-    VariablesRepository variablesRepository;
+    const OperatorMap& operatorsMap;
+    const ProgramMap& programsMap;
+    const VariableMap& variablesMap;
 
-    OperatorLiteralDefinition operatorLiteralDefinition;
+    const OperatorLiteralDefinition& operatorLiteralDefinition;
 
 public:
-    Resolver(const OperatorsRepository &operatorsRepository,
-             const ProgramsRepository &programsRepository,
-             const VariablesRepository &variablesRepository,
-             const OperatorLiteralDefinition &operatorLiteralDefinition) :
-        operatorsRepository(operatorsRepository),
-        programsRepository(programsRepository),
-        variablesRepository(variablesRepository),
+    Resolver(const OperatorMap& operatorsMap,
+             const ProgramMap& programsMap,
+             const VariableMap& variablesMap,
+             const OperatorLiteralDefinition& operatorLiteralDefinition) :
+        operatorsMap(operatorsMap),
+        programsMap(programsMap),
+        variablesMap(variablesMap),
         operatorLiteralDefinition(operatorLiteralDefinition) { }
 
-    LiteralVector resolve(LiteralVector tokens);
+    LiteralVector resolve(LiteralVector tokens) const;
 };
 
 

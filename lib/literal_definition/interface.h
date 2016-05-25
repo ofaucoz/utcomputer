@@ -16,11 +16,20 @@ using namespace std;
  */
 class LiteralDefinitionInterface {
 public:
-    virtual string getPattern() const = 0;
-    virtual LiteralInterface* createInstance(string value) const = 0;
+    virtual const string getPattern() const = 0;
+    virtual LiteralPointer createInstance(string value) const = 0;
+    virtual ~LiteralDefinitionInterface() {};
 };
 
-typedef vector<LiteralDefinitionInterface*> LiteralDefinitionVector;
+/*
+ * Literals definitions pointer
+ */
+typedef shared_ptr<LiteralDefinitionInterface> LiteralDefinitionPointer;
+
+/*
+ * Literals definitions vector
+ */
+typedef vector<LiteralDefinitionPointer> LiteralDefinitionVector;
 
 
 #endif // LO21_LITERAL_DEFINITION_INTERFACE_H

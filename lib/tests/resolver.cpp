@@ -5,76 +5,63 @@
 #include "../exception/undefined_atom.h"
 
 TEST(ResolverTest, Resolve) {
-    NumericLiteral literal1(2);
-    AtomLiteral literal2("FOO");
-    AtomLiteral literal3("ADD");
-    NumericLiteral literal4(4, 5);
-    AtomLiteral literal5("BAR");
-    OperatorLiteral literal6("+");
-    AtomLiteral literal7("PROG");
+    // Operators messages
+    OperatorMap operatorMap;
+    operatorMap["ADD"] = OperatorPointer(new PlusOperator);
 
-    // Operators repository
-    PlusOperator plusOperator;
-
-    OperatorsRepository operatorsRepository;
-    operatorsRepository.set("ADD", plusOperator);
-
-    // Programs repository
-    ProgramsRepository programsRepository;
-
+    // Programs messages
+    ProgramMap programMap;
     LiteralVector program;
 
-    program.push_back(&literal1);
-    program.push_back(&literal4);
-    program.push_back(&literal6);
+    program.push_back(LiteralPointer(new NumericLiteral(2)));
+    program.push_back(LiteralPointer(new NumericLiteral(4, 5)));
+    program.push_back(LiteralPointer(new OperatorLiteral("+")));
 
-    programsRepository.set("PROG", program);
+    programMap["PROG"] = program;
 
-    // Variables repository
-    VariablesRepository variablesRepository;
-    variablesRepository.set("FOO", literal1);
-    variablesRepository.set("BAR", literal4);
-
-    // Operator literal definition
-    OperatorLiteralDefinition operatorLiteralDefinition;
+    // Variables messages
+    VariableMap variableMap;
+    variableMap["FOO"] = LiteralPointer(new NumericLiteral(2));
+    variableMap["BAR"] = LiteralPointer(new NumericLiteral(4, 5, 6, 7));
 
     // Resolver
-    Resolver resolver(operatorsRepository, programsRepository, variablesRepository, operatorLiteralDefinition);
+    OperatorLiteralDefinition operatorLiteralDefinition;
+    Resolver resolver(operatorMap, programMap, variableMap, operatorLiteralDefinition);
 
     // Build input vector
-    LiteralVector vector;
-    vector.push_back(&literal1);
-    vector.push_back(&literal2);
-    vector.push_back(&literal3);
-    vector.push_back(&literal4);
-    vector.push_back(&literal5);
-    vector.push_back(&literal6);
-    vector.push_back(&literal7);
+    LiteralVector tokens;
+    tokens.push_back(LiteralPointer(new NumericLiteral(2)));
+    tokens.push_back(LiteralPointer(new AtomLiteral("FOO")));
+    tokens.push_back(LiteralPointer(new AtomLiteral("ADD")));
+    tokens.push_back(LiteralPointer(new NumericLiteral(4, 5)));
+    tokens.push_back(LiteralPointer(new AtomLiteral("BAR")));
+    tokens.push_back(LiteralPointer(new OperatorLiteral("+")));
+    tokens.push_back(LiteralPointer(new AtomLiteral("PROG")));
 
-    LiteralVector resolved = resolver.resolve(vector);
+    LiteralVector resolved = resolver.resolve(tokens);
 
     // Check the resolved tokens
-    ASSERT_TRUE(dynamic_cast<NumericLiteral*>(resolved[0]) != nullptr);
-    ASSERT_TRUE(dynamic_cast<NumericLiteral*>(resolved[1]) != nullptr);
-    ASSERT_TRUE(dynamic_cast<OperatorLiteral*>(resolved[2]) != nullptr);
-    ASSERT_TRUE(dynamic_cast<NumericLiteral*>(resolved[3]) != nullptr);
-    ASSERT_TRUE(dynamic_cast<NumericLiteral*>(resolved[4]) != nullptr);
-    ASSERT_TRUE(dynamic_cast<OperatorLiteral*>(resolved[5]) != nullptr);
-    ASSERT_TRUE(dynamic_cast<NumericLiteral*>(resolved[6]) != nullptr);
-    ASSERT_TRUE(dynamic_cast<NumericLiteral*>(resolved[7]) != nullptr);
-    ASSERT_TRUE(dynamic_cast<OperatorLiteral*>(resolved[8]) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[0]) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[1]) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<OperatorLiteral>(resolved[2]) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[3]) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[4]) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<OperatorLiteral>(resolved[5]) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[6]) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[7]) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<OperatorLiteral>(resolved[8]) != nullptr);
 }
 
 TEST(ResolverTest, ResolveFailure) {
-    OperatorsRepository operatorsRepository;
-    ProgramsRepository programsRepository;
-    VariablesRepository variablesRepository;
+    OperatorMap operatorMap;
+    ProgramMap programMap;
+    VariableMap variableMap;
     OperatorLiteralDefinition operatorLiteralDefinition;
 
-    Resolver resolver(operatorsRepository, programsRepository, variablesRepository, operatorLiteralDefinition);
+    Resolver resolver(operatorMap, programMap, variableMap, operatorLiteralDefinition);
 
     LiteralVector vector;
-    vector.push_back(new AtomLiteral("FOO"));
+    vector.push_back(LiteralPointer(new AtomLiteral("FOO")));
 
     ASSERT_THROW(resolver.resolve(vector), UndefinedAtomException);
 }
