@@ -11,12 +11,12 @@ using namespace std;
  */
 class PlusOperator : public OperatorInterface {
 public:
-    string getTokenValue() const {
+    const string getTokenValue() const override {
         return "+";
     }
 
-    void apply(LiteralsRepository& stack) const {
-        stack.count();
+    void apply(LiteralsStack& stack) const override {
+        stack.size();
     }
 };
 

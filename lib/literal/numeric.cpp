@@ -1,6 +1,6 @@
 #include "numeric.h"
 
-string NumericLiteral::toString() const {
+const string NumericLiteral::toString() const {
     string value = "0";
 
     if (realNumerator != 0) {

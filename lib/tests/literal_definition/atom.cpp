@@ -10,8 +10,8 @@ TEST(AtomLiteralDefinitionTest, Construct) {
 TEST(AtomLiteralDefinitionTest, CreateInstance) {
     AtomLiteralDefinition definition;
 
-    ASSERT_TRUE(dynamic_cast<AtomLiteral*>(definition.createInstance("FOO")) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<AtomLiteral>(definition.createInstance("FOO")) != nullptr);
 
-    LiteralInterface* literal = definition.createInstance("FOO");
+    LiteralPointer literal = definition.createInstance("FOO");
     ASSERT_EQ("FOO", literal->toString());
 }

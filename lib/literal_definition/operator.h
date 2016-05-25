@@ -14,12 +14,12 @@ using namespace std;
  */
 class OperatorLiteralDefinition : public LiteralDefinitionInterface {
 public:
-    string getPattern() const {
+    const string getPattern() const override {
         return "\\+|\\-|\\*|\\/|\\$";
     }
 
-    LiteralInterface* createInstance(string value) const {
-        return new OperatorLiteral(value);
+    LiteralPointer createInstance(string value) const override {
+        return LiteralPointer(new OperatorLiteral(value));
     }
 };
 

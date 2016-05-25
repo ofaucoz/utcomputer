@@ -14,12 +14,12 @@ using namespace std;
  */
 class WhitespaceLiteralDefinition : public LiteralDefinitionInterface {
 public:
-    string getPattern() const {
+    const string getPattern() const override {
         return "\\s+";
     }
 
-    LiteralInterface* createInstance(string value) const {
-        return new WhitespaceLiteral();
+    LiteralPointer createInstance(string value) const override {
+        return LiteralPointer(new WhitespaceLiteral());
     }
 };
 

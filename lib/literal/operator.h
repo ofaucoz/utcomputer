@@ -22,7 +22,7 @@ public:
         return name;
     }
 
-    string toString() const {
+    const string toString() const override {
         return name;
     };
 };

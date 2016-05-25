@@ -13,7 +13,7 @@ using namespace std;
  */
 struct WhitespaceLiteral : public LiteralInterface {
 public:
-    string toString() const {
+    const string toString() const override {
         return " ";
     };
 };

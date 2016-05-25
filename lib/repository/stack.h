@@ -3,32 +3,24 @@
 
 
 #include <stack>
-
-using namespace std;
+#include "observable.h"
 
 /*
- * Abstract repository template for stacks.
+ * Observable stack based on the standard stack and dispatching
+ * notifications to observers on data change.
  */
-template<typename Type> class StackRepository {
-protected:
-    stack<Type*> internalStack;
-
+template<class T> class ObservableStack : public std::stack<T>, public Repository {
 public:
-    void add(Type& value) {
-        internalStack.push(&value);
+    void pushAndNotify(const T& item) {
+        this->push(item);
+        notify();
     }
 
-    Type& pop() {
-        Type* top = internalStack.top();
-        internalStack.pop();
-
-        return *top;
-    }
-
-    unsigned long count() const {
-        return internalStack.size();
+    void popAndNotify() {
+        this->pop();
+        notify();
     }
 };
 
 
-#endif // LO21_REPOSITORY_STACK_H
+#endif //LO21_REPOSITORY_STACK_H

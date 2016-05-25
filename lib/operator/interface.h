@@ -3,8 +3,7 @@
 
 
 #include <iostream>
-#include <vector>
-#include "../repository/literals.h"
+#include "../literal/interface.h"
 
 using namespace std;
 
@@ -16,10 +15,20 @@ using namespace std;
  */
 class OperatorInterface {
 public:
-    virtual string getTokenValue() const = 0;
-    virtual void apply(LiteralsRepository& stack) const = 0;
+    virtual const string getTokenValue() const = 0;
+    virtual void apply(LiteralsStack& stack) const = 0;
+    virtual ~OperatorInterface() {};
 };
 
-typedef vector<OperatorInterface*> OperatorVector;
+/*
+ * Operator pointer
+ */
+typedef shared_ptr<OperatorInterface> OperatorPointer;
+
+/*
+ * Operators hashmap
+ */
+typedef unordered_map<string, OperatorPointer> OperatorMap;
+
 
 #endif // LO21_OPERATOR_INTERFACE_H

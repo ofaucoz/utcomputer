@@ -4,6 +4,11 @@
 
 #include <iostream>
 #include <vector>
+#include <stack>
+#include <unordered_map>
+#include <memory>
+#include "../repository/map.h"
+#include "../repository/stack.h"
 
 using namespace std;
 
@@ -20,9 +25,34 @@ using namespace std;
  */
 struct LiteralInterface {
 public:
-    virtual string toString() const = 0;
+    virtual const string toString() const = 0;
+    virtual ~LiteralInterface() {};
 };
 
-typedef vector<LiteralInterface*> LiteralVector;
+/*
+ * Literals unique pointer
+ */
+typedef shared_ptr<LiteralInterface> LiteralPointer;
+
+/*
+ * Literals vector
+ */
+typedef vector<LiteralPointer> LiteralVector;
+
+/*
+ * Literals stack
+ */
+typedef ObservableStack<LiteralPointer> LiteralsStack;
+
+/*
+ * Variables hashmap
+ */
+typedef ObservableMap<string, LiteralPointer> VariableMap;
+
+/*
+ * Programs hashmap
+ */
+typedef ObservableMap<string, LiteralVector> ProgramMap;
+
 
 #endif // LO21_LITERAL_INTERFACE_H

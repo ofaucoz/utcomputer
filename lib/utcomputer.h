@@ -25,12 +25,13 @@ using namespace std;
  */
 class UTComputer {
 private:
-    Lexer lexer;
-    Resolver resolver;
-    Runner runner;
+    const Lexer& lexer;
+    const Resolver& resolver;
+    const Runner& runner;
 
 public:
-    UTComputer(Lexer lexer, Resolver resolver, Runner runner): lexer(lexer), resolver(resolver), runner(runner) {}
+    UTComputer(const Lexer& lexer, const Resolver& resolver, Runner& runner):
+        lexer(lexer), resolver(resolver), runner(runner) {}
 
     void execute(string command) {
         try {

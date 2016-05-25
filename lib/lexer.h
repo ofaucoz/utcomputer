@@ -20,11 +20,11 @@ private:
     LiteralDefinitionVector definitions;
 
 public:
-    void addDefinition(LiteralDefinitionInterface& definition) {
-        definitions.push_back(&definition);
+    void addDefinition(LiteralDefinitionInterface* definition) {
+        definitions.push_back(LiteralDefinitionPointer(definition));
     }
 
-    LiteralVector tokenize(string command);
+    LiteralVector tokenize(string command) const;
 };
 
 

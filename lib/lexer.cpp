@@ -1,11 +1,11 @@
 #include "lexer.h"
 
-LiteralVector Lexer::tokenize(string command) {
+LiteralVector Lexer::tokenize(string command) const {
     // Vector of found tokens
     LiteralVector tokens;
 
     // Initialization of variables
-    LiteralDefinitionVector::iterator iterator;
+    LiteralDefinitionVector::const_iterator iterator;
     smatch matchs;
     string match;
     regex pattern;

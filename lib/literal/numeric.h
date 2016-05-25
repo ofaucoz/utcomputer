@@ -44,7 +44,7 @@ public:
         return imaginaryDenominator;
     }
 
-    string toString() const;
+    const string toString() const override;
 };
 
 

@@ -14,12 +14,12 @@ using namespace std;
  */
 class ExpressionLiteralDefinition : public LiteralDefinitionInterface {
 public:
-    string getPattern() const {
+    const string getPattern() const override {
         return "'[^']*'";
     }
 
-    LiteralInterface* createInstance(string value) const {
-        return new ExpressionLiteral(value);
+    LiteralPointer createInstance(string value) const override {
+        return LiteralPointer(new ExpressionLiteral(value));
     }
 };
 

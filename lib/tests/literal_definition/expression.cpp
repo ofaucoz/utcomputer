@@ -10,8 +10,8 @@ TEST(ExpressionLiteralDefinitionTest, Construct) {
 TEST(ExpressionLiteralDefinitionTest, CreateInstance) {
     ExpressionLiteralDefinition definition;
 
-    ASSERT_TRUE(dynamic_cast<ExpressionLiteral*>(definition.createInstance("FOO")) != nullptr);
+    ASSERT_TRUE(dynamic_pointer_cast<ExpressionLiteral>(definition.createInstance("FOO")) != nullptr);
 
-    LiteralInterface* literal = definition.createInstance("FOO");
+    LiteralPointer literal = definition.createInstance("FOO");
     ASSERT_EQ("FOO", literal->toString());
 }
