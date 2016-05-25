@@ -27,5 +27,10 @@ public:
     };
 };
 
+/*
+ * Program literal pointer
+ */
+typedef shared_ptr<ProgramLiteral> ProgramLiteralPointer;
+
 
 #endif // LO21_LITERAL_PROGRAM_H

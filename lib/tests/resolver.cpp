@@ -41,15 +41,15 @@ TEST(ResolverTest, Resolve) {
     LiteralVector resolved = resolver.resolve(tokens);
 
     // Check the resolved tokens
-    ASSERT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[0]) != nullptr);
-    ASSERT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[1]) != nullptr);
-    ASSERT_TRUE(dynamic_pointer_cast<OperatorLiteral>(resolved[2]) != nullptr);
-    ASSERT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[3]) != nullptr);
-    ASSERT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[4]) != nullptr);
-    ASSERT_TRUE(dynamic_pointer_cast<OperatorLiteral>(resolved[5]) != nullptr);
-    ASSERT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[6]) != nullptr);
-    ASSERT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[7]) != nullptr);
-    ASSERT_TRUE(dynamic_pointer_cast<OperatorLiteral>(resolved[8]) != nullptr);
+    EXPECT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[0]) != nullptr);
+    EXPECT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[1]) != nullptr);
+    EXPECT_TRUE(dynamic_pointer_cast<OperatorLiteral>(resolved[2]) != nullptr);
+    EXPECT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[3]) != nullptr);
+    EXPECT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[4]) != nullptr);
+    EXPECT_TRUE(dynamic_pointer_cast<OperatorLiteral>(resolved[5]) != nullptr);
+    EXPECT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[6]) != nullptr);
+    EXPECT_TRUE(dynamic_pointer_cast<NumericLiteral>(resolved[7]) != nullptr);
+    EXPECT_TRUE(dynamic_pointer_cast<OperatorLiteral>(resolved[8]) != nullptr);
 }
 
 TEST(ResolverTest, ResolveFailure) {
@@ -63,5 +63,5 @@ TEST(ResolverTest, ResolveFailure) {
     LiteralVector vector;
     vector.push_back(LiteralPointer(new AtomLiteral("FOO")));
 
-    ASSERT_THROW(resolver.resolve(vector), UndefinedAtomException);
+    EXPECT_THROW(resolver.resolve(vector), UndefinedAtomException);
 }

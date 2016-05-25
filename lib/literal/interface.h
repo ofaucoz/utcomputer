@@ -30,12 +30,12 @@ public:
 };
 
 /*
- * Literals unique pointer
+ * Literal pointer
  */
 typedef shared_ptr<LiteralInterface> LiteralPointer;
 
 /*
- * Literals vector
+ * Literal vector
  */
 typedef vector<LiteralPointer> LiteralVector;
 

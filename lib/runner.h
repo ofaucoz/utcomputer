@@ -3,6 +3,7 @@
 
 
 #include <iostream>
+#include "operator/interface.h"
 
 using namespace std;
 
@@ -11,7 +12,15 @@ using namespace std;
  * using the operators objects.
  */
 class Runner {
-    // TODO
+private:
+    const OperatorMap& operatorsMap;
+    LiteralsStack& literalStack;
+
+public:
+    Runner(const OperatorMap& operatorsMap, LiteralsStack& literalStack) :
+        operatorsMap(operatorsMap), literalStack(literalStack) { }
+
+    void run(LiteralVector resolvedTokens);
 };
 
 

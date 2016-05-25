@@ -18,5 +18,10 @@ public:
     };
 };
 
+/*
+ * Whitespace literal pointer
+ */
+typedef shared_ptr<WhitespaceLiteral> WhitespaceLiteralPointer;
+
 
 #endif // LO21_LITERAL_WHITESPACE_H

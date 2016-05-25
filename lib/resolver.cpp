@@ -7,7 +7,7 @@ LiteralVector Resolver::resolve(LiteralVector tokens) const {
 
     // For each atom token, replace it by its resolved components from the repositories
     for (LiteralVector::iterator iterator = tokens.begin(); iterator != tokens.end(); ++iterator) {
-        if (shared_ptr<AtomLiteral> atom = dynamic_pointer_cast<AtomLiteral>(*iterator)) {
+        if (AtomLiteralPointer atom = dynamic_pointer_cast<AtomLiteral>(*iterator)) {
             if (operatorsMap.find(atom->getValue()) != operatorsMap.end()) {
                 // This atom is an operator
                 resolved.push_back(operatorLiteralDefinition.createInstance(atom->getValue()));
@@ -24,9 +24,9 @@ LiteralVector Resolver::resolve(LiteralVector tokens) const {
             } else {
                 throw UndefinedAtomException(atom->getValue());
             }
-        } else if (shared_ptr<NumericLiteral> numericLiteral = dynamic_pointer_cast<NumericLiteral>(*iterator)) {
+        } else if (NumericLiteralPointer numericLiteral = dynamic_pointer_cast<NumericLiteral>(*iterator)) {
             resolved.push_back(numericLiteral);
-        } else if (shared_ptr<OperatorLiteral> operatorLiteral = dynamic_pointer_cast<OperatorLiteral>(*iterator)) {
+        } else if (OperatorLiteralPointer operatorLiteral = dynamic_pointer_cast<OperatorLiteral>(*iterator)) {
             resolved.push_back(operatorLiteral);
         }
     }

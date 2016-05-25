@@ -28,7 +28,7 @@ typedef shared_ptr<OperatorInterface> OperatorPointer;
 /*
  * Operators hashmap
  */
-typedef unordered_map<string, OperatorPointer> OperatorMap;
+typedef ObservableMap<string, OperatorPointer> OperatorMap;
 
 
 #endif // LO21_OPERATOR_INTERFACE_H
