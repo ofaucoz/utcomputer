@@ -27,5 +27,10 @@ public:
     };
 };
 
+/*
+ * Operator literal pointer
+ */
+typedef shared_ptr<OperatorLiteral> OperatorLiteralPointer;
+
 
 #endif // LO21_LITERAL_INT_H

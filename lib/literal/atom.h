@@ -27,5 +27,10 @@ public:
     };
 };
 
+/*
+ * Atom literal pointer
+ */
+typedef shared_ptr<AtomLiteral> AtomLiteralPointer;
+
 
 #endif // LO21_LITERAL_ATOM_H

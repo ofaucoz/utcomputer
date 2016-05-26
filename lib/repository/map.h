@@ -12,11 +12,11 @@
  */
 template<class K, class V> class ObservableMap : public std::unordered_map<K, V>, public Repository {
 public:
-    V& get(const K& key) {
-        return this->operator[](key);
+    const V& get(const K& key) const {
+        return this->at(key);
     }
 
-    bool has(const K& key) {
+    bool has(const K& key) const {
         return this->find(key) != this->end();
     }
 

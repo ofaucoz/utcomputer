@@ -3,6 +3,8 @@
 
 
 #include "interface.h"
+#include "../math/math.h"
+#include "../math/fraction.h"
 
 using namespace std;
 
@@ -18,6 +20,8 @@ private:
     double imaginaryNumerator;
     double imaginaryDenominator;
 
+    const string formatDouble(double value) const;
+
 public:
     NumericLiteral(double realNumerator,
                    double realDenominator = 1,
@@ -27,6 +31,13 @@ public:
         realDenominator(realDenominator),
         imaginaryNumerator(imaginaryNumerator),
         imaginaryDenominator(imaginaryDenominator) { }
+
+    NumericLiteral(Fraction real, Fraction imaginary) {
+        realNumerator = real.getNumerator();
+        realDenominator = real.getDenominator();
+        imaginaryNumerator = imaginary.getNumerator();
+        imaginaryDenominator = imaginary.getDenominator();
+    }
 
     double getRealNumerator() const {
         return realNumerator;
@@ -44,8 +55,21 @@ public:
         return imaginaryDenominator;
     }
 
+    Fraction getRealFraction() const {
+        return Fraction(realNumerator, realDenominator);
+    }
+
+    Fraction getImaginaryFraction() const {
+        return Fraction(imaginaryNumerator, imaginaryDenominator);
+    }
+
     const string toString() const override;
 };
+
+/*
+ * Numeric literal pointer
+ */
+typedef shared_ptr<NumericLiteral> NumericLiteralPointer;
 
 
 #endif // LO21_LITERAL_COMPLEX_H

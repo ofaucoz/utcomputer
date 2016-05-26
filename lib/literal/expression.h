@@ -27,5 +27,10 @@ public:
     };
 };
 
+/*
+ * Expression literal pointer
+ */
+typedef shared_ptr<ExpressionLiteral> ExpressionLiteralPointer;
+
 
 #endif // LO21_LITERAL_EXPRESSION_H
