@@ -12,8 +12,16 @@
  */
 template<class K, class V> class ObservableMap : public std::unordered_map<K, V>, public Repository {
 public:
+    V& get(const K& key) {
+        return this->operator[](key);
+    }
+
+    bool has(const K& key) {
+        return this->find(key) != this->end();
+    }
+
     void setAndNotify(const K& key, const V& value) {
-        this->operator[](key) = value;
+        this->emplace(key, value);
         notify();
     }
 
