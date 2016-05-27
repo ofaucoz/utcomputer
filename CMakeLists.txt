@@ -52,8 +52,14 @@ set(SOURCE_FILES
         lib/literal_definition/program.h
         lib/operator/interface.cpp
         lib/operator/interface.h
-        lib/operator/plus.cpp
-        lib/operator/plus.h
+        lib/operator/addition.cpp
+        lib/operator/addition.h
+        lib/operator/substraction.cpp
+        lib/operator/substraction.h
+        lib/operator/division.cpp
+        lib/operator/division.h
+        lib/operator/multiplication.cpp
+        lib/operator/multiplication.h
         lib/repository/observable.cpp
         lib/repository/observable.h
         lib/repository/map.cpp
@@ -80,7 +86,10 @@ set(TEST_FILES
         lib/tests/literal_definition/operator.cpp
         lib/tests/literal_definition/expression.cpp
         lib/tests/literal_definition/whitespace.cpp
-        lib/tests/operator/plus.cpp
+        lib/tests/operator/addition.cpp
+        lib/tests/operator/substraction.cpp
+        lib/tests/operator/multiplication.cpp
+        lib/tests/operator/division.cpp
         lib/tests/repository/map.cpp
         lib/tests/repository/stack.cpp
         lib/tests/lexer.cpp

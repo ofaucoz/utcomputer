@@ -1,13 +1,13 @@
 #include <gtest/gtest.h>
 #include "../resolver.h"
-#include "../operator/plus.h"
+#include "../operator/addition.h"
 #include "../literal/atom.h"
 #include "../exception/undefined_atom.h"
 
 TEST(ResolverTest, Resolve) {
     // Operators messages
     OperatorMap operatorMap;
-    operatorMap["ADD"] = OperatorPointer(new PlusOperator);
+    operatorMap["ADD"] = OperatorPointer(new AdditionOperator);
 
     // Programs messages
     ProgramMap programMap;

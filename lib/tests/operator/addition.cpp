@@ -1,62 +1,62 @@
 #include <gtest/gtest.h>
-#include "../../operator/plus.h"
+#include "../../operator/addition.h"
 
-TEST(PlusOperatorTest, AddIntNumerics) {
+TEST(AdditionOperatorTest, IntNumerics) {
     LiteralsStack stack;
     stack.push(LiteralPointer(new NumericLiteral(4)));
     stack.push(LiteralPointer(new NumericLiteral(3)));
 
     EXPECT_EQ(2, stack.size());
 
-    PlusOperator plusOperator;
-    plusOperator.apply(stack);
+    AdditionOperator additionOperator;
+    additionOperator.apply(stack);
 
     EXPECT_EQ(1, stack.size());
     EXPECT_EQ("7", stack.top()->toString());
 }
 
-TEST(PlusOperatorTest, AddComplexNumerics) {
+TEST(AdditionOperatorTest, ComplexNumerics) {
     LiteralsStack stack;
     stack.push(LiteralPointer(new NumericLiteral(3, 4, 1, 6)));
     stack.push(LiteralPointer(new NumericLiteral(1, 6, 3, 4)));
 
     EXPECT_EQ(2, stack.size());
 
-    PlusOperator plusOperator;
-    plusOperator.apply(stack);
+    AdditionOperator additionOperator;
+    additionOperator.apply(stack);
 
     EXPECT_EQ(1, stack.size());
     EXPECT_EQ("11/12$11/12", stack.top()->toString());
 }
 
-TEST(PlusOperatorTest, FailNotEnoughOperands) {
+TEST(AdditionOperatorTest, FailNotEnoughOperands) {
     LiteralsStack stack;
     stack.push(LiteralPointer(new NumericLiteral(3)));
 
     EXPECT_EQ(1, stack.size());
 
-    PlusOperator plusOperator;
-    EXPECT_THROW(plusOperator.apply(stack), InvalidSyntaxException);
+    AdditionOperator additionOperator;
+    EXPECT_THROW(additionOperator.apply(stack), InvalidSyntaxException);
 }
 
-TEST(PlusOperatorTest, FailFirstNonNumeric) {
+TEST(AdditionOperatorTest, FailFirstNonNumeric) {
     LiteralsStack stack;
-    stack.push(LiteralPointer(new ExpressionLiteral("ADD")));
+    stack.push(LiteralPointer(new ExpressionLiteral("FOO")));
     stack.push(LiteralPointer(new NumericLiteral(3)));
 
     EXPECT_EQ(2, stack.size());
 
-    PlusOperator plusOperator;
-    EXPECT_THROW(plusOperator.apply(stack), InvalidOperandException);
+    AdditionOperator additionOperator;
+    EXPECT_THROW(additionOperator.apply(stack), InvalidOperandException);
 }
 
-TEST(PlusOperatorTest, FailSecondNonNumeric) {
+TEST(AdditionOperatorTest, FailSecondNonNumeric) {
     LiteralsStack stack;
     stack.push(LiteralPointer(new NumericLiteral(3)));
-    stack.push(LiteralPointer(new ExpressionLiteral("ADD")));
+    stack.push(LiteralPointer(new ExpressionLiteral("FOO")));
 
     EXPECT_EQ(2, stack.size());
 
-    PlusOperator plusOperator;
-    EXPECT_THROW(plusOperator.apply(stack), InvalidOperandException);
+    AdditionOperator additionOperator;
+    EXPECT_THROW(additionOperator.apply(stack), InvalidOperandException);
 }

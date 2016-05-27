@@ -1,5 +1,5 @@
-#ifndef LO21_OPERATOR_PLUS_H
-#define LO21_OPERATOR_PLUS_H
+#ifndef LO21_OPERATOR_ADDITION_H
+#define LO21_OPERATOR_ADDITION_H
 
 
 #include "interface.h"
@@ -11,18 +11,11 @@
 
 using namespace std;
 
-/*
- * Addition operator using the "+" symbol.
- */
-class PlusOperator : public OperatorInterface {
+class AdditionOperator : public OperatorInterface {
 public:
-    const string getTokenValue() const override {
-        return "+";
-    }
-
     void apply(LiteralsStack& stack) const override {
         if (stack.size() < 2) {
-            throw InvalidSyntaxException("+ operator requires 2 operands");
+            throw InvalidSyntaxException("Addition operator requires 2 operands");
         }
 
         LiteralPointer first = stack.top();
@@ -49,4 +42,4 @@ public:
     }
 };
 
-#endif // LO21_OPERATOR_PLUS_H
+#endif // LO21_OPERATOR_ADDITION_H
