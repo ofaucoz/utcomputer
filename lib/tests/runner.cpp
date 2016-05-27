@@ -3,7 +3,7 @@
 #include "../literal/numeric.h"
 #include "../literal/operator.h"
 #include "../operator/interface.h"
-#include "../operator/plus.h"
+#include "../operator/addition.h"
 #include "../runner.h"
 
 int countRunnerUpdates;
@@ -17,7 +17,7 @@ public:
 
 TEST(RunnerTest, Run) {
     OperatorMap operatorMap;
-    operatorMap["+"] = OperatorPointer(new PlusOperator);
+    operatorMap["+"] = OperatorPointer(new AdditionOperator);
 
     // Build input literals
     LiteralVector resolved;
@@ -42,8 +42,8 @@ TEST(RunnerTest, Run) {
 
 TEST(RunnerTest, RunMultiple) {
     OperatorMap operatorMap;
-    operatorMap["+"] = OperatorPointer(new PlusOperator);
-    operatorMap["ADD"] = OperatorPointer(new PlusOperator);
+    operatorMap["+"] = OperatorPointer(new AdditionOperator);
+    operatorMap["ADD"] = OperatorPointer(new AdditionOperator);
 
     // Build input literals
     LiteralVector resolved;

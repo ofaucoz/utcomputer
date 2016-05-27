@@ -27,6 +27,18 @@ public:
     }
 
     /*
+     * Substract two fractions
+     */
+    static Fraction substract(Fraction f1, Fraction f2) {
+        return simplify(
+            Fraction(
+                (f1.getNumerator() * f2.getDenominator()) - (f2.getNumerator() * f1.getDenominator()),
+                f1.getDenominator() * f2.getDenominator()
+            )
+        );
+    }
+
+    /*
      * Simplify a given fraction using the GCD
      */
     static Fraction simplify(Fraction f) {
@@ -40,7 +52,10 @@ public:
             return f;
         }
 
-        double fGcd = gcd((int) f.getNumerator(), (int) f.getDenominator());
+        int num = (int) f.getNumerator();
+        int dem = (int) f.getDenominator();
+
+        double fGcd = gcd((num >= 0 ? num : -num), (dem >= 0 ? dem : -dem));
 
         return Fraction(f.getNumerator() / fGcd, f.getDenominator() / fGcd);
     }

@@ -15,7 +15,6 @@ using namespace std;
  */
 class OperatorInterface {
 public:
-    virtual const string getTokenValue() const = 0;
     virtual void apply(LiteralsStack& stack) const = 0;
     virtual ~OperatorInterface() {};
 };
