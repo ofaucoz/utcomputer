@@ -37,6 +37,8 @@ TEST(SubstractionOperatorTest, FailNotEnoughOperands) {
 
     SubstractionOperator substractionOperator;
     EXPECT_THROW(substractionOperator.apply(stack), InvalidSyntaxException);
+
+    EXPECT_EQ(1, stack.size());
 }
 
 TEST(SubstractionOperatorTest, FailFirstNonNumeric) {
@@ -48,6 +50,8 @@ TEST(SubstractionOperatorTest, FailFirstNonNumeric) {
 
     SubstractionOperator substractionOperator;
     EXPECT_THROW(substractionOperator.apply(stack), InvalidOperandException);
+
+    EXPECT_EQ(2, stack.size());
 }
 
 TEST(SubstractionOperatorTest, FailSecondNonNumeric) {
@@ -59,4 +63,6 @@ TEST(SubstractionOperatorTest, FailSecondNonNumeric) {
 
     SubstractionOperator substractionOperator;
     EXPECT_THROW(substractionOperator.apply(stack), InvalidOperandException);
+
+    EXPECT_EQ(2, stack.size());
 }

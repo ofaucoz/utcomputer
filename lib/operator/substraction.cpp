@@ -15,10 +15,16 @@ void SubstractionOperator::apply(LiteralsStack &stack) const {
     NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
 
     if (! firstNumeric) {
+        stack.push(second);
+        stack.push(first);
+
         throw InvalidOperandException(first->toString());
     }
 
     if (! secondNumeric) {
+        stack.push(second);
+        stack.push(first);
+
         throw InvalidOperandException(second->toString());
     }
 
