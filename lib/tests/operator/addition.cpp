@@ -38,7 +38,7 @@ TEST(AdditionOperatorTest, FailNotEnoughOperands) {
     AdditionOperator additionOperator;
     EXPECT_THROW(additionOperator.apply(stack), InvalidSyntaxException);
 
-    EXPECT_EQ(1, stack.size());
+    EXPECT_EQ(0, stack.size());
 }
 
 TEST(AdditionOperatorTest, FailFirstNonNumeric) {
@@ -51,7 +51,7 @@ TEST(AdditionOperatorTest, FailFirstNonNumeric) {
     AdditionOperator additionOperator;
     EXPECT_THROW(additionOperator.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(2, stack.size());
+    EXPECT_EQ(0, stack.size());
 }
 
 TEST(AdditionOperatorTest, FailSecondNonNumeric) {
@@ -64,5 +64,5 @@ TEST(AdditionOperatorTest, FailSecondNonNumeric) {
     AdditionOperator additionOperator;
     EXPECT_THROW(additionOperator.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(2, stack.size());
+    EXPECT_EQ(0, stack.size());
 }
