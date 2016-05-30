@@ -62,6 +62,8 @@ set(SOURCE_FILES
         lib/operator/multiplication.h
         lib/operator/euclidian_division.cpp
         lib/operator/euclidian_division.h
+        lib/operator/modulo.cpp
+        lib/operator/modulo.h
         lib/repository/observable.cpp
         lib/repository/observable.h
         lib/repository/map.cpp
@@ -93,6 +95,7 @@ set(TEST_FILES
         lib/tests/operator/multiplication.cpp
         lib/tests/operator/division.cpp
         lib/tests/operator/euclidian_division.cpp
+        lib/tests/operator/modulo.cpp
         lib/tests/repository/map.cpp
         lib/tests/repository/stack.cpp
         lib/tests/lexer.cpp
