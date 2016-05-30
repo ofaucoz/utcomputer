@@ -66,6 +66,10 @@ set(SOURCE_FILES
         lib/operator/modulo.h
         lib/operator/opposite.cpp
         lib/operator/opposite.h
+        lib/operator/denominator.cpp
+        lib/operator/denominator.h
+        lib/operator/numerator.cpp
+        lib/operator/numerator.h
         lib/repository/observable.cpp
         lib/repository/observable.h
         lib/repository/map.cpp
@@ -99,6 +103,8 @@ set(TEST_FILES
         lib/tests/operator/euclidian_division.cpp
         lib/tests/operator/modulo.cpp
         lib/tests/operator/opposite.cpp
+        lib/tests/operator/numerator.cpp
+        lib/tests/operator/denominator.cpp
         lib/tests/repository/map.cpp
         lib/tests/repository/stack.cpp
         lib/tests/lexer.cpp
