@@ -20,13 +20,21 @@ public:
         return this->find(key) != this->end();
     }
 
-    void setAndNotify(const K& key, const V& value) {
+    void set(const K& key, const V& value) {
         this->emplace(key, value);
+    }
+
+    void setAndNotify(const K& key, const V& value) {
+        this->set(key, value);
         notify();
     }
 
-    void removeAndNotify(const K& key) {
+    void remove(const K& key) {
         this->erase(key);
+    }
+
+    void removeAndNotify(const K& key) {
+        this->remove(key);
         notify();
     }
 };

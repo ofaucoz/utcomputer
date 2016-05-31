@@ -27,27 +27,33 @@ class UTComputer {
 private:
     const Lexer& lexer;
     const Resolver& resolver;
-    const Runner& runner;
+    Runner& runner;
 
 public:
     UTComputer(const Lexer& lexer, const Resolver& resolver, Runner& runner):
         lexer(lexer), resolver(resolver), runner(runner) {}
 
     void execute(string command) {
-        try {
-            LiteralVector tokens = lexer.tokenize(command);
-            LiteralVector resolved = resolver.resolve(tokens);
-            TokensDumper::dump(cout, resolved);
-        } catch (InvalidSyntaxException exception) {
-            cout << "Invalid syntax : " << exception.getValue() << endl;
-        } catch (UndefinedAtomException exception) {
-            cout << "Undefined atom : " << exception.getValue() << endl;
-        } catch (exception) {
-            cout << "Unknown error" << endl;
-        }
 
-        // literals = resolver.resolve(tokens)
-        // runner.applyChanges(literals)
+        /*
+         * The Lexer tokenizes the command. It creates a list of tokens
+         * by splitting the given string into independant elements.
+         */
+        LiteralVector tokens = lexer.tokenize(command);
+
+        /*
+         * The tokens from the lexer can be of various types. To execute
+         * the command, we need to resolve the atom tokens to variables,
+         * programs and operators. The Resolver do this.
+         */
+        LiteralVector resolved = resolver.resolve(tokens);
+
+        /*
+         * The resolved tokens are now only numeric or operator literals.
+         * The Runner can be used to compute the command result.
+         */
+        runner.run(resolved);
+
     }
 };
 

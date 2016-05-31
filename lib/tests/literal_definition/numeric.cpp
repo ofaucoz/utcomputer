@@ -1,10 +1,23 @@
 #include <gtest/gtest.h>
 #include "../../literal_definition/numeric.h"
 
-TEST(NumericLiteralDefinitionTest, Construct) {
+TEST(NumericLiteralDefinitionTest, Pattern) {
     NumericLiteralDefinition definition;
 
-    EXPECT_GT(definition.getPattern().size(), 2);
+    EXPECT_TRUE(regex_match("36", regex("^(" + definition.getPattern() + ")")));
+    EXPECT_TRUE(regex_match("-36", regex("^(" + definition.getPattern() + ")")));
+    EXPECT_TRUE(regex_match("36.4", regex("^(" + definition.getPattern() + ")")));
+    EXPECT_TRUE(regex_match("-36.4", regex("^(" + definition.getPattern() + ")")));
+    EXPECT_TRUE(regex_match("36/4", regex("^(" + definition.getPattern() + ")")));
+    EXPECT_TRUE(regex_match("-36/4", regex("^(" + definition.getPattern() + ")")));
+    EXPECT_TRUE(regex_match("-36.4/4.2", regex("^(" + definition.getPattern() + ")")));
+    EXPECT_TRUE(regex_match("36$4", regex("^(" + definition.getPattern() + ")")));
+    EXPECT_TRUE(regex_match("36/3$4/2", regex("^(" + definition.getPattern() + ")")));
+    EXPECT_TRUE(regex_match("-36/3$4/2", regex("^(" + definition.getPattern() + ")")));
+    EXPECT_TRUE(regex_match("36/3$-4/2", regex("^(" + definition.getPattern() + ")")));
+    EXPECT_TRUE(regex_match("36/-3$4/2", regex("^(" + definition.getPattern() + ")")));
+    EXPECT_TRUE(regex_match("36/-3$4/-2", regex("^(" + definition.getPattern() + ")")));
+    EXPECT_TRUE(regex_match("36.4/-3.4$4.4/-2.4", regex("^(" + definition.getPattern() + ")")));
 }
 
 TEST(NumericLiteralDefinitionTest, CreateInstance) {

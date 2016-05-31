@@ -25,8 +25,7 @@ TEST(ResolverTest, Resolve) {
     variableMap["BAR"] = LiteralPointer(new NumericLiteral(4, 5, 6, 7));
 
     // Resolver
-    OperatorLiteralDefinition operatorLiteralDefinition;
-    Resolver resolver(operatorMap, programMap, variableMap, operatorLiteralDefinition);
+    Resolver resolver(operatorMap, programMap, variableMap, LiteralDefinitionPointer(new OperatorLiteralDefinition));
 
     // Build input vector
     LiteralVector tokens;
@@ -56,9 +55,8 @@ TEST(ResolverTest, ResolveFailure) {
     OperatorMap operatorMap;
     ProgramMap programMap;
     VariableMap variableMap;
-    OperatorLiteralDefinition operatorLiteralDefinition;
 
-    Resolver resolver(operatorMap, programMap, variableMap, operatorLiteralDefinition);
+    Resolver resolver(operatorMap, programMap, variableMap, LiteralDefinitionPointer(new OperatorLiteralDefinition));
 
     LiteralVector vector;
     vector.push_back(LiteralPointer(new AtomLiteral("FOO")));
