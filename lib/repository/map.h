@@ -4,13 +4,13 @@
 
 #include <iostream>
 #include <unordered_map>
-#include "observable.h"
+#include "interface.h"
 
 /*
  * Observable map based on the standard unordered_map and dispatching
  * notifications to observers on data change.
  */
-template<class K, class V> class ObservableMap : public std::unordered_map<K, V>, public Repository {
+template<class K, class V> class ObservableMap : public std::unordered_map<K, V>, public RepositoryObservable {
 public:
     const V& get(const K& key) const {
         return this->at(key);

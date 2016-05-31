@@ -3,13 +3,13 @@
 
 
 #include <stack>
-#include "observable.h"
+#include "interface.h"
 
 /*
  * Observable stack based on the standard stack and dispatching
  * notifications to observers on data change.
  */
-template<class T> class ObservableStack : public std::vector<T>, public Repository {
+template<class T> class ObservableStack : public std::vector<T>, public RepositoryObservable {
 public:
     const T& top() const {
         return this->back();

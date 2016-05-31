@@ -70,8 +70,8 @@ set(SOURCE_FILES
         lib/operator/denominator.h
         lib/operator/numerator.cpp
         lib/operator/numerator.h
-        lib/repository/observable.cpp
-        lib/repository/observable.h
+        lib/repository/interface.cpp
+        lib/repository/interface.h
         lib/repository/map.cpp
         lib/repository/map.h
         lib/repository/stack.cpp
