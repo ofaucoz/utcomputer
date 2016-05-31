@@ -5,7 +5,7 @@ class MockObserverException {};
 
 class MockObserver: public RepositoryObserver {
 public:
-    virtual void update() {
+    void update(Repository* repository) {
         throw MockObserverException();
     }
 };
