@@ -11,6 +11,7 @@ This application uses CMake. You should probably use an IDE handling this for yo
 but if you don't want to, you can use the following instructions:
 
 ```
+sudo apt-get install build-essential libgtk-3-dev libgtkmm-3.0-dev
 cd /path/to/the/project
 cmake CMakeLists.txt
 make
