@@ -18,14 +18,13 @@ private:
     const OperatorMap& operatorsMap;
     const ProgramMap& programsMap;
     const VariableMap& variablesMap;
-
-    const OperatorLiteralDefinition& operatorLiteralDefinition;
+    const LiteralDefinitionPointer operatorLiteralDefinition;
 
 public:
     Resolver(const OperatorMap& operatorsMap,
              const ProgramMap& programsMap,
              const VariableMap& variablesMap,
-             const OperatorLiteralDefinition& operatorLiteralDefinition) :
+             const LiteralDefinitionPointer operatorLiteralDefinition) :
         operatorsMap(operatorsMap),
         programsMap(programsMap),
         variablesMap(variablesMap),

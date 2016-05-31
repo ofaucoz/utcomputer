@@ -10,7 +10,7 @@ LiteralVector Resolver::resolve(LiteralVector tokens) const {
         if (AtomLiteralPointer atom = dynamic_pointer_cast<AtomLiteral>(*iterator)) {
             if (operatorsMap.find(atom->getValue()) != operatorsMap.end()) {
                 // This atom is an operator
-                resolved.push_back(operatorLiteralDefinition.createInstance(atom->getValue()));
+                resolved.push_back(operatorLiteralDefinition->createInstance(atom->getValue()));
             } else if (variablesMap.find(atom->getValue()) != variablesMap.end()) {
                 // This atom is a variable
                 resolved.push_back(variablesMap.at(atom->getValue()));

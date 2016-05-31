@@ -36,7 +36,7 @@ private:
 
 public:
     const string getPattern() const override {
-        return "-?[0-9]+/?-?[0-9]?+\\$?-?[0-9]?+/?-?[0-9]?+";
+        return "(-?[0-9]+(\\.[0-9]+)?)(/-?[0-9]+(\\.[0-9]+)?)?(\\$(-?[0-9]+(\\.[0-9]+)?)(/-?[0-9]+(\\.[0-9]+)?)?)?";
     }
 
     LiteralPointer createInstance(string value) const override;

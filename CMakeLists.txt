@@ -109,7 +109,8 @@ set(TEST_FILES
         lib/tests/repository/stack.cpp
         lib/tests/lexer.cpp
         lib/tests/resolver.cpp
-        lib/tests/runner.cpp)
+        lib/tests/runner.cpp
+        lib/tests/utcomputer.cpp)
 
 add_executable(LO21tests lib/tests/main.cpp ${SOURCE_FILES} ${TEST_FILES})
 target_link_libraries(LO21tests ${GTEST_LIBRARIES} pthread)
