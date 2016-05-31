@@ -8,11 +8,11 @@
 
 using namespace std;
 
-class Repository;
+class RepositoryObservable;
 class RepositoryObserver;
 
 typedef shared_ptr<RepositoryObserver> RepositoryObserverPointer;
-typedef shared_ptr<Repository> RepositoryPointer;
+typedef shared_ptr<RepositoryObservable> RepositoryPointer;
 
 /*
  * Basis for the repositories implementing the Subject part of the
@@ -20,7 +20,7 @@ typedef shared_ptr<Repository> RepositoryPointer;
  *
  * Extended by the other repositories to notify listeners.
  */
-class Repository {
+class RepositoryObservable {
 private:
     vector<RepositoryObserverPointer> observers;
 
@@ -46,6 +46,18 @@ protected:
     const RepositoryPointer &getRepository() const {
         return repository;
     }
+};
+
+/*
+ * Basis for the repositories able to be dumped as a string and
+ * loaded from a string.
+ *
+ * Extended by the other repositories to save them (and restore them).
+ */
+class RepositorySavable {
+public:
+    virtual string dump() const = 0;
+    virtual static RepositorySavable load(string dump) = 0;
 };
 
 

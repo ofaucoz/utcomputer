@@ -1,6 +1,6 @@
-#include "observable.h"
+#include "interface.h"
 
-void Repository::notify() const {
+void RepositoryObservable::notify() const {
     for (vector<RepositoryObserverPointer>::const_iterator it = observers.begin(); it != observers.end(); ++it) {
         (*it)->update();
     }
