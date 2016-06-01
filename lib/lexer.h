@@ -24,6 +24,14 @@ public:
         definitions.push_back(LiteralDefinitionPointer(definition));
     }
 
+    void addDefinition(LiteralDefinitionPointer definition) {
+        definitions.push_back(definition);
+    }
+
+    const LiteralDefinitionVector &getDefinitions() const {
+        return definitions;
+    }
+
     LiteralVector tokenize(string command) const;
 };
 

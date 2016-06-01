@@ -1,5 +1,11 @@
 #include <gtest/gtest.h>
 #include "../utcomputer.h"
+#include "../literal_definition/atom.h"
+#include "../literal_definition/whitespace.h"
+#include "../literal_definition/numeric.h"
+#include "../literal_definition/expression.h"
+#include "../literal_definition/operator.h"
+#include "../literal_definition/program.h"
 #include "../operator/addition.h"
 #include "../operator/substraction.h"
 #include "../operator/division.h"
@@ -9,6 +15,7 @@
 #include "../operator/modulo.h"
 #include "../operator/euclidian_division.h"
 #include "../operator/opposite.h"
+#include "../operator/eval.h"
 
 TEST(UTComputer, FunctionnalTest) {
     // Stack
@@ -36,7 +43,7 @@ TEST(UTComputer, FunctionnalTest) {
      * Lexer
      */
     Lexer lexer;
-    lexer.addDefinition(new WhitespaceLiteralDefinition());
+    lexer.addDefinition(new WhitespaceLiteralDefinition);
     lexer.addDefinition(new NumericLiteralDefinition);
     lexer.addDefinition(new OperatorLiteralDefinition);
     lexer.addDefinition(new ExpressionLiteralDefinition);
@@ -58,73 +65,87 @@ TEST(UTComputer, FunctionnalTest) {
      */
     UTComputer computer(lexer, resolver, runner);
 
-
-    /*
-     * Test operators
-     */
+    operatorsMap.set("EVAL", OperatorPointer(new EvalOperator(computer)));
 
     // Addition
     computer.execute("3 4 +");
-    ASSERT_EQ(1, stack.size());
-    ASSERT_EQ("7", stack.top()->toString());
+    EXPECT_EQ(1, stack.size());
+    EXPECT_EQ("7", stack.top()->toString());
 
     // Substraction
     computer.execute("5 -");
-    ASSERT_EQ(1, stack.size());
-    ASSERT_EQ("2", stack.top()->toString());
+    EXPECT_EQ(1, stack.size());
+    EXPECT_EQ("2", stack.top()->toString());
 
     // Division
     computer.execute("2 /");
-    ASSERT_EQ(1, stack.size());
-    ASSERT_EQ("1", stack.top()->toString());
+    EXPECT_EQ(1, stack.size());
+    EXPECT_EQ("1", stack.top()->toString());
 
     // Multiplication
     computer.execute("5 *");
-    ASSERT_EQ(1, stack.size());
-    ASSERT_EQ("5", stack.top()->toString());
+    EXPECT_EQ(1, stack.size());
+    EXPECT_EQ("5", stack.top()->toString());
 
     // Euclidian division
     computer.execute("2 DIV");
-    ASSERT_EQ(1, stack.size());
-    ASSERT_EQ("2", stack.top()->toString());
+    EXPECT_EQ(1, stack.size());
+    EXPECT_EQ("2", stack.top()->toString());
 
     // Multiplication
     computer.execute("4.5 *");
-    ASSERT_EQ(1, stack.size());
-    ASSERT_EQ("9", stack.top()->toString());
+    EXPECT_EQ(1, stack.size());
+    EXPECT_EQ("9", stack.top()->toString());
 
     // Modulo
     computer.execute("4 MOD");
-    ASSERT_EQ(1, stack.size());
-    ASSERT_EQ("1", stack.top()->toString());
+    EXPECT_EQ(1, stack.size());
+    EXPECT_EQ("1", stack.top()->toString());
 
     // Modulo
     computer.execute("4 MOD");
-    ASSERT_EQ(1, stack.size());
-    ASSERT_EQ("1", stack.top()->toString());
+    EXPECT_EQ(1, stack.size());
+    EXPECT_EQ("1", stack.top()->toString());
 
     // Opposite
     computer.execute("NEG");
-    ASSERT_EQ(1, stack.size());
-    ASSERT_EQ("-1", stack.top()->toString());
+    EXPECT_EQ(1, stack.size());
+    EXPECT_EQ("-1", stack.top()->toString());
 
     // Numerator
     computer.execute("3/4 NUM");
-    ASSERT_EQ(2, stack.size());
-    ASSERT_EQ("3", stack.top()->toString());
+    EXPECT_EQ(2, stack.size());
+    EXPECT_EQ("3", stack.top()->toString());
 
     // Denominator
     computer.execute("2.4/4.8 DEN");
-    ASSERT_EQ(3, stack.size());
-    ASSERT_EQ("4.800000", stack.top()->toString());
+    EXPECT_EQ(3, stack.size());
+    EXPECT_EQ("4.800000", stack.top()->toString());
 
     // Addition
     computer.execute("+");
-    ASSERT_EQ(2, stack.size());
-    ASSERT_EQ("7.800000", stack.top()->toString());
+    EXPECT_EQ(2, stack.size());
+    EXPECT_EQ("7.800000", stack.top()->toString());
 
     // Addition
     computer.execute("+");
-    ASSERT_EQ(1, stack.size());
-    ASSERT_EQ("6.800000", stack.top()->toString());
+    EXPECT_EQ(1, stack.size());
+    EXPECT_EQ("6.800000", stack.top()->toString());
+
+    // Eval simple
+    computer.execute("'3+6' EVAL");
+    EXPECT_EQ(2, stack.size());
+    EXPECT_EQ("9", stack.top()->toString());
+
+    // Eval complex
+    computer.execute("'DIV(9,NEG(-2))+4' EVAL");
+    EXPECT_EQ(3, stack.size());
+    EXPECT_EQ("8", stack.top()->toString());
+
+
+    // Variables
+    variablesMap.set("FOO", NumericLiteralPointer(new NumericLiteral(12)));
+    computer.execute("9 FOO +");
+    EXPECT_EQ(4, stack.size());
+    EXPECT_EQ("21", stack.top()->toString());
 }

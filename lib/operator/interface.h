@@ -16,6 +16,7 @@ using namespace std;
 class OperatorInterface {
 public:
     virtual void apply(LiteralsStack& stack) const = 0;
+    virtual int getPriority() const = 0;
     virtual ~OperatorInterface() {};
 };
 

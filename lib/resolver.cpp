@@ -1,6 +1,7 @@
 #include "resolver.h"
 #include "literal/atom.h"
 #include "exception/undefined_atom.h"
+#include "literal/whitespace.h"
 
 LiteralVector Resolver::resolve(LiteralVector tokens) const {
     LiteralVector resolved;
@@ -24,10 +25,8 @@ LiteralVector Resolver::resolve(LiteralVector tokens) const {
             } else {
                 throw UndefinedAtomException(atom->getValue());
             }
-        } else if (NumericLiteralPointer numericLiteral = dynamic_pointer_cast<NumericLiteral>(*iterator)) {
-            resolved.push_back(numericLiteral);
-        } else if (OperatorLiteralPointer operatorLiteral = dynamic_pointer_cast<OperatorLiteral>(*iterator)) {
-            resolved.push_back(operatorLiteral);
+        } else if (dynamic_pointer_cast<WhitespaceLiteral>(*iterator) == nullptr) { // Ignore whitespaces
+            resolved.push_back((*iterator));
         }
     }
 

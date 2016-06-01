@@ -4,8 +4,9 @@
 
 #include <iostream>
 #include "operator/interface.h"
+#include "literal/operator.h"
 #include "literal/numeric.h"
-#include "literal_definition/operator.h"
+#include "literal_definition/interface.h"
 
 using namespace std;
 
@@ -31,6 +32,10 @@ public:
         operatorLiteralDefinition(operatorLiteralDefinition) { }
 
     LiteralVector resolve(LiteralVector tokens) const;
+
+    const OperatorMap &getOperatorsMap() const {
+        return operatorsMap;
+    }
 };
 
 

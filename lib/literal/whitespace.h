@@ -7,9 +7,7 @@
 using namespace std;
 
 /*
- * A numeric literal storing all possible types of numeric values.
- * For instance :
- *      1.4$3/4
+ * A whitespace literal.
  */
 struct WhitespaceLiteral : public LiteralInterface {
 public:

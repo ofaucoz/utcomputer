@@ -6,14 +6,9 @@
 #include "lexer.h"
 #include "resolver.h"
 #include "runner.h"
-#include "literal_definition/atom.h"
-#include "literal_definition/whitespace.h"
-#include "literal_definition/numeric.h"
-#include "literal_definition/operator.h"
-#include "literal_definition/expression.h"
-#include "literal_definition/program.h"
-#include "debug/tokens_dumper.h"
 #include "exception/undefined_atom.h"
+#include "exception/invalid_syntax.h"
+#include "exception/invalid_operand.h"
 
 using namespace std;
 
@@ -39,7 +34,11 @@ public:
          * The Lexer tokenizes the command. It creates a list of tokens
          * by splitting the given string into independant elements.
          */
-        LiteralVector tokens = lexer.tokenize(command);
+        execute(lexer.tokenize(command));
+
+    }
+
+    void execute(LiteralVector tokens) {
 
         /*
          * The tokens from the lexer can be of various types. To execute
@@ -54,6 +53,14 @@ public:
          */
         runner.run(resolved);
 
+    }
+
+    const Lexer &getLexer() const {
+        return lexer;
+    }
+
+    const Resolver &getResolver() const {
+        return resolver;
     }
 };
 

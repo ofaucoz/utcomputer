@@ -14,6 +14,10 @@ using namespace std;
 class AdditionOperator : public OperatorInterface {
 public:
     void apply(LiteralsStack& stack) const override;
+
+    int getPriority() const override {
+        return 0;
+    }
 };
 
 #endif // LO21_OPERATOR_ADDITION_H

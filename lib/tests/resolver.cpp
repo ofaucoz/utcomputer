@@ -2,6 +2,7 @@
 #include "../resolver.h"
 #include "../operator/addition.h"
 #include "../literal/atom.h"
+#include "../literal_definition/operator.h"
 #include "../exception/undefined_atom.h"
 
 TEST(ResolverTest, Resolve) {
