@@ -3,6 +3,9 @@
 
 
 #include "interface.h"
+#include "../exception/invalid_syntax.h"
+#include "../literal/numeric.h"
+#include "../exception/invalid_operand.h"
 
 using namespace std;
 

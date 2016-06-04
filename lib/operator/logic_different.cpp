@@ -1,7 +1,5 @@
 #include "logic_different.h"
-#include "../exception/invalid_syntax.h"
-#include "../literal/numeric.h"
-#include "../exception/invalid_operand.h"
+
 
 void LogicDifferentOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {
