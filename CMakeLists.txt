@@ -83,7 +83,34 @@ set(SOURCE_FILES
         lib/runner.cpp
         lib/runner.h
         lib/utcomputer.cpp
-        lib/utcomputer.h)
+        lib/utcomputer.h
+        lib/operator/stack_clear.cpp
+        lib/operator/stack_clear.h
+        lib/operator/stack_drop.cpp
+        lib/operator/stack_drop.h
+        lib/operator/numeric_complex_build.cpp
+        lib/operator/numeric_complex_build.h
+        lib/operator/numeric_complex_real.cpp
+        lib/operator/numeric_complex_real.h
+        lib/operator/numeric_complex_imaginary.cpp
+        lib/operator/logic_equals.cpp
+        lib/operator/logic_equals.h
+        lib/operator/logic_different.cpp
+        lib/operator/logic_different.h
+        lib/operator/logic_greater.cpp
+        lib/operator/logic_greater.h
+        lib/operator/logic_greater_equals.cpp
+        lib/operator/logic_greater_equals.h
+        lib/operator/logic_lesser.cpp
+        lib/operator/logic_lesser.h
+        lib/operator/logic_lesser_equals.cpp
+        lib/operator/logic_lesser_equals.h
+        lib/operator/logic_and.cpp
+        lib/operator/logic_and.h
+        lib/operator/logic_or.cpp
+        lib/operator/logic_or.h
+        lib/operator/logic_not.cpp
+        lib/operator/logic_not.h)
 
 add_executable(LO21 main.cpp ${SOURCE_FILES})
 
@@ -110,7 +137,18 @@ set(TEST_FILES
         lib/tests/lexer.cpp
         lib/tests/resolver.cpp
         lib/tests/runner.cpp
-        lib/tests/utcomputer.cpp)
+        lib/tests/utcomputer.cpp
+        lib/tests/operator/stack_clear.cpp
+        lib/tests/operator/stack_drop.cpp
+        lib/tests/operator/numeric_complex_build.cpp
+        lib/tests/operator/numeric_complex_real.cpp
+        lib/tests/operator/logic_equals.cpp
+        lib/tests/operator/logic_different.cpp
+        lib/tests/operator/logic_greater.cpp
+        lib/tests/operator/logic_greater_equals.cpp
+        lib/tests/operator/logic_and.cpp
+        lib/tests/operator/logic_or.cpp
+        lib/tests/operator/logic_not.cpp)
 
 add_executable(LO21tests lib/tests/main.cpp ${SOURCE_FILES} ${TEST_FILES})
 target_link_libraries(LO21tests ${GTEST_LIBRARIES} pthread)
