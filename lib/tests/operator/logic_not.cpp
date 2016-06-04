@@ -6,7 +6,7 @@
 
 TEST(LogicNotOperatNotTest, 1to0) {
     LiteralsStack stack;
-    stack.push(LiteralPointer(new NumericLiteral(8,5,4,3)));
+    stack.push(LiteralPointer(new NumericLiteral(8, 5, 4, 3)));
 
     EXPECT_EQ(1, stack.size());
 
