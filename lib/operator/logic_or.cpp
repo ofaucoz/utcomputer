@@ -18,14 +18,11 @@ void LogicOrOperator::apply(LiteralsStack &stack) const {
     LiteralPointer second = stack.top();
     stack.pop();
 
-    NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
-    NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
 
-
-    if(firstNumeric->toString()=="0"){
+    if(first->toString()=="0"){
         firstLogicalValue = 0;
     }
-    if(secondNumeric->toString()=="0"){
+    if(second->toString()=="0"){
         secondLogicalValue = 0;
     }
     if(firstLogicalValue + secondLogicalValue==2){
