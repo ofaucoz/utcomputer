@@ -20,10 +20,5 @@ void LogicNotOperator::apply(LiteralsStack &stack) const {
     }
 
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(1-firstLogicalValue)));
-
-
-
-
-
 }
 

@@ -32,9 +32,4 @@ void LogicOrOperator::apply(LiteralsStack &stack) const {
         firstLogicalValue = 0; //in order to have 1 as the pushed value
     }
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(firstLogicalValue+secondLogicalValue)));
-
-
-
-
-
 }

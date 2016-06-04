@@ -33,8 +33,6 @@ void NumericComplexBuildOperator::apply(LiteralsStack &stack) const {
         throw InvalidSyntaxException("Arguments can't already be complex");
     }
 
-
-
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(secondNumeric->getRealNumerator(),secondNumeric->getRealDenominator(),firstNumeric->getRealNumerator(),firstNumeric->getRealDenominator())));
 }
 

@@ -11,6 +11,10 @@ void LogicGreaterEqualsOperator::apply(LiteralsStack &stack) const {
     }
     double firstNumericModule = 0;
     double secondNumericModule = 0;
+    int realNum = 0;
+    int realDen = 0;
+    int imagNum= 0;
+    int imagDen = 0;
 
     LiteralPointer first = stack.top();
     stack.pop();
@@ -29,14 +33,21 @@ void LogicGreaterEqualsOperator::apply(LiteralsStack &stack) const {
         throw InvalidOperandException(second->toString());
     }
 
-    firstNumericModule =sqrt((pow(firstNumeric->getRealNumerator(),2) / pow(firstNumeric->getRealDenominator(),2))
-                             +
-                             (pow(firstNumeric->getImaginaryNumerator(),2) / pow(firstNumeric->getImaginaryDenominator(),2)));
+    realNum = firstNumeric->getRealNumerator();
+    realDen = firstNumeric->getRealDenominator();
+    imagNum = firstNumeric->getImaginaryNumerator();
+    imagDen = firstNumeric->getImaginaryDenominator();
+
+    firstNumericModule =sqrt((pow(realNum,2) / pow(realDen,2))+(pow(imagNum,2) / pow(imagDen,2)));
+
+    realNum = secondNumeric->getRealNumerator();
+    realDen = secondNumeric->getRealDenominator();
+    imagNum = secondNumeric->getImaginaryNumerator();
+    imagDen = secondNumeric->getImaginaryDenominator();
 
 
-    secondNumericModule =sqrt((pow(secondNumeric->getRealNumerator(),2) / pow(secondNumeric->getRealDenominator(),2))
-                              +
-                              (pow(secondNumeric->getImaginaryNumerator(),2) / pow(secondNumeric->getImaginaryDenominator(),2)));
+    secondNumericModule =sqrt((pow(realNum,2) / pow(realDen,2))+(pow(imagNum,2) / pow(imagDen,2)));
+
     if(firstNumericModule <= secondNumericModule){
         stack.pushAndNotify(LiteralPointer(new NumericLiteral(1)));
     }

@@ -30,9 +30,7 @@ void LogicEqualsOperator::apply(LiteralsStack &stack) const {
 
     if(firstNumeric->toString()==secondNumeric->toString()){
         stack.pushAndNotify(LiteralPointer(new NumericLiteral(1)));
-    }
-    else
-    {
+    }else{
         stack.pushAndNotify(LiteralPointer(new NumericLiteral(0)));
     }
 
