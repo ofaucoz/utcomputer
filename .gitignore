@@ -8,6 +8,7 @@ build
 *.glade~
 .idea
 ui/views/#main.glade#
+*.~vsdx
 
 # Compiled Object files
 *.slo
