@@ -110,7 +110,7 @@ set(TEST_FILES
         lib/tests/lexer.cpp
         lib/tests/resolver.cpp
         lib/tests/runner.cpp
-        lib/tests/utcomputer.cpp)
+        lib/tests/utcomputer.cpp lib/operator/stack_clear.cpp lib/operator/stack_clear.h lib/tests/operator/stack_clear.cpp lib/operator/stack_drop.cpp lib/operator/stack_drop.h lib/tests/operator/stack_drop.cpp lib/operator/numeric_complex_build.cpp lib/operator/numeric_complex_build.h lib/tests/operator/numeric_complex_build.cpp lib/operator/numeric_complex_real.cpp lib/operator/numeric_complex_real.h lib/tests/operator/numeric_complex_real.cpp lib/operator/numeric_complex_imaginary.cpp lib/operator/numeric_complex_imaginary.h lib/tests/operator/numeric_complex_imaginary.cpp lib/operator/logic_equals.cpp lib/operator/logic_equals.h lib/tests/operator/logic_equals.cpp lib/operator/logic_different.cpp lib/operator/logic_different.h lib/tests/operator/logic_different.cpp)
 
 add_executable(LO21tests lib/tests/main.cpp ${SOURCE_FILES} ${TEST_FILES})
 target_link_libraries(LO21tests ${GTEST_LIBRARIES} pthread)
