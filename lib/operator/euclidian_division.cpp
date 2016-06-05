@@ -1,4 +1,5 @@
 #include "euclidian_division.h"
+#include "../debug/dumper.h"
 
 void EuclidianDivisionOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {

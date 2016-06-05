@@ -1,6 +1,11 @@
 #include <iostream>
 #include "lib/utcomputer.h"
-#include "lib/debug/tokens_dumper.h"
+#include "lib/literal_definition/atom.h"
+#include "lib/literal_definition/whitespace.h"
+#include "lib/literal_definition/numeric.h"
+#include "lib/literal_definition/expression.h"
+#include "lib/literal_definition/operator.h"
+#include "lib/literal_definition/program.h"
 #include "lib/operator/addition.h"
 #include "lib/operator/substraction.h"
 #include "lib/operator/division.h"
@@ -39,7 +44,7 @@ int main() {
      * Lexer
      */
     Lexer lexer;
-    lexer.addDefinition(new WhitespaceLiteralDefinition());
+    lexer.addDefinition(new WhitespaceLiteralDefinition);
     lexer.addDefinition(new NumericLiteralDefinition);
     lexer.addDefinition(new OperatorLiteralDefinition);
     lexer.addDefinition(new ExpressionLiteralDefinition);

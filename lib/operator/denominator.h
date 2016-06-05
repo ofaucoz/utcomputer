@@ -13,6 +13,10 @@ using namespace std;
 class DenominatorOperator : public OperatorInterface {
 public:
     void apply(LiteralsStack& stack) const override;
+
+    int getPriority() const override {
+        return 0;
+    }
 };
 
 #endif // LO21_OPERATOR_DENOMINATOR_H

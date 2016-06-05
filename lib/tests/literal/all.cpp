@@ -4,6 +4,8 @@
 #include "../../literal/numeric.h"
 #include "../../literal/operator.h"
 #include "../../literal/program.h"
+#include "../../literal/whitespace.h"
+#include "../../literal/parenthesis.h"
 
 TEST(AtomLiteralTest, ConstructAndToString) {
     AtomLiteral atomLiteral("FOO");
@@ -48,4 +50,17 @@ TEST(ProgramLiteralTest, ConstructAndToString) {
 
     EXPECT_EQ(programLiteral.getValue(), "[FOO 3 +]");
     EXPECT_EQ(programLiteral.toString(), "[FOO 3 +]");
+}
+
+TEST(WhitespaceLiteralTest, ConstructAndToString) {
+    WhitespaceLiteral whitespaceLiteral;
+
+    EXPECT_EQ(whitespaceLiteral.toString(), " ");
+}
+
+TEST(ParenthesisLiteralTest, ConstructAndToString) {
+    ParenthesisLiteral parenthesisLiteral("(");
+
+    EXPECT_EQ(parenthesisLiteral.getValue(), "(");
+    EXPECT_EQ(parenthesisLiteral.toString(), "(");
 }

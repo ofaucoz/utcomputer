@@ -8,8 +8,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 # Application
 set(SOURCE_FILES
-        lib/debug/tokens_dumper.cpp
-        lib/debug/tokens_dumper.h
+        lib/debug/dumper.cpp
+        lib/debug/dumper.h
         lib/exception/invalid_syntax.cpp
         lib/exception/invalid_syntax.h
         lib/exception/undefined_atom.cpp
@@ -36,6 +36,10 @@ set(SOURCE_FILES
         lib/literal/atom.h
         lib/literal/whitespace.cpp
         lib/literal/whitespace.h
+        lib/literal/parenthesis.cpp
+        lib/literal/parenthesis.h
+        lib/literal/comma.cpp
+        lib/literal/comma.h
         lib/literal_definition/interface.cpp
         lib/literal_definition/interface.h
         lib/literal_definition/atom.cpp
@@ -50,6 +54,10 @@ set(SOURCE_FILES
         lib/literal_definition/expression.h
         lib/literal_definition/program.cpp
         lib/literal_definition/program.h
+        lib/literal_definition/parenthesis.cpp
+        lib/literal_definition/parenthesis.h
+        lib/literal_definition/comma.cpp
+        lib/literal_definition/comma.h
         lib/operator/interface.cpp
         lib/operator/interface.h
         lib/operator/addition.cpp
@@ -70,6 +78,8 @@ set(SOURCE_FILES
         lib/operator/denominator.h
         lib/operator/numerator.cpp
         lib/operator/numerator.h
+        lib/operator/eval.cpp
+        lib/operator/eval.h
         lib/repository/observable.cpp
         lib/repository/observable.h
         lib/repository/map.cpp
@@ -96,6 +106,8 @@ set(TEST_FILES
         lib/tests/literal_definition/operator.cpp
         lib/tests/literal_definition/expression.cpp
         lib/tests/literal_definition/whitespace.cpp
+        lib/tests/literal_definition/program.cpp
+        lib/tests/literal_definition/parenthesis.cpp
         lib/tests/operator/addition.cpp
         lib/tests/operator/substraction.cpp
         lib/tests/operator/multiplication.cpp
@@ -105,6 +117,7 @@ set(TEST_FILES
         lib/tests/operator/opposite.cpp
         lib/tests/operator/numerator.cpp
         lib/tests/operator/denominator.cpp
+        lib/tests/operator/eval.cpp
         lib/tests/repository/map.cpp
         lib/tests/repository/stack.cpp
         lib/tests/lexer.cpp

@@ -14,6 +14,10 @@ using namespace std;
 class DivisionOperator : public OperatorInterface {
 public:
     void apply(LiteralsStack& stack) const override;
+
+    int getPriority() const override {
+        return 10;
+    }
 };
 
 #endif // LO21_OPERATOR_DIVISION_H

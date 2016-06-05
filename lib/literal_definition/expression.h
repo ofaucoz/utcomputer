@@ -15,7 +15,7 @@ using namespace std;
 class ExpressionLiteralDefinition : public LiteralDefinitionInterface {
 public:
     const string getPattern() const override {
-        return "'[^']*'";
+        return "\'[^\']+\'";
     }
 
     LiteralPointer createInstance(string value) const override {
