@@ -13,6 +13,10 @@ using namespace std;
 class LogicAndOperator : public OperatorInterface {
 public:
     void apply(LiteralsStack& stack) const override;
+
+    int getPriority() const {
+        return 0;
+    }
 };
 
 
