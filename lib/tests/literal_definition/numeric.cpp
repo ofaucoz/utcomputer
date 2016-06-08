@@ -43,13 +43,15 @@ TEST(NumericLiteralDefinitionTest, CreateInstance) {
     EXPECT_EQ(-4, complexIntLiteral->getImaginaryNumerator());
     EXPECT_EQ(1, complexIntLiteral->getImaginaryDenominator());
 
-    NumericLiteralPointer complexRationalLiteral = dynamic_pointer_cast<NumericLiteral>(definition.createInstance("36/9$-55/7"));
+    NumericLiteralPointer complexRationalLiteral = dynamic_pointer_cast<NumericLiteral>(
+        definition.createInstance("36/9$-55/7"));
     EXPECT_EQ(36, complexRationalLiteral->getRealNumerator());
     EXPECT_EQ(9, complexRationalLiteral->getRealDenominator());
     EXPECT_EQ(-55, complexRationalLiteral->getImaginaryNumerator());
     EXPECT_EQ(7, complexRationalLiteral->getImaginaryDenominator());
 
-    NumericLiteralPointer imaginaryRationalLiteral = dynamic_pointer_cast<NumericLiteral>(definition.createInstance("0$-4/5"));
+    NumericLiteralPointer imaginaryRationalLiteral = dynamic_pointer_cast<NumericLiteral>(
+        definition.createInstance("0$-4/5"));
     EXPECT_EQ(0, imaginaryRationalLiteral->getRealNumerator());
     EXPECT_EQ(1, imaginaryRationalLiteral->getRealDenominator());
     EXPECT_EQ(-4, imaginaryRationalLiteral->getImaginaryNumerator());

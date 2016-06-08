@@ -11,7 +11,7 @@ using namespace std;
 
 class LogicDifferentOperator : public OperatorInterface {
 public:
-    void apply(LiteralsStack& stack) const override;
+    void apply(LiteralsStack &stack) const override;
 
     int getPriority() const {
         return 0;

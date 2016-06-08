@@ -24,7 +24,7 @@ public:
         return result.substr(0, result.size() - 1);
     }
 
-    static void dumpLiterals(ostream& stream, LiteralVector literals) {
+    static void dumpLiterals(ostream &stream, LiteralVector literals) {
         int i = 0;
 
         for (LiteralVector::iterator it = literals.begin(); it != literals.end(); ++it) {

@@ -14,7 +14,7 @@ void Runner::run(LiteralVector tokens) {
             literalStack.pushAndNotify(expressionLiteral);
         } else if (OperatorLiteralPointer operatorLiteral = dynamic_pointer_cast<OperatorLiteral>(*iterator)) {
             // For each operator, execute it
-            if (! operatorsMap.has(operatorLiteral->getName())) {
+            if (!operatorsMap.has(operatorLiteral->getName())) {
                 throw "Operator not supported";
             }
 

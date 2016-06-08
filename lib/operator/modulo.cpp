@@ -18,29 +18,29 @@ void ModuloOperator::apply(LiteralsStack &stack) const {
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
     NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
 
-    if (! firstNumeric) {
+    if (!firstNumeric) {
         throw InvalidOperandException(first->toString());
     }
 
-    if (! secondNumeric) {
+    if (!secondNumeric) {
         throw InvalidOperandException(second->toString());
     }
 
     if (firstNumeric->toString().find("/") != std::string::npos ||
         firstNumeric->toString().find("$") != std::string::npos ||
         firstNumeric->toString().find(".") != std::string::npos ||
-        ! Math::isInt(secondNumeric->getRealNumerator())) {
+        !Math::isInt(secondNumeric->getRealNumerator())) {
         throw InvalidOperandException(first->toString());
     }
 
     if (secondNumeric->toString().find("/") != std::string::npos ||
         secondNumeric->toString().find("$") != std::string::npos ||
         secondNumeric->toString().find(".") != std::string::npos ||
-        ! Math::isInt(secondNumeric->getRealNumerator())) {
+        !Math::isInt(secondNumeric->getRealNumerator())) {
         throw InvalidOperandException(second->toString());
     }
 
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(
-        (int)secondNumeric->getRealNumerator() % (int)firstNumeric->getRealNumerator()
+        (int) secondNumeric->getRealNumerator() % (int) firstNumeric->getRealNumerator()
     )));
 }

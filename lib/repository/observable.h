@@ -9,6 +9,7 @@
 using namespace std;
 
 class Repository;
+
 class RepositoryObserver;
 
 typedef shared_ptr<RepositoryObserver> RepositoryObserverPointer;
@@ -25,7 +26,7 @@ private:
     vector<RepositoryObserverPointer> observers;
 
 public:
-    void attach(RepositoryObserver* observer) {
+    void attach(RepositoryObserver *observer) {
         observers.push_back(RepositoryObserverPointer(observer));
     }
 
@@ -37,7 +38,7 @@ public:
  */
 class RepositoryObserver {
 public:
-    virtual void update(Repository* repository) = 0;
+    virtual void update(Repository *repository) = 0;
 };
 
 

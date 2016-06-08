@@ -16,7 +16,7 @@ private:
     string value;
 
 public:
-    ExpressionLiteral(string value): value(value) {}
+    ExpressionLiteral(string value) : value(value) { }
 
     const string &getValue() const {
         return value;

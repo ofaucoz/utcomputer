@@ -10,7 +10,7 @@ void DenominatorOperator::apply(LiteralsStack &stack) const {
 
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
 
-    if (! firstNumeric) {
+    if (!firstNumeric) {
         throw InvalidOperandException(first->toString());
     }
 

@@ -1,15 +1,13 @@
 #include "logic_and.h"
 
-
 void LogicAndOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {
         if (stack.size() == 1) {
             stack.pop();
         }
 
-        throw InvalidSyntaxException("Equals operator requires 2 operands");
+        throw InvalidSyntaxException("And operator requires 2 operands");
     }
-    int result=1;
 
     LiteralPointer first = stack.top();
     stack.pop();
@@ -17,7 +15,9 @@ void LogicAndOperator::apply(LiteralsStack &stack) const {
     LiteralPointer second = stack.top();
     stack.pop();
 
-    if(first->toString()=="0"||second->toString()=="0"){
+    int result = 1;
+
+    if (first->toString() == "0" || second->toString() == "0") {
         result = 0;
     }
 

@@ -19,14 +19,16 @@ using namespace std;
 
 class EvalOperator : public OperatorInterface {
 private:
-    UTComputer& computer;
+    UTComputer &computer;
+
     int findPriority(string name) const;
 
 public:
     EvalOperator(UTComputer &computer) : computer(computer) { }
 
     LiteralVector postfix(string infix) const;
-    void apply(LiteralsStack& stack) const override;
+
+    void apply(LiteralsStack &stack) const override;
 
     int getPriority() const override {
         return 0;

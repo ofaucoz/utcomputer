@@ -14,7 +14,7 @@ private:
     string value;
 
 public:
-    ParenthesisLiteral(string value): value(value) {}
+    ParenthesisLiteral(string value) : value(value) { }
 
     const string &getValue() const {
         return value;

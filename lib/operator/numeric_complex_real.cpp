@@ -1,9 +1,7 @@
-
 #include "numeric_complex_real.h"
 #include "../exception/invalid_syntax.h"
 #include "../literal/numeric.h"
 #include "../exception/invalid_operand.h"
-
 
 void NumericComplexReal::apply(LiteralsStack &stack) const {
     if (stack.size() < 1) {
@@ -15,7 +13,7 @@ void NumericComplexReal::apply(LiteralsStack &stack) const {
 
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
 
-    if (! firstNumeric) {
+    if (!firstNumeric) {
         throw InvalidOperandException(first->toString());
     }
 
@@ -23,5 +21,8 @@ void NumericComplexReal::apply(LiteralsStack &stack) const {
         throw InvalidOperandException(first->toString());
     }
 
-    stack.pushAndNotify(LiteralPointer(new NumericLiteral(firstNumeric->getRealNumerator(),firstNumeric->getRealDenominator())));
+    stack.pushAndNotify(LiteralPointer(new NumericLiteral(
+        firstNumeric->getRealNumerator(),
+        firstNumeric->getRealDenominator()
+    )));
 }

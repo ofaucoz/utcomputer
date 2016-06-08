@@ -12,7 +12,7 @@ using namespace std;
 
 class LogicNotOperator : public OperatorInterface {
 public:
-    void apply(LiteralsStack& stack) const override;
+    void apply(LiteralsStack &stack) const override;
 
     int getPriority() const {
         return 0;

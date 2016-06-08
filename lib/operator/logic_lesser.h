@@ -12,13 +12,12 @@ using namespace std;
 
 class LogicLesserOperator : public OperatorInterface {
 public:
-    void apply(LiteralsStack& stack) const override;
+    void apply(LiteralsStack &stack) const override;
 
     int getPriority() const {
         return 0;
     }
 };
-
 
 
 #endif //LO21_LOGIC_LESSER_H

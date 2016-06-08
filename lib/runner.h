@@ -13,11 +13,11 @@ using namespace std;
  */
 class Runner {
 private:
-    const OperatorMap& operatorsMap;
-    LiteralsStack& literalStack;
+    const OperatorMap &operatorsMap;
+    LiteralsStack &literalStack;
 
 public:
-    Runner(const OperatorMap& operatorsMap, LiteralsStack& literalStack) :
+    Runner(const OperatorMap &operatorsMap, LiteralsStack &literalStack) :
         operatorsMap(operatorsMap), literalStack(literalStack) { }
 
     void run(LiteralVector resolvedTokens);

@@ -1,8 +1,5 @@
 #include <gtest/gtest.h>
 #include "../../operator/numeric_complex_build.h"
-#include "../../literal/numeric.h"
-#include "../../exception/invalid_syntax.h"
-#include "../../exception/invalid_operand.h"
 
 TEST(NumericComplexBuildOperatorTest, IntArguments) {
     LiteralsStack stack;
@@ -20,8 +17,8 @@ TEST(NumericComplexBuildOperatorTest, IntArguments) {
 
 TEST(NumericComplexBuildOperatorTest, FractionArguments) {
     LiteralsStack stack;
-    stack.push(LiteralPointer(new NumericLiteral(8,2)));
-    stack.push(LiteralPointer(new NumericLiteral(2,4)));
+    stack.push(LiteralPointer(new NumericLiteral(8, 2)));
+    stack.push(LiteralPointer(new NumericLiteral(2, 4)));
 
     EXPECT_EQ(2, stack.size());
 
@@ -34,7 +31,7 @@ TEST(NumericComplexBuildOperatorTest, FractionArguments) {
 
 TEST(NumericComplexBuildOperatorTest, WrongArguments) {
     LiteralsStack stack;
-    stack.push(LiteralPointer(new NumericLiteral(8,1,5,4)));
+    stack.push(LiteralPointer(new NumericLiteral(8, 1, 5, 4)));
     stack.push(LiteralPointer(new NumericLiteral(2)));
 
     EXPECT_EQ(2, stack.size());

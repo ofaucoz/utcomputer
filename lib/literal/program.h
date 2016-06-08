@@ -16,7 +16,7 @@ private:
     string value;
 
 public:
-    ProgramLiteral(string value): value(value) {}
+    ProgramLiteral(string value) : value(value) { }
 
     const string &getValue() const {
         return value;

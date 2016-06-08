@@ -17,8 +17,10 @@ using namespace std;
 class LiteralDefinitionInterface {
 public:
     virtual const string getPattern() const = 0;
+
     virtual LiteralPointer createInstance(string value) const = 0;
-    virtual ~LiteralDefinitionInterface() {};
+
+    virtual ~LiteralDefinitionInterface() { };
 };
 
 /*

@@ -5,6 +5,7 @@ CMakeFiles
 LO21
 LO21tests
 build
+*.glade~
 
 # Compiled Object files
 *.slo
