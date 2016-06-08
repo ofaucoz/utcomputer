@@ -1,15 +1,24 @@
 cmake_minimum_required(VERSION 2.8)
 project(LO21)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
+# Google Test
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+# GTK+ / GTKMM
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
+pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
+include_directories(${GTKMM_INCLUDE_DIRS})
+include_directories(${GTK3_INCLUDE_DIRS})
+link_directories(${GTK3_LIBRARY_DIRS})
+link_directories(${GTKMM_LIBRARY_DIRS})
+add_definitions(${GTK3_CFLAGS_OTHER})
+add_definitions(${GTKMM_CFLAGS_OTHER})
 
-# Application
-set(SOURCE_FILES
-        lib/debug/dumper.cpp
-        lib/debug/dumper.h
+# Library
+set(LIBRARY_FILES
         lib/exception/invalid_syntax.cpp
         lib/exception/invalid_syntax.h
         lib/exception/undefined_atom.cpp
@@ -122,7 +131,21 @@ set(SOURCE_FILES
         lib/operator/logic_not.cpp
         lib/operator/logic_not.h)
 
-add_executable(LO21 main.cpp ${SOURCE_FILES})
+set(INTERFACE_FILES
+        ui/main.cpp
+        ui/main.h
+        ui/keyboardWidget.cpp
+        ui/keyboardWidget.h
+        ui/repositoryWidget.cpp
+        ui/repositoryWidget.h
+        ui/messageTreeView.cpp
+        ui/messageTreeView.h
+        ui/historyTreeView.cpp
+        ui/historyTreeView.h)
+
+configure_file(ui/views/main.glade ui/views/main.glade COPYONLY)
+add_executable(LO21 main.cpp ${LIBRARY_FILES} ${INTERFACE_FILES})
+target_link_libraries(LO21 pthread ${GTKMM_LIBRARIES} ${GTK3_LIBRARIES})
 
 # Tests
 set(TEST_FILES
@@ -163,5 +186,5 @@ set(TEST_FILES
         lib/tests/operator/logic_or.cpp
         lib/tests/operator/logic_not.cpp)
 
-add_executable(LO21tests lib/tests/main.cpp ${SOURCE_FILES} ${TEST_FILES})
-target_link_libraries(LO21tests ${GTEST_LIBRARIES} pthread)
+add_executable(LO21tests lib/tests/main.cpp ${LIBRARY_FILES} ${TEST_FILES})
+target_link_libraries(LO21tests pthread ${GTEST_LIBRARIES})

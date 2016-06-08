@@ -29,23 +29,15 @@ public:
         observers.push_back(RepositoryObserverPointer(observer));
     }
 
-    void notify() const;
+    void notify();
 };
 
 /*
  * Basis for the objects observing repositories (observers).
  */
 class RepositoryObserver {
-private:
-    RepositoryPointer repository;
-
 public:
-    virtual void update() = 0;
-
-protected:
-    const RepositoryPointer &getRepository() const {
-        return repository;
-    }
+    virtual void update(Repository* repository) = 0;
 };
 
 

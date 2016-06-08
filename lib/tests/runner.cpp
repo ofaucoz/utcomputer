@@ -10,7 +10,7 @@ int countRunnerUpdates;
 
 class MockRunnerObserver: public RepositoryObserver {
 public:
-    virtual void update() {
+    void update(Repository* repository) {
         countRunnerUpdates++;
     }
 };

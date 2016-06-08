@@ -1,4 +1,6 @@
 #include <iostream>
+#include <gtkmm.h>
+#include <cstring>
 #include "lib/utcomputer.h"
 #include "lib/literal_definition/atom.h"
 #include "lib/literal_definition/whitespace.h"
@@ -15,60 +17,22 @@
 #include "lib/operator/modulo.h"
 #include "lib/operator/euclidian_division.h"
 #include "lib/operator/opposite.h"
+#include "ui/main.h"
 
 using namespace std;
+using namespace Gtk;
 
-int main() {
-    // Stack
-    LiteralsStack stack;
+int main(int argc, char* argv[]) {
 
-    // Operators
-    OperatorMap operatorsMap;
-    operatorsMap.set("+", OperatorPointer(new AdditionOperator));
-    operatorsMap.set("-", OperatorPointer(new SubstractionOperator));
-    operatorsMap.set("/", OperatorPointer(new DivisionOperator));
-    operatorsMap.set("*", OperatorPointer(new MultiplicationOperator));
-    operatorsMap.set("DIV", OperatorPointer(new EuclidianDivisionOperator));
-    operatorsMap.set("MOD", OperatorPointer(new ModuloOperator));
-    operatorsMap.set("NEG", OperatorPointer(new OppositeOperator));
-    operatorsMap.set("NUM", OperatorPointer(new NumeratorOperator));
-    operatorsMap.set("DEN", OperatorPointer(new DenominatorOperator));
 
-    // Programs
-    ProgramMap programsMap;
+    Glib::RefPtr<Application> app = Gtk::Application::create(argc, argv, "org.gtkmm.example");
+    RefPtr<Builder> builder = Builder::create();
+    builder->add_from_file("ui/views/main.glade");
+    MainWindow* window1 = nullptr;
+    builder->get_widget_derived("window1", window1);
+    app->run(*window1);
 
-    // Variables
-    VariableMap variablesMap;
-
-    /*
-     * Lexer
-     */
-    Lexer lexer;
-    lexer.addDefinition(new WhitespaceLiteralDefinition);
-    lexer.addDefinition(new NumericLiteralDefinition);
-    lexer.addDefinition(new OperatorLiteralDefinition);
-    lexer.addDefinition(new ExpressionLiteralDefinition);
-    lexer.addDefinition(new ProgramLiteralDefinition);
-    lexer.addDefinition(new AtomLiteralDefinition);
-
-    /*
-     * Resolver
-     */
-    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorLiteralDefinition));
-
-    /*
-     * Runner
-     */
-    Runner runner(operatorsMap, stack);
-
-    /*
-     * Application
-     */
-    UTComputer computer(lexer, resolver, runner);
-
-    computer.execute("36.5 -2/4 + 6$4 * 98/2$-55/4 +");
-
-    TokensDumper::dump(cout, stack);
+    delete window1;
 
     return 0;
 }
