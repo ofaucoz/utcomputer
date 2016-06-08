@@ -6,7 +6,7 @@
 
 using namespace std;
 
-/*
+/**
  * An expression literal represents a quoted expression that can be evaluated.
  * For instance :
  *      '3*X1+(3+TOTO)/-2'
@@ -16,20 +16,26 @@ private:
     string value;
 
 public:
+    /**
+     * @param value The expression.
+     */
     ExpressionLiteral(string value) : value(value) { }
 
+    /**
+     * @return The expression.
+     */
     const string &getValue() const {
         return value;
     }
 
+    /**
+     * @inheritdoc
+     */
     const string toString() const override {
         return value;
     };
 };
 
-/*
- * Expression literal pointer
- */
 typedef shared_ptr<ExpressionLiteral> ExpressionLiteralPointer;
 
 

@@ -6,19 +6,21 @@
 
 using namespace std;
 
-/*
+/**
  * A whitespace literal.
+ * For instance :
+ *      a space or a tabulation
  */
 struct WhitespaceLiteral : public LiteralInterface {
 public:
+    /**
+     * @inheritdoc
+     */
     const string toString() const override {
         return " ";
     };
 };
 
-/*
- * Whitespace literal pointer
- */
 typedef shared_ptr<WhitespaceLiteral> WhitespaceLiteralPointer;
 
 

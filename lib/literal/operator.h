@@ -6,30 +6,36 @@
 
 using namespace std;
 
-/*
- * An operator literal represents an operator name.
+/**
+ * An operator literal represents a native operator or a custom resolved operator.
  * For instance :
- *      +
+ *      + (native) or DIV (custom)
  */
 struct OperatorLiteral : public LiteralInterface {
 private:
     string name;
 
 public:
-    OperatorLiteral(string value) : name(value) { }
+    /**
+     * @param name The operator name.
+     */
+    OperatorLiteral(string name) : name(name) { }
 
+    /**
+     * @return The operator name.
+     */
     const string &getName() const {
         return name;
     }
 
+    /**
+     * @inheritdoc
+     */
     const string toString() const override {
         return name;
     };
 };
 
-/*
- * Operator literal pointer
- */
 typedef shared_ptr<OperatorLiteral> OperatorLiteralPointer;
 
 

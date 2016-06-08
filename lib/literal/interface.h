@@ -12,46 +12,51 @@
 
 using namespace std;
 
-/*
+/**
  * Interface for all the literals.
  *
- * A literal is the simple representation of an elmeent from a command to parse.
- * In the Parser-Lexer algorithm, literal are called tokens and they are created
- * by the lexer to be analyzed by the parser. They store a type (here, it's the
+ * A literal is the simple representation of an element from a command to parse.
+ * In the Parser-Lexer algorithm, literals are called tokens and they are created
+ * by the Lexer to be analyzed by the parser. They store a type (here, it's the
  * class name) and a name to be used by the parser.
  *
  * Literals are structures as they only carry data.
+ *
  * @see https://google.github.io/styleguide/cppguide.html#Structs_vs._Classes
  */
 struct LiteralInterface {
 public:
+    /**
+     * Each literal have a string representation. This method return this string.
+     */
     virtual const string toString() const = 0;
 
+    /**
+     * Virtual destructor to avoid conflict issues with children classes.
+     */
     virtual ~LiteralInterface() { };
 };
 
-/*
- * Literal pointer
- */
 typedef shared_ptr<LiteralInterface> LiteralPointer;
-
-/*
- * Literal vector
- */
 typedef vector<LiteralPointer> LiteralVector;
 
-/*
- * Literals stack
+/**
+ * Stack of literals based on the ObservableStack class.
+ * This type is used by the Runner for execution.
  */
 typedef ObservableStack<LiteralPointer> LiteralsStack;
 
-/*
- * Variables hashmap
+/**
+ * The variables hasmap is an association between a string
+ * and a Literal (usually a numeric literal but it could be
+ * theorically anything as anyone can add literals of their own).
  */
 typedef ObservableMap<string, LiteralPointer> VariableMap;
 
-/*
- * Programs hashmap
+/**
+ * The programs hasmap is an association between a string
+ * and a vector of Literals to execute in the Runner.
+ * These programs will be resolved by the Resolver.
  */
 typedef ObservableMap<string, LiteralVector> ProgramMap;
 

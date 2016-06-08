@@ -9,15 +9,21 @@
 
 using namespace std;
 
-/*
+/**
  * Definition of an atom literal.
  */
 class AtomLiteralDefinition : public LiteralDefinitionInterface {
 public:
+    /**
+     * @inheritdoc
+     */
     const string getPattern() const override {
         return "[A-Z][A-Z0-9]+";
     }
 
+    /**
+     * @inheritdoc
+     */
     LiteralPointer createInstance(string value) const override {
         return LiteralPointer(new AtomLiteral(value));
     }

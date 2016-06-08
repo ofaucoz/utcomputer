@@ -11,15 +11,21 @@
 
 using namespace std;
 
-/*
+/**
  * Definition of an parethesis literal.
  */
 class ParenthesisLiteralDefinition : public LiteralDefinitionInterface {
 public:
+    /**
+     * @inheritdoc
+     */
     const string getPattern() const override {
         return "\\(|\\)";
     }
 
+    /**
+     * @inheritdoc
+     */
     LiteralPointer createInstance(string value) const override {
         return LiteralPointer(new ParenthesisLiteral(value));
     }

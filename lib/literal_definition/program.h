@@ -9,15 +9,21 @@
 
 using namespace std;
 
-/*
+/**
  * Definition of a program literal.
  */
 class ProgramLiteralDefinition : public LiteralDefinitionInterface {
 public:
+    /**
+     * @inheritdoc
+     */
     const string getPattern() const override {
         return "\\[[^\\]]*\\]";
     }
 
+    /**
+     * @inheritdoc
+     */
     LiteralPointer createInstance(string value) const override {
         return LiteralPointer(new ProgramLiteral(value));
     }

@@ -6,7 +6,7 @@
 
 using namespace std;
 
-/*
+/**
  * An atom literal represents a name of a custom operator, a variable or a program.
  * For instance :
  *      MYVAR
@@ -16,20 +16,26 @@ private:
     string value;
 
 public:
+    /**
+     * @param value The atom name.
+     */
     AtomLiteral(string value) : value(value) { }
 
+    /**
+     * @return The atom name.
+     */
     const string &getValue() const {
         return value;
     }
 
+    /**
+     * @inheritdoc
+     */
     const string toString() const override {
         return value;
     };
 };
 
-/*
- * Atom literal pointer
- */
 typedef shared_ptr<AtomLiteral> AtomLiteralPointer;
 
 

@@ -6,30 +6,36 @@
 
 using namespace std;
 
-/*
- * A program literal represents a string surrounded by brackets.
+/**
+ * A program literal represents a string surrounded by brackets (a program).
  * For instance :
  *      [ DUP 0 < NEG ]
  */
 struct ProgramLiteral : public LiteralInterface {
 private:
-    string value;
+    string name;
 
 public:
-    ProgramLiteral(string value) : value(value) { }
+    /**
+     * @param name The program name.
+     */
+    ProgramLiteral(string name) : name(name) { }
 
-    const string &getValue() const {
-        return value;
+    /**
+     * @return The program name.
+     */
+    const string &getName() const {
+        return name;
     }
 
+    /**
+     * @inheritdoc
+     */
     const string toString() const override {
-        return value;
+        return name;
     };
 };
 
-/*
- * Program literal pointer
- */
 typedef shared_ptr<ProgramLiteral> ProgramLiteralPointer;
 
 

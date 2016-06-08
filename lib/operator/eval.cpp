@@ -65,7 +65,7 @@ LiteralVector EvalOperator::postfix(string infix) const {
         if (ParenthesisLiteralPointer parenthesisLiteral = dynamic_pointer_cast<ParenthesisLiteral>(*token)) {
 
             // Parenthesis can be either an indication of priority or a custom operator
-            if (parenthesisLiteral->getValue() == "(") {
+            if (parenthesisLiteral->getParenthesis() == "(") {
 
                 // If the previous token was an atom, we are in the case of an operator
                 if (previous != nullptr) {
