@@ -9,17 +9,18 @@
  * Observable stack based on the standard stack and dispatching
  * notifications to observers on data change.
  */
-template<class T> class ObservableStack : public std::vector<T>, public Repository {
+template<class T>
+class ObservableStack : public std::vector<T>, public Repository {
 public:
-    const T& top() const {
+    const T &top() const {
         return this->back();
     }
 
-    void push(const T& item) {
+    void push(const T &item) {
         this->push_back(item);
     }
 
-    void pushAndNotify(const T& item) {
+    void pushAndNotify(const T &item) {
         this->push(item);
         notify();
     }

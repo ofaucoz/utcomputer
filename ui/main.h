@@ -41,40 +41,48 @@ class MainWindow : public Gtk::Window {
 protected:
     unsigned int iterCommand;
     Glib::RefPtr<Gtk::Builder> builder;
-    Window * variableWindow;
-    Window * programWindow;
-    LiteralsStack  stack;
+    Window *variableWindow;
+    Window *programWindow;
+    LiteralsStack stack;
     OperatorMap operatorsMap;
     VariableMap variablesMap;
     ProgramMap programsMap;
-    Lexer * lexer;
-    Resolver * resolver;
-    Runner * runner;
-    repositoryWidget * literalStack; //GtkTreeView
-    messageTreeView * messageTree; //GtkTreeView
-    historyTreeView * historyTree; //GtkTreeView
-    repositoryWidget * variableTree;
-    repositoryWidget * programTree;
+    Lexer *lexer;
+    Resolver *resolver;
+    Runner *runner;
+    repositoryWidget *literalStack; //GtkTreeView
+    messageTreeView *messageTree; //GtkTreeView
+    historyTreeView *historyTree; //GtkTreeView
+    repositoryWidget *variableTree;
+    repositoryWidget *programTree;
     ToggleButton *variableButton;
     ToggleButton *programButton;
     Entry *nbStack;
     Entry *command;
-    keyboardWidget* keyboard; //GtkBox
+    keyboardWidget *keyboard; //GtkBox
     ToggleButton *keyboardSwitch;
     std::string commandInput;
-    UTComputer * computer;
+    UTComputer *computer;
     CheckButton *bip;
 
 public:
-    MainWindow(BaseObjectType* window, const Glib::RefPtr<Gtk::Builder>& glade);
-    virtual ~MainWindow() {};
+    MainWindow(BaseObjectType *window, const Glib::RefPtr<Gtk::Builder> &glade);
+
+    virtual ~MainWindow() { };
+
     void on_entry_command_activated();
+
     void on_entry_nbStack_activated();
-    void on_button_variable_clicked(){if(variableButton->get_active())variableWindow->show(); else variableWindow->hide();}
-    void on_button_program_clicked(){if(programButton->get_active())programWindow->show(); else programWindow->hide();}
+
+    void on_button_variable_clicked() { if (variableButton->get_active())variableWindow->show(); else variableWindow->hide(); }
+
+    void on_button_program_clicked() { if (programButton->get_active())programWindow->show(); else programWindow->hide(); }
+
     void on_button_keyboard_clicked(string label);
-    void on_toggle_button_keyboard_clicked(){if(keyboardSwitch->get_active())keyboard->hide(); else keyboard->show();}
-    bool on_key_press_event(GdkEventKey* event) override;
+
+    void on_toggle_button_keyboard_clicked() { if (keyboardSwitch->get_active())keyboard->hide(); else keyboard->show(); }
+
+    bool on_key_press_event(GdkEventKey *event) override;
 };
 
 

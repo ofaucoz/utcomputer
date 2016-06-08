@@ -26,7 +26,8 @@ using namespace std;
 struct LiteralInterface {
 public:
     virtual const string toString() const = 0;
-    virtual ~LiteralInterface() {};
+
+    virtual ~LiteralInterface() { };
 };
 
 /*

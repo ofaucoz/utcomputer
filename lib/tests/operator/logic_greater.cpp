@@ -1,13 +1,11 @@
 #include <gtest/gtest.h>
 #include "../../literal/numeric.h"
-#include "../../exception/invalid_syntax.h"
-#include "../../exception/invalid_operand.h"
 #include "../../operator/logic_greater.h"
 
 TEST(LogicGreaterOperatorTest, GreaterComplexArguments) {
     LiteralsStack stack;
-    stack.push(LiteralPointer(new NumericLiteral(8,5,3,3)));
-    stack.push(LiteralPointer(new NumericLiteral(5,5,4,3)));
+    stack.push(LiteralPointer(new NumericLiteral(8, 5, 3, 3)));
+    stack.push(LiteralPointer(new NumericLiteral(5, 5, 4, 3)));
 
     EXPECT_EQ(2, stack.size());
 
@@ -20,8 +18,8 @@ TEST(LogicGreaterOperatorTest, GreaterComplexArguments) {
 
 TEST(LogicGreaterperatorTest, LesserComplexArguments) {
     LiteralsStack stack;
-    stack.push(LiteralPointer(new NumericLiteral(2,5,3,3)));
-    stack.push(LiteralPointer(new NumericLiteral(5,5,4,3)));
+    stack.push(LiteralPointer(new NumericLiteral(2, 5, 3, 3)));
+    stack.push(LiteralPointer(new NumericLiteral(5, 5, 4, 3)));
 
     EXPECT_EQ(2, stack.size());
 
@@ -34,8 +32,8 @@ TEST(LogicGreaterperatorTest, LesserComplexArguments) {
 
 TEST(LogicGreaterperatorTest, LesserIntArguments) {
     LiteralsStack stack;
-    stack.push(LiteralPointer(new NumericLiteral(2,5)));
-    stack.push(LiteralPointer(new NumericLiteral(5,5)));
+    stack.push(LiteralPointer(new NumericLiteral(2, 5)));
+    stack.push(LiteralPointer(new NumericLiteral(5, 5)));
 
     EXPECT_EQ(2, stack.size());
 

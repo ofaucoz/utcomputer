@@ -7,18 +7,17 @@
 using namespace std;
 
 
-class historyTreeView : public Gtk::TreeView{
+class historyTreeView : public Gtk::TreeView {
 protected:
 
-    class ModelColumns : public Gtk::TreeModel::ColumnRecord
-    {
+    class ModelColumns : public Gtk::TreeModel::ColumnRecord {
     public:
 
-        ModelColumns()
-        {add(col_command); }
+        ModelColumns() { add(col_command); }
 
         Gtk::TreeModelColumn<Glib::ustring> col_command;
     };
+
     ModelColumns columns;
     Glib::RefPtr<Gtk::ListStore> refTreeModel;
     Glib::RefPtr<Gtk::Builder> builder;
@@ -27,10 +26,14 @@ protected:
     unsigned int iterCommand;
 public:
     historyTreeView(BaseObjectType *treeview, const Glib::RefPtr<Gtk::Builder> &builder);
+
     void update(string command);
-    virtual ~historyTreeView(){}
-    string& getTabCommand(unsigned int i){return tabCommand[i];}
-    unsigned int getIterCommand(){return iterCommand;}
+
+    virtual ~historyTreeView() { }
+
+    string &getTabCommand(unsigned int i) { return tabCommand[i]; }
+
+    unsigned int getIterCommand() { return iterCommand; }
 
 };
 

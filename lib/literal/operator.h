@@ -16,7 +16,7 @@ private:
     string name;
 
 public:
-    OperatorLiteral(string value): name(value) {}
+    OperatorLiteral(string value) : name(value) { }
 
     const string &getName() const {
         return name;

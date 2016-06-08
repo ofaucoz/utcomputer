@@ -1,7 +1,3 @@
-//
-// Created by orphee on 04/06/16.
-//
-
 #ifndef LO21_LOGIC_OR_H
 #define LO21_LOGIC_OR_H
 
@@ -16,7 +12,7 @@ using namespace std;
 
 class LogicOrOperator : public OperatorInterface {
 public:
-    void apply(LiteralsStack& stack) const override;
+    void apply(LiteralsStack &stack) const override;
 
     int getPriority() const {
         return 0;

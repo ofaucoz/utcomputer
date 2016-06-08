@@ -1,7 +1,5 @@
 #include <gtest/gtest.h>
 #include "../../literal/numeric.h"
-#include "../../exception/invalid_syntax.h"
-#include "../../exception/invalid_operand.h"
 #include "../../operator/logic_not.h"
 
 TEST(LogicNotOperatNotTest, 1to0) {

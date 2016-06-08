@@ -8,21 +8,21 @@
 
 #include <gtkmm.h>
 #include <iostream>
+
 using namespace std;
 
 
-class messageTreeView : public Gtk::TreeView{
+class messageTreeView : public Gtk::TreeView {
 protected:
 
-    class ModelColumns : public Gtk::TreeModel::ColumnRecord
-    {
+    class ModelColumns : public Gtk::TreeModel::ColumnRecord {
     public:
 
-        ModelColumns()
-        {add(col_message); }
+        ModelColumns() { add(col_message); }
 
         Gtk::TreeModelColumn<Glib::ustring> col_message;
     };
+
     ModelColumns columns;
     Glib::RefPtr<Gtk::ListStore> refTreeModel;
     Glib::RefPtr<Gtk::Builder> builder;
@@ -30,8 +30,10 @@ protected:
 public:
 
     messageTreeView(BaseObjectType *treeview, const Glib::RefPtr<Gtk::Builder> &builder);
+
     void update(string message);
-    virtual ~messageTreeView(){}
+
+    virtual ~messageTreeView() { }
 
 };
 

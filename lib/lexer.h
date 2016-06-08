@@ -20,7 +20,7 @@ private:
     LiteralDefinitionVector definitions;
 
 public:
-    void addDefinition(LiteralDefinitionInterface* definition) {
+    void addDefinition(LiteralDefinitionInterface *definition) {
         definitions.push_back(LiteralDefinitionPointer(definition));
     }
 

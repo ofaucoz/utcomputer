@@ -1,13 +1,11 @@
 #include <gtest/gtest.h>
 #include "../../literal/numeric.h"
-#include "../../exception/invalid_syntax.h"
-#include "../../exception/invalid_operand.h"
 #include "../../operator/logic_or.h"
 
 TEST(LogicOrOperatorTest, IntLiteralOrIntLiteral) {
     LiteralsStack stack;
-    stack.push(LiteralPointer(new NumericLiteral(8,5,4,3)));
-    stack.push(LiteralPointer(new NumericLiteral(5,8,4,3)));
+    stack.push(LiteralPointer(new NumericLiteral(8, 5, 4, 3)));
+    stack.push(LiteralPointer(new NumericLiteral(5, 8, 4, 3)));
 
     EXPECT_EQ(2, stack.size());
 
@@ -20,7 +18,7 @@ TEST(LogicOrOperatorTest, IntLiteralOrIntLiteral) {
 
 TEST(LogicOrOperatorTest, IntLiteralOr0) {
     LiteralsStack stack;
-    stack.push(LiteralPointer(new NumericLiteral(8,5,4,3)));
+    stack.push(LiteralPointer(new NumericLiteral(8, 5, 4, 3)));
     stack.push(LiteralPointer(new NumericLiteral(0)));
 
     EXPECT_EQ(2, stack.size());
@@ -35,7 +33,7 @@ TEST(LogicOrOperatorTest, IntLiteralOr0) {
 TEST(LogicOrOperatorTest, 0OrIntLiteral) {
     LiteralsStack stack;
     stack.push(LiteralPointer(new NumericLiteral(0)));
-    stack.push(LiteralPointer(new NumericLiteral(8,5,4,3)));
+    stack.push(LiteralPointer(new NumericLiteral(8, 5, 4, 3)));
 
 
     EXPECT_EQ(2, stack.size());

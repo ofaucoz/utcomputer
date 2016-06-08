@@ -16,15 +16,15 @@ using namespace std;
  */
 class Resolver {
 private:
-    const OperatorMap& operatorsMap;
-    const ProgramMap& programsMap;
-    const VariableMap& variablesMap;
+    const OperatorMap &operatorsMap;
+    const ProgramMap &programsMap;
+    const VariableMap &variablesMap;
     const LiteralDefinitionPointer operatorLiteralDefinition;
 
 public:
-    Resolver(const OperatorMap& operatorsMap,
-             const ProgramMap& programsMap,
-             const VariableMap& variablesMap,
+    Resolver(const OperatorMap &operatorsMap,
+             const ProgramMap &programsMap,
+             const VariableMap &variablesMap,
              const LiteralDefinitionPointer operatorLiteralDefinition) :
         operatorsMap(operatorsMap),
         programsMap(programsMap),

@@ -85,10 +85,12 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     programButton->signal_clicked().connect(sigc::mem_fun(*this, &MainWindow::on_button_program_clicked));
     add_events(Gdk::KEY_PRESS_MASK);
     for (unsigned int i = 0; i < 19; i++) {
-        keyboard->getButton(i).signal_clicked().connect(sigc::bind<Glib::ustring>(sigc::mem_fun(*this, &MainWindow::on_button_keyboard_clicked), keyboard->getButton(i).get_label()));
+        keyboard->getButton(i).signal_clicked().connect(
+            sigc::bind<Glib::ustring>(sigc::mem_fun(*this, &MainWindow::on_button_keyboard_clicked),
+                                      keyboard->getButton(i).get_label()));
     }
 
-    iterCommand=historyTree->getIterCommand();
+    iterCommand = historyTree->getIterCommand();
 
 
 }
@@ -109,29 +111,29 @@ void MainWindow::on_entry_command_activated() {
         commandInput = command->get_text();
         computer->execute(commandInput);
         historyTree->update(commandInput);
-        iterCommand=historyTree->getIterCommand();
+        iterCommand = historyTree->getIterCommand();
     }
     catch (const InvalidOperandException &exception1) {
         messageTree->update(exception1.getValue());
-        if(bip->get_active()){
+        if (bip->get_active()) {
             cout << '\a' << endl;
         }
     }
     catch (const InvalidSyntaxException &exception2) {
         messageTree->update(exception2.getValue());
-        if(bip->get_active()){
+        if (bip->get_active()) {
             cout << '\a' << endl;
         }
     }
     catch (const UndefinedAtomException &exception3) {
         messageTree->update(exception3.getValue());
-        if(bip->get_active()){
+        if (bip->get_active()) {
             cout << '\a' << endl;
         }
     }
     catch (const UnsupportedLiteralException &exception4) {
         messageTree->update(exception4.getValue());
-        if(bip->get_active()){
+        if (bip->get_active()) {
             cout << '\a' << endl;
         }
     }
@@ -150,27 +152,25 @@ void MainWindow::on_entry_nbStack_activated() {
     literalStack->update(&stack);
 }
 
-bool MainWindow::on_key_press_event(GdkEventKey* key_event)
-{
+bool MainWindow::on_key_press_event(GdkEventKey *key_event) {
     //GDK_CONTROL_MASK -> the 'Ctrl' key(mask)
     //GDK_KEY_Z -> the 'Z' key
     //GDK_KEY_Y -> the 'Y' key
 
     //select the first radio button, when we press alt + 1
-    if((key_event->keyval == GDK_KEY_z)&&(key_event->state &(GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK)) == GDK_CONTROL_MASK)
-    {
+    if ((key_event->keyval == GDK_KEY_z) &&
+        (key_event->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK)) == GDK_CONTROL_MASK) {
         cout << "ctrl + Z was pressed" << endl;
-        if(iterCommand!=0){
+        if (iterCommand != 0) {
             iterCommand--;
         }
         command->set_text(historyTree->getTabCommand(iterCommand));
         //returning true, cancels the propagation of the event
         return true;
     }
-    else if((key_event->keyval == GDK_KEY_y) &&
-            (key_event->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK)) == GDK_CONTROL_MASK)
-    {
-        if(iterCommand < historyTree->getIterCommand()){
+    else if ((key_event->keyval == GDK_KEY_y) &&
+             (key_event->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK)) == GDK_CONTROL_MASK) {
+        if (iterCommand < historyTree->getIterCommand()) {
             iterCommand++;
         }
         command->set_text(historyTree->getTabCommand(iterCommand));
@@ -178,8 +178,7 @@ bool MainWindow::on_key_press_event(GdkEventKey* key_event)
         cout << "ctrl + Y was pressed" << endl;
         return true;
     }
-    else if(key_event->keyval == GDK_KEY_Escape)
-    {
+    else if (key_event->keyval == GDK_KEY_Escape) {
         //close the window, when the 'esc' key is pressed
         hide();
         return true;

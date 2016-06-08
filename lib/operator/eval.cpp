@@ -11,7 +11,7 @@ void EvalOperator::apply(LiteralsStack &stack) const {
 
     ExpressionLiteralPointer firstEpression = dynamic_pointer_cast<ExpressionLiteral>(first);
 
-    if (! firstEpression) {
+    if (!firstEpression) {
         throw InvalidOperandException(first->toString());
     }
 
@@ -95,7 +95,7 @@ LiteralVector EvalOperator::postfix(string infix) const {
                 }
 
                 // And then, if there was a custom operator for this closing parenthesis, we add it
-                if (! prefixOperatorsStack.empty()) {
+                if (!prefixOperatorsStack.empty()) {
                     if (prefixOperatorsStack.top() != nullptr) {
                         postfixed.push_back(prefixOperatorsStack.top());
                     }
@@ -108,20 +108,20 @@ LiteralVector EvalOperator::postfix(string infix) const {
 
             }
 
-        // Native operator (+ - * /)
+            // Native operator (+ - * /)
         } else if (OperatorLiteralPointer operatorLiteral = dynamic_pointer_cast<OperatorLiteral>(*token)) {
 
             // Find the priority and push to the stack accordingly
             int currentPriority = findPriority(operatorLiteral->toString());
 
-            while (! stack.empty() && currentPriority < findPriority(stack.top()->toString())) {
+            while (!stack.empty() && currentPriority < findPriority(stack.top()->toString())) {
                 postfixed.push_back(stack.top());
                 stack.pop();
             }
 
             stack.push(operatorLiteral);
 
-        // Comma
+            // Comma
         } else if (dynamic_pointer_cast<CommaLiteral>(*token)) {
 
             // A comma acts as a closing parenthesis and an opnening one right after
@@ -134,7 +134,7 @@ LiteralVector EvalOperator::postfix(string infix) const {
 
             stack.push(LiteralPointer(new ParenthesisLiteral("(")));
 
-        // Other tokens (numerics, expressions, ...)
+            // Other tokens (numerics, expressions, ...)
         } else {
             // Simply push them
             postfixed.push_back(*token);
@@ -145,7 +145,7 @@ LiteralVector EvalOperator::postfix(string infix) const {
     }
 
     // Pop any remaining operators from the stack and push them
-    while (! stack.empty()) {
+    while (!stack.empty()) {
         postfixed.push_back(stack.top());
         stack.pop();
     }

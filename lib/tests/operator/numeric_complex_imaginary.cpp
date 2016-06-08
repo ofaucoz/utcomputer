@@ -1,12 +1,9 @@
 #include <gtest/gtest.h>
 #include "../../operator/numeric_complex_imaginary.h"
-#include "../../literal/expression.h"
-#include "../../literal/numeric.h"
-#include "../../exception/invalid_operand.h"
 
 TEST(NumericComplexRealImaginaryTest, ComplexLiterals) {
     LiteralsStack stack;
-    stack.push(LiteralPointer(new NumericLiteral(3, 4,5,6)));
+    stack.push(LiteralPointer(new NumericLiteral(3, 4, 5, 6)));
 
     EXPECT_EQ(1, stack.size());
 

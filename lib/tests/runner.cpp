@@ -8,9 +8,9 @@
 
 int countRunnerUpdates;
 
-class MockRunnerObserver: public RepositoryObserver {
+class MockRunnerObserver : public RepositoryObserver {
 public:
-    void update(Repository* repository) {
+    void update(Repository *repository) {
         countRunnerUpdates++;
     }
 };

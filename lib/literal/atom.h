@@ -16,7 +16,7 @@ private:
     string value;
 
 public:
-    AtomLiteral(string value): value(value) {}
+    AtomLiteral(string value) : value(value) { }
 
     const string &getValue() const {
         return value;

@@ -13,7 +13,7 @@ using namespace std;
 
 class MultiplicationOperator : public OperatorInterface {
 public:
-    void apply(LiteralsStack& stack) const override;
+    void apply(LiteralsStack &stack) const override;
 
     int getPriority() const override {
         return 10;

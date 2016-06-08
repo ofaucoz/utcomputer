@@ -48,14 +48,14 @@ LiteralPointer NumericLiteralDefinition::createInstance(string value) const {
             // Next numbers will be imaginary
             isComplex = true;
             parsedString.pop();
-        } else if (! isRational && ! isComplex) {
+        } else if (!isRational && !isComplex) {
             // Not a denominator and not complex ==> real numerator
             realNumerator = stod(parsedString.front());
             parsedString.pop();
-        } else if (! isRational) {
+        } else if (!isRational) {
             imagNumerator = stod(parsedString.front());
             parsedString.pop();
-        } else if (! isComplex) {
+        } else if (!isComplex) {
             realDenominator = stod(parsedString.front());
             parsedString.pop();
             isRational = false;

@@ -1,11 +1,12 @@
 #include <gtest/gtest.h>
 #include "../../repository/stack.h"
 
-class MockObserverException {};
+class MockObserverException {
+};
 
-class MockObserver: public RepositoryObserver {
+class MockObserver : public RepositoryObserver {
 public:
-    void update(Repository* repository) {
+    void update(Repository *repository) {
         throw MockObserverException();
     }
 };

@@ -1,7 +1,4 @@
-
 #include "numeric_complex_build.h"
-
-
 
 void NumericComplexBuildOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {
@@ -21,18 +18,23 @@ void NumericComplexBuildOperator::apply(LiteralsStack &stack) const {
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
     NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
 
-    if (! firstNumeric) {
+    if (!firstNumeric) {
         throw InvalidOperandException(first->toString());
     }
 
-    if (! secondNumeric) {
+    if (!secondNumeric) {
         throw InvalidOperandException(second->toString());
     }
 
-    if (firstNumeric->getImaginaryNumerator() != 0 || secondNumeric->getImaginaryNumerator()!= 0) {
+    if (firstNumeric->getImaginaryNumerator() != 0 || secondNumeric->getImaginaryNumerator() != 0) {
         throw InvalidSyntaxException("Arguments can't already be complex");
     }
 
-    stack.pushAndNotify(LiteralPointer(new NumericLiteral(secondNumeric->getRealNumerator(),secondNumeric->getRealDenominator(),firstNumeric->getRealNumerator(),firstNumeric->getRealDenominator())));
+    stack.pushAndNotify(LiteralPointer(new NumericLiteral(
+        secondNumeric->getRealNumerator(),
+        secondNumeric->getRealDenominator(),
+        firstNumeric->getRealNumerator(),
+        firstNumeric->getRealDenominator()
+    )));
 }
 

@@ -18,11 +18,11 @@ void AdditionOperator::apply(LiteralsStack &stack) const {
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
     NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
 
-    if (! firstNumeric) {
+    if (!firstNumeric) {
         throw InvalidOperandException(first->toString());
     }
 
-    if (! secondNumeric) {
+    if (!secondNumeric) {
         throw InvalidOperandException(second->toString());
     }
 

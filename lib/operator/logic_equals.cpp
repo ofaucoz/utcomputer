@@ -1,6 +1,5 @@
 #include "logic_equals.h"
 
-
 void LogicEqualsOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {
         if (stack.size() == 1) {
@@ -9,7 +8,6 @@ void LogicEqualsOperator::apply(LiteralsStack &stack) const {
 
         throw InvalidSyntaxException("Equals operator requires 2 operands");
     }
-
 
     LiteralPointer first = stack.top();
     stack.pop();
@@ -20,17 +18,17 @@ void LogicEqualsOperator::apply(LiteralsStack &stack) const {
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
     NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
 
-    if (! firstNumeric) {
+    if (!firstNumeric) {
         throw InvalidOperandException(first->toString());
     }
 
-    if (! secondNumeric) {
+    if (!secondNumeric) {
         throw InvalidOperandException(second->toString());
     }
 
-    if(firstNumeric->toString()==secondNumeric->toString()){
+    if (firstNumeric->toString() == secondNumeric->toString()) {
         stack.pushAndNotify(LiteralPointer(new NumericLiteral(1)));
-    }else{
+    } else {
         stack.pushAndNotify(LiteralPointer(new NumericLiteral(0)));
     }
 }
