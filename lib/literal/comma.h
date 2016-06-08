@@ -6,19 +6,21 @@
 
 using namespace std;
 
-/*
- * A comma literal.
+/**
+ * A comma literal represents a comma.
+ * For instance :
+ *      ,
  */
 struct CommaLiteral : public LiteralInterface {
 public:
+    /**
+     * @inheritdoc
+     */
     const string toString() const override {
         return ",";
     };
 };
 
-/*
- * Comma literal pointer
- */
 typedef shared_ptr<CommaLiteral> CommaLiteralPointer;
 
 

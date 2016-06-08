@@ -6,17 +6,25 @@
 
 using namespace std;
 
-/*
- * Exception thrown when the runner encounter an unsupported literal
- * (resolver inserted unsupported literal).
+/**
+ * Exception thrown when the Runner encounter an unsupported literal.
  */
 struct UnsupportedLiteralException {
 private:
+    /**
+     * The string representation of the unsupported literal.
+     */
     string value;
 
 public:
+    /**
+     * @param value The string representation of the unsupported literal.
+     */
     UnsupportedLiteralException(const string &value) : value(value) { }
 
+    /**
+     * Get the string representation of the unsupported literal.
+     */
     const string &getValue() const {
         return value;
     }

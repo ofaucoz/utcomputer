@@ -11,8 +11,8 @@
 
 using namespace std;
 
-/*
- * Definition of an atom literal.
+/**
+ * Definition of a numeric literal.
  */
 class NumericLiteralDefinition : public LiteralDefinitionInterface {
 private:
@@ -31,14 +31,23 @@ private:
      *
      * This method is used by the definition to build numeric literals
      * given a string.
+     *
+     * @param value The string to parse.
+     * @return The queue used in the createInstance method to build the literal.
      */
     queue<std::string> parse(string value) const;
 
 public:
+    /**
+     * @inheritdoc
+     */
     const string getPattern() const override {
         return "(-?[0-9]+(\\.[0-9]+)?)(/-?[0-9]+(\\.[0-9]+)?)?(\\$(-?[0-9]+(\\.[0-9]+)?)(/-?[0-9]+(\\.[0-9]+)?)?)?";
     }
 
+    /**
+     * @inheritdoc
+     */
     LiteralPointer createInstance(string value) const override;
 };
 

@@ -9,15 +9,21 @@
 
 using namespace std;
 
-/*
+/**
  * Definition of a comma literal.
  */
 class CommaLiteralDefinition : public LiteralDefinitionInterface {
 public:
+    /**
+     * @inheritdoc
+     */
     const string getPattern() const override {
         return ",";
     }
 
+    /**
+     * @inheritdoc
+     */
     LiteralPointer createInstance(string value) const override {
         return LiteralPointer(new CommaLiteral());
     }

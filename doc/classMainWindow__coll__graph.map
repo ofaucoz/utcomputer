@@ -1,0 +1,20 @@
+<map id="MainWindow" name="MainWindow">
+<area shape="rect" id="node3" href="$classObservableStack.html" title="{ObservableStack\&lt; Literal\lPointer \&gt;\n||+ top()\l+ push()\l+ pushAndNotify()\l+ pop()\l+ popAndNotify()\l}" alt="" coords="807,154,976,305"/>
+<area shape="rect" id="node30" href="$classRunner.html" title="{Runner\n||+ Runner()\l+ run()\l}" alt="" coords="824,419,908,511"/>
+<area shape="rect" id="node5" href="$classRepository.html" title="{Repository\n|&#45; observers\l|+ attach()\l+ notify()\l}" alt="" coords="379,5,465,97"/>
+<area shape="rect" id="node7" href="$classObservableMap.html" title="{ObservableMap\&lt; string,\l LiteralPointer \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="60,147,221,312"/>
+<area shape="rect" id="node20" href="$classObservableMap.html" title="{ObservableMap\&lt; string,\l LiteralVector \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="245,147,407,312"/>
+<area shape="rect" id="node22" href="$classObservableMap.html" title="{ObservableMap\&lt; string,\l OperatorPointer \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="431,147,592,312"/>
+<area shape="rect" id="node27" href="$classObservableMap.html" title="{ObservableMap\&lt; K, V \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="618,154,781,305"/>
+<area shape="rect" id="node6" href="$classLexer.html" title="{Lexer\n|&#45; definitions\l|+ addDefinition()\l+ addDefinition()\l+ getDefinitions()\l+ tokenize()\l}" alt="" coords="677,404,799,525"/>
+<area shape="rect" id="node29" href="$classUTComputer.html" title="{UTComputer\n||+ UTComputer()\l+ getLexer()\l+ getResolver()\l+ execute()\l+ execute()\l}" alt="" coords="619,617,737,753"/>
+<area shape="rect" id="node9" href="$classhistoryTreeView.html" title="{historyTreeView\n|# refTreeModel\l# builder\l# nbAff\l# tabCommand\l# iterCommand\l|+ historyTreeView()\l+ update()\l+ ~historyTreeView()\l+ getTabCommand()\l+ getIterCommand()\l}" alt="" coords="1365,588,1509,783"/>
+<area shape="rect" id="node16" href="$classrepositoryWidget.html" title="{repositoryWidget\n|# builder\l# refTreeModel\l# nbAff\l|+ repositoryWidget()\l+ setNb()\l+ update()\l+ ~repositoryWidget()\l}" alt="" coords="1151,610,1299,761"/>
+<area shape="rect" id="node11" href="$classhistoryTreeView_1_1ModelColumns.html" title="{historyTreeView::ModelColumns\n|+ col_command\l|+ ModelColumns()\l}" alt="" coords="1499,426,1710,503"/>
+<area shape="rect" id="node15" href="$classmessageTreeView_1_1ModelColumns.html" title="{messageTreeView::ModelColumns\n|+ col_message\l|+ ModelColumns()\l}" alt="" coords="1733,426,1959,503"/>
+<area shape="rect" id="node13" href="$classmessageTreeView.html" title="{messageTreeView\n|# refTreeModel\l# builder\l# nbAff\l|+ messageTreeView()\l+ update()\l+ ~messageTreeView()\l}" alt="" coords="1767,617,1925,753"/>
+<area shape="rect" id="node17" href="$classRepositoryObserver.html" title="{RepositoryObserver\n||+ update()\l}" alt="" coords="1235,426,1374,503"/>
+<area shape="rect" id="node18" href="$classrepositoryWidget_1_1ModelColumns.html" title="{repositoryWidget::ModelColumns\n|+ col_id\l+ col_value\l|+ ModelColumns()\l}" alt="" coords="996,419,1211,511"/>
+<area shape="rect" id="node24" href="$classkeyboardWidget.html" title="{keyboardWidget\n|&#45; builder\l&#45; keyboardGrid\l&#45; button\l|+ keyboardWidget()\l+ getGrid()\l+ getButton()\l}" alt="" coords="2017,617,2153,753"/>
+<area shape="rect" id="node26" href="$classResolver.html" title="{Resolver\n|&#45; operatorLiteralDefinition\l|+ Resolver()\l+ getOperatorsMap()\l+ resolve()\l}" alt="" coords="485,411,652,518"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="LiteralDefinitionInterface" name="LiteralDefinitionInterface">
+<area shape="rect" id="node2" href="$classAtomLiteralDefinition.html" title="{AtomLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="5,167,148,259"/>
+<area shape="rect" id="node3" href="$classCommaLiteralDefinition.html" title="{CommaLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="172,167,331,259"/>
+<area shape="rect" id="node4" href="$classExpressionLiteralDefinition.html" title="{ExpressionLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="355,167,532,259"/>
+<area shape="rect" id="node5" href="$classNumericLiteralDefinition.html" title="{NumericLiteralDefinition\n||+ getPattern()\l+ createInstance()\l&#45; parse()\l}" alt="" coords="556,160,717,267"/>
+<area shape="rect" id="node6" href="$classOperatorLiteralDefinition.html" title="{OperatorLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="742,167,905,259"/>
+<area shape="rect" id="node7" href="$classParenthesisLiteralDefinition.html" title="{ParenthesisLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="929,167,1110,259"/>
+<area shape="rect" id="node8" href="$classProgramLiteralDefinition.html" title="{ProgramLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="1135,167,1296,259"/>
+<area shape="rect" id="node9" href="$classWhitespaceLiteralDefinition.html" title="{WhitespaceLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="1321,167,1502,259"/>
+</map>

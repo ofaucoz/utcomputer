@@ -18,9 +18,9 @@ make
 ./LO21
 ```
 
-## Running the tests
+## Running the tests (Google Test)
 
-Install the GoogleTest library using the following instructions:
+Install the Google Test library using the following instructions:
 
 ```
 sudo apt-get install cmake libgtest-dev
@@ -41,18 +41,27 @@ make
 ./LO21tests
 ```
 
+## Building the API documentation (Doxygen)
+
+```
+sudo apt-get install doxygen graphviz
+cd /path/to/the/project
+doxygen Doxyfile
+```
+
+Doxygen documentation is generated in the `doc` directory.
+
 ## Internal architecture
 
 This project aims to use and implement OOP principles in a pure way:
 
 - every class should have a single responsibility
 - encapsulation should be used everywhere to avoid hard-coded dependancies between services
-- desgin patterns should be used to ensure extandability and maintenability
-
+- desgin patterns should be used to ensure maintenability
 
 UTComputer has three main components:
 - the **Lexer** takes a string as an input and split it in a list of literals ;
-- the **Resolver** transform the AtomLiterals in this list into numeric literals by evaluating them using variables/programs ;
-- the **Runner** executes the code using operators
+- the **Resolver** transform the Atom literals of this list into Numeric or Operator literals by evaluating them using variables/programs/operators lists ;
+- the **Runner** executes the command using operators ;
 
 Each of these components has dependencies on other services (the LiteralFactory, the repositories, etc.).

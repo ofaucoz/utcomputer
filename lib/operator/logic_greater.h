@@ -11,8 +11,14 @@ using namespace std;
 
 class LogicGreaterOperator : public OperatorInterface {
 public:
+    /**
+     * @inheritdoc
+     */
     void apply(LiteralsStack &stack) const override;
 
+    /**
+     * @inheritdoc
+     */
     int getPriority() const {
         return 0;
     }

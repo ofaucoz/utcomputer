@@ -6,28 +6,36 @@
 
 using namespace std;
 
-/*
- * A parenthesis literal.
+/**
+ * A parenthesis literal represents a parenthesis.
+ * For instance :
+ *      ( or )
  */
 struct ParenthesisLiteral : public LiteralInterface {
 private:
-    string value;
+    string parenthesis;
 
 public:
-    ParenthesisLiteral(string value) : value(value) { }
+    /**
+     * @param parenthesis The parenthesis ("(" or ")").
+     */
+    ParenthesisLiteral(string parenthesis) : parenthesis(parenthesis) { }
 
-    const string &getValue() const {
-        return value;
+    /**
+     * @return The parenthesis ("(" or ")").
+     */
+    const string &getParenthesis() const {
+        return parenthesis;
     }
 
+    /**
+     * @inheritdoc
+     */
     const string toString() const override {
-        return value;
+        return parenthesis;
     };
 };
 
-/*
- * Whitespace literal pointer
- */
 typedef shared_ptr<ParenthesisLiteral> ParenthesisLiteralPointer;
 
 

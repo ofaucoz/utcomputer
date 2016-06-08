@@ -48,7 +48,7 @@ TEST(OperatorLiteralTest, ConstructAndToString) {
 TEST(ProgramLiteralTest, ConstructAndToString) {
     ProgramLiteral programLiteral("[FOO 3 +]");
 
-    EXPECT_EQ(programLiteral.getValue(), "[FOO 3 +]");
+    EXPECT_EQ(programLiteral.getName(), "[FOO 3 +]");
     EXPECT_EQ(programLiteral.toString(), "[FOO 3 +]");
 }
 
@@ -61,6 +61,6 @@ TEST(WhitespaceLiteralTest, ConstructAndToString) {
 TEST(ParenthesisLiteralTest, ConstructAndToString) {
     ParenthesisLiteral parenthesisLiteral("(");
 
-    EXPECT_EQ(parenthesisLiteral.getValue(), "(");
+    EXPECT_EQ(parenthesisLiteral.getParenthesis(), "(");
     EXPECT_EQ(parenthesisLiteral.toString(), "(");
 }

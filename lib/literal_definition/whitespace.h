@@ -9,15 +9,21 @@
 
 using namespace std;
 
-/*
+/**
  * Definition of an whitespace literal.
  */
 class WhitespaceLiteralDefinition : public LiteralDefinitionInterface {
 public:
+    /**
+     * @inheritdoc
+     */
     const string getPattern() const override {
         return "\\s+";
     }
 
+    /**
+     * @inheritdoc
+     */
     LiteralPointer createInstance(string value) const override {
         return LiteralPointer(new WhitespaceLiteral());
     }

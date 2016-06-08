@@ -12,8 +12,14 @@ using namespace std;
 
 class LogicLesserEqualsOperator : public OperatorInterface {
 public:
+    /**
+     * @inheritdoc
+     */
     void apply(LiteralsStack &stack) const override;
 
+    /**
+     * @inheritdoc
+     */
     int getPriority() const {
         return 0;
     }

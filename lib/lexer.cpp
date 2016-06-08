@@ -17,7 +17,9 @@ LiteralVector Lexer::tokenize(string command) const {
 
         // We iterate over each literal definition trying to find one matching
         for (iterator = definitions.begin(); !definitionFound && iterator != definitions.end(); ++iterator) {
-            // The pattern is defined by the LiteralDefinition object
+            // The pattern is defined by the LiteralDefinition object.
+            // We try to match if at the beginning of the command: we use ^ to do so.
+            // We also want to remove the matched string: we catch it using the parenthesis.
             pattern = regex("^(" + (*iterator)->getPattern() + ")");
 
             // If we found the right literal definition, we build a literal using it
