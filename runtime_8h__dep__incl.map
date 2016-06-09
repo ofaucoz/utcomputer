@@ -1,0 +1,34 @@
+<map id="lib/exception/runtime.h" name="lib/exception/runtime.h">
+<area shape="rect" id="node2" href="$stack_8h.html" title="lib/literal/stack.h" alt="" coords="1357,80,1474,107"/>
+<area shape="rect" id="node3" href="$operator_2interface_8h.html" title="lib/operator/interface.h" alt="" coords="1340,155,1491,181"/>
+<area shape="rect" id="node4" href="$addition_8h.html" title="lib/operator/addition.h" alt="" coords="29,326,175,353"/>
+<area shape="rect" id="node5" href="$main_8h.html" title="ui/main.h" alt="" coords="1225,497,1299,524"/>
+<area shape="rect" id="node6" href="$denominator_8h.html" title="lib/operator/denominator.h" alt="" coords="103,415,275,442"/>
+<area shape="rect" id="node7" href="$division_8h.html" title="lib/operator/division.h" alt="" coords="251,326,396,353"/>
+<area shape="rect" id="node8" href="$euclidian__division_8h.html" title="lib/operator/euclidian\l_division.h" alt="" coords="350,408,491,449"/>
+<area shape="rect" id="node9" href="$eval_8h.html" title="lib/operator/eval.h" alt="" coords="566,415,691,442"/>
+<area shape="rect" id="node10" href="$resolver_8h.html" title="lib/resolver.h" alt="" coords="471,237,567,263"/>
+<area shape="rect" id="node12" href="$runner_8h.html" title="lib/runner.h" alt="" coords="691,237,777,263"/>
+<area shape="rect" id="node13" href="$logic__and_8h.html" title="lib/operator/logic\l_and.h" alt="" coords="771,319,889,360"/>
+<area shape="rect" id="node14" href="$logic__different_8h.html" title="lib/operator/logic\l_different.h" alt="" coords="867,408,985,449"/>
+<area shape="rect" id="node15" href="$logic__equals_8h.html" title="lib/operator/logic\l_equals.h" alt="" coords="963,319,1081,360"/>
+<area shape="rect" id="node16" href="$logic__greater_8h.html" title="lib/operator/logic\l_greater.h" alt="" coords="1059,408,1177,449"/>
+<area shape="rect" id="node17" href="$logic__greater__equals_8h.html" title="lib/operator/logic\l_greater_equals.h" alt="" coords="1155,319,1281,360"/>
+<area shape="rect" id="node18" href="$logic__lesser_8h.html" title="lib/operator/logic\l_lesser.h" alt="" coords="1251,408,1369,449"/>
+<area shape="rect" id="node19" href="$logic__lesser__equals_8h.html" title="lib/operator/logic\l_lesser_equals.h" alt="" coords="1355,319,1475,360"/>
+<area shape="rect" id="node20" href="$logic__not_8h.html" title="lib/operator/logic\l_not.h" alt="" coords="1443,408,1561,449"/>
+<area shape="rect" id="node21" href="$logic__or_8h.html" title="lib/operator/logic_or.h" alt="" coords="1550,326,1697,353"/>
+<area shape="rect" id="node22" href="$modulo_8h.html" title="lib/operator/modulo.h" alt="" coords="1636,415,1779,442"/>
+<area shape="rect" id="node23" href="$multiplication_8h.html" title="lib/operator/multiplication.h" alt="" coords="1772,326,1949,353"/>
+<area shape="rect" id="node24" href="$numerator_8h.html" title="lib/operator/numerator.h" alt="" coords="1855,415,2013,442"/>
+<area shape="rect" id="node25" href="$numeric__complex__build_8h.html" title="lib/operator/numeric\l_complex_build.h" alt="" coords="2025,319,2161,360"/>
+<area shape="rect" id="node26" href="$numeric__complex__imaginary_8h.html" title="lib/operator/numeric\l_complex_imaginary.h" alt="" coords="2089,408,2241,449"/>
+<area shape="rect" id="node27" href="$numeric__complex__real_8h.html" title="lib/operator/numeric\l_complex_real.h" alt="" coords="1979,229,2115,271"/>
+<area shape="rect" id="node28" href="$opposite_8h.html" title="lib/operator/opposite.h" alt="" coords="2140,237,2291,263"/>
+<area shape="rect" id="node29" href="$stack__clear_8h.html" title="lib/operator/stack\l_clear.h" alt="" coords="2315,229,2438,271"/>
+<area shape="rect" id="node30" href="$stack__drop_8h.html" title="lib/operator/stack\l_drop.h" alt="" coords="2462,229,2585,271"/>
+<area shape="rect" id="node31" href="$stack__redo_8h.html" title="lib/operator/stack\l_redo.h" alt="" coords="2806,229,2929,271"/>
+<area shape="rect" id="node32" href="$stack__undo_8h.html" title="lib/operator/stack\l_undo.h" alt="" coords="2953,229,3075,271"/>
+<area shape="rect" id="node33" href="$substraction_8h.html" title="lib/operator/substraction.h" alt="" coords="2609,237,2781,263"/>
+<area shape="rect" id="node11" href="$utcomputer_8h.html" title="lib/utcomputer.h" alt="" coords="582,326,697,353"/>
+</map>

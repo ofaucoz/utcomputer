@@ -1,0 +1,12 @@
+<map id="LiteralDefinitionInterface" name="LiteralDefinitionInterface">
+<area shape="rect" id="node2" href="$classAtomLiteralDefinition.html" title="{AtomLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="5,167,148,259"/>
+<area shape="rect" id="node3" href="$classCommaLiteralDefinition.html" title="{CommaLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="172,167,331,259"/>
+<area shape="rect" id="node4" href="$classExpressionLiteralDefinition.html" title="{ExpressionLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="355,167,532,259"/>
+<area shape="rect" id="node5" href="$classNumericLiteralDefinition.html" title="{NumericLiteralDefinition\n||+ getPattern()\l+ createInstance()\l&#45; parse()\l}" alt="" coords="556,160,717,267"/>
+<area shape="rect" id="node6" href="$classOperatorEqualComparisonLiteralDefinition.html" title="{OperatorEqualComparisonLiteral\lDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="741,160,951,267"/>
+<area shape="rect" id="node7" href="$classOperatorNumericLiteralDefinition.html" title="{OperatorNumericLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="975,167,1186,259"/>
+<area shape="rect" id="node8" href="$classOperatorStrictComparisonLiteralDefinition.html" title="{OperatorStrictComparison\lLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="1210,160,1383,267"/>
+<area shape="rect" id="node9" href="$classParenthesisLiteralDefinition.html" title="{ParenthesisLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="1407,167,1589,259"/>
+<area shape="rect" id="node10" href="$classProgramLiteralDefinition.html" title="{ProgramLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="1613,167,1775,259"/>
+<area shape="rect" id="node11" href="$classWhitespaceLiteralDefinition.html" title="{WhitespaceLiteralDefinition\n||+ getPattern()\l+ createInstance()\l}" alt="" coords="1799,167,1981,259"/>
+</map>
