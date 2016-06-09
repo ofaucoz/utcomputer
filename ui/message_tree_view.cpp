@@ -1,11 +1,7 @@
-//
-// Created by orphee on 04/06/16.
-//
+#include "message_tree_view.h"
 
-#include "messageTreeView.h"
-
-messageTreeView::messageTreeView(BaseObjectType *treeview, const Glib::RefPtr<Gtk::Builder> &builder) : Gtk::TreeView(
-    treeview), builder(builder) {
+MessageTreeView::MessageTreeView(BaseObjectType *treeview, const Glib::RefPtr<Gtk::Builder> &builder) :
+    Gtk::TreeView(treeview), builder(builder) {
     refTreeModel = Gtk::ListStore::create(columns);
     set_model(refTreeModel);
     this->append_column("message", columns.col_message);
@@ -13,7 +9,7 @@ messageTreeView::messageTreeView(BaseObjectType *treeview, const Glib::RefPtr<Gt
 
 }
 
-void messageTreeView::update(string message) {
+void MessageTreeView::update(string message) {
     if (nbAff == 8) {
         refTreeModel->clear();
         nbAff = 0;

@@ -1,10 +1,6 @@
-//
-// Created by orphee on 02/06/16.
-//
+#include "keyboard_widget.h"
 
-#include "keyboardWidget.h"
-
-keyboardWidget::keyboardWidget(BaseObjectType *box, const Glib::RefPtr<Gtk::Builder> &builder)
+KeyboardWidget::KeyboardWidget(BaseObjectType *box, const Glib::RefPtr<Gtk::Builder> &builder)
     : Gtk::Box(box), builder(builder) {
     builder->get_widget("button_0", button[0]);
     builder->get_widget("button_1", button[1]);

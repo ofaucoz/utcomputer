@@ -1,32 +1,34 @@
-#ifndef LO21_HISTORYTREEVIEW_H
-#define LO21_HISTORYTREEVIEW_H
+#ifndef LO21_UI_HISTORY_H
+#define LO21_UI_HISTORY_H
+
 
 #include <gtkmm.h>
 #include <queue>
 
 using namespace std;
 
-
-class historyTreeView : public Gtk::TreeView {
+class HistoryTreeView : public Gtk::TreeView {
 protected:
     class ModelColumns : public Gtk::TreeModel::ColumnRecord {
     public:
-
-        ModelColumns() { add(col_command); }
-
         Gtk::TreeModelColumn<Glib::ustring> col_command;
+
+        ModelColumns() {
+            add(col_command);
+        }
     };
 
     ModelColumns columns;
     Glib::RefPtr<Gtk::ListStore> refTreeModel;
     Glib::RefPtr<Gtk::Builder> builder;
     unsigned int nbAff;
+
 public:
-    historyTreeView(BaseObjectType *treeview, const Glib::RefPtr<Gtk::Builder> &builder);
+    HistoryTreeView(BaseObjectType *treeview, const Glib::RefPtr<Gtk::Builder> &builder);
 
     void update(string command);
 
-    virtual ~historyTreeView() { }
+    virtual ~HistoryTreeView() { }
 };
 
-#endif //LO21_HISTORYTREEVIEW_H
+#endif // LO21_UI_HISTORY_H

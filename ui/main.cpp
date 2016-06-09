@@ -2,12 +2,8 @@
 #include "../lib/operator/stack_undo.h"
 #include "../lib/operator/stack_redo.h"
 
-MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade) : Gtk::Window(window), builder(glade),
-                                                                                    computer(nullptr),
-                                                                                    literalStack(nullptr) {
-    /*
-     * Load view file
-     */
+MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade) :
+    Gtk::Window(window), builder(glade), computer(nullptr), literalStack(nullptr) {
 
     /*
      * Lexer
@@ -38,8 +34,9 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
      */
     computer = new UTComputer(*lexer, *resolver, *runner);
 
-    // Operators
-
+    /*
+     * Operators
+     */
     operatorsMap.set("+", OperatorPointer(new AdditionOperator));
     operatorsMap.set("-", OperatorPointer(new SubstractionOperator));
     operatorsMap.set("/", OperatorPointer(new DivisionOperator));
@@ -72,7 +69,6 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
      */
 
     // Load non-derived widgets
-
     builder->get_widget("commandEntry", command);
     builder->get_widget("nbStackEntry", nbStack);
     builder->get_widget("variableToggleButton", variableButton);
@@ -83,7 +79,6 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     builder->get_widget("checkButtonBip", bip);
 
     // Load derived widgets
-
     builder->get_widget_derived("stackTreeView", literalStack);
     builder->get_widget_derived("messageTreeView", messageTree);
     builder->get_widget_derived("historyTreeView", historyTree);
@@ -92,7 +87,6 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     builder->get_widget_derived("programTreeView", programTree);
 
     // Attach observers
-
     stack.attach(literalStack);
 
     // Connect signals
@@ -103,12 +97,17 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     keyboardSwitch->signal_clicked().connect(sigc::mem_fun(*this, &MainWindow::on_toggle_button_keyboard_clicked));
     variableButton->signal_clicked().connect(sigc::mem_fun(*this, &MainWindow::on_button_variable_clicked));
     programButton->signal_clicked().connect(sigc::mem_fun(*this, &MainWindow::on_button_program_clicked));
+
     add_events(Gdk::KEY_PRESS_MASK);
     add_events(Gdk::FOCUS_CHANGE_MASK);
-    for (unsigned int i = 0; i < 19; i++) {
-        keyboard->getButton(i).signal_clicked().connect(
-            sigc::bind<Glib::ustring>(sigc::mem_fun(*this, &MainWindow::on_button_keyboard_clicked),
-                                      keyboard->getButton(i).get_label()));
+
+    int i;
+
+    for (i = 0; i < 19; i++) {
+        keyboard->getButton(i).signal_clicked().connect(sigc::bind<Glib::ustring>(
+            sigc::mem_fun(*this, &MainWindow::on_button_keyboard_clicked),
+            keyboard->getButton(i).get_label()
+        ));
     }
 }
 
@@ -118,8 +117,7 @@ void MainWindow::on_button_keyboard_clicked(string label) {
         cout << stack.top()->toString() << endl;
         historyTree->update(commandInput);
         commandInput = "";
-    }
-    else{
+    } else {
         commandInput += label;
         command->set_text(commandInput);
     }
@@ -127,48 +125,44 @@ void MainWindow::on_button_keyboard_clicked(string label) {
 
 void MainWindow::on_entry_command_changed() {
     string input = command->get_text();
-    if(input=="+"||input=="-"||input=="*"||input=="/"){
+
+    if (input == "+" || input == "-" || input == "*" || input == "/") {
         try {
             computer->execute(input);
             historyTree->update(input);
-        }
-        catch (const InvalidOperandException &exception1) {
+        } catch (const InvalidOperandException &exception1) {
             messageTree->update(exception1.getValue());
             if (bip->get_active()) {
                 cout << '\a' << endl;
             }
-        }
-        catch (const InvalidSyntaxException &exception2) {
+        } catch (const InvalidSyntaxException &exception2) {
             messageTree->update(exception2.getValue());
             if (bip->get_active()) {
                 cout << '\a' << endl;
             }
-        }
-        catch (const UndefinedAtomException &exception3) {
+        } catch (const UndefinedAtomException &exception3) {
             messageTree->update(exception3.getValue());
             if (bip->get_active()) {
                 cout << '\a' << endl;
             }
-        }
-        catch (const UnsupportedLiteralException &exception4) {
+        } catch (const UnsupportedLiteralException &exception4) {
             messageTree->update(exception4.getValue());
             if (bip->get_active()) {
                 cout << '\a' << endl;
             }
-        }
-        catch (const RuntimeException &exception5) {
+        } catch (const RuntimeException &exception5) {
             messageTree->update(exception5.getDescription());
             if (bip->get_active()) {
                 cout << '\a' << endl;
             }
         }
+
         command->set_text("");
     }
 }
 
-bool MainWindow::on_entry_command_focused(GdkEventFocus *event)
-{
-    if(command->get_text()=="Type your command here ..."){
+bool MainWindow::on_entry_command_focused(GdkEventFocus *event) {
+    if (command->get_text() == "Type your command here ...") {
         command->set_text("");
     }
 }
@@ -178,31 +172,28 @@ void MainWindow::on_entry_command_activated() {
         commandInput = command->get_text();
         computer->execute(commandInput);
         historyTree->update(commandInput);
-    }
-    catch (const InvalidOperandException &exception1) {
+    } catch (const InvalidOperandException &exception1) {
         messageTree->update(exception1.getValue());
         if (bip->get_active()) {
             cout << '\a' << endl;
         }
-    }
-    catch (const InvalidSyntaxException &exception2) {
+    } catch (const InvalidSyntaxException &exception2) {
         messageTree->update(exception2.getValue());
         if (bip->get_active()) {
             cout << '\a' << endl;
         }
-    }
-    catch (const UndefinedAtomException &exception3) {
+    } catch (const UndefinedAtomException &exception3) {
         messageTree->update(exception3.getValue());
         if (bip->get_active()) {
             cout << '\a' << endl;
         }
-    }
-    catch (const UnsupportedLiteralException &exception4) {
+    } catch (const UnsupportedLiteralException &exception4) {
         messageTree->update(exception4.getValue());
         if (bip->get_active()) {
             cout << '\a' << endl;
         }
     }
+
     command->set_text("");
     commandInput="";
 }
@@ -214,6 +205,7 @@ void MainWindow::on_entry_nbStack_activated() {
 
     s << nbStack->get_text().raw();
     s >> result;
+
     literalStack->setNb(result);
     literalStack->update(&stack);
 }
@@ -229,17 +221,21 @@ bool MainWindow::on_key_press_event(GdkEventKey *key_event) {
 
         //returning true, cancels the propagation of the event
         return true;
-    }//case ctrl+y is pressed
+    }
+
+    //case ctrl+y is pressed
     else if ((key_event->keyval == GDK_KEY_y) &&
              (key_event->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK)) == GDK_CONTROL_MASK) {
 
         return true;
     }
+
     else if (key_event->keyval == GDK_KEY_Escape) {
         //close the window, when the 'esc' key is pressed
         hide();
         return true;
     }
+
     //if the event has not been handled, call the base class
     return Gtk::Window::on_key_press_event(key_event);
 }

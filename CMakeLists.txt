@@ -75,6 +75,10 @@ set(LIBRARY_FILES
         lib/operator/stack_clear.h
         lib/operator/stack_drop.cpp
         lib/operator/stack_drop.h
+        lib/operator/stack_undo.cpp
+        lib/operator/stack_undo.h
+        lib/operator/stack_redo.cpp
+        lib/operator/stack_redo.h
         lib/operator/numeric_complex_build.cpp
         lib/operator/numeric_complex_build.h
         lib/operator/numeric_complex_real.cpp
@@ -107,19 +111,19 @@ set(LIBRARY_FILES
         lib/resolver.h
         lib/runner.cpp
         lib/runner.h
-        lib/utcomputer.h lib/operator/stack_undo.cpp lib/operator/stack_undo.h lib/operator/stack_redo.cpp lib/operator/stack_redo.h)
+        lib/utcomputer.h)
 
 set(INTERFACE_FILES
         ui/main.cpp
         ui/main.h
-        ui/keyboardWidget.cpp
-        ui/keyboardWidget.h
-        ui/repositoryWidget.cpp
-        ui/repositoryWidget.h
-        ui/messageTreeView.cpp
-        ui/messageTreeView.h
-        ui/historyTreeView.cpp
-        ui/historyTreeView.h)
+        ui/keyboard_widget.cpp
+        ui/keyboard_widget.h
+        ui/repository_widget.cpp
+        ui/repository_widget.h
+        ui/message_tree_view.cpp
+        ui/message_tree_view.h
+        ui/history_tree_view.cpp
+        ui/history_tree_view.h)
 
 configure_file(ui/views/main.glade ui/views/main.glade COPYONLY)
 add_executable(LO21 main.cpp ${LIBRARY_FILES} ${INTERFACE_FILES})
