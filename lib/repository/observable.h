@@ -40,7 +40,7 @@ public:
      * Notify the observers that the data changed and they should update
      * themselves.
      */
-    void notify();
+    virtual void notify();
 };
 
 /**

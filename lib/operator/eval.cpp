@@ -17,6 +17,8 @@ void EvalOperator::apply(LiteralsStack &stack) const {
 
     // Ignore first and last characters (expression quotes) and postfix
     computer.execute(postfix(firstEpression->getValue().substr(1, firstEpression->getValue().size() - 2)));
+
+    stack.save();
 }
 
 int EvalOperator::findPriority(string name) const {

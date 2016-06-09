@@ -26,4 +26,5 @@ void SubstractionOperator::apply(LiteralsStack &stack) const {
     Fraction resultI = Math::substract(secondNumeric->getImaginaryFraction(), firstNumeric->getImaginaryFraction());
 
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(resultR, resultI)));
+    stack.save();
 }

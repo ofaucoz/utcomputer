@@ -26,4 +26,5 @@ void AdditionOperator::apply(LiteralsStack &stack) const {
     Fraction resultI = Math::add(firstNumeric->getImaginaryFraction(), secondNumeric->getImaginaryFraction());
 
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(resultR, resultI)));
+    stack.save();
 }

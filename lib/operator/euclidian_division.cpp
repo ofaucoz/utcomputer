@@ -37,4 +37,6 @@ void EuclidianDivisionOperator::apply(LiteralsStack &stack) const {
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(
         (((int) secondNumeric->getRealNumerator()) / (int) firstNumeric->getRealNumerator()))
     ));
+
+    stack.save();
 }

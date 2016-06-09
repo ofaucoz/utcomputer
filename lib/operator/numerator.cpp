@@ -19,4 +19,5 @@ void NumeratorOperator::apply(LiteralsStack &stack) const {
     }
 
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(firstNumeric->getRealNumerator())));
+    stack.save();
 }

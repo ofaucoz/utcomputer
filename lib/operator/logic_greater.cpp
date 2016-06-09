@@ -43,4 +43,6 @@ void LogicGreaterOperator::apply(LiteralsStack &stack) const {
     } else {
         stack.pushAndNotify(LiteralPointer(new NumericLiteral(0)));
     }
+
+    stack.save();
 }

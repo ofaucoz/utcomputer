@@ -9,5 +9,6 @@ void LogicNotOperator::apply(LiteralsStack &stack) const {
     stack.pop();
 
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(first->toString() == "0" ? 1 : 0)));
+    stack.save();
 }
 

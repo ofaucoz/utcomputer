@@ -43,4 +43,6 @@ void DivisionOperator::apply(LiteralsStack &stack) const {
         Math::simplify(Fraction(resultRN, resultRD)),
         Math::simplify(Fraction(resultIN, resultID))
     )));
+
+    stack.save();
 }

@@ -3,7 +3,7 @@
 
 
 #include <iostream>
-#include "../literal/interface.h"
+#include "../literal/stack.h"
 
 using namespace std;
 
