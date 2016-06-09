@@ -19,4 +19,5 @@ void DenominatorOperator::apply(LiteralsStack &stack) const {
     }
 
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(firstNumeric->getRealDenominator())));
+    stack.save();
 }

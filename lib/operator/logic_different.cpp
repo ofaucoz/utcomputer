@@ -27,4 +27,6 @@ void LogicDifferentOperator::apply(LiteralsStack &stack) const {
     } else {
         stack.pushAndNotify(LiteralPointer(new NumericLiteral(1)));
     }
+
+    stack.save();
 }

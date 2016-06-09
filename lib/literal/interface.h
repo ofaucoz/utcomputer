@@ -8,7 +8,6 @@
 #include <unordered_map>
 #include <memory>
 #include "../repository/map.h"
-#include "../repository/stack.h"
 
 using namespace std;
 
@@ -39,12 +38,6 @@ public:
 
 typedef shared_ptr<LiteralInterface> LiteralPointer;
 typedef vector<LiteralPointer> LiteralVector;
-
-/**
- * Stack of literals based on the ObservableStack class.
- * This type is used by the Runner for execution.
- */
-typedef ObservableStack<LiteralPointer> LiteralsStack;
 
 /**
  * The variables hasmap is an association between a string

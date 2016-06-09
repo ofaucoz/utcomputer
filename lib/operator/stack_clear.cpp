@@ -4,7 +4,11 @@ void StackClearOperator::apply(LiteralsStack &stack) const {
     if (stack.size() == 0) {
         throw InvalidSyntaxException("Stack already cleared");
     }
+
     while (stack.size() != 0) {
-        stack.popAndNotify();
+        stack.pop();
     }
+
+    stack.notify();
+    stack.save();
 }

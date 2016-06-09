@@ -36,4 +36,6 @@ void MultiplicationOperator::apply(LiteralsStack &stack) const {
         Math::simplify(resultR),
         Math::simplify(resultI)
     )));
+
+    stack.save();
 }

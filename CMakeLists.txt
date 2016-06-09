@@ -23,6 +23,7 @@ set(LIBRARY_FILES
         lib/exception/undefined_atom.h
         lib/exception/invalid_operand.h
         lib/exception/unspported_literal.h
+        lib/exception/runtime.h
         lib/math/fraction.h
         lib/math/math.cpp
         lib/math/math.h
@@ -36,6 +37,7 @@ set(LIBRARY_FILES
         lib/literal/whitespace.h
         lib/literal/parenthesis.h
         lib/literal/comma.h
+        lib/literal/stack.h
         lib/literal_definition/interface.h
         lib/literal_definition/atom.h
         lib/literal_definition/whitespace.h
@@ -99,14 +101,13 @@ set(LIBRARY_FILES
         lib/repository/observable.cpp
         lib/repository/observable.h
         lib/repository/map.h
-        lib/repository/stack.h
         lib/lexer.cpp
         lib/lexer.h
         lib/resolver.cpp
         lib/resolver.h
         lib/runner.cpp
         lib/runner.h
-        lib/utcomputer.h)
+        lib/utcomputer.h lib/operator/stack_undo.cpp lib/operator/stack_undo.h lib/operator/stack_redo.cpp lib/operator/stack_redo.h)
 
 set(INTERFACE_FILES
         ui/main.cpp
@@ -128,9 +129,12 @@ target_link_libraries(LO21 pthread ${GTKMM_LIBRARIES} ${GTK3_LIBRARIES})
 set(TEST_FILES
         lib/tests/math/math.cpp
         lib/tests/literal/all.cpp
+        lib/tests/literal/stack.cpp
         lib/tests/literal_definition/atom.cpp
         lib/tests/literal_definition/numeric.cpp
         lib/tests/literal_definition/operator_numeric.cpp
+        lib/tests/literal_definition/operator_strict_comparison.cpp
+        lib/tests/literal_definition/operator_equal_comparison.cpp
         lib/tests/literal_definition/expression.cpp
         lib/tests/literal_definition/whitespace.cpp
         lib/tests/literal_definition/program.cpp
@@ -158,13 +162,10 @@ set(TEST_FILES
         lib/tests/operator/logic_or.cpp
         lib/tests/operator/logic_not.cpp
         lib/tests/repository/map.cpp
-        lib/tests/repository/stack.cpp
         lib/tests/lexer.cpp
         lib/tests/resolver.cpp
         lib/tests/runner.cpp
-        lib/tests/utcomputer.cpp
-        lib/tests/literal_definition/operator_strict_comparison.cpp
-        lib/tests/literal_definition/operator_equal_comparison.cpp)
+        lib/tests/utcomputer.cpp)
 
 add_executable(LO21tests lib/tests/main.cpp ${LIBRARY_FILES} ${TEST_FILES})
 target_link_libraries(LO21tests pthread ${GTEST_LIBRARIES})

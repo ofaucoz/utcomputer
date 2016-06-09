@@ -18,4 +18,5 @@ void LogicAndOperator::apply(LiteralsStack &stack) const {
     }
 
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(result)));
+    stack.save();
 }

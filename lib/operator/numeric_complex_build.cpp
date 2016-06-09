@@ -35,5 +35,7 @@ void NumericComplexBuildOperator::apply(LiteralsStack &stack) const {
         firstNumeric->getRealNumerator(),
         firstNumeric->getRealDenominator()
     )));
+
+    stack.save();
 }
 

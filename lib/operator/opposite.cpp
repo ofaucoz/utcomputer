@@ -20,4 +20,6 @@ void OppositeOperator::apply(LiteralsStack &stack) const {
         firstNumeric->getImaginaryNumerator(),
         firstNumeric->getImaginaryDenominator()
     )));
+
+    stack.save();
 }

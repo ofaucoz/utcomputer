@@ -1,4 +1,6 @@
 #include "main.h"
+#include "../lib/operator/stack_undo.h"
+#include "../lib/operator/stack_redo.h"
 
 MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade) : Gtk::Window(window), builder(glade),
                                                                                     computer(nullptr),
@@ -62,6 +64,8 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     operatorsMap.set("RE", OperatorPointer(new NumericComplexRealOperator));
     operatorsMap.set("CLEAR", OperatorPointer(new StackClearOperator));
     operatorsMap.set("DROP", OperatorPointer(new StackDropOperator));
+    operatorsMap.set("UNDO", OperatorPointer(new StackUndoOperator));
+    operatorsMap.set("REDO", OperatorPointer(new StackRedoOperator));
 
     /*
      * Create main window
@@ -148,6 +152,12 @@ void MainWindow::on_entry_command_changed() {
         }
         catch (const UnsupportedLiteralException &exception4) {
             messageTree->update(exception4.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const RuntimeException &exception5) {
+            messageTree->update(exception5.getDescription());
             if (bip->get_active()) {
                 cout << '\a' << endl;
             }
