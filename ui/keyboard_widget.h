@@ -5,7 +5,7 @@
 #include <gtkmm.h>
 
 
-class KeyboardWidget : public Gtk::Box {
+class KeyboardWidget: public Gtk::Box {
 private:
     Glib::RefPtr<Gtk::Builder> builder;
     Gtk::Grid *keyboardGrid;

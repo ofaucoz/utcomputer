@@ -36,7 +36,9 @@ TEST(ProgramsMapSerializer, Serialize) {
     programMap["PROG"] = program;
 
     string serialized = serializer.serialize(programMap);
-    EXPECT_EQ("{\"PROG\":[\"numeric:1/2$3/4\",\"atom:FOO\",\"comma\",\"expression:'BAR'\",\"operator:+\",\"parenthesis:(\",\"program:[ A B + ]\",\"whitespace\"]}", serialized);
+    EXPECT_EQ(
+        "{\"PROG\":[\"numeric:1/2$3/4\",\"atom:FOO\",\"comma\",\"expression:'BAR'\",\"operator:+\",\"parenthesis:(\",\"program:[ A B + ]\",\"whitespace\"]}",
+        serialized);
 
     ProgramMap unserialized = serializer.unserialize(serialized);
     EXPECT_EQ(programMap.size(), unserialized.size());

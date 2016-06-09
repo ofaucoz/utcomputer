@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class NumericComplexRealOperator : public OperatorInterface {
+class NumericComplexRealOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc

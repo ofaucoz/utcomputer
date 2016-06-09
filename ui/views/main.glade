@@ -67,10 +67,16 @@
                             </packing>
                         </child>
                         <child>
-                            <object class="GtkEntry" id="inputProgram">
+                            <object class="GtkTextView" id="programText">
+                                <property name="width_request">312</property>
+                                <property name="height_request">166</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
-                                <property name="max_length">196</property>
+                                <property name="margin_left">30</property>
+                                <property name="margin_right">30</property>
+                                <property name="margin_top">13</property>
+                                <property name="margin_bottom">13</property>
+                                <property name="border_width">10</property>
                             </object>
                             <packing>
                                 <property name="expand">False</property>
@@ -153,9 +159,16 @@
                             </packing>
                         </child>
                         <child>
-                            <object class="GtkEntry" id="inputVariable">
+                            <object class="GtkTextView" id="variableText">
+                                <property name="width_request">312</property>
+                                <property name="height_request">166</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
+                                <property name="margin_left">30</property>
+                                <property name="margin_right">30</property>
+                                <property name="margin_top">13</property>
+                                <property name="margin_bottom">13</property>
+                                <property name="border_width">10</property>
                             </object>
                             <packing>
                                 <property name="expand">False</property>

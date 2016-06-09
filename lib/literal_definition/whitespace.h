@@ -12,7 +12,7 @@ using namespace std;
 /**
  * Definition of an whitespace literal.
  */
-class WhitespaceLiteralDefinition : public LiteralDefinitionInterface {
+class WhitespaceLiteralDefinition: public LiteralDefinitionInterface {
 public:
     /**
      * @inheritdoc

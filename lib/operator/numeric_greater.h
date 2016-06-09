@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class NumericGreaterOperator : public OperatorInterface {
+class NumericGreaterOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc

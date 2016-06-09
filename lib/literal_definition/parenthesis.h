@@ -14,7 +14,7 @@ using namespace std;
 /**
  * Definition of an parethesis literal.
  */
-class ParenthesisLiteralDefinition : public LiteralDefinitionInterface {
+class ParenthesisLiteralDefinition: public LiteralDefinitionInterface {
 public:
     /**
      * @inheritdoc

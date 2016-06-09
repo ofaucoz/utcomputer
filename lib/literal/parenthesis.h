@@ -11,7 +11,7 @@ using namespace std;
  * For instance :
  *      ( or )
  */
-struct ParenthesisLiteral : public LiteralInterface {
+struct ParenthesisLiteral: public LiteralInterface {
 private:
     string parenthesis;
 

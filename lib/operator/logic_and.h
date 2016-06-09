@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class LogicAndOperator : public OperatorInterface {
+class LogicAndOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc

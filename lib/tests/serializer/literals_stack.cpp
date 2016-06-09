@@ -32,7 +32,9 @@ TEST(LiteralsStackSerializer, Serialize) {
     stack.push(LiteralPointer(new WhitespaceLiteral()));
 
     string serialized = serializer.serialize(stack);
-    EXPECT_EQ("[\"numeric:1/2$3/4\",\"atom:FOO\",\"comma\",\"expression:'BAR'\",\"operator:+\",\"parenthesis:(\",\"program:[ A B + ]\",\"whitespace\"]", serialized);
+    EXPECT_EQ(
+        "[\"numeric:1/2$3/4\",\"atom:FOO\",\"comma\",\"expression:'BAR'\",\"operator:+\",\"parenthesis:(\",\"program:[ A B + ]\",\"whitespace\"]",
+        serialized);
 
     LiteralsStack unserialized = serializer.unserialize(serialized);
     EXPECT_EQ(stack.size(), unserialized.size());

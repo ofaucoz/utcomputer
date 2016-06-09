@@ -66,7 +66,8 @@ TEST(UTComputer, FunctionnalTest) {
     /*
      * Resolver
      */
-    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
+    Resolver resolver
+        (operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
 
     /*
      * Runner

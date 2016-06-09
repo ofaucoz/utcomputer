@@ -5,7 +5,7 @@
 #include "interface.h"
 #include "../exception/invalid_syntax.h"
 
-class StackUndoOperator : public OperatorInterface {
+class StackUndoOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc

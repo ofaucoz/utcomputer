@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class NumericComplexImaginaryOperator : public OperatorInterface {
+class NumericComplexImaginaryOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc

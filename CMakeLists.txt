@@ -50,6 +50,7 @@ set(LIBRARY_FILES
         lib/literal_definition/program.h
         lib/literal_definition/parenthesis.h
         lib/literal_definition/comma.h
+        lib/literal_definition/operator_atom_literal.h
         lib/operator/interface.h
         lib/operator/addition.cpp
         lib/operator/addition.h
@@ -104,6 +105,10 @@ set(LIBRARY_FILES
         lib/operator/logic_or.h
         lib/operator/logic_not.cpp
         lib/operator/logic_not.h
+        lib/operator/sto.cpp
+        lib/operator/sto.h
+        lib/operator/forget.cpp
+        lib/operator/forget.h
         lib/repository/observable.cpp
         lib/repository/observable.h
         lib/repository/map.h
@@ -132,7 +137,11 @@ set(INTERFACE_FILES
         ui/message_tree_view.cpp
         ui/message_tree_view.h
         ui/history_tree_view.cpp
-        ui/history_tree_view.h)
+        ui/history_tree_view.h
+        ui/stack_widget.cpp
+        ui/stack_widget.h
+        ui/variable_widget.cpp
+        ui/variable_widget.h)
 
 configure_file(ui/views/main.glade ui/views/main.glade COPYONLY)
 add_executable(LO21 main.cpp ${LIBRARY_FILES} ${INTERFACE_FILES})
@@ -152,6 +161,8 @@ set(TEST_FILES
         lib/tests/literal_definition/whitespace.cpp
         lib/tests/literal_definition/program.cpp
         lib/tests/literal_definition/parenthesis.cpp
+        lib/tests/literal_definition/operator_strict_comparison.cpp
+        lib/tests/literal_definition/operator_equal_comparison.cpp
         lib/tests/operator/addition.cpp
         lib/tests/operator/substraction.cpp
         lib/tests/operator/multiplication.cpp
@@ -175,6 +186,8 @@ set(TEST_FILES
         lib/tests/operator/logic_and.cpp
         lib/tests/operator/logic_or.cpp
         lib/tests/operator/logic_not.cpp
+        lib/tests/operator/forget.cpp
+        lib/tests/operator/sto.cpp
         lib/tests/repository/map.cpp
         lib/tests/serializer/literals_stack.cpp
         lib/tests/serializer/programs_map.cpp

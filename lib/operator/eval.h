@@ -17,7 +17,7 @@
 
 using namespace std;
 
-class EvalOperator : public OperatorInterface {
+class EvalOperator: public OperatorInterface {
 private:
     UTComputer &computer;
 

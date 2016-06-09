@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class DivisionOperator : public OperatorInterface {
+class DivisionOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc

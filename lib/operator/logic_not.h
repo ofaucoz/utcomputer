@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class LogicNotOperator : public OperatorInterface {
+class LogicNotOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc

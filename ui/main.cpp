@@ -1,4 +1,6 @@
 #include "main.h"
+#include "../lib/operator/sto.h"
+#include "../lib/operator/forget.h"
 
 MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade) :
     Gtk::Window(window), builder(glade), computer(nullptr), literalStack(nullptr) {
@@ -19,8 +21,12 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     /*
      * Resolver
      */
-    resolver = new Resolver(operatorsMap, programsMap, variablesMap,
-                            LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
+    resolver = new Resolver(
+        operatorsMap,
+        programsMap,
+        variablesMap,
+        LiteralDefinitionPointer(new OperatorAtomLiteralDefinition)
+    );
 
     /*
      * Runner
@@ -36,6 +42,7 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
      * Operators
      */
     operatorsMap.set("+", OperatorPointer(new AdditionOperator));
+    operatorsMap.set("ADD", OperatorPointer(new AdditionOperator));
     operatorsMap.set("-", OperatorPointer(new SubstractionOperator));
     operatorsMap.set("/", OperatorPointer(new DivisionOperator));
     operatorsMap.set("*", OperatorPointer(new MultiplicationOperator));
@@ -61,6 +68,8 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     operatorsMap.set("DROP", OperatorPointer(new StackDropOperator));
     operatorsMap.set("UNDO", OperatorPointer(new StackUndoOperator));
     operatorsMap.set("REDO", OperatorPointer(new StackRedoOperator));
+    operatorsMap.set("STO", OperatorPointer(new StoOperator(variablesMap)));
+    operatorsMap.set("FORGET", OperatorPointer(new ForgetOperator(variablesMap)));
 
     /*
      * Create main window
@@ -75,6 +84,8 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     builder->get_widget("variableWindow", variableWindow);
     builder->get_widget("programWindow", programWindow);
     builder->get_widget("checkButtonBip", bip);
+    builder->get_widget("programText", programEditionTextView);
+    builder->get_widget("variableText", variableEditionTextView);
 
     // Load derived widgets
     builder->get_widget_derived("stackTreeView", literalStack);
@@ -86,8 +97,17 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
 
     // Attach observers
     stack.attach(literalStack);
+    variablesMap.attach(variableTree);
+
+    // Make TextView editable
+    programEditionTextView->set_editable(true);
+    variableEditionTextView->set_editable(true);
 
     // Connect signals
+    programEditionTextView->signal_key_release_event().connect(sigc::mem_fun(*this,
+                                                                             &MainWindow::on_program_text_view_enter));
+    variableEditionTextView->signal_key_release_event().connect(sigc::mem_fun(*this,
+                                                                              &MainWindow::on_variable_text_view_enter));
     command->signal_activate().connect(sigc::mem_fun(*this, &MainWindow::on_entry_command_activated));
     command->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::on_entry_command_changed));
     command->signal_focus_in_event().connect(sigc::mem_fun(*this, &MainWindow::on_entry_command_focused));
@@ -107,6 +127,54 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
             keyboard->getButton(i).get_label()
         ));
     }
+}
+
+bool MainWindow::on_program_text_view_enter(GdkEventKey *key_event) {
+    if (key_event->keyval == 0xFF0D) { //catch enter key
+
+    }
+    return true;
+}
+
+bool MainWindow::on_variable_text_view_enter(GdkEventKey *key_event) {
+    if (key_event->keyval == 0xFF0D) { //catch enter key
+        try {
+            computer->execute(variableEditionTextView->get_buffer()->get_text());
+            variableEditionTextView->get_buffer()->set_text("");
+        }
+        catch (const InvalidOperandException &exception1) {
+            messageTree->update(exception1.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const InvalidSyntaxException &exception2) {
+            messageTree->update("Undefined literal :" + exception2.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const UndefinedAtomException &exception3) {
+            messageTree->update("Undefined atom :" + exception3.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const UnsupportedLiteralException &exception4) {
+            messageTree->update("Unsupported literal :" + exception4.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const std::out_of_range &exception5) {
+            messageTree->update("Variable not found");
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+
+    }
+    return true;
 }
 
 void MainWindow::on_button_keyboard_clicked(string label) {
@@ -134,22 +202,27 @@ void MainWindow::on_entry_command_changed() {
                 cout << '\a' << endl;
             }
         } catch (const InvalidSyntaxException &exception2) {
-            messageTree->update(exception2.getValue());
+            messageTree->update("Undefined literal :" + exception2.getValue());
             if (bip->get_active()) {
                 cout << '\a' << endl;
             }
         } catch (const UndefinedAtomException &exception3) {
-            messageTree->update(exception3.getValue());
+            messageTree->update("Undefined atom :" + exception3.getValue());
             if (bip->get_active()) {
                 cout << '\a' << endl;
             }
         } catch (const UnsupportedLiteralException &exception4) {
-            messageTree->update(exception4.getValue());
+            messageTree->update("Unsupported literal :" + exception4.getValue());
             if (bip->get_active()) {
                 cout << '\a' << endl;
             }
         } catch (const RuntimeException &exception5) {
             messageTree->update(exception5.getDescription());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        } catch (const std::out_of_range &exception5) {
+            messageTree->update("Variable not found");
             if (bip->get_active()) {
                 cout << '\a' << endl;
             }
@@ -176,12 +249,12 @@ void MainWindow::on_entry_command_activated() {
             cout << '\a' << endl;
         }
     } catch (const InvalidSyntaxException &exception2) {
-        messageTree->update(exception2.getValue());
+        messageTree->update("Unknown literal :" + exception2.getValue());
         if (bip->get_active()) {
             cout << '\a' << endl;
         }
     } catch (const UndefinedAtomException &exception3) {
-        messageTree->update(exception3.getValue());
+        messageTree->update("Undefined atom : " + exception3.getValue());
         if (bip->get_active()) {
             cout << '\a' << endl;
         }
@@ -190,10 +263,15 @@ void MainWindow::on_entry_command_activated() {
         if (bip->get_active()) {
             cout << '\a' << endl;
         }
+    } catch (const std::out_of_range &exception5) {
+        messageTree->update("Variable not found");
+        if (bip->get_active()) {
+            cout << '\a' << endl;
+        }
     }
 
     command->set_text("");
-    commandInput="";
+    commandInput = "";
 }
 
 
@@ -221,9 +299,9 @@ bool MainWindow::on_key_press_event(GdkEventKey *key_event) {
         return true;
     }
 
-    //case ctrl+y is pressed
+        //case ctrl+y is pressed
     else if ((key_event->keyval == GDK_KEY_y) &&
-             (key_event->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK)) == GDK_CONTROL_MASK) {
+        (key_event->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK)) == GDK_CONTROL_MASK) {
 
         return true;
     }

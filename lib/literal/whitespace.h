@@ -11,7 +11,7 @@ using namespace std;
  * For instance :
  *      a space or a tabulation
  */
-struct WhitespaceLiteral : public LiteralInterface {
+struct WhitespaceLiteral: public LiteralInterface {
 public:
     /**
      * @inheritdoc
