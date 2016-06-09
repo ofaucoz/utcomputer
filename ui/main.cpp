@@ -24,7 +24,7 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
      * Resolver
      */
     resolver = new Resolver(operatorsMap, programsMap, variablesMap,
-                            LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
+                            LiteralDefinitionPointer(new OperatorAtomLiteralDefinition));
 
     /*
      * Runner
@@ -39,6 +39,7 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     // Operators
 
     operatorsMap.set("+", OperatorPointer(new AdditionOperator));
+    operatorsMap.set("ADD", OperatorPointer(new AdditionOperator));
     operatorsMap.set("-", OperatorPointer(new SubstractionOperator));
     operatorsMap.set("/", OperatorPointer(new DivisionOperator));
     operatorsMap.set("*", OperatorPointer(new MultiplicationOperator));
@@ -77,6 +78,8 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     builder->get_widget("variableWindow", variableWindow);
     builder->get_widget("programWindow", programWindow);
     builder->get_widget("checkButtonBip", bip);
+    builder->get_widget("programText",programEditionTextView);
+    builder->get_widget("variableText",variableEditionTextView);
 
     // Load derived widgets
 
@@ -90,8 +93,15 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     // Attach observers
 
     stack.attach(literalStack);
+    variablesMap.attach(variableTree);
+
+    // Make TextView editable
+    programEditionTextView->set_editable(true);
+    variableEditionTextView->set_editable(true);
 
     // Connect signals
+    programEditionTextView->signal_key_release_event().connect(sigc::mem_fun(*this, &MainWindow::on_program_text_view_enter));
+    variableEditionTextView->signal_key_release_event().connect(sigc::mem_fun(*this, &MainWindow::on_variable_text_view_enter));
     command->signal_activate().connect(sigc::mem_fun(*this, &MainWindow::on_entry_command_activated));
     command->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::on_entry_command_changed));
     command->signal_focus_in_event().connect(sigc::mem_fun(*this, &MainWindow::on_entry_command_focused));
@@ -108,14 +118,28 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     }
 }
 
+bool MainWindow::on_program_text_view_enter(GdkEventKey *key_event) {
+    if (key_event->keyval == 0xFF0D) { //catch enter key
+
+        return true;
+    }
+    return true;
+}
+
+bool MainWindow::on_variable_text_view_enter(GdkEventKey *key_event) {
+    if (key_event->keyval == 0xFF0D) { //catch enter key
+        return true;
+    }
+    return true;
+}
+
 void MainWindow::on_button_keyboard_clicked(string label) {
     if (label == "=") {
         computer->execute(commandInput);
         cout << stack.top()->toString() << endl;
         historyTree->update(commandInput);
         commandInput = "";
-    }
-    else{
+    }else {
         commandInput += label;
         command->set_text(commandInput);
     }
@@ -135,19 +159,19 @@ void MainWindow::on_entry_command_changed() {
             }
         }
         catch (const InvalidSyntaxException &exception2) {
-            messageTree->update(exception2.getValue());
+            messageTree->update("Undefined literal :" + exception2.getValue());
             if (bip->get_active()) {
                 cout << '\a' << endl;
             }
         }
         catch (const UndefinedAtomException &exception3) {
-            messageTree->update(exception3.getValue());
+            messageTree->update("Undefined atom :" + exception3.getValue());
             if (bip->get_active()) {
                 cout << '\a' << endl;
             }
         }
         catch (const UnsupportedLiteralException &exception4) {
-            messageTree->update(exception4.getValue());
+            messageTree->update("Unsupported literal :" + exception4.getValue());
             if (bip->get_active()) {
                 cout << '\a' << endl;
             }
@@ -176,13 +200,13 @@ void MainWindow::on_entry_command_activated() {
         }
     }
     catch (const InvalidSyntaxException &exception2) {
-        messageTree->update(exception2.getValue());
+        messageTree->update("Unknown literal :" + exception2.getValue());
         if (bip->get_active()) {
             cout << '\a' << endl;
         }
     }
     catch (const UndefinedAtomException &exception3) {
-        messageTree->update(exception3.getValue());
+        messageTree->update("Undefined atom : " + exception3.getValue());
         if (bip->get_active()) {
             cout << '\a' << endl;
         }

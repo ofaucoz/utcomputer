@@ -35,6 +35,7 @@
 #include "../lib/literal_definition/whitespace.h"
 #include "../lib/literal_definition/numeric.h"
 #include "../lib/literal_definition/operator_numeric.h"
+#include "../lib/literal_definition/operator_atom_literal.h"
 #include "../lib/literal_definition/operator_strict_comparison.h"
 #include "../lib/literal_definition/operator_equal_comparison.h"
 #include "../lib/literal_definition/expression.h"
@@ -57,7 +58,6 @@ using namespace Glib;
 
 class MainWindow : public Gtk::Window {
 protected:
-    unsigned int iterCommand;
     Glib::RefPtr<Gtk::Builder> builder;
     Window *variableWindow;
     Window *programWindow;
@@ -77,6 +77,8 @@ protected:
     ToggleButton *programButton;
     Entry *nbStack;
     Entry *command;
+    TextView *variableEditionTextView;
+    TextView *programEditionTextView;
     keyboardWidget *keyboard; //GtkBox
     ToggleButton *keyboardSwitch;
     std::string commandInput;
@@ -105,6 +107,10 @@ public:
     void on_toggle_button_keyboard_clicked() { if (keyboardSwitch->get_active())keyboard->hide(); else keyboard->show(); }
 
     bool on_key_press_event(GdkEventKey *event) override;
+
+    bool on_program_text_view_enter(GdkEventKey *event);
+
+    bool on_variable_text_view_enter(GdkEventKey *event);
 };
 
 

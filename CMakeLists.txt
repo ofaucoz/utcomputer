@@ -106,7 +106,7 @@ set(LIBRARY_FILES
         lib/resolver.h
         lib/runner.cpp
         lib/runner.h
-        lib/utcomputer.h)
+        lib/utcomputer.h lib/literal_definition/operator_atom_literal.h)
 
 set(INTERFACE_FILES
         ui/main.cpp
