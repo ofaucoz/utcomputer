@@ -21,12 +21,12 @@ TEST(EvalOperatorTest, Postfix) {
 
     Lexer lexer;
     lexer.addDefinition(new NumericLiteralDefinition);
-    lexer.addDefinition(new OperatorLiteralDefinition);
+    lexer.addDefinition(new OperatorNumericLiteralDefinition);
     lexer.addDefinition(new ExpressionLiteralDefinition);
     lexer.addDefinition(new ProgramLiteralDefinition);
     lexer.addDefinition(new AtomLiteralDefinition);
 
-    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorLiteralDefinition));
+    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
     Runner runner(operatorsMap, stack);
     UTComputer computer(lexer, resolver, runner);
 
@@ -66,12 +66,12 @@ TEST(EvalOperatorTest, Expression) {
 
     Lexer lexer;
     lexer.addDefinition(new NumericLiteralDefinition);
-    lexer.addDefinition(new OperatorLiteralDefinition);
+    lexer.addDefinition(new OperatorNumericLiteralDefinition);
     lexer.addDefinition(new ExpressionLiteralDefinition);
     lexer.addDefinition(new ProgramLiteralDefinition);
     lexer.addDefinition(new AtomLiteralDefinition);
 
-    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorLiteralDefinition));
+    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
     Runner runner(operatorsMap, stack);
     UTComputer computer(lexer, resolver, runner);
 
@@ -101,12 +101,12 @@ TEST(EvalOperatorTest, CustomOperators) {
 
     Lexer lexer;
     lexer.addDefinition(new NumericLiteralDefinition);
-    lexer.addDefinition(new OperatorLiteralDefinition);
+    lexer.addDefinition(new OperatorNumericLiteralDefinition);
     lexer.addDefinition(new ExpressionLiteralDefinition);
     lexer.addDefinition(new ProgramLiteralDefinition);
     lexer.addDefinition(new AtomLiteralDefinition);
 
-    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorLiteralDefinition));
+    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
     Runner runner(operatorsMap, stack);
     UTComputer computer(lexer, resolver, runner);
 
@@ -134,12 +134,12 @@ TEST(EvalOperatorTest, FailNonEspression) {
 
     Lexer lexer;
     lexer.addDefinition(new NumericLiteralDefinition);
-    lexer.addDefinition(new OperatorLiteralDefinition);
+    lexer.addDefinition(new OperatorNumericLiteralDefinition);
     lexer.addDefinition(new ExpressionLiteralDefinition);
     lexer.addDefinition(new ProgramLiteralDefinition);
     lexer.addDefinition(new AtomLiteralDefinition);
 
-    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorLiteralDefinition));
+    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
     Runner runner(operatorsMap, stack);
     UTComputer computer(lexer, resolver, runner);
 

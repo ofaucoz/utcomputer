@@ -10,9 +10,9 @@
 using namespace std;
 
 /**
- * Definition of an operator literal.
+ * Definition of a numeric operator literal.
  */
-class OperatorLiteralDefinition : public LiteralDefinitionInterface {
+class OperatorNumericLiteralDefinition : public LiteralDefinitionInterface {
 public:
     /**
      * @inheritdoc

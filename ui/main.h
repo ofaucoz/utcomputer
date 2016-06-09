@@ -15,10 +15,28 @@
 #include "../lib/operator/opposite.h"
 #include "../lib/operator/numerator.h"
 #include "../lib/operator/denominator.h"
+#include "../lib/exception/unspported_literal.h"
+#include "../lib/operator/eval.h"
+#include "../lib/operator/logic_and.h"
+#include "../lib/operator/logic_different.h"
+#include "../lib/operator/logic_equals.h"
+#include "../lib/operator/logic_greater.h"
+#include "../lib/operator/logic_greater_equals.h"
+#include "../lib/operator/logic_lesser.h"
+#include "../lib/operator/logic_lesser_equals.h"
+#include "../lib/operator/logic_not.h"
+#include "../lib/operator/logic_or.h"
+#include "../lib/operator/numeric_complex_build.h"
+#include "../lib/operator/numeric_complex_imaginary.h"
+#include "../lib/operator/numeric_complex_real.h"
+#include "../lib/operator/stack_clear.h"
+#include "../lib/operator/stack_drop.h"
 #include "../lib/lexer.h"
 #include "../lib/literal_definition/whitespace.h"
 #include "../lib/literal_definition/numeric.h"
-#include "../lib/literal_definition/operator.h"
+#include "../lib/literal_definition/operator_numeric.h"
+#include "../lib/literal_definition/operator_strict_comparison.h"
+#include "../lib/literal_definition/operator_equal_comparison.h"
 #include "../lib/literal_definition/expression.h"
 #include "../lib/literal_definition/program.h"
 #include "../lib/literal_definition/atom.h"
@@ -71,6 +89,10 @@ public:
     virtual ~MainWindow() { };
 
     void on_entry_command_activated();
+
+    void on_entry_command_changed();
+
+    bool on_entry_command_focused(GdkEventFocus *event);
 
     void on_entry_nbStack_activated();
 

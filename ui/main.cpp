@@ -1,6 +1,4 @@
 #include "main.h"
-#include "../lib/exception/unspported_literal.h"
-
 
 MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade) : Gtk::Window(window), builder(glade),
                                                                                     computer(nullptr),
@@ -8,6 +6,36 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     /*
      * Load view file
      */
+
+    /*
+     * Lexer
+     */
+    lexer = new Lexer();
+    lexer->addDefinition(new WhitespaceLiteralDefinition());
+    lexer->addDefinition(new NumericLiteralDefinition);
+    lexer->addDefinition(new OperatorNumericLiteralDefinition);
+    lexer->addDefinition(new OperatorEqualComparisonLiteralDefinition);
+    lexer->addDefinition(new OperatorStrictComparisonLiteralDefinition);
+    lexer->addDefinition(new ExpressionLiteralDefinition);
+    lexer->addDefinition(new ProgramLiteralDefinition);
+    lexer->addDefinition(new AtomLiteralDefinition);
+
+    /*
+     * Resolver
+     */
+    resolver = new Resolver(operatorsMap, programsMap, variablesMap,
+                            LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
+
+    /*
+     * Runner
+     */
+    runner = new Runner(operatorsMap, stack);
+
+    /*
+     * Application
+     */
+    computer = new UTComputer(*lexer, *resolver, *runner);
+
     // Operators
 
     operatorsMap.set("+", OperatorPointer(new AdditionOperator));
@@ -19,34 +47,21 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     operatorsMap.set("NEG", OperatorPointer(new OppositeOperator));
     operatorsMap.set("NUM", OperatorPointer(new NumeratorOperator));
     operatorsMap.set("DEN", OperatorPointer(new DenominatorOperator));
-
-
-    /*
-     * Lexer
-     */
-    lexer = new Lexer();
-    lexer->addDefinition(new WhitespaceLiteralDefinition());
-    lexer->addDefinition(new NumericLiteralDefinition);
-    lexer->addDefinition(new OperatorLiteralDefinition);
-    lexer->addDefinition(new ExpressionLiteralDefinition);
-    lexer->addDefinition(new ProgramLiteralDefinition);
-    lexer->addDefinition(new AtomLiteralDefinition);
-
-    /*
-     * Resolver
-     */
-    resolver = new Resolver(operatorsMap, programsMap, variablesMap,
-                            LiteralDefinitionPointer(new OperatorLiteralDefinition));
-
-    /*
-     * Runner
-     */
-    runner = new Runner(operatorsMap, stack);
-
-    /*
-     * Application
-     */
-    computer = new UTComputer(*lexer, *resolver, *runner);
+    operatorsMap.set("EVAL", OperatorPointer(new EvalOperator(*computer)));
+    operatorsMap.set("AND", OperatorPointer(new LogicAndOperator));
+    operatorsMap.set("NOT", OperatorPointer(new LogicNotOperator));
+    operatorsMap.set("OR", OperatorPointer(new LogicOrOperator));
+    operatorsMap.set("!=", OperatorPointer(new LogicDifferentOperator));
+    operatorsMap.set("=", OperatorPointer(new LogicEqualsOperator));
+    operatorsMap.set(">", OperatorPointer(new LogicGreaterOperator));
+    operatorsMap.set(">=", OperatorPointer(new LogicGreaterEqualsOperator));
+    operatorsMap.set("<", OperatorPointer(new LogicLesserOperator));
+    operatorsMap.set("<=", OperatorPointer(new LogicLesserEqualsOperator));
+    operatorsMap.set("$", OperatorPointer(new NumericComplexBuildOperator));
+    operatorsMap.set("IM", OperatorPointer(new NumericComplexImaginaryOperator));
+    operatorsMap.set("RE", OperatorPointer(new NumericComplexRealOperator));
+    operatorsMap.set("CLEAR", OperatorPointer(new StackClearOperator));
+    operatorsMap.set("DROP", OperatorPointer(new StackDropOperator));
 
     /*
      * Create main window
@@ -76,23 +91,21 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
 
     stack.attach(literalStack);
 
-
     // Connect signals
     command->signal_activate().connect(sigc::mem_fun(*this, &MainWindow::on_entry_command_activated));
+    command->signal_changed().connect(sigc::mem_fun(*this, &MainWindow::on_entry_command_changed));
+    command->signal_focus_in_event().connect(sigc::mem_fun(*this, &MainWindow::on_entry_command_focused));
     nbStack->signal_activate().connect(sigc::mem_fun(*this, &MainWindow::on_entry_nbStack_activated));
     keyboardSwitch->signal_clicked().connect(sigc::mem_fun(*this, &MainWindow::on_toggle_button_keyboard_clicked));
     variableButton->signal_clicked().connect(sigc::mem_fun(*this, &MainWindow::on_button_variable_clicked));
     programButton->signal_clicked().connect(sigc::mem_fun(*this, &MainWindow::on_button_program_clicked));
     add_events(Gdk::KEY_PRESS_MASK);
+    add_events(Gdk::FOCUS_CHANGE_MASK);
     for (unsigned int i = 0; i < 19; i++) {
         keyboard->getButton(i).signal_clicked().connect(
             sigc::bind<Glib::ustring>(sigc::mem_fun(*this, &MainWindow::on_button_keyboard_clicked),
                                       keyboard->getButton(i).get_label()));
     }
-
-    iterCommand = historyTree->getIterCommand();
-
-
 }
 
 void MainWindow::on_button_keyboard_clicked(string label) {
@@ -102,8 +115,52 @@ void MainWindow::on_button_keyboard_clicked(string label) {
         historyTree->update(commandInput);
         commandInput = "";
     }
-    else commandInput += label;
+    else{
+        commandInput += label;
+        command->set_text(commandInput);
+    }
+}
 
+void MainWindow::on_entry_command_changed() {
+    string input = command->get_text();
+    if(input=="+"||input=="-"||input=="*"||input=="/"){
+        try {
+            computer->execute(input);
+            historyTree->update(input);
+        }
+        catch (const InvalidOperandException &exception1) {
+            messageTree->update(exception1.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const InvalidSyntaxException &exception2) {
+            messageTree->update(exception2.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const UndefinedAtomException &exception3) {
+            messageTree->update(exception3.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const UnsupportedLiteralException &exception4) {
+            messageTree->update(exception4.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        command->set_text("");
+    }
+}
+
+bool MainWindow::on_entry_command_focused(GdkEventFocus *event)
+{
+    if(command->get_text()=="Type your command here ..."){
+        command->set_text("");
+    }
 }
 
 void MainWindow::on_entry_command_activated() {
@@ -111,7 +168,6 @@ void MainWindow::on_entry_command_activated() {
         commandInput = command->get_text();
         computer->execute(commandInput);
         historyTree->update(commandInput);
-        iterCommand = historyTree->getIterCommand();
     }
     catch (const InvalidOperandException &exception1) {
         messageTree->update(exception1.getValue());
@@ -137,8 +193,8 @@ void MainWindow::on_entry_command_activated() {
             cout << '\a' << endl;
         }
     }
-
-
+    command->set_text("");
+    commandInput="";
 }
 
 
@@ -154,28 +210,19 @@ void MainWindow::on_entry_nbStack_activated() {
 
 bool MainWindow::on_key_press_event(GdkEventKey *key_event) {
     //GDK_CONTROL_MASK -> the 'Ctrl' key(mask)
-    //GDK_KEY_Z -> the 'Z' key
-    //GDK_KEY_Y -> the 'Y' key
+    //GDK_KEY_z -> the 'z' key
+    //GDK_KEY_y -> the 'y' key
 
-    //select the first radio button, when we press alt + 1
+    //case ctrl+z is pressed
     if ((key_event->keyval == GDK_KEY_z) &&
         (key_event->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK)) == GDK_CONTROL_MASK) {
-        cout << "ctrl + Z was pressed" << endl;
-        if (iterCommand != 0) {
-            iterCommand--;
-        }
-        command->set_text(historyTree->getTabCommand(iterCommand));
+
         //returning true, cancels the propagation of the event
         return true;
-    }
+    }//case ctrl+y is pressed
     else if ((key_event->keyval == GDK_KEY_y) &&
              (key_event->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK)) == GDK_CONTROL_MASK) {
-        if (iterCommand < historyTree->getIterCommand()) {
-            iterCommand++;
-        }
-        command->set_text(historyTree->getTabCommand(iterCommand));
-        //and the second radio button, when we press alt + 2
-        cout << "ctrl + Y was pressed" << endl;
+
         return true;
     }
     else if (key_event->keyval == GDK_KEY_Escape) {
@@ -183,7 +230,6 @@ bool MainWindow::on_key_press_event(GdkEventKey *key_event) {
         hide();
         return true;
     }
-
     //if the event has not been handled, call the base class
     return Gtk::Window::on_key_press_event(key_event);
 }

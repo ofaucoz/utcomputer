@@ -2,11 +2,7 @@
 
 void EuclidianDivisionOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {
-        if (stack.size() == 1) {
-            stack.pop();
-        }
-
-        throw InvalidSyntaxException("Division operator requires 2 operands");
+       throw InvalidSyntaxException("Division operator requires 2 operands");
     }
 
     LiteralPointer first = stack.top();

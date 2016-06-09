@@ -1,6 +1,6 @@
 #include "numeric_complex_imaginary.h"
 
-void NumericComplexImaginary::apply(LiteralsStack &stack) const {
+void NumericComplexImaginaryOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 1) {
         throw InvalidSyntaxException("Imaginary part operator requires 1 operand");
     }

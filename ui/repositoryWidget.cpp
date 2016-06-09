@@ -14,7 +14,6 @@ void repositoryWidget::update(Repository *repository) {
     Glib::RefPtr<Gtk::ListStore> refTreeModel2 = Gtk::ListStore::create(columns);
     set_model(refTreeModel2);
     if (LiteralsStack *ObservableStackPointer = static_cast<LiteralsStack *>(repository)) {
-        cout << "done" << endl;
         vector<LiteralPointer>::const_iterator it = ObservableStackPointer->begin();
         for (unsigned int i = 0; it != ObservableStackPointer->end() && i < nbAff; i++, ++it) {
             Gtk::TreeModel::Row row = *(refTreeModel2->append());

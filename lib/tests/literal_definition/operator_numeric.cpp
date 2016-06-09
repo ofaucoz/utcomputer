@@ -1,14 +1,14 @@
 #include <gtest/gtest.h>
-#include "../../literal_definition/operator.h"
+#include "../../literal_definition/operator_numeric.h"
 
 TEST(OperatorLiteralDefinitionTest, Construct) {
-    OperatorLiteralDefinition definition;
+    OperatorNumericLiteralDefinition definition;
 
     EXPECT_GT(definition.getPattern().size(), 2);
 }
 
 TEST(OperatorLiteralDefinitionTest, CreateInstanceNative) {
-    OperatorLiteralDefinition definition;
+    OperatorNumericLiteralDefinition definition;
 
     EXPECT_TRUE(dynamic_pointer_cast<OperatorLiteral>(definition.createInstance("+")) != nullptr);
 
@@ -17,7 +17,7 @@ TEST(OperatorLiteralDefinitionTest, CreateInstanceNative) {
 }
 
 TEST(OperatorLiteralDefinitionTest, CreateInstance) {
-    OperatorLiteralDefinition definition;
+    OperatorNumericLiteralDefinition definition;
 
     EXPECT_TRUE(dynamic_pointer_cast<OperatorLiteral>(definition.createInstance("FOO")) != nullptr);
 

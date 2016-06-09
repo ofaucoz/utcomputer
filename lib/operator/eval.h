@@ -11,7 +11,7 @@
 #include "../literal_definition/numeric.h"
 #include "../literal_definition/expression.h"
 #include "../literal_definition/program.h"
-#include "../literal_definition/operator.h"
+#include "../literal_definition/operator_numeric.h"
 #include "../literal_definition/parenthesis.h"
 #include "../literal_definition/comma.h"
 

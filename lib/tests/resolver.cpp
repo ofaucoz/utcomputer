@@ -2,7 +2,7 @@
 #include "../resolver.h"
 #include "../operator/addition.h"
 #include "../literal/atom.h"
-#include "../literal_definition/operator.h"
+#include "../literal_definition/operator_numeric.h"
 #include "../exception/undefined_atom.h"
 
 TEST(ResolverTest, Resolve) {
@@ -26,7 +26,7 @@ TEST(ResolverTest, Resolve) {
     variableMap["BAR"] = LiteralPointer(new NumericLiteral(4, 5, 6, 7));
 
     // Resolver
-    Resolver resolver(operatorMap, programMap, variableMap, LiteralDefinitionPointer(new OperatorLiteralDefinition));
+    Resolver resolver(operatorMap, programMap, variableMap, LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
 
     // Build input vector
     LiteralVector tokens;
@@ -57,7 +57,7 @@ TEST(ResolverTest, ResolveFailure) {
     ProgramMap programMap;
     VariableMap variableMap;
 
-    Resolver resolver(operatorMap, programMap, variableMap, LiteralDefinitionPointer(new OperatorLiteralDefinition));
+    Resolver resolver(operatorMap, programMap, variableMap, LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
 
     LiteralVector vector;
     vector.push_back(LiteralPointer(new AtomLiteral("FOO")));

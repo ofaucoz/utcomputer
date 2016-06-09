@@ -2,10 +2,6 @@
 
 void LogicLesserEqualsOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {
-        if (stack.size() == 1) {
-            stack.pop();
-        }
-
         throw InvalidSyntaxException("Lesser or equals operator requires 2 operands");
     }
 

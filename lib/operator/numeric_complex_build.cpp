@@ -2,10 +2,6 @@
 
 void NumericComplexBuildOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {
-        if (stack.size() == 1) {
-            stack.pop();
-        }
-
         throw InvalidSyntaxException("ComplexBuilder operator requires 2 operands");
     }
 
@@ -19,14 +15,17 @@ void NumericComplexBuildOperator::apply(LiteralsStack &stack) const {
     NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
 
     if (!firstNumeric) {
+        stack.notify();
         throw InvalidOperandException(first->toString());
     }
 
     if (!secondNumeric) {
+        stack.notify();
         throw InvalidOperandException(second->toString());
     }
 
     if (firstNumeric->getImaginaryNumerator() != 0 || secondNumeric->getImaginaryNumerator() != 0) {
+        stack.notify();
         throw InvalidSyntaxException("Arguments can't already be complex");
     }
 
