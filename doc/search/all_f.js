@@ -3,6 +3,7 @@ var searchData=
   ['readme_2emd',['README.md',['../README_8md.html',1,'']]],
   ['realdenominator',['realDenominator',['../structNumericLiteral.html#ac7efa8106c4263e3244d59418384554e',1,'NumericLiteral']]],
   ['realnumerator',['realNumerator',['../structNumericLiteral.html#aa5fe99844e103bb632c0dcedf3e70376',1,'NumericLiteral']]],
+  ['redo',['redo',['../classLiteralsStack.html#a26ceb29150e428f52cfe49e8ef40d9af',1,'LiteralsStack']]],
   ['reftreemodel',['refTreeModel',['../classhistoryTreeView.html#a10603b4437cd858dfb19328219544cbc',1,'historyTreeView::refTreeModel()'],['../classmessageTreeView.html#a807d99e1248960530f052a6a124cb47e',1,'messageTreeView::refTreeModel()'],['../classrepositoryWidget.html#a68d863c073d752b80b659b031ff45e5f',1,'repositoryWidget::refTreeModel()']]],
   ['remove',['remove',['../classObservableMap.html#ac391f6455b83738fe4b2faade0bb9c91',1,'ObservableMap']]],
   ['removeandnotify',['removeAndNotify',['../classObservableMap.html#a3d6bb5ea35867fbadacad628304771af',1,'ObservableMap']]],
@@ -16,5 +17,7 @@ var searchData=
   ['resolver_2eh',['resolver.h',['../resolver_8h.html',1,'']]],
   ['run',['run',['../classRunner.html#a6c9425fabdeb70aca9a08417e404e319',1,'Runner']]],
   ['runner',['Runner',['../classRunner.html',1,'Runner'],['../classUTComputer.html#a19c2c0178f78445f7e16068847f9b8a5',1,'UTComputer::runner()'],['../classMainWindow.html#a29c1c6779d3bb7df5b29d0156d281b07',1,'MainWindow::runner()'],['../classRunner.html#ad64989225821e87f1fe0e3e725c0995c',1,'Runner::Runner()']]],
-  ['runner_2eh',['runner.h',['../runner_8h.html',1,'']]]
+  ['runner_2eh',['runner.h',['../runner_8h.html',1,'']]],
+  ['runtime_2eh',['runtime.h',['../runtime_8h.html',1,'']]],
+  ['runtimeexception',['RuntimeException',['../structRuntimeException.html',1,'RuntimeException'],['../structRuntimeException.html#adc0c8d3240dfbc6942f96d08006dc854',1,'RuntimeException::RuntimeException()']]]
 ];

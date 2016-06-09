@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['tokenize',['tokenize',['../classLexer.html#a56539b54ef537a0a653dbb3929eee0d8',1,'Lexer']]],
-  ['top',['top',['../classObservableStack.html#a6e1ca7d7dcb6b36ad38411c4c9935431',1,'ObservableStack']]],
-  ['tostring',['toString',['../structAtomLiteral.html#a061e9f811156c80b216daff2ccd32053',1,'AtomLiteral::toString()'],['../structCommaLiteral.html#adbc1406467baa48e0c8313643947fe40',1,'CommaLiteral::toString()'],['../structExpressionLiteral.html#a50326c678b588a51bb33971ca0e2ecbe',1,'ExpressionLiteral::toString()'],['../structLiteralInterface.html#a26f61c9e08eb5a75080855aa3692c6b3',1,'LiteralInterface::toString()'],['../structNumericLiteral.html#a5c5eb64162965f0ad57228dfdcea9726',1,'NumericLiteral::toString()'],['../structOperatorLiteral.html#a56ef5501d4dcb7608095117272ef8ed4',1,'OperatorLiteral::toString()'],['../structParenthesisLiteral.html#a3ee4f97f818668bfe8e83cd52bffdfd2',1,'ParenthesisLiteral::toString()'],['../structProgramLiteral.html#ace21b29b23ab80b78b52e80dae74456f',1,'ProgramLiteral::toString()'],['../structWhitespaceLiteral.html#a8c0a88ae439264d50e0469f8aff0e9e5',1,'WhitespaceLiteral::toString()']]]
+  ['save',['save',['../classLiteralsStack.html#aa61e82b472d9968fa87b47846bc11cb4',1,'LiteralsStack']]],
+  ['second',['second',['../classLiteralsStack.html#a0aa5730269253090d6c7eae9e67f132a',1,'LiteralsStack']]],
+  ['set',['set',['../classObservableMap.html#af8ace095ee450e78aec25ad61d4359a4',1,'ObservableMap']]],
+  ['setandnotify',['setAndNotify',['../classObservableMap.html#a4430e3b0cb305d532e853d5617f8f3ec',1,'ObservableMap']]],
+  ['setnb',['setNb',['../classrepositoryWidget.html#a8da174759775506ab4a323c97d14003a',1,'repositoryWidget']]],
+  ['simplify',['simplify',['../classMath.html#a24a39e5ff9469d9bf5e32770b7eede55',1,'Math']]],
+  ['size',['size',['../classLiteralsStack.html#ac250379bbf1b38add528a317a5a656be',1,'LiteralsStack']]],
+  ['substract',['substract',['../classMath.html#a24fc87a037a4bd63a9752192f7ed7100',1,'Math']]]
 ];

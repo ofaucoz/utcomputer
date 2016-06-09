@@ -1,6 +1,7 @@
 <map id="lib/operator/interface.h" name="lib/operator/interface.h">
-<area shape="rect" id="node3" href="$literal_2interface_8h.html" title="../literal/interface.h" alt="" coords="170,80,301,107"/>
-<area shape="rect" id="node8" href="$map_8h.html" title="../repository/map.h" alt="" coords="92,155,222,181"/>
-<area shape="rect" id="node10" href="$stack_8h.html" title="../repository/stack.h" alt="" coords="246,155,385,181"/>
-<area shape="rect" id="node9" href="$observable_8h.html" title="observable.h" alt="" coords="260,229,356,256"/>
+<area shape="rect" id="node3" href="$stack_8h.html" title="../literal/stack.h" alt="" coords="81,80,193,107"/>
+<area shape="rect" id="node4" href="$literal_2interface_8h.html" title="interface.h" alt="" coords="234,155,317,181"/>
+<area shape="rect" id="node11" href="$runtime_8h.html" title="../exception/runtime.h" alt="" coords="63,155,211,181"/>
+<area shape="rect" id="node9" href="$map_8h.html" title="../repository/map.h" alt="" coords="303,229,434,256"/>
+<area shape="rect" id="node10" href="$observable_8h.html" title="observable.h" alt="" coords="359,304,455,331"/>
 </map>

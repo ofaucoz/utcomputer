@@ -1,8 +1,7 @@
 <map id="Repository" name="Repository">
-<area shape="rect" id="node2" href="$classObservableMap.html" title="{ObservableMap\&lt; K, V \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="5,153,168,303"/>
-<area shape="rect" id="node3" href="$classObservableMap.html" title="{ObservableMap\&lt; string,\l LiteralPointer \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="193,145,354,311"/>
-<area shape="rect" id="node4" href="$classObservableMap.html" title="{ObservableMap\&lt; string,\l LiteralVector \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="378,145,539,311"/>
-<area shape="rect" id="node5" href="$classObservableMap.html" title="{ObservableMap\&lt; string,\l OperatorPointer \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="563,145,725,311"/>
-<area shape="rect" id="node6" href="$classObservableStack.html" title="{ObservableStack\&lt; T \&gt;\n||+ top()\l+ push()\l+ pushAndNotify()\l+ pop()\l+ popAndNotify()\l}" alt="" coords="749,160,904,296"/>
-<area shape="rect" id="node7" href="$classObservableStack.html" title="{ObservableStack\&lt; Literal\lPointer \&gt;\n||+ top()\l+ push()\l+ pushAndNotify()\l+ pop()\l+ popAndNotify()\l}" alt="" coords="929,153,1098,303"/>
+<area shape="rect" id="node2" href="$classLiteralsStack.html" title="{LiteralsStack\n|&#45; savedStates\l&#45; currentState\l&#45; currentStateIndex\l|+ LiteralsStack()\l+ size()\l+ top()\l+ second()\l+ begin()\l+ end()\l+ push()\l+ pushAndNotify()\l+ pop()\l+ popAndNotify()\l+ save()\l+ undo()\l+ redo()\l}" alt="" coords="5,145,139,428"/>
+<area shape="rect" id="node3" href="$classObservableMap.html" title="{ObservableMap\&lt; K, V \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="163,211,325,362"/>
+<area shape="rect" id="node4" href="$classObservableMap.html" title="{ObservableMap\&lt; string,\l LiteralPointer \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="350,204,511,369"/>
+<area shape="rect" id="node5" href="$classObservableMap.html" title="{ObservableMap\&lt; string,\l LiteralVector \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="535,204,697,369"/>
+<area shape="rect" id="node6" href="$classObservableMap.html" title="{ObservableMap\&lt; string,\l OperatorPointer \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="721,204,882,369"/>
 </map>

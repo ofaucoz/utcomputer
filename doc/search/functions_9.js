@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['literalstocommand',['literalsToCommand',['../classDumper.html#a5ef23d51b43c7b758da91d14de2e8153',1,'Dumper']]]
+  ['keyboardwidget',['keyboardWidget',['../classkeyboardWidget.html#a6a9b01766d1d202396193c989a38fdc8',1,'keyboardWidget']]]
 ];

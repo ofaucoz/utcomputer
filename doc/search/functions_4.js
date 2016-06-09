@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['findpriority',['findPriority',['../classEvalOperator.html#a0f78edf14861c0aff43bc312361de23c',1,'EvalOperator']]],
-  ['formatdouble',['formatDouble',['../structNumericLiteral.html#ab57baf7c0c1396290d91c6caa852b164',1,'NumericLiteral']]],
-  ['fraction',['Fraction',['../classFraction.html#ac6ddeaafd142700c0639927dd3bd07b5',1,'Fraction']]]
+  ['end',['end',['../classLiteralsStack.html#a3f234a09a4b2b0b676f3984c39f2c565',1,'LiteralsStack']]],
+  ['evaloperator',['EvalOperator',['../classEvalOperator.html#a4107316bc1fec7114b0677aa0606f8ad',1,'EvalOperator']]],
+  ['execute',['execute',['../classUTComputer.html#ae854d3685bdc4259a8bbd755ea811f1c',1,'UTComputer::execute(string command)'],['../classUTComputer.html#a997aa966e2fcd3e1e1e1261ad3c24cb6',1,'UTComputer::execute(LiteralVector tokens)']]],
+  ['expressionliteral',['ExpressionLiteral',['../structExpressionLiteral.html#ac3cac8e3ebd6601a8e2766caf7480d55',1,'ExpressionLiteral']]]
 ];

@@ -7,5 +7,7 @@ var searchData=
   ['columns',['columns',['../classhistoryTreeView.html#afc4295d71921f7121a519fe60c284ff1',1,'historyTreeView::columns()'],['../classmessageTreeView.html#a98fc34dfde1211a59f61dd1298054f06',1,'messageTreeView::columns()'],['../classrepositoryWidget.html#aa924594c7f3d3eefc08ab34c011119aa',1,'repositoryWidget::columns()']]],
   ['command',['command',['../classMainWindow.html#a5a6378ad03811ef909e70d4e1ab4f431',1,'MainWindow']]],
   ['commandinput',['commandInput',['../classMainWindow.html#a61f51e7c1dd9b1fdff69b9306b1b8bc3',1,'MainWindow']]],
-  ['computer',['computer',['../classEvalOperator.html#a7d48e81a7294932ba7b02bfcb307bf76',1,'EvalOperator::computer()'],['../classMainWindow.html#a5dca986dd95a6c52bb1719378eae2520',1,'MainWindow::computer()']]]
+  ['computer',['computer',['../classEvalOperator.html#a7d48e81a7294932ba7b02bfcb307bf76',1,'EvalOperator::computer()'],['../classMainWindow.html#a5dca986dd95a6c52bb1719378eae2520',1,'MainWindow::computer()']]],
+  ['currentstate',['currentState',['../classLiteralsStack.html#a05c9922131fcdd640e35be20c52905a6',1,'LiteralsStack']]],
+  ['currentstateindex',['currentStateIndex',['../classLiteralsStack.html#af627f2f158f651993b13cdaf01f40988',1,'LiteralsStack']]]
 ];
