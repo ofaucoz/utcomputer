@@ -36,8 +36,6 @@ TEST(EuclidianDivisionOperatorTest, FailNotEnoughOperands) {
 
     EuclidianDivisionOperator euclidianDivisionOperator;
     EXPECT_THROW(euclidianDivisionOperator.apply(stack), InvalidSyntaxException);
-
-    EXPECT_EQ(0, stack.size());
 }
 
 TEST(EuclidianDivisionOperatorTest, FailFirstNonNumeric) {

@@ -3,7 +3,7 @@
 #include "../literal_definition/atom.h"
 #include "../literal_definition/whitespace.h"
 #include "../literal_definition/numeric.h"
-#include "../literal_definition/operator.h"
+#include "../literal_definition/operator_numeric.h"
 #include "../literal_definition/expression.h"
 #include "../literal_definition/program.h"
 
@@ -12,7 +12,7 @@ TEST(LexerTest, Tokenize) {
 
     lexer.addDefinition(new WhitespaceLiteralDefinition());
     lexer.addDefinition(new NumericLiteralDefinition());
-    lexer.addDefinition(new OperatorLiteralDefinition());
+    lexer.addDefinition(new OperatorNumericLiteralDefinition());
     lexer.addDefinition(new ExpressionLiteralDefinition());
     lexer.addDefinition(new ProgramLiteralDefinition());
     lexer.addDefinition(new AtomLiteralDefinition());

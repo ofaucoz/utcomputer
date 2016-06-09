@@ -37,8 +37,6 @@ TEST(ModuloOperatorTest, FailNotEnoughOperands) {
 
     ModuloOperator moduloOperator;
     EXPECT_THROW(moduloOperator.apply(stack), InvalidSyntaxException);
-
-    EXPECT_EQ(0, stack.size());
 }
 
 TEST(ModuloOperatorTest, FailFirstNonNumeric) {

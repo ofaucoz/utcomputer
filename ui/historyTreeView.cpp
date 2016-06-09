@@ -10,18 +10,15 @@ historyTreeView::historyTreeView(BaseObjectType *treeview, const Glib::RefPtr<Gt
     set_model(refTreeModel);
     this->append_column("command", columns.col_command);
     nbAff = 0;
-
 }
 
 void historyTreeView::update(string command) {
     if (nbAff == 15) {
-        refTreeModel->clear();
+        refTreeModel = Gtk::ListStore::create(columns);
+        set_model(refTreeModel);
         nbAff = 0;
     }
     Gtk::TreeModel::Row row = *(refTreeModel->append());
-    tabCommand[iterCommand] = command;
-    iterCommand++;
     row[columns.col_command] = command;
     nbAff++;
-
 }
