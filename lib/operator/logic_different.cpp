@@ -2,10 +2,6 @@
 
 void LogicDifferentOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {
-        if (stack.size() == 1) {
-            stack.pop();
-        }
-
         throw InvalidSyntaxException("Different operator requires 2 operands");
     }
 

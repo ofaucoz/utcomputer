@@ -6,6 +6,7 @@ LO21
 LO21tests
 build
 *.glade~
+.idea
 
 # Compiled Object files
 *.slo

@@ -9,7 +9,6 @@ using namespace std;
 
 class historyTreeView : public Gtk::TreeView {
 protected:
-
     class ModelColumns : public Gtk::TreeModel::ColumnRecord {
     public:
 
@@ -22,19 +21,12 @@ protected:
     Glib::RefPtr<Gtk::ListStore> refTreeModel;
     Glib::RefPtr<Gtk::Builder> builder;
     unsigned int nbAff;
-    string tabCommand[20];
-    unsigned int iterCommand;
 public:
     historyTreeView(BaseObjectType *treeview, const Glib::RefPtr<Gtk::Builder> &builder);
 
     void update(string command);
 
     virtual ~historyTreeView() { }
-
-    string &getTabCommand(unsigned int i) { return tabCommand[i]; }
-
-    unsigned int getIterCommand() { return iterCommand; }
-
 };
 
 #endif //LO21_HISTORYTREEVIEW_H

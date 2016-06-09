@@ -37,8 +37,6 @@ TEST(MultiplicationOperatorTest, FailNotEnoughOperands) {
 
     MultiplicationOperator multiplicationOperator;
     EXPECT_THROW(multiplicationOperator.apply(stack), InvalidSyntaxException);
-
-    EXPECT_EQ(0, stack.size());
 }
 
 TEST(MultiplicationOperatorTest, FailFirstNonNumeric) {

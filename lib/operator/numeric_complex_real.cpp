@@ -3,7 +3,7 @@
 #include "../literal/numeric.h"
 #include "../exception/invalid_operand.h"
 
-void NumericComplexReal::apply(LiteralsStack &stack) const {
+void NumericComplexRealOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 1) {
         throw InvalidSyntaxException("Real part operator requires 1 operand");
     }

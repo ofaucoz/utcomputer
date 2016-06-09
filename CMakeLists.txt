@@ -41,7 +41,9 @@ set(LIBRARY_FILES
         lib/literal_definition/whitespace.h
         lib/literal_definition/numeric.cpp
         lib/literal_definition/numeric.h
-        lib/literal_definition/operator.h
+        lib/literal_definition/operator_numeric.h
+        lib/literal_definition/operator_strict_comparison.h
+        lib/literal_definition/operator_equal_comparison.h
         lib/literal_definition/expression.h
         lib/literal_definition/program.h
         lib/literal_definition/parenthesis.h
@@ -128,7 +130,7 @@ set(TEST_FILES
         lib/tests/literal/all.cpp
         lib/tests/literal_definition/atom.cpp
         lib/tests/literal_definition/numeric.cpp
-        lib/tests/literal_definition/operator.cpp
+        lib/tests/literal_definition/operator_numeric.cpp
         lib/tests/literal_definition/expression.cpp
         lib/tests/literal_definition/whitespace.cpp
         lib/tests/literal_definition/program.cpp
@@ -160,7 +162,9 @@ set(TEST_FILES
         lib/tests/lexer.cpp
         lib/tests/resolver.cpp
         lib/tests/runner.cpp
-        lib/tests/utcomputer.cpp)
+        lib/tests/utcomputer.cpp
+        lib/tests/literal_definition/operator_strict_comparison.cpp
+        lib/tests/literal_definition/operator_equal_comparison.cpp)
 
 add_executable(LO21tests lib/tests/main.cpp ${LIBRARY_FILES} ${TEST_FILES})
 target_link_libraries(LO21tests pthread ${GTEST_LIBRARIES})

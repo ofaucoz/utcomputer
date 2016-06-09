@@ -7,7 +7,7 @@ TEST(NumericComplexRealImaginaryTest, ComplexLiterals) {
 
     EXPECT_EQ(1, stack.size());
 
-    NumericComplexImaginary numericComplexImaginary;
+    NumericComplexImaginaryOperator numericComplexImaginary;
     numericComplexImaginary.apply(stack);
 
     EXPECT_EQ(1, stack.size());
@@ -20,7 +20,7 @@ TEST(NumericComplexImaginaryTest, FailInt) {
 
     EXPECT_EQ(1, stack.size());
 
-    NumericComplexImaginary numericComplexImaginary;
+    NumericComplexImaginaryOperator numericComplexImaginary;
     EXPECT_THROW(numericComplexImaginary.apply(stack), InvalidOperandException);
 
     EXPECT_EQ(0, stack.size());

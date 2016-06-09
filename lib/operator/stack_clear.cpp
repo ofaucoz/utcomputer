@@ -5,6 +5,6 @@ void StackClearOperator::apply(LiteralsStack &stack) const {
         throw InvalidSyntaxException("Stack already cleared");
     }
     while (stack.size() != 0) {
-        stack.pop();
+        stack.popAndNotify();
     }
 }

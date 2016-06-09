@@ -37,8 +37,6 @@ TEST(DivisionOperatorTest, FailNotEnoughOperands) {
 
     DivisionOperator divisionOperator;
     EXPECT_THROW(divisionOperator.apply(stack), InvalidSyntaxException);
-
-    EXPECT_EQ(0, stack.size());
 }
 
 TEST(DivisionOperatorTest, FailFirstNonNumeric) {

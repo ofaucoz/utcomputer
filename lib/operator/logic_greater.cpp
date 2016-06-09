@@ -2,10 +2,6 @@
 
 void LogicGreaterOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {
-        if (stack.size() == 1) {
-            stack.pop();
-        }
-
         throw InvalidSyntaxException("Greater operator requires 2 operands");
     }
 

@@ -9,7 +9,7 @@ TEST(NumericComplexRealTest, ComplexLiterals) {
 
     EXPECT_EQ(1, stack.size());
 
-    NumericComplexReal numericComplexReal;
+    NumericComplexRealOperator numericComplexReal;
     numericComplexReal.apply(stack);
 
     EXPECT_EQ(1, stack.size());
@@ -22,7 +22,7 @@ TEST(NumericComplexRealTest, FailInt) {
 
     EXPECT_EQ(1, stack.size());
 
-    NumericComplexReal numericComplexReal;
+    NumericComplexRealOperator numericComplexReal;
     EXPECT_THROW(numericComplexReal.apply(stack), InvalidOperandException);
 
     EXPECT_EQ(0, stack.size());
