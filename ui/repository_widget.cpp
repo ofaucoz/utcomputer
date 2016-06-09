@@ -1,8 +1,8 @@
-#include "repositoryWidget.h"
+#include "repository_widget.h"
 #include "../lib/literal/stack.h"
 
-repositoryWidget::repositoryWidget(BaseObjectType *treeview, const Glib::RefPtr<Gtk::Builder> &builder) : Gtk::TreeView(
-    treeview), builder(builder) {
+RepositoryWidget::RepositoryWidget(BaseObjectType *treeview, const Glib::RefPtr<Gtk::Builder> &builder) :
+    Gtk::TreeView(treeview), builder(builder) {
     refTreeModel = Gtk::ListStore::create(columns);
     set_model(refTreeModel);
     nbAff = 5;
@@ -10,7 +10,7 @@ repositoryWidget::repositoryWidget(BaseObjectType *treeview, const Glib::RefPtr<
     this->append_column("value", columns.col_value);
 }
 
-void repositoryWidget::update(Repository *repository) {
+void RepositoryWidget::update(Repository *repository) {
     Glib::RefPtr<Gtk::ListStore> refTreeModel2 = Gtk::ListStore::create(columns);
     set_model(refTreeModel2);
 
