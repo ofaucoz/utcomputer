@@ -1,6 +1,4 @@
 #include "main.h"
-#include "../lib/operator/stack_undo.h"
-#include "../lib/operator/stack_redo.h"
 
 MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade) :
     Gtk::Window(window), builder(glade), computer(nullptr), literalStack(nullptr) {
