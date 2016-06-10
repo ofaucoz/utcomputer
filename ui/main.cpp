@@ -50,10 +50,10 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     operatorsMap.set("OR", OperatorPointer(new LogicOrOperator));
     operatorsMap.set("!=", OperatorPointer(new LogicDifferentOperator));
     operatorsMap.set("=", OperatorPointer(new LogicEqualsOperator));
-    operatorsMap.set(">", OperatorPointer(new LogicGreaterOperator));
-    operatorsMap.set(">=", OperatorPointer(new LogicGreaterEqualsOperator));
-    operatorsMap.set("<", OperatorPointer(new LogicLesserOperator));
-    operatorsMap.set("<=", OperatorPointer(new LogicLesserEqualsOperator));
+    operatorsMap.set(">", OperatorPointer(new NumericGreaterOperator));
+    operatorsMap.set(">=", OperatorPointer(new NumericGreaterEqualsOperator));
+    operatorsMap.set("<", OperatorPointer(new NumericLesserOperator));
+    operatorsMap.set("<=", OperatorPointer(new NumericLesserEqualsOperator));
     operatorsMap.set("$", OperatorPointer(new NumericComplexBuildOperator));
     operatorsMap.set("IM", OperatorPointer(new NumericComplexImaginaryOperator));
     operatorsMap.set("RE", OperatorPointer(new NumericComplexRealOperator));
