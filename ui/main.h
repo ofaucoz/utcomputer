@@ -36,6 +36,8 @@
 #include "../lib/operator/numeric_complex_real.h"
 #include "../lib/operator/stack_clear.h"
 #include "../lib/operator/stack_drop.h"
+#include "../lib/operator/stack_undo.h"
+#include "../lib/operator/stack_redo.h"
 #include "../lib/lexer.h"
 #include "../lib/literal_definition/whitespace.h"
 #include "../lib/literal_definition/numeric.h"

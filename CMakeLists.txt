@@ -79,6 +79,8 @@ set(LIBRARY_FILES
         lib/operator/stack_undo.h
         lib/operator/stack_redo.cpp
         lib/operator/stack_redo.h
+        lib/operator/stack_swap.cpp
+        lib/operator/stack_swap.h
         lib/operator/numeric_complex_build.cpp
         lib/operator/numeric_complex_build.h
         lib/operator/numeric_complex_real.cpp
@@ -155,6 +157,7 @@ set(TEST_FILES
         lib/tests/operator/eval.cpp
         lib/tests/operator/stack_clear.cpp
         lib/tests/operator/stack_drop.cpp
+        lib/tests/operator/stack_swap.cpp
         lib/tests/operator/numeric_complex_imaginary.cpp
         lib/tests/operator/numeric_complex_build.cpp
         lib/tests/operator/numeric_complex_real.cpp
