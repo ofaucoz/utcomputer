@@ -6,10 +6,7 @@ void DivisionOperator::apply(LiteralsStack &stack) const {
     }
 
     LiteralPointer first = stack.top();
-    stack.pop();
-
-    LiteralPointer second = stack.top();
-    stack.pop();
+    LiteralPointer second = stack.second();
 
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
     NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
@@ -38,6 +35,9 @@ void DivisionOperator::apply(LiteralsStack &stack) const {
     if (resultID == 0) {
         resultID = 1;
     }
+
+    stack.pop();
+    stack.pop();
 
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(
         Math::simplify(Fraction(resultRN, resultRD)),

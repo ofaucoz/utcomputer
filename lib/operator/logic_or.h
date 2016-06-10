@@ -1,5 +1,5 @@
-#ifndef LO21_LOGIC_OR_H
-#define LO21_LOGIC_OR_H
+#ifndef LO21_OPERATOR_LOGIC_OR_H
+#define LO21_OPERATOR_LOGIC_OR_H
 
 
 #include "interface.h"
@@ -26,4 +26,4 @@ public:
 };
 
 
-#endif //LO21_LOGIC_OR_H
+#endif //LO21_OPERATOR_LOGIC_OR_H

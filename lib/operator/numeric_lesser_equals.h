@@ -1,5 +1,5 @@
-#ifndef LO21_LOGIC_GREATER_EQUALS_H
-#define LO21_LOGIC_GREATER_EQUALS_H
+#ifndef LO21_OPERATOR_LOGIC_LESSER_EQUALS_H
+#define LO21_OPERATOR_LOGIC_LESSER_EQUALS_H
 
 
 #include "interface.h"
@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class LogicGreaterEqualsOperator : public OperatorInterface {
+class NumericLesserEqualsOperator : public OperatorInterface {
 public:
     /**
      * @inheritdoc
@@ -26,4 +26,4 @@ public:
 };
 
 
-#endif //LO21_LOGIC_GREATER_EQUALS_H
+#endif //LO21_OPERATOR_LOGIC_LESSER_EQUALS_H

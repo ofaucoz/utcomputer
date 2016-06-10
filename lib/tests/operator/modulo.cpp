@@ -26,7 +26,7 @@ TEST(ModuloOperatorTest, ComplexNumerics) {
     ModuloOperator moduloOperator;
     EXPECT_THROW(moduloOperator.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(0, stack.size());
+    EXPECT_EQ(2, stack.size());
 }
 
 TEST(ModuloOperatorTest, FailNotEnoughOperands) {
@@ -49,7 +49,7 @@ TEST(ModuloOperatorTest, FailFirstNonNumeric) {
     ModuloOperator moduloOperator;
     EXPECT_THROW(moduloOperator.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(0, stack.size());
+    EXPECT_EQ(2, stack.size());
 }
 
 TEST(ModuloOperatorTest, FailSecondNonNumeric) {
@@ -62,5 +62,5 @@ TEST(ModuloOperatorTest, FailSecondNonNumeric) {
     ModuloOperator moduloOperator;
     EXPECT_THROW(moduloOperator.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(0, stack.size());
+    EXPECT_EQ(2, stack.size());
 }

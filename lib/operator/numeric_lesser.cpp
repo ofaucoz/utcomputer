@@ -1,8 +1,8 @@
-#include "addition.h"
+#include "numeric_lesser.h"
 
-void AdditionOperator::apply(LiteralsStack &stack) const {
+void NumericLesserOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {
-        throw InvalidSyntaxException("Addition operator requires 2 operands");
+        throw InvalidSyntaxException("Lesser operator requires 2 operands");
     }
 
     LiteralPointer first = stack.top();
@@ -19,11 +19,11 @@ void AdditionOperator::apply(LiteralsStack &stack) const {
         throw InvalidOperandException(second->toString());
     }
 
-    Fraction resultR = Math::add(firstNumeric->getRealFraction(), secondNumeric->getRealFraction());
-    Fraction resultI = Math::add(firstNumeric->getImaginaryFraction(), secondNumeric->getImaginaryFraction());
+    double firstModule = Math::module(firstNumeric->getRealFraction(), firstNumeric->getImaginaryFraction());
+    double secondModule = Math::module(secondNumeric->getRealFraction(), secondNumeric->getImaginaryFraction());
 
     stack.pop();
     stack.pop();
-    stack.pushAndNotify(LiteralPointer(new NumericLiteral(resultR, resultI)));
+    stack.pushAndNotify(LiteralPointer(new NumericLiteral(firstModule > secondModule ? 1 : 0)));
     stack.save();
 }

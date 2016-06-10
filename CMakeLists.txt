@@ -90,14 +90,14 @@ set(LIBRARY_FILES
         lib/operator/logic_equals.h
         lib/operator/logic_different.cpp
         lib/operator/logic_different.h
-        lib/operator/logic_greater.cpp
-        lib/operator/logic_greater.h
-        lib/operator/logic_greater_equals.cpp
-        lib/operator/logic_greater_equals.h
-        lib/operator/logic_lesser.cpp
-        lib/operator/logic_lesser.h
-        lib/operator/logic_lesser_equals.cpp
-        lib/operator/logic_lesser_equals.h
+        lib/operator/numeric_greater.cpp
+        lib/operator/numeric_greater.h
+        lib/operator/numeric_greater_equals.cpp
+        lib/operator/numeric_greater_equals.h
+        lib/operator/numeric_lesser.cpp
+        lib/operator/numeric_lesser.h
+        lib/operator/numeric_lesser_equals.cpp
+        lib/operator/numeric_lesser_equals.h
         lib/operator/logic_and.cpp
         lib/operator/logic_and.h
         lib/operator/logic_or.cpp
@@ -163,8 +163,8 @@ set(TEST_FILES
         lib/tests/operator/numeric_complex_real.cpp
         lib/tests/operator/logic_equals.cpp
         lib/tests/operator/logic_different.cpp
-        lib/tests/operator/logic_greater.cpp
-        lib/tests/operator/logic_greater_equals.cpp
+        lib/tests/operator/numeric_greater.cpp
+        lib/tests/operator/numeric_greater_equals.cpp
         lib/tests/operator/logic_and.cpp
         lib/tests/operator/logic_or.cpp
         lib/tests/operator/logic_not.cpp

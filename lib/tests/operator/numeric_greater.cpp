@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "../../literal/numeric.h"
-#include "../../operator/logic_greater.h"
+#include "../../operator/numeric_greater.h"
 
 TEST(LogicGreaterOperatorTest, GreaterComplexArguments) {
     LiteralsStack stack;
@@ -9,8 +9,8 @@ TEST(LogicGreaterOperatorTest, GreaterComplexArguments) {
 
     EXPECT_EQ(2, stack.size());
 
-    LogicGreaterOperator logicGreaterOperator;
-    logicGreaterOperator.apply(stack);
+    NumericGreaterOperator greaterOperator;
+    greaterOperator.apply(stack);
 
     EXPECT_EQ(1, stack.size());
     EXPECT_EQ("1", stack.top()->toString());
@@ -23,8 +23,8 @@ TEST(LogicGreaterperatorTest, LesserComplexArguments) {
 
     EXPECT_EQ(2, stack.size());
 
-    LogicGreaterOperator logicGreaterOperator;
-    logicGreaterOperator.apply(stack);
+    NumericGreaterOperator greaterOperator;
+    greaterOperator.apply(stack);
 
     EXPECT_EQ(1, stack.size());
     EXPECT_EQ("0", stack.top()->toString());
@@ -37,8 +37,8 @@ TEST(LogicGreaterperatorTest, LesserIntArguments) {
 
     EXPECT_EQ(2, stack.size());
 
-    LogicGreaterOperator logicGreaterOperator;
-    logicGreaterOperator.apply(stack);
+    NumericGreaterOperator greaterOperator;
+    greaterOperator.apply(stack);
 
     EXPECT_EQ(1, stack.size());
     EXPECT_EQ("0", stack.top()->toString());

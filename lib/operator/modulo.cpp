@@ -6,10 +6,7 @@ void ModuloOperator::apply(LiteralsStack &stack) const {
     }
 
     LiteralPointer first = stack.top();
-    stack.pop();
-
-    LiteralPointer second = stack.top();
-    stack.pop();
+    LiteralPointer second = stack.second();
 
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
     NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
@@ -35,6 +32,9 @@ void ModuloOperator::apply(LiteralsStack &stack) const {
         !Math::isInt(secondNumeric->getRealNumerator())) {
         throw InvalidOperandException(second->toString());
     }
+
+    stack.pop();
+    stack.pop();
 
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(
         (int) secondNumeric->getRealNumerator() % (int) firstNumeric->getRealNumerator()

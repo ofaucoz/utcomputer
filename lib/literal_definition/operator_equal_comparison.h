@@ -1,7 +1,6 @@
-#ifndef LO21_EQUAL_COMPARISON_H
-#define LO21_EQUALCOMPARISON_H
+#ifndef LO21_LITERAL_DEFINITION_OPERATOR_EQUAL_H
+#define LO21_LITERAL_DEFINITION_OPERATOR_EQUAL_H
 
-//|\=|!\=|>|<|>\=|<\=
 
 #include <iostream>
 #include <regex>
@@ -24,4 +23,4 @@ public:
     }
 };
 
-#endif //LO21_EQUAL_COMPARISON_H
+#endif //LO21_LITERAL_DEFINITION_OPERATOR_EQUAL_H

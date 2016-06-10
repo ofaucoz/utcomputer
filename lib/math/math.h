@@ -41,6 +41,15 @@ public:
     static Fraction simplify(Fraction f);
 
     /**
+     * Compute the module of a complex number.
+     *
+     * @param real The real fraction.
+     * @param imaginary The imaginary fraction.
+     * @return The module of the complex.
+     */
+    static double module(Fraction real, Fraction imaginary);
+
+    /**
      * Check if the given double is actually an integer.
      *
      * @param value The value to check.

@@ -1,5 +1,5 @@
-#ifndef LO21_LITERAL_INT_H
-#define LO21_LITERAL_INT_H
+#ifndef LO21_LITERAL_OPERATOR_H
+#define LO21_LITERAL_OPERATOR_H
 
 
 #include "interface.h"
@@ -39,4 +39,4 @@ public:
 typedef shared_ptr<OperatorLiteral> OperatorLiteralPointer;
 
 
-#endif // LO21_LITERAL_INT_H
+#endif // LO21_LITERAL_OPERATOR_H
