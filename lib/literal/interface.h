@@ -26,14 +26,14 @@ using namespace std;
 struct LiteralInterface {
 public:
     /**
-     * Each literal have a string representation. This method return this string.
-     */
-    virtual const string toString() const = 0;
-
-    /**
      * Virtual destructor to avoid conflict issues with children classes.
      */
     virtual ~LiteralInterface() { };
+
+    /**
+     * @return This literal string representation.
+     */
+    virtual const string toString() const = 0;
 };
 
 typedef shared_ptr<LiteralInterface> LiteralPointer;

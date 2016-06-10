@@ -21,6 +21,34 @@ public:
     LiteralPointer createInstance(string value) const override {
         return LiteralPointer(new OperatorLiteral(value));
     }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(LiteralPointer literal) const override {
+        return false; // Handled by the OperatorNumericLiteralDefinition
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(string serialized) const {
+        return false; // Handled by the OperatorNumericLiteralDefinition
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const string serialize(LiteralPointer literal) const {
+        return ""; // Handled by the OperatorNumericLiteralDefinition
+    }
+
+    /**
+     * @inheritdoc
+     */
+    LiteralPointer unserialize(string serialized) const {
+        return nullptr; // Handled by the OperatorNumericLiteralDefinition
+    }
 };
 
 #endif //LO21_LITERAL_DEFINITION_OPERATOR_EQUAL_H

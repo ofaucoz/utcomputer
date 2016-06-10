@@ -13,26 +13,26 @@ using namespace std;
  */
 struct ProgramLiteral : public LiteralInterface {
 private:
-    string name;
+    string program;
 
 public:
     /**
-     * @param name The program name.
+     * @param program The program name.
      */
-    ProgramLiteral(string name) : name(name) { }
+    ProgramLiteral(string program) : program(program) { }
 
     /**
      * @return The program name.
      */
-    const string &getName() const {
-        return name;
+    const string &getProgram() const {
+        return program;
     }
 
     /**
      * @inheritdoc
      */
     const string toString() const override {
-        return name;
+        return program;
     };
 };
 
