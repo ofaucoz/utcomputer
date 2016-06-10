@@ -6,8 +6,6 @@ void DenominatorOperator::apply(LiteralsStack &stack) const {
     }
 
     LiteralPointer first = stack.top();
-    stack.pop();
-
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
 
     if (!firstNumeric) {
@@ -18,6 +16,7 @@ void DenominatorOperator::apply(LiteralsStack &stack) const {
         throw InvalidOperandException(first->toString());
     }
 
+    stack.pop();
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(firstNumeric->getRealDenominator())));
     stack.save();
 }

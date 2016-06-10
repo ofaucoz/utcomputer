@@ -6,13 +6,14 @@ void StackSwapOperator::apply(LiteralsStack &stack) const {
     }
 
     LiteralPointer first = stack.top();
-    stack.pop();
+    LiteralPointer second = stack.second();
 
-    LiteralPointer second = stack.top();
+    stack.pop();
     stack.pop();
 
     stack.push(first);
     stack.push(second);
+
     stack.notify();
     stack.save();
 }

@@ -1,5 +1,5 @@
-#ifndef LO21_LOGIC_LESSER_H
-#define LO21_LOGIC_LESSER_H
+#ifndef LO21_OPERATOR_LOGIC_LESSER_H
+#define LO21_OPERATOR_LOGIC_LESSER_H
 
 
 #include "interface.h"
@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class LogicLesserOperator : public OperatorInterface {
+class NumericLesserOperator : public OperatorInterface {
 public:
     /**
      * @inheritdoc
@@ -26,4 +26,4 @@ public:
 };
 
 
-#endif //LO21_LOGIC_LESSER_H
+#endif //LO21_OPERATOR_LOGIC_LESSER_H

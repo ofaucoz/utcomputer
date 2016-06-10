@@ -39,4 +39,4 @@ public:
 typedef shared_ptr<ParenthesisLiteral> ParenthesisLiteralPointer;
 
 
-#endif // LO21_LITERAL_WHITESPACE_H
+#endif // LO21_LITERAL_PARENTHESIS_H

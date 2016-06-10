@@ -1,15 +1,16 @@
-#ifndef LO21_LOGIC_GREATER_H
-#define LO21_LOGIC_GREATER_H
+#ifndef LO21_OPERATOR_LOGIC_GREATER_EQUALS_H
+#define LO21_OPERATOR_LOGIC_GREATER_EQUALS_H
 
 
 #include "interface.h"
 #include "../exception/invalid_syntax.h"
 #include "../literal/numeric.h"
 #include "../exception/invalid_operand.h"
+#include <math.h>
 
 using namespace std;
 
-class LogicGreaterOperator : public OperatorInterface {
+class NumericGreaterEqualsOperator : public OperatorInterface {
 public:
     /**
      * @inheritdoc
@@ -25,4 +26,4 @@ public:
 };
 
 
-#endif //LO21_LOGIC_GREATER_H
+#endif //LO21_OPERATOR_LOGIC_GREATER_EQUALS_H

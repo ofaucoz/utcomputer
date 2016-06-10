@@ -6,10 +6,7 @@ void SubstractionOperator::apply(LiteralsStack &stack) const {
     }
 
     LiteralPointer first = stack.top();
-    stack.pop();
-
-    LiteralPointer second = stack.top();
-    stack.pop();
+    LiteralPointer second = stack.second();
 
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
     NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
@@ -25,6 +22,8 @@ void SubstractionOperator::apply(LiteralsStack &stack) const {
     Fraction resultR = Math::substract(secondNumeric->getRealFraction(), firstNumeric->getRealFraction());
     Fraction resultI = Math::substract(secondNumeric->getImaginaryFraction(), firstNumeric->getImaginaryFraction());
 
+    stack.pop();
+    stack.pop();
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(resultR, resultI)));
     stack.save();
 }

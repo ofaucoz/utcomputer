@@ -25,5 +25,5 @@ TEST(NumericComplexRealTest, FailInt) {
     NumericComplexRealOperator numericComplexReal;
     EXPECT_THROW(numericComplexReal.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(0, stack.size());
+    EXPECT_EQ(1, stack.size());
 }

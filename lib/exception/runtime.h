@@ -7,8 +7,7 @@
 using namespace std;
 
 /**
- * Exception thrown when a runtime error occurs (something that should not be possible
- * using the Graphical User Interface).
+ * Exception thrown when a runtime error occurs.
  */
 struct RuntimeException {
 private:

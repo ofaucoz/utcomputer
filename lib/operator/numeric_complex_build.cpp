@@ -6,10 +6,7 @@ void NumericComplexBuildOperator::apply(LiteralsStack &stack) const {
     }
 
     LiteralPointer first = stack.top();
-    stack.pop();
-
-    LiteralPointer second = stack.top();
-    stack.pop();
+    LiteralPointer second = stack.second();
 
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
     NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
@@ -28,6 +25,9 @@ void NumericComplexBuildOperator::apply(LiteralsStack &stack) const {
         stack.notify();
         throw InvalidSyntaxException("Arguments can't already be complex");
     }
+
+    stack.pop();
+    stack.pop();
 
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(
         secondNumeric->getRealNumerator(),

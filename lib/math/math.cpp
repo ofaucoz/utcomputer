@@ -37,6 +37,15 @@ Fraction Math::simplify(Fraction f) {
     return Fraction(f.getNumerator() / fGcd, f.getDenominator() / fGcd);
 }
 
+double Math::module(Fraction real, Fraction imaginary) {
+    double realNum = real.getNumerator();
+    double realDen = real.getDenominator();
+    double imagNum = imaginary.getNumerator();
+    double imagDen = imaginary.getDenominator();
+
+    return sqrt((pow(realNum, 2) / pow(realDen, 2)) + (pow(imagNum, 2) / pow(imagDen, 2)));
+}
+
 bool Math::isInt(double value) {
     double intpart;
     return modf(value, &intpart) == 0.0;

@@ -24,7 +24,7 @@ TEST(NumeratorOperatorTest, FailComplex) {
     NumeratorOperator numeratorOperator;
     EXPECT_THROW(numeratorOperator.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(0, stack.size());
+    EXPECT_EQ(1, stack.size());
 }
 
 TEST(NumeratorOperatorTest, FailNonNumeric) {
@@ -36,5 +36,5 @@ TEST(NumeratorOperatorTest, FailNonNumeric) {
     NumeratorOperator numeratorOperator;
     EXPECT_THROW(numeratorOperator.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(0, stack.size());
+    EXPECT_EQ(1, stack.size());
 }

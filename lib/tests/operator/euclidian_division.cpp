@@ -25,7 +25,7 @@ TEST(EuclidianDivisionOperatorTest, ComplexNumerics) {
     EuclidianDivisionOperator euclidianDivisionOperator;
     EXPECT_THROW(euclidianDivisionOperator.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(0, stack.size());
+    EXPECT_EQ(2, stack.size());
 }
 
 TEST(EuclidianDivisionOperatorTest, FailNotEnoughOperands) {
@@ -48,7 +48,7 @@ TEST(EuclidianDivisionOperatorTest, FailFirstNonNumeric) {
     EuclidianDivisionOperator euclidianDivisionOperator;
     EXPECT_THROW(euclidianDivisionOperator.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(0, stack.size());
+    EXPECT_EQ(2, stack.size());
 }
 
 TEST(EuclidianDivisionOperatorTest, FailSecondNonNumeric) {
@@ -61,5 +61,5 @@ TEST(EuclidianDivisionOperatorTest, FailSecondNonNumeric) {
     EuclidianDivisionOperator euclidianDivisionOperator;
     EXPECT_THROW(euclidianDivisionOperator.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(0, stack.size());
+    EXPECT_EQ(2, stack.size());
 }

@@ -21,10 +21,10 @@
 #include "../operator/logic_and.h"
 #include "../operator/logic_different.h"
 #include "../operator/logic_equals.h"
-#include "../operator/logic_greater.h"
-#include "../operator/logic_greater_equals.h"
-#include "../operator/logic_lesser.h"
-#include "../operator/logic_lesser_equals.h"
+#include "../operator/numeric_greater.h"
+#include "../operator/numeric_greater_equals.h"
+#include "../operator/numeric_lesser.h"
+#include "../operator/numeric_lesser_equals.h"
 #include "../operator/logic_not.h"
 #include "../operator/logic_or.h"
 #include "../operator/numeric_complex_build.h"
@@ -93,10 +93,10 @@ TEST(UTComputer, FunctionnalTest) {
     operatorsMap.set("OR", OperatorPointer(new LogicOrOperator));
     operatorsMap.set("!=", OperatorPointer(new LogicDifferentOperator));
     operatorsMap.set("=", OperatorPointer(new LogicEqualsOperator));
-    operatorsMap.set(">", OperatorPointer(new LogicGreaterOperator));
-    operatorsMap.set(">=", OperatorPointer(new LogicGreaterEqualsOperator));
-    operatorsMap.set("<", OperatorPointer(new LogicLesserOperator));
-    operatorsMap.set("<=", OperatorPointer(new LogicLesserEqualsOperator));
+    operatorsMap.set(">", OperatorPointer(new NumericGreaterOperator));
+    operatorsMap.set(">=", OperatorPointer(new NumericGreaterEqualsOperator));
+    operatorsMap.set("<", OperatorPointer(new NumericLesserOperator));
+    operatorsMap.set("<=", OperatorPointer(new NumericLesserEqualsOperator));
     operatorsMap.set("$", OperatorPointer(new NumericComplexBuildOperator));
     operatorsMap.set("IM", OperatorPointer(new NumericComplexImaginaryOperator));
     operatorsMap.set("RE", OperatorPointer(new NumericComplexRealOperator));

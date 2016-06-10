@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "../../literal/numeric.h"
-#include "../../operator/logic_greater_equals.h"
+#include "../../operator/numeric_greater_equals.h"
 
 TEST(LogicGreaterEqualsOperatorTest, GreaterComplexArguments) {
     LiteralsStack stack;
@@ -9,8 +9,8 @@ TEST(LogicGreaterEqualsOperatorTest, GreaterComplexArguments) {
 
     EXPECT_EQ(2, stack.size());
 
-    LogicGreaterEqualsOperator logicGreaterEqualsOperator;
-    logicGreaterEqualsOperator.apply(stack);
+    NumericGreaterEqualsOperator greaterEqualsOperator;
+    greaterEqualsOperator.apply(stack);
 
     EXPECT_EQ(1, stack.size());
     EXPECT_EQ("1", stack.top()->toString());
@@ -23,8 +23,8 @@ TEST(LogicGreaterEqualsOperatorTest, LesserComplexArguments) {
 
     EXPECT_EQ(2, stack.size());
 
-    LogicGreaterEqualsOperator logicGreaterEqualsOperator;
-    logicGreaterEqualsOperator.apply(stack);
+    NumericGreaterEqualsOperator greaterEqualsOperator;
+    greaterEqualsOperator.apply(stack);
 
     EXPECT_EQ(1, stack.size());
     EXPECT_EQ("0", stack.top()->toString());
@@ -37,8 +37,8 @@ TEST(LogicGreaterEqualsOperatorTest, EqualsComplexArguments) {
 
     EXPECT_EQ(2, stack.size());
 
-    LogicGreaterEqualsOperator logicGreaterEqualsOperator;
-    logicGreaterEqualsOperator.apply(stack);
+    NumericGreaterEqualsOperator greaterEqualsOperator;
+    greaterEqualsOperator.apply(stack);
 
     EXPECT_EQ(1, stack.size());
     EXPECT_EQ("1", stack.top()->toString());

@@ -49,7 +49,7 @@ TEST(MultiplicationOperatorTest, FailFirstNonNumeric) {
     MultiplicationOperator multiplicationOperator;
     EXPECT_THROW(multiplicationOperator.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(0, stack.size());
+    EXPECT_EQ(2, stack.size());
 }
 
 TEST(MultiplicationOperatorTest, FailSecondNonNumeric) {
@@ -62,6 +62,6 @@ TEST(MultiplicationOperatorTest, FailSecondNonNumeric) {
     MultiplicationOperator multiplicationOperator;
     EXPECT_THROW(multiplicationOperator.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(0, stack.size());
+    EXPECT_EQ(2, stack.size());
 }
 

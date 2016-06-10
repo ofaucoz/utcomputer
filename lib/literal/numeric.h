@@ -1,5 +1,5 @@
-#ifndef LO21_LITERAL_COMPLEX_H
-#define LO21_LITERAL_COMPLEX_H
+#ifndef LO21_LITERAL_NUMERIC_H
+#define LO21_LITERAL_NUMERIC_H
 
 
 #include "interface.h"
@@ -127,4 +127,4 @@ public:
 typedef shared_ptr<NumericLiteral> NumericLiteralPointer;
 
 
-#endif // LO21_LITERAL_COMPLEX_H
+#endif // LO21_LITERAL_NUMERIC_H

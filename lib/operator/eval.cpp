@@ -7,13 +7,13 @@ void EvalOperator::apply(LiteralsStack &stack) const {
     }
 
     LiteralPointer first = stack.top();
-    stack.pop();
-
     ExpressionLiteralPointer firstEpression = dynamic_pointer_cast<ExpressionLiteral>(first);
 
     if (!firstEpression) {
         throw InvalidOperandException(first->toString());
     }
+
+    stack.pop();
 
     // Ignore first and last characters (expression quotes) and postfix
     computer.execute(postfix(firstEpression->getValue().substr(1, firstEpression->getValue().size() - 2)));
