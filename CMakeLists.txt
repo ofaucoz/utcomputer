@@ -106,7 +106,12 @@ set(LIBRARY_FILES
         lib/resolver.h
         lib/runner.cpp
         lib/runner.h
-        lib/utcomputer.h lib/literal_definition/operator_atom_literal.h lib/operator/sto.cpp lib/operator/sto.h)
+        lib/utcomputer.h
+        lib/literal_definition/operator_atom_literal.h
+        lib/operator/sto.cpp
+        lib/operator/sto.h
+        lib/operator/forget.cpp
+        lib/operator/forget.h)
 
 set(INTERFACE_FILES
         ui/main.cpp
@@ -118,7 +123,9 @@ set(INTERFACE_FILES
         ui/messageTreeView.cpp
         ui/messageTreeView.h
         ui/historyTreeView.cpp
-        ui/historyTreeView.h ui/variableWidget.cpp ui/variableWidget.h)
+        ui/historyTreeView.h
+        ui/variableWidget.cpp
+        ui/variableWidget.h)
 
 configure_file(ui/views/main.glade ui/views/main.glade COPYONLY)
 add_executable(LO21 main.cpp ${LIBRARY_FILES} ${INTERFACE_FILES})
@@ -164,7 +171,8 @@ set(TEST_FILES
         lib/tests/runner.cpp
         lib/tests/utcomputer.cpp
         lib/tests/literal_definition/operator_strict_comparison.cpp
-        lib/tests/literal_definition/operator_equal_comparison.cpp lib/tests/operator/sto.cpp)
+        lib/tests/literal_definition/operator_equal_comparison.cpp
+        lib/tests/operator/sto.cpp)
 
 add_executable(LO21tests lib/tests/main.cpp ${LIBRARY_FILES} ${TEST_FILES})
 target_link_libraries(LO21tests pthread ${GTEST_LIBRARIES})

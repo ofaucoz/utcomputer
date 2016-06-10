@@ -1,6 +1,5 @@
 #include "variableWidget.h"
 
-
 VariableWidget::VariableWidget(BaseObjectType *treeview, const Glib::RefPtr<Gtk::Builder> &builder) : Gtk::TreeView(
     treeview), builder(builder) {
     refTreeModel = Gtk::ListStore::create(columns);
@@ -23,7 +22,6 @@ void VariableWidget::update(Repository *repository) {
     if (VariableMap *ObservableMapPointer = static_cast<VariableMap *>(repository)) {
         std::unordered_map<string, LiteralPointer>::const_iterator it = ObservableMapPointer->begin();
         for (unsigned int i = 0; it != ObservableMapPointer->end() && i < nbAff; i++, ++it) {
-            cout << it->first << endl;
             Gtk::TreeModel::Row row = *(refTreeModel->append());
             row[columns.col_id] = it->first;
             row[columns.col_value] = it->second->toString();

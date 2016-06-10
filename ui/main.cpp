@@ -1,5 +1,6 @@
 #include "main.h"
 #include "../lib/operator/sto.h"
+#include "../lib/operator/forget.h"
 
 MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade) : Gtk::Window(window), builder(glade),
                                                                                     computer(nullptr),
@@ -65,6 +66,7 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     operatorsMap.set("CLEAR", OperatorPointer(new StackClearOperator));
     operatorsMap.set("DROP", OperatorPointer(new StackDropOperator));
     operatorsMap.set("STO",OperatorPointer(new StoOperator(variablesMap)));
+    operatorsMap.set("FORGET",OperatorPointer(new ForgetOperator(variablesMap)));
 
     /*
      * Create main window
@@ -123,14 +125,47 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
 bool MainWindow::on_program_text_view_enter(GdkEventKey *key_event) {
     if (key_event->keyval == 0xFF0D) { //catch enter key
 
-        return true;
     }
     return true;
 }
 
 bool MainWindow::on_variable_text_view_enter(GdkEventKey *key_event) {
     if (key_event->keyval == 0xFF0D) { //catch enter key
-        return true;
+        try {
+            computer->execute(variableEditionTextView->get_buffer()->get_text());
+            variableEditionTextView->get_buffer()->set_text("");
+        }
+        catch (const InvalidOperandException &exception1) {
+            messageTree->update(exception1.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const InvalidSyntaxException &exception2) {
+            messageTree->update("Undefined literal :" + exception2.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const UndefinedAtomException &exception3) {
+            messageTree->update("Undefined atom :" + exception3.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const UnsupportedLiteralException &exception4) {
+            messageTree->update("Unsupported literal :" + exception4.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const std::out_of_range &exception5) {
+            messageTree->update("Variable not found");
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+
     }
     return true;
 }
@@ -178,6 +213,12 @@ void MainWindow::on_entry_command_changed() {
                 cout << '\a' << endl;
             }
         }
+        catch (const std::out_of_range &exception5) {
+            messageTree->update("Variable not found");
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
         command->set_text("");
     }
 }
@@ -215,6 +256,12 @@ void MainWindow::on_entry_command_activated() {
     }
     catch (const UnsupportedLiteralException &exception4) {
         messageTree->update(exception4.getValue());
+        if (bip->get_active()) {
+            cout << '\a' << endl;
+        }
+    }
+    catch (const std::out_of_range &exception5) {
+        messageTree->update("Variable not found");
         if (bip->get_active()) {
             cout << '\a' << endl;
         }
