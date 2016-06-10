@@ -4,7 +4,7 @@
 
 #include <gtkmm.h>
 #include "keyboardWidget.h"
-#include "repositoryWidget.h"
+#include "stackWidget.h"
 #include "../lib/operator/interface.h"
 #include "../lib/operator/addition.h"
 #include "../lib/operator/substraction.h"
@@ -46,6 +46,7 @@
 #include "../lib/runner.h"
 #include "messageTreeView.h"
 #include "historyTreeView.h"
+#include "variableWidget.h"
 #include <iostream>
 #include <sys/ioctl.h>
 #include <unistd.h>
@@ -68,11 +69,11 @@ protected:
     Lexer *lexer;
     Resolver *resolver;
     Runner *runner;
-    repositoryWidget *literalStack; //GtkTreeView
+    StackWidget *literalStack; //GtkTreeView
     messageTreeView *messageTree; //GtkTreeView
     historyTreeView *historyTree; //GtkTreeView
-    repositoryWidget *variableTree;
-    repositoryWidget *programTree;
+    VariableWidget *variableTree;
+    StackWidget *programTree;
     ToggleButton *variableButton;
     ToggleButton *programButton;
     Entry *nbStack;

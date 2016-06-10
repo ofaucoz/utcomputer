@@ -1,16 +1,11 @@
-//
-// Created by orphee on 02/06/16.
-//
-
-#ifndef LO21_REPOSITORYWIDGET_H
-#define LO21_REPOSITORYWIDGET_H
-
+#ifndef LO21_VARIABLEWIDGET_H
+#define LO21_VARIABLEWIDGET_H
 
 #include <gtkmm.h>
 #include "../lib/repository/observable.h"
 #include "../lib/literal/interface.h"
 
-class repositoryWidget : public RepositoryObserver, public Gtk::TreeView {
+class VariableWidget : public RepositoryObserver, public Gtk::TreeView {
 protected:
     class ModelColumns : public Gtk::TreeModel::ColumnRecord {
     public:
@@ -20,7 +15,7 @@ protected:
             add(col_value);
         }
 
-        Gtk::TreeModelColumn<int> col_id;
+        Gtk::TreeModelColumn<Glib::ustring> col_id;
         Gtk::TreeModelColumn<Glib::ustring> col_value;
     };
 
@@ -29,16 +24,12 @@ protected:
     Glib::RefPtr<Gtk::ListStore> refTreeModel;
     unsigned int nbAff;
 public:
-    repositoryWidget(BaseObjectType *treeview, const Glib::RefPtr<Gtk::Builder> &builder);
+    VariableWidget(BaseObjectType *treeview, const Glib::RefPtr<Gtk::Builder> &builder);
 
     //repositoryWidget(unsigned int nb) : nbAff(nb){}
     void setNb(unsigned int nbAff) { this->nbAff = nbAff; }
 
-    virtual void update(Repository *repository);
-
-    virtual ~repositoryWidget() { }
-
+    virtual void update(Repository* repository);
 };
 
-
-#endif //LO21_REPOSITORYWIDGET_H
+#endif //LO21_VARIABLEWIDGET_H

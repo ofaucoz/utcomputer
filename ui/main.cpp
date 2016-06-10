@@ -1,4 +1,5 @@
 #include "main.h"
+#include "../lib/operator/sto.h"
 
 MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade) : Gtk::Window(window), builder(glade),
                                                                                     computer(nullptr),
@@ -63,6 +64,7 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     operatorsMap.set("RE", OperatorPointer(new NumericComplexRealOperator));
     operatorsMap.set("CLEAR", OperatorPointer(new StackClearOperator));
     operatorsMap.set("DROP", OperatorPointer(new StackDropOperator));
+    operatorsMap.set("STO",OperatorPointer(new StoOperator(variablesMap)));
 
     /*
      * Create main window
