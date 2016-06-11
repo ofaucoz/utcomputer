@@ -48,7 +48,7 @@ TEST(OperatorLiteralTest, ConstructAndToString) {
 TEST(ProgramLiteralTest, ConstructAndToString) {
     ProgramLiteral programLiteral("[FOO 3 +]");
 
-    EXPECT_EQ(programLiteral.getName(), "[FOO 3 +]");
+    EXPECT_EQ(programLiteral.getProgram(), "[FOO 3 +]");
     EXPECT_EQ(programLiteral.toString(), "[FOO 3 +]");
 }
 

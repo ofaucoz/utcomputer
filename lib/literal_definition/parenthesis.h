@@ -29,6 +29,35 @@ public:
     LiteralPointer createInstance(string value) const override {
         return LiteralPointer(new ParenthesisLiteral(value));
     }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(LiteralPointer literal) const override {
+        return dynamic_pointer_cast<ParenthesisLiteral>(literal) != nullptr;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(string serialized) const {
+        return serialized.substr(0, 12) == "parenthesis:";
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const string serialize(LiteralPointer literal) const {
+        ParenthesisLiteralPointer parenthesisLiteral = dynamic_pointer_cast<ParenthesisLiteral>(literal);
+        return "parenthesis:" + parenthesisLiteral->getParenthesis();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    LiteralPointer unserialize(string serialized) const {
+        return createInstance(serialized.substr(12));
+    }
 };
 
 

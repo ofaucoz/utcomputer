@@ -27,6 +27,34 @@ public:
     LiteralPointer createInstance(string value) const override {
         return LiteralPointer(new WhitespaceLiteral());
     }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(LiteralPointer literal) const override {
+        return dynamic_pointer_cast<WhitespaceLiteral>(literal) != nullptr;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(string serialized) const {
+        return serialized == "whitespace";
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const string serialize(LiteralPointer literal) const {
+        return "whitespace";
+    }
+
+    /**
+     * @inheritdoc
+     */
+    LiteralPointer unserialize(string serialized) const {
+        return LiteralPointer(new WhitespaceLiteral());
+    }
 };
 
 
