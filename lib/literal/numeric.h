@@ -1,5 +1,5 @@
-#ifndef LO21_LITERAL_COMPLEX_H
-#define LO21_LITERAL_COMPLEX_H
+#ifndef LO21_LITERAL_NUMERIC_H
+#define LO21_LITERAL_NUMERIC_H
 
 
 #include "interface.h"
@@ -24,7 +24,7 @@ using namespace std;
  * complexs, ..., we only create them for the NumericLiteral and then this
  * literal is displayed according to its real type.
  */
-struct NumericLiteral : public LiteralInterface {
+struct NumericLiteral: public LiteralInterface {
 private:
     double realNumerator;
     double realDenominator;
@@ -127,4 +127,4 @@ public:
 typedef shared_ptr<NumericLiteral> NumericLiteralPointer;
 
 
-#endif // LO21_LITERAL_COMPLEX_H
+#endif // LO21_LITERAL_NUMERIC_H

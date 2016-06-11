@@ -6,10 +6,7 @@ void MultiplicationOperator::apply(LiteralsStack &stack) const {
     }
 
     LiteralPointer first = stack.top();
-    stack.pop();
-
-    LiteralPointer second = stack.top();
-    stack.pop();
+    LiteralPointer second = stack.second();
 
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
     NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
@@ -32,8 +29,13 @@ void MultiplicationOperator::apply(LiteralsStack &stack) const {
         secondNumeric->getImaginaryDenominator() * firstNumeric->getImaginaryDenominator()
     );
 
+    stack.pop();
+    stack.pop();
+
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(
         Math::simplify(resultR),
         Math::simplify(resultI)
     )));
+
+    stack.save();
 }

@@ -12,7 +12,7 @@ using namespace std;
 /**
  * Definition of an atom literal.
  */
-class AtomLiteralDefinition : public LiteralDefinitionInterface {
+class AtomLiteralDefinition: public LiteralDefinitionInterface {
 public:
     /**
      * @inheritdoc
@@ -26,6 +26,35 @@ public:
      */
     LiteralPointer createInstance(string value) const override {
         return LiteralPointer(new AtomLiteral(value));
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(LiteralPointer literal) const override {
+        return dynamic_pointer_cast<AtomLiteral>(literal) != nullptr;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(string serialized) const {
+        return serialized.substr(0, 5) == "atom:";
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const string serialize(LiteralPointer literal) const {
+        AtomLiteralPointer atomLiteral = dynamic_pointer_cast<AtomLiteral>(literal);
+        return "atom:" + atomLiteral->getValue();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    LiteralPointer unserialize(string serialized) const {
+        return createInstance(serialized.substr(5));
     }
 };
 

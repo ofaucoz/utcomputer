@@ -3,6 +3,7 @@
 #include "../literal_definition/atom.h"
 #include "../literal/program.h"
 
+
 void StoOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {
         throw InvalidSyntaxException("STO operator requires 2 operands");
@@ -45,5 +46,6 @@ void StoOperator::apply(LiteralsStack &stack) const {
         }
 
     }
+
     stack.notify();
 }

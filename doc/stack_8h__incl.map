@@ -1,3 +1,6 @@
-<map id="lib/repository/stack.h" name="lib/repository/stack.h">
-<area shape="rect" id="node3" href="$observable_8h.html" title="observable.h" alt="" coords="85,80,181,107"/>
+<map id="lib/literal/stack.h" name="lib/literal/stack.h">
+<area shape="rect" id="node2" href="$literal_2interface_8h.html" title="interface.h" alt="" coords="190,80,273,107"/>
+<area shape="rect" id="node10" href="$runtime_8h.html" title="../exception/runtime.h" alt="" coords="5,80,153,107"/>
+<area shape="rect" id="node8" href="$map_8h.html" title="../repository/map.h" alt="" coords="283,155,414,181"/>
+<area shape="rect" id="node9" href="$observable_8h.html" title="observable.h" alt="" coords="329,229,425,256"/>
 </map>

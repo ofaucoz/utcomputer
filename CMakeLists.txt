@@ -23,6 +23,7 @@ set(LIBRARY_FILES
         lib/exception/undefined_atom.h
         lib/exception/invalid_operand.h
         lib/exception/unspported_literal.h
+        lib/exception/runtime.h
         lib/math/fraction.h
         lib/math/math.cpp
         lib/math/math.h
@@ -37,6 +38,7 @@ set(LIBRARY_FILES
         lib/literal/parenthesis.h
         lib/literal/hook.h
         lib/literal/comma.h
+        lib/literal/stack.h
         lib/literal_definition/interface.h
         lib/literal_definition/atom.h
         lib/literal_definition/whitespace.h
@@ -51,6 +53,7 @@ set(LIBRARY_FILES
         lib/literal_definition/hook.h
         lib/literal_definition/comma.h
         lib/operator/forget.h
+        lib/literal_definition/operator_atom_literal.h
         lib/operator/interface.h
         lib/operator/addition.cpp
         lib/operator/addition.h
@@ -76,6 +79,12 @@ set(LIBRARY_FILES
         lib/operator/stack_clear.h
         lib/operator/stack_drop.cpp
         lib/operator/stack_drop.h
+        lib/operator/stack_undo.cpp
+        lib/operator/stack_undo.h
+        lib/operator/stack_redo.cpp
+        lib/operator/stack_redo.h
+        lib/operator/stack_swap.cpp
+        lib/operator/stack_swap.h
         lib/operator/numeric_complex_build.cpp
         lib/operator/numeric_complex_build.h
         lib/operator/numeric_complex_real.cpp
@@ -85,24 +94,34 @@ set(LIBRARY_FILES
         lib/operator/logic_equals.h
         lib/operator/logic_different.cpp
         lib/operator/logic_different.h
-        lib/operator/logic_greater.cpp
-        lib/operator/logic_greater.h
-        lib/operator/logic_greater_equals.cpp
-        lib/operator/logic_greater_equals.h
-        lib/operator/logic_lesser.cpp
-        lib/operator/logic_lesser.h
-        lib/operator/logic_lesser_equals.cpp
-        lib/operator/logic_lesser_equals.h
+        lib/operator/numeric_greater.cpp
+        lib/operator/numeric_greater.h
+        lib/operator/numeric_greater_equals.cpp
+        lib/operator/numeric_greater_equals.h
+        lib/operator/numeric_lesser.cpp
+        lib/operator/numeric_lesser.h
+        lib/operator/numeric_lesser_equals.cpp
+        lib/operator/numeric_lesser_equals.h
         lib/operator/logic_and.cpp
         lib/operator/logic_and.h
         lib/operator/logic_or.cpp
         lib/operator/logic_or.h
         lib/operator/logic_not.cpp
         lib/operator/logic_not.h
+        lib/operator/sto.cpp
+        lib/operator/sto.h
+        lib/operator/forget.cpp
+        lib/operator/forget.h
         lib/repository/observable.cpp
         lib/repository/observable.h
         lib/repository/map.h
-        lib/repository/stack.h
+        lib/serializer/json.h
+        lib/serializer/literals_stack.cpp
+        lib/serializer/literals_stack.h
+        lib/serializer/programs_map.cpp
+        lib/serializer/programs_map.h
+        lib/serializer/variables_map.cpp
+        lib/serializer/variables_map.h
         lib/lexer.cpp
         lib/lexer.h
         lib/resolver.cpp
@@ -123,18 +142,21 @@ set(LIBRARY_FILES
 set(INTERFACE_FILES
         ui/main.cpp
         ui/main.h
-        ui/keyboardWidget.cpp
-        ui/keyboardWidget.h
-        ui/stackWidget.cpp
-        ui/stackWidget.h
-        ui/messageTreeView.cpp
-        ui/messageTreeView.h
-        ui/historyTreeView.cpp
-        ui/historyTreeView.h
-        ui/variableWidget.cpp
-        ui/variableWidget.h
         ui/programWidget.cpp
-        ui/programWidget.h)
+        ui/programWidget.h
+        ui/keyboard_widget.cpp
+        ui/keyboard_widget.h
+        ui/repository_widget.cpp
+        ui/repository_widget.h
+        ui/message_tree_view.cpp
+        ui/message_tree_view.h
+        ui/history_tree_view.cpp
+        ui/history_tree_view.h
+        ui/stack_widget.cpp
+        ui/stack_widget.h
+        ui/variable_widget.cpp
+        ui/variable_widget.h)
+
 
 configure_file(ui/views/main.glade ui/views/main.glade COPYONLY)
 add_executable(LO21 main.cpp ${LIBRARY_FILES} ${INTERFACE_FILES})
@@ -144,13 +166,18 @@ target_link_libraries(LO21 pthread ${GTKMM_LIBRARIES} ${GTK3_LIBRARIES})
 set(TEST_FILES
         lib/tests/math/math.cpp
         lib/tests/literal/all.cpp
+        lib/tests/literal/stack.cpp
         lib/tests/literal_definition/atom.cpp
         lib/tests/literal_definition/numeric.cpp
         lib/tests/literal_definition/operator_numeric.cpp
+        lib/tests/literal_definition/operator_strict_comparison.cpp
+        lib/tests/literal_definition/operator_equal_comparison.cpp
         lib/tests/literal_definition/expression.cpp
         lib/tests/literal_definition/whitespace.cpp
         lib/tests/literal_definition/program.cpp
         lib/tests/literal_definition/parenthesis.cpp
+        lib/tests/literal_definition/operator_strict_comparison.cpp
+        lib/tests/literal_definition/operator_equal_comparison.cpp
         lib/tests/operator/addition.cpp
         lib/tests/operator/substraction.cpp
         lib/tests/operator/multiplication.cpp
@@ -165,18 +192,23 @@ set(TEST_FILES
         lib/tests/operator/stack_clear.cpp
         lib/tests/operator/stack_drop.cpp
         lib/tests/operator/stack_dup.cpp
+        lib/tests/operator/stack_swap.cpp
         lib/tests/operator/numeric_complex_imaginary.cpp
         lib/tests/operator/numeric_complex_build.cpp
         lib/tests/operator/numeric_complex_real.cpp
         lib/tests/operator/logic_equals.cpp
         lib/tests/operator/logic_different.cpp
-        lib/tests/operator/logic_greater.cpp
-        lib/tests/operator/logic_greater_equals.cpp
+        lib/tests/operator/numeric_greater.cpp
+        lib/tests/operator/numeric_greater_equals.cpp
         lib/tests/operator/logic_and.cpp
         lib/tests/operator/logic_or.cpp
         lib/tests/operator/logic_not.cpp
+        lib/tests/operator/forget.cpp
+        lib/tests/operator/sto.cpp
         lib/tests/repository/map.cpp
-        lib/tests/repository/stack.cpp
+        lib/tests/serializer/literals_stack.cpp
+        lib/tests/serializer/programs_map.cpp
+        lib/tests/serializer/variables_map.cpp
         lib/tests/lexer.cpp
         lib/tests/resolver.cpp
         lib/tests/runner.cpp

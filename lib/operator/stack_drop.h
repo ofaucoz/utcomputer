@@ -1,11 +1,11 @@
-#ifndef LO21_STACK_DROP_OPERATOR_H
-#define LO21_STACK_DROP_OPERATOR_H
+#ifndef LO21_OPERATOR_STACK_DROP_OPERATOR_H
+#define LO21_OPERATOR_STACK_DROP_OPERATOR_H
 
 
 #include "interface.h"
 #include "../exception/invalid_syntax.h"
 
-class StackDropOperator : public OperatorInterface {
+class StackDropOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc
@@ -21,4 +21,4 @@ public:
 };
 
 
-#endif //LO21_STACK_DROP_OPERATOR_H
+#endif //LO21_OPERATOR_STACK_DROP_OPERATOR_H

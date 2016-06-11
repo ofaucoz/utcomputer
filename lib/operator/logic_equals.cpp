@@ -6,25 +6,10 @@ void LogicEqualsOperator::apply(LiteralsStack &stack) const {
     }
 
     LiteralPointer first = stack.top();
+    LiteralPointer second = stack.second();
+
     stack.pop();
-
-    LiteralPointer second = stack.top();
     stack.pop();
-
-    NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
-    NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
-
-    if (!firstNumeric) {
-        throw InvalidOperandException(first->toString());
-    }
-
-    if (!secondNumeric) {
-        throw InvalidOperandException(second->toString());
-    }
-
-    if (firstNumeric->toString() == secondNumeric->toString()) {
-        stack.pushAndNotify(LiteralPointer(new NumericLiteral(1)));
-    } else {
-        stack.pushAndNotify(LiteralPointer(new NumericLiteral(0)));
-    }
+    stack.pushAndNotify(LiteralPointer(new NumericLiteral(first->toString() == second->toString() ? 1 : 0)));
+    stack.save();
 }

@@ -1,5 +1,5 @@
-#ifndef LO21_NUMERIC_COMPLEX_BUILD_H
-#define LO21_NUMERIC_COMPLEX_BUILD_H
+#ifndef LO21_OPERATOR_NUMERIC_COMPLEX_BUILD_H
+#define LO21_OPERATOR_NUMERIC_COMPLEX_BUILD_H
 
 
 #include "interface.h"
@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class NumericComplexBuildOperator : public OperatorInterface {
+class NumericComplexBuildOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //LO21_NUMERIC_COMPLEX_BUILD_H
+#endif //LO21_OPERATOR_NUMERIC_COMPLEX_BUILD_H

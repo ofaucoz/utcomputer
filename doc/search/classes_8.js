@@ -3,6 +3,7 @@ var searchData=
   ['lexer',['Lexer',['../classLexer.html',1,'']]],
   ['literaldefinitioninterface',['LiteralDefinitionInterface',['../classLiteralDefinitionInterface.html',1,'']]],
   ['literalinterface',['LiteralInterface',['../structLiteralInterface.html',1,'']]],
+  ['literalsstack',['LiteralsStack',['../classLiteralsStack.html',1,'']]],
   ['logicandoperator',['LogicAndOperator',['../classLogicAndOperator.html',1,'']]],
   ['logicdifferentoperator',['LogicDifferentOperator',['../classLogicDifferentOperator.html',1,'']]],
   ['logicequalsoperator',['LogicEqualsOperator',['../classLogicEqualsOperator.html',1,'']]],

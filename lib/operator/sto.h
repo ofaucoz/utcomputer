@@ -17,6 +17,7 @@ private:
     Lexer &lexer;
 public:
     StoOperator(VariableMap & variableMap,ProgramMap &programMap,Lexer &lexer) : variableMap(variableMap), programMap(programMap), lexer(lexer) { }
+
     /**
      * @inheritdoc
      */

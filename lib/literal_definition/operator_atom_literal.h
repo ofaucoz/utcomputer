@@ -11,7 +11,9 @@ using namespace std;
 /**
  * Definition of a custom operator literal.
  */
-class OperatorAtomLiteralDefinition : public LiteralDefinitionInterface {
+
+class OperatorAtomLiteralDefinition: public LiteralDefinitionInterface {
+
 public:
     /**
      * @inheritdoc
@@ -26,6 +28,35 @@ public:
     LiteralPointer createInstance(string value) const override {
         return LiteralPointer(new OperatorLiteral(value));
     }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(LiteralPointer literal) const override {
+        return false; // Handled by the OperatorNumericLiteralDefinition
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(string serialized) const {
+        return false; // Handled by the OperatorNumericLiteralDefinition
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const string serialize(LiteralPointer literal) const {
+        return ""; // Handled by the OperatorNumericLiteralDefinition
+    }
+
+    /**
+     * @inheritdoc
+     */
+    LiteralPointer unserialize(string serialized) const {
+        return nullptr; // Handled by the OperatorNumericLiteralDefinition
+    }
+
 };
 
 #endif //LO21_OPERATOR_ATOM_LITERAL_H

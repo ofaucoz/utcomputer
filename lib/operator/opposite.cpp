@@ -6,13 +6,13 @@ void OppositeOperator::apply(LiteralsStack &stack) const {
     }
 
     LiteralPointer first = stack.top();
-    stack.pop();
-
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
 
     if (!firstNumeric) {
         throw InvalidOperandException(first->toString());
     }
+
+    stack.pop();
 
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(
         -firstNumeric->getRealNumerator(),
@@ -20,4 +20,6 @@ void OppositeOperator::apply(LiteralsStack &stack) const {
         firstNumeric->getImaginaryNumerator(),
         firstNumeric->getImaginaryDenominator()
     )));
+
+    stack.save();
 }

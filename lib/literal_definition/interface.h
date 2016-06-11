@@ -19,6 +19,11 @@ using namespace std;
 class LiteralDefinitionInterface {
 public:
     /**
+     * Virtual destructor to avoid conflict issues with children classes.
+     */
+    virtual ~LiteralDefinitionInterface() { };
+
+    /**
      * Return the pattern associated to this definition.
      * This pattern is the regex used to match a string to a this definition
      * (this matched string will then be provided to `createInstance`).
@@ -37,9 +42,24 @@ public:
     virtual LiteralPointer createInstance(string value) const = 0;
 
     /**
-     * Virtual destructor to avoid conflict issues with children classes.
+     * Check whether this literal definition is able to serialize the given literal.
      */
-    virtual ~LiteralDefinitionInterface() { };
+    virtual const bool support(LiteralPointer literal) const = 0;
+
+    /**
+     * Check whether this literal definition is able to unserialize the given string.
+     */
+    virtual const bool support(string serialized) const = 0;
+
+    /**
+     * Serialize the given literal.
+     */
+    virtual const string serialize(LiteralPointer literal) const = 0;
+
+    /**
+     * Unserialize the given string.
+     */
+    virtual LiteralPointer unserialize(string serialized) const = 0;
 };
 
 typedef shared_ptr<LiteralDefinitionInterface> LiteralDefinitionPointer;

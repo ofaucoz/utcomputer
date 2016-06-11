@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['notify',['notify',['../classRepository.html#a348ff1f79a28f649b5e9dace54ae846c',1,'Repository']]],
-  ['numericliteral',['NumericLiteral',['../structNumericLiteral.html#ab7546798b35606cc9f4335f590111b3f',1,'NumericLiteral::NumericLiteral(double realNumerator, double realDenominator=1, double imaginaryNumerator=0, double imaginaryDenominator=1)'],['../structNumericLiteral.html#a3c6d61ea227715ebc77598d3605242c1',1,'NumericLiteral::NumericLiteral(Fraction real, Fraction imaginary)']]]
+  ['mainwindow',['MainWindow',['../classMainWindow.html#abc679916de338b0a3e8d84621570bf65',1,'MainWindow']]],
+  ['messagetreeview',['messageTreeView',['../classmessageTreeView.html#a4822721e4efa25a4b0ce31b0f5aa2bdd',1,'messageTreeView']]],
+  ['modelcolumns',['ModelColumns',['../classhistoryTreeView_1_1ModelColumns.html#a46a2a20b33dcb9c2a7f35726684d5a4b',1,'historyTreeView::ModelColumns::ModelColumns()'],['../classmessageTreeView_1_1ModelColumns.html#a8015f1bb619a203bec47b32d1f82297b',1,'messageTreeView::ModelColumns::ModelColumns()'],['../classrepositoryWidget_1_1ModelColumns.html#a76a0f5f0744d0119ada7d0d8cc88a236',1,'repositoryWidget::ModelColumns::ModelColumns()']]]
 ];

@@ -17,6 +17,7 @@ private:
     ProgramMap &programMap;
 public:
     ForgetOperator(VariableMap & variableMap, ProgramMap &programMap) : variableMap(variableMap), programMap(programMap) { }
+
     /**
      * @inheritdoc
      */

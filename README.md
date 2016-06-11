@@ -7,15 +7,16 @@ This project follow the Google C++ coding convention: https://google.github.io/s
 
 ## Running the application
 
-This application uses CMake. You should probably use an IDE handling this for you (we recommand CLion),
-but if you don't want to, you can use the following instructions:
+Install the compilation tools:
 
 ```
-sudo apt-get install build-essential libgtk-3-dev libgtkmm-3.0-dev
-cd /path/to/the/project
-cmake CMakeLists.txt
-make
-./LO21
+sudo apt-get install cmake build-essential libgtk-3-dev libgtkmm-3.0-dev
+```
+
+And run the following command in the project directory:
+
+```
+bin/run.sh
 ```
 
 ## Running the tests (Google Test)
@@ -32,13 +33,10 @@ sudo cp *.a /usr/lib
 
 See http://www.eriksmistad.no/getting-started-with-google-test-on-ubuntu/ for more informations.
 
-To run the tests, you should probably use your IDE (we recommand CLion) but you can also do it by hand:
+And run the following command in the project directory:
 
 ```
-cd /path/to/the/project
-cmake CMakeLists.txt
-make
-./LO21tests
+bin/test.sh
 ```
 
 ## Building the API documentation (Doxygen)

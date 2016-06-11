@@ -11,7 +11,7 @@ using namespace std;
  * For instance :
  *      ( or )
  */
-struct ParenthesisLiteral : public LiteralInterface {
+struct ParenthesisLiteral: public LiteralInterface {
 private:
     string parenthesis;
 
@@ -39,4 +39,4 @@ public:
 typedef shared_ptr<ParenthesisLiteral> ParenthesisLiteralPointer;
 
 
-#endif // LO21_LITERAL_WHITESPACE_H
+#endif // LO21_LITERAL_PARENTHESIS_H

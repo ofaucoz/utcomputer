@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class ModuloOperator : public OperatorInterface {
+class ModuloOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc

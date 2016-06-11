@@ -14,7 +14,7 @@ using namespace std;
 /**
  * Definition of a numeric literal.
  */
-class NumericLiteralDefinition : public LiteralDefinitionInterface {
+class NumericLiteralDefinition: public LiteralDefinitionInterface {
 private:
     /**
      * Split the given string into a queue of elements to extract
@@ -49,6 +49,35 @@ public:
      * @inheritdoc
      */
     LiteralPointer createInstance(string value) const override;
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(LiteralPointer literal) const override {
+        return dynamic_pointer_cast<NumericLiteral>(literal) != nullptr;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(string serialized) const {
+        return serialized.substr(0, 8) == "numeric:";
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const string serialize(LiteralPointer literal) const {
+        NumericLiteralPointer numericLiteral = dynamic_pointer_cast<NumericLiteral>(literal);
+        return "numeric:" + numericLiteral->toString();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    LiteralPointer unserialize(string serialized) const {
+        return createInstance(serialized.substr(8));
+    }
 };
 
 

@@ -1,7 +1,5 @@
-#ifndef LO21_EQUAL_COMPARISON_H
-#define LO21_EQUALCOMPARISON_H
-
-//|\=|!\=|>|<|>\=|<\=
+#ifndef LO21_LITERAL_DEFINITION_OPERATOR_EQUAL_H
+#define LO21_LITERAL_DEFINITION_OPERATOR_EQUAL_H
 
 #include <iostream>
 #include <regex>
@@ -13,7 +11,7 @@ using namespace std;
 /**
  * Definition of an equal comparison operator literal.
  */
-class OperatorEqualComparisonLiteralDefinition : public LiteralDefinitionInterface {
+class OperatorEqualComparisonLiteralDefinition: public LiteralDefinitionInterface {
 public:
     const string getPattern() const override {
         return ">\\=|<\\=";
@@ -22,6 +20,34 @@ public:
     LiteralPointer createInstance(string value) const override {
         return LiteralPointer(new OperatorLiteral(value));
     }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(LiteralPointer literal) const override {
+        return false; // Handled by the OperatorNumericLiteralDefinition
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(string serialized) const {
+        return false; // Handled by the OperatorNumericLiteralDefinition
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const string serialize(LiteralPointer literal) const {
+        return ""; // Handled by the OperatorNumericLiteralDefinition
+    }
+
+    /**
+     * @inheritdoc
+     */
+    LiteralPointer unserialize(string serialized) const {
+        return nullptr; // Handled by the OperatorNumericLiteralDefinition
+    }
 };
 
-#endif //LO21_EQUAL_COMPARISON_H
+#endif //LO21_LITERAL_DEFINITION_OPERATOR_EQUAL_H

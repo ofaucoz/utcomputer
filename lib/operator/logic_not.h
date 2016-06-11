@@ -1,5 +1,5 @@
-#ifndef LO21_LOGIC_NOT_H
-#define LO21_LOGIC_NOT_H
+#ifndef LO21_OPERATOR_LOGIC_NOT_H
+#define LO21_OPERATOR_LOGIC_NOT_H
 
 
 #include "interface.h"
@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class LogicNotOperator : public OperatorInterface {
+class LogicNotOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc
@@ -26,4 +26,4 @@ public:
 };
 
 
-#endif //LO21_LOGIC_NOT_H
+#endif //LO21_OPERATOR_LOGIC_NOT_H

@@ -1,5 +1,5 @@
-#ifndef LO21_LOGIC_EQUALS_H
-#define LO21_LOGIC_EQUALS_H
+#ifndef LO21_OPERATOR_LOGIC_EQUALS_H
+#define LO21_OPERATOR_LOGIC_EQUALS_H
 
 
 #include "interface.h"
@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class LogicEqualsOperator : public OperatorInterface {
+class LogicEqualsOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //LO21_LOGIC_EQUALS_H
+#endif //LO21_OPERATOR_LOGIC_EQUALS_H

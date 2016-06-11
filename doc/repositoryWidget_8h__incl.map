@@ -1,6 +1,5 @@
 <map id="ui/repositoryWidget.h" name="ui/repositoryWidget.h">
-<area shape="rect" id="node3" href="$observable_8h.html" title="../lib/repository/observable.h" alt="" coords="205,229,391,256"/>
-<area shape="rect" id="node7" href="$literal_2interface_8h.html" title="../lib/literal/interface.h" alt="" coords="385,80,531,107"/>
-<area shape="rect" id="node10" href="$map_8h.html" title="../repository/map.h" alt="" coords="443,155,574,181"/>
-<area shape="rect" id="node11" href="$stack_8h.html" title="../repository/stack.h" alt="" coords="230,155,369,181"/>
+<area shape="rect" id="node3" href="$observable_8h.html" title="../lib/repository/observable.h" alt="" coords="296,229,483,256"/>
+<area shape="rect" id="node7" href="$literal_2interface_8h.html" title="../lib/literal/interface.h" alt="" coords="181,80,328,107"/>
+<area shape="rect" id="node10" href="$map_8h.html" title="../repository/map.h" alt="" coords="72,155,203,181"/>
 </map>

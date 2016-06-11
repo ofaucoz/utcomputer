@@ -1,5 +1,5 @@
-#ifndef LO21_LOGIC_DIFFERENT_H
-#define LO21_LOGIC_DIFFERENT_H
+#ifndef LO21_OPERATOR_LOGIC_DIFFERENT_H
+#define LO21_OPERATOR_LOGIC_DIFFERENT_H
 
 
 #include "interface.h"
@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class LogicDifferentOperator : public OperatorInterface {
+class LogicDifferentOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //LO21_LOGIC_DIFFERENT_H
+#endif //LO21_OPERATOR_LOGIC_DIFFERENT_H

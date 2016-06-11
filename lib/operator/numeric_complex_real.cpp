@@ -9,8 +9,6 @@ void NumericComplexRealOperator::apply(LiteralsStack &stack) const {
     }
 
     LiteralPointer first = stack.top();
-    stack.pop();
-
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
 
     if (!firstNumeric) {
@@ -21,8 +19,12 @@ void NumericComplexRealOperator::apply(LiteralsStack &stack) const {
         throw InvalidOperandException(first->toString());
     }
 
+    stack.pop();
+
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(
         firstNumeric->getRealNumerator(),
         firstNumeric->getRealDenominator()
     )));
+
+    stack.save();
 }

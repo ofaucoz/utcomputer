@@ -8,7 +8,6 @@
 #include <unordered_map>
 #include <memory>
 #include "../repository/map.h"
-#include "../repository/stack.h"
 
 using namespace std;
 
@@ -27,24 +26,18 @@ using namespace std;
 struct LiteralInterface {
 public:
     /**
-     * Each literal have a string representation. This method return this string.
-     */
-    virtual const string toString() const = 0;
-
-    /**
      * Virtual destructor to avoid conflict issues with children classes.
      */
     virtual ~LiteralInterface() { };
+
+    /**
+     * @return This literal string representation.
+     */
+    virtual const string toString() const = 0;
 };
 
 typedef shared_ptr<LiteralInterface> LiteralPointer;
 typedef vector<LiteralPointer> LiteralVector;
-
-/**
- * Stack of literals based on the ObservableStack class.
- * This type is used by the Runner for execution.
- */
-typedef ObservableStack<LiteralPointer> LiteralsStack;
 
 /**
  * The variables hasmap is an association between a string

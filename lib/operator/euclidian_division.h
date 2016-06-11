@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class EuclidianDivisionOperator : public OperatorInterface {
+class EuclidianDivisionOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc

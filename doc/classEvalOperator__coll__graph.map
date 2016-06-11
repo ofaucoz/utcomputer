@@ -1,10 +1,10 @@
 <map id="EvalOperator" name="EvalOperator">
-<area shape="rect" id="node2" href="$classOperatorInterface.html" title="{OperatorInterface\n||+ apply()\l+ getPriority()\l+ ~OperatorInterface()\l}" alt="" coords="5,588,156,695"/>
-<area shape="rect" id="node3" href="$classUTComputer.html" title="{UTComputer\n||+ UTComputer()\l+ getLexer()\l+ getResolver()\l+ execute()\l+ execute()\l}" alt="" coords="181,573,298,709"/>
-<area shape="rect" id="node4" href="$classLexer.html" title="{Lexer\n|&#45; definitions\l|+ addDefinition()\l+ addDefinition()\l+ getDefinitions()\l+ tokenize()\l}" alt="" coords="9,389,131,511"/>
-<area shape="rect" id="node5" href="$classResolver.html" title="{Resolver\n|&#45; operatorLiteralDefinition\l|+ Resolver()\l+ getOperatorsMap()\l+ resolve()\l}" alt="" coords="156,397,323,503"/>
-<area shape="rect" id="node6" href="$classObservableMap.html" title="{ObservableMap\&lt; K, V \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="179,147,342,297"/>
-<area shape="rect" id="node9" href="$classRunner.html" title="{Runner\n||+ Runner()\l+ run()\l}" alt="" coords="347,404,431,496"/>
-<area shape="rect" id="node8" href="$classRepository.html" title="{Repository\n|&#45; observers\l|+ attach()\l+ notify()\l}" alt="" coords="323,5,409,97"/>
-<area shape="rect" id="node10" href="$classObservableStack.html" title="{ObservableStack\&lt; Literal\lPointer \&gt;\n||+ top()\l+ push()\l+ pushAndNotify()\l+ pop()\l+ popAndNotify()\l}" alt="" coords="389,147,559,297"/>
+<area shape="rect" id="node2" href="$classOperatorInterface.html" title="{OperatorInterface\n||+ apply()\l+ getPriority()\l+ ~OperatorInterface()\l}" alt="" coords="5,720,156,827"/>
+<area shape="rect" id="node3" href="$classUTComputer.html" title="{UTComputer\n||+ UTComputer()\l+ getLexer()\l+ getResolver()\l+ execute()\l+ execute()\l}" alt="" coords="181,705,298,841"/>
+<area shape="rect" id="node4" href="$classLexer.html" title="{Lexer\n|&#45; definitions\l|+ addDefinition()\l+ addDefinition()\l+ getDefinitions()\l+ tokenize()\l}" alt="" coords="50,521,173,643"/>
+<area shape="rect" id="node5" href="$classResolver.html" title="{Resolver\n|&#45; operatorLiteralDefinition\l|+ Resolver()\l+ getOperatorsMap()\l+ resolve()\l}" alt="" coords="305,529,472,635"/>
+<area shape="rect" id="node6" href="$classObservableMap.html" title="{ObservableMap\&lt; K, V \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="257,213,419,363"/>
+<area shape="rect" id="node9" href="$classRunner.html" title="{Runner\n||+ Runner()\l+ run()\l}" alt="" coords="197,536,281,628"/>
+<area shape="rect" id="node8" href="$classRepository.html" title="{Repository\n|&#45; observers\l|+ attach()\l+ notify()\l}" alt="" coords="149,5,236,97"/>
+<area shape="rect" id="node10" href="$classLiteralsStack.html" title="{LiteralsStack\n|&#45; savedStates\l&#45; currentState\l&#45; currentStateIndex\l|+ LiteralsStack()\l+ size()\l+ top()\l+ second()\l+ begin()\l+ end()\l+ push()\l+ pushAndNotify()\l+ pop()\l+ popAndNotify()\l+ save()\l+ undo()\l+ redo()\l}" alt="" coords="99,147,233,429"/>
 </map>

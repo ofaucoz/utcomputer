@@ -26,7 +26,13 @@ TEST(EvalOperatorTest, Postfix) {
     lexer.addDefinition(new ProgramLiteralDefinition);
     lexer.addDefinition(new AtomLiteralDefinition);
 
-    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
+    Resolver resolver(
+        operatorsMap,
+        programsMap,
+        variablesMap,
+        LiteralDefinitionPointer(new OperatorNumericLiteralDefinition)
+    );
+
     Runner runner(operatorsMap, stack);
     UTComputer computer(lexer, resolver, runner);
 
@@ -71,7 +77,13 @@ TEST(EvalOperatorTest, Expression) {
     lexer.addDefinition(new ProgramLiteralDefinition);
     lexer.addDefinition(new AtomLiteralDefinition);
 
-    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
+    Resolver resolver(
+        operatorsMap,
+        programsMap,
+        variablesMap,
+        LiteralDefinitionPointer(new OperatorNumericLiteralDefinition)
+    );
+
     Runner runner(operatorsMap, stack);
     UTComputer computer(lexer, resolver, runner);
 
@@ -106,7 +118,13 @@ TEST(EvalOperatorTest, CustomOperators) {
     lexer.addDefinition(new ProgramLiteralDefinition);
     lexer.addDefinition(new AtomLiteralDefinition);
 
-    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
+    Resolver resolver(
+        operatorsMap,
+        programsMap,
+        variablesMap,
+        LiteralDefinitionPointer(new OperatorNumericLiteralDefinition)
+    );
+
     Runner runner(operatorsMap, stack);
     UTComputer computer(lexer, resolver, runner);
 
@@ -139,7 +157,13 @@ TEST(EvalOperatorTest, FailNonEspression) {
     lexer.addDefinition(new ProgramLiteralDefinition);
     lexer.addDefinition(new AtomLiteralDefinition);
 
-    Resolver resolver(operatorsMap, programsMap, variablesMap, LiteralDefinitionPointer(new OperatorNumericLiteralDefinition));
+    Resolver resolver(
+        operatorsMap,
+        programsMap,
+        variablesMap,
+        LiteralDefinitionPointer(new OperatorNumericLiteralDefinition)
+    );
+
     Runner runner(operatorsMap, stack);
     UTComputer computer(lexer, resolver, runner);
 
@@ -150,5 +174,5 @@ TEST(EvalOperatorTest, FailNonEspression) {
     EvalOperator evalOperator(computer);
     EXPECT_THROW(evalOperator.apply(stack), InvalidOperandException);
 
-    EXPECT_EQ(0, stack.size());
+    EXPECT_EQ(1, stack.size());
 }

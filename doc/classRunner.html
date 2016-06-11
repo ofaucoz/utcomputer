@@ -99,15 +99,15 @@ Collaboration diagram for Runner:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRunner__coll__graph.png" border="0" usemap="#Runner_coll__map" alt="Collaboration graph"/></div>
 <map name="Runner_coll__map" id="Runner_coll__map">
-<area shape="rect" id="node2" href="classObservableStack.html" title="{ObservableStack\&lt; Literal\lPointer \&gt;\n||+ top()\l+ push()\l+ pushAndNotify()\l+ pop()\l+ popAndNotify()\l}" alt="" coords="77,147,246,297"/>
-<area shape="rect" id="node4" href="classRepository.html" title="{Repository\n|&#45; observers\l|+ attach()\l+ notify()\l}" alt="" coords="214,5,301,97"/>
-<area shape="rect" id="node5" href="classObservableMap.html" title="{ObservableMap\&lt; K, V \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="271,147,433,297"/>
+<area shape="rect" id="node2" href="classLiteralsStack.html" title="{LiteralsStack\n|&#45; savedStates\l&#45; currentState\l&#45; currentStateIndex\l|+ LiteralsStack()\l+ size()\l+ top()\l+ second()\l+ begin()\l+ end()\l+ push()\l+ pushAndNotify()\l+ pop()\l+ popAndNotify()\l+ save()\l+ undo()\l+ redo()\l}" alt="" coords="5,147,139,429"/>
+<area shape="rect" id="node3" href="classRepository.html" title="{Repository\n|&#45; observers\l|+ attach()\l+ notify()\l}" alt="" coords="55,5,142,97"/>
+<area shape="rect" id="node4" href="classObservableMap.html" title="{ObservableMap\&lt; K, V \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="163,213,325,363"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad64989225821e87f1fe0e3e725c0995c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRunner.html#ad64989225821e87f1fe0e3e725c0995c">Runner</a> (const <a class="el" href="operator_2interface_8h.html#a2379d1af54d31acc56682db68418b2a9">OperatorMap</a> &amp;<a class="el" href="classRunner.html#a6176e3d421c6f9918cdb22e818ea1d15">operatorsMap</a>, <a class="el" href="literal_2interface_8h.html#a07c00914e71d2dd19e5b0d64c7ceae51">LiteralsStack</a> &amp;<a class="el" href="classRunner.html#ae9013afbf6125ec56a095784a2ce7b47">literalStack</a>)</td></tr>
+<tr class="memitem:ad64989225821e87f1fe0e3e725c0995c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRunner.html#ad64989225821e87f1fe0e3e725c0995c">Runner</a> (const <a class="el" href="operator_2interface_8h.html#a2379d1af54d31acc56682db68418b2a9">OperatorMap</a> &amp;<a class="el" href="classRunner.html#a6176e3d421c6f9918cdb22e818ea1d15">operatorsMap</a>, <a class="el" href="classLiteralsStack.html">LiteralsStack</a> &amp;<a class="el" href="classRunner.html#ae9013afbf6125ec56a095784a2ce7b47">literalStack</a>)</td></tr>
 <tr class="separator:ad64989225821e87f1fe0e3e725c0995c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c9425fabdeb70aca9a08417e404e319"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRunner.html#a6c9425fabdeb70aca9a08417e404e319">run</a> (<a class="el" href="literal_2interface_8h.html#a4bf1140fd50825987e0c451b7fb017bf">LiteralVector</a> resolvedTokens)</td></tr>
 <tr class="separator:a6c9425fabdeb70aca9a08417e404e319"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,7 +116,7 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a6176e3d421c6f9918cdb22e818ea1d15"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="operator_2interface_8h.html#a2379d1af54d31acc56682db68418b2a9">OperatorMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRunner.html#a6176e3d421c6f9918cdb22e818ea1d15">operatorsMap</a></td></tr>
 <tr class="separator:a6176e3d421c6f9918cdb22e818ea1d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9013afbf6125ec56a095784a2ce7b47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="literal_2interface_8h.html#a07c00914e71d2dd19e5b0d64c7ceae51">LiteralsStack</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRunner.html#ae9013afbf6125ec56a095784a2ce7b47">literalStack</a></td></tr>
+<tr class="memitem:ae9013afbf6125ec56a095784a2ce7b47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLiteralsStack.html">LiteralsStack</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRunner.html#ae9013afbf6125ec56a095784a2ce7b47">literalStack</a></td></tr>
 <tr class="separator:ae9013afbf6125ec56a095784a2ce7b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -140,7 +140,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="literal_2interface_8h.html#a07c00914e71d2dd19e5b0d64c7ceae51">LiteralsStack</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classLiteralsStack.html">LiteralsStack</a> &amp;&#160;</td>
           <td class="paramname"><em>literalStack</em>&#160;</td>
         </tr>
         <tr>
@@ -208,7 +208,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="literal_2interface_8h.html#a07c00914e71d2dd19e5b0d64c7ceae51">LiteralsStack</a>&amp; Runner::literalStack</td>
+          <td class="memname"><a class="el" href="classLiteralsStack.html">LiteralsStack</a>&amp; Runner::literalStack</td>
         </tr>
       </table>
   </td>

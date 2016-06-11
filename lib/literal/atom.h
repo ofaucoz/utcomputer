@@ -11,7 +11,7 @@ using namespace std;
  * For instance :
  *      MYVAR
  */
-struct AtomLiteral : public LiteralInterface {
+struct AtomLiteral: public LiteralInterface {
 private:
     string value;
 

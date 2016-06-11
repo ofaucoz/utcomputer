@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class SubstractionOperator : public OperatorInterface {
+class SubstractionOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc

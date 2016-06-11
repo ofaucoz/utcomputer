@@ -4,6 +4,7 @@ var searchData=
   ['denominator',['denominator',['../classFraction.html#a8dc352b27b71c16da2de17505eca4023',1,'Fraction']]],
   ['denominator_2eh',['denominator.h',['../denominator_8h.html',1,'']]],
   ['denominatoroperator',['DenominatorOperator',['../classDenominatorOperator.html',1,'']]],
+  ['description',['description',['../structRuntimeException.html#a07b3b88a64a686ca241bf57550ac50ed',1,'RuntimeException']]],
   ['division_2eh',['division.h',['../division_8h.html',1,'']]],
   ['divisionoperator',['DivisionOperator',['../classDivisionOperator.html',1,'']]],
   ['dumper',['Dumper',['../classDumper.html',1,'']]],

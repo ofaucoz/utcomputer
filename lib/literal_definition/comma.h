@@ -12,7 +12,7 @@ using namespace std;
 /**
  * Definition of a comma literal.
  */
-class CommaLiteralDefinition : public LiteralDefinitionInterface {
+class CommaLiteralDefinition: public LiteralDefinitionInterface {
 public:
     /**
      * @inheritdoc
@@ -25,6 +25,34 @@ public:
      * @inheritdoc
      */
     LiteralPointer createInstance(string value) const override {
+        return LiteralPointer(new CommaLiteral());
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(LiteralPointer literal) const override {
+        return dynamic_pointer_cast<CommaLiteral>(literal) != nullptr;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const bool support(string serialized) const {
+        return serialized == "comma";
+    }
+
+    /**
+     * @inheritdoc
+     */
+    const string serialize(LiteralPointer literal) const {
+        return "comma";
+    }
+
+    /**
+     * @inheritdoc
+     */
+    LiteralPointer unserialize(string serialized) const {
         return LiteralPointer(new CommaLiteral());
     }
 };

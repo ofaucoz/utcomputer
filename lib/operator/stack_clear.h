@@ -1,12 +1,12 @@
-#ifndef LO21_STACK_CLEAR_OPERATOR_H
-#define LO21_STACK_CLEAR_OPERATOR_H
+#ifndef LO21_OPERATOR_STACK_CLEAR_OPERATOR_H
+#define LO21_OPERATOR_STACK_CLEAR_OPERATOR_H
 
 
 #include "../literal/interface.h"
 #include "interface.h"
 #include "../exception/invalid_syntax.h"
 
-class StackClearOperator : public OperatorInterface {
+class StackClearOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc
@@ -22,4 +22,4 @@ public:
 };
 
 
-#endif //LO21_STACK_CLEAR_OPERATOR_H
+#endif //LO21_OPERATOR_STACK_CLEAR_OPERATOR_H

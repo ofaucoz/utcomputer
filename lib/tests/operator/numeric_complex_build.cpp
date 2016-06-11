@@ -39,5 +39,4 @@ TEST(NumericComplexBuildOperatorTest, WrongArguments) {
     NumericComplexBuildOperator numericComplexBuildOperator;
     EXPECT_THROW(numericComplexBuildOperator.apply(stack), InvalidSyntaxException);
 
-
 }

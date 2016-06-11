@@ -6,10 +6,7 @@ void AdditionOperator::apply(LiteralsStack &stack) const {
     }
 
     LiteralPointer first = stack.top();
-    stack.pop();
-
-    LiteralPointer second = stack.top();
-    stack.pop();
+    LiteralPointer second = stack.second();
 
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
     NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
@@ -25,5 +22,8 @@ void AdditionOperator::apply(LiteralsStack &stack) const {
     Fraction resultR = Math::add(firstNumeric->getRealFraction(), secondNumeric->getRealFraction());
     Fraction resultI = Math::add(firstNumeric->getImaginaryFraction(), secondNumeric->getImaginaryFraction());
 
+    stack.pop();
+    stack.pop();
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(resultR, resultI)));
+    stack.save();
 }
