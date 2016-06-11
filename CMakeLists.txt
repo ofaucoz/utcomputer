@@ -114,7 +114,7 @@ set(LIBRARY_FILES
         lib/operator/sto.cpp
         lib/operator/sto.h
         lib/operator/forget.cpp
-        lib/operator/forget.h lib/operator/program_if.cpp lib/operator/program_if.h)
+        lib/operator/forget.h lib/operator/program_if.cpp lib/operator/program_if.h lib/operator/stack_dup.cpp lib/operator/stack_dup.h)
 
 set(INTERFACE_FILES
         ui/main.cpp

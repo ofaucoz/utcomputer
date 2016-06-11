@@ -1,7 +1,3 @@
-//
-// Created by orphee on 04/06/16.
-//
-
 #include "stack_drop.h"
 
 

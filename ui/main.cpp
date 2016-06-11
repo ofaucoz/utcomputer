@@ -2,6 +2,7 @@
 #include "../lib/operator/sto.h"
 #include "../lib/operator/forget.h"
 #include "../lib/operator/program_if.h"
+#include "../lib/operator/stack_dup.h"
 
 MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade) : Gtk::Window(window), builder(glade),
                                                                                     computer(nullptr),
@@ -70,6 +71,7 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     operatorsMap.set("FORGET",OperatorPointer(new ForgetOperator(variablesMap,programsMap)));
     EvalOperator *evalOperator = new EvalOperator(*computer);
     operatorsMap.set("IFT",OperatorPointer(new ProgramIfOperator(*evalOperator)));
+    operatorsMap.set("DUP",OperatorPointer(new StackDupOperator));
 
     /*
      * Create main window
