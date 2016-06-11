@@ -178,6 +178,8 @@ set(TEST_FILES
         lib/tests/literal_definition/parenthesis.cpp
         lib/tests/literal_definition/operator_strict_comparison.cpp
         lib/tests/literal_definition/operator_equal_comparison.cpp
+        lib/tests/literal_definition/operator_strict_comparison.cpp
+        lib/tests/literal_definition/operator_equal_comparison.cpp
         lib/tests/operator/addition.cpp
         lib/tests/operator/substraction.cpp
         lib/tests/operator/multiplication.cpp
@@ -205,6 +207,8 @@ set(TEST_FILES
         lib/tests/operator/logic_not.cpp
         lib/tests/operator/forget.cpp
         lib/tests/operator/sto.cpp
+        lib/tests/operator/program_if.cpp
+        lib/tests/operator/sto.cpp
         lib/tests/repository/map.cpp
         lib/tests/serializer/literals_stack.cpp
         lib/tests/serializer/programs_map.cpp
@@ -212,11 +216,7 @@ set(TEST_FILES
         lib/tests/lexer.cpp
         lib/tests/resolver.cpp
         lib/tests/runner.cpp
-        lib/tests/utcomputer.cpp
-        lib/tests/literal_definition/operator_strict_comparison.cpp
-        lib/tests/literal_definition/operator_equal_comparison.cpp
-        lib/tests/operator/sto.cpp
-        lib/tests/operator/program_if.cpp)
+        lib/tests/utcomputer.cpp)
 
 add_executable(LO21tests lib/tests/main.cpp ${LIBRARY_FILES} ${TEST_FILES})
 target_link_libraries(LO21tests pthread ${GTEST_LIBRARIES})
