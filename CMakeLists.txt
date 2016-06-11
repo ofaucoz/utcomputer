@@ -114,7 +114,11 @@ set(LIBRARY_FILES
         lib/operator/sto.cpp
         lib/operator/sto.h
         lib/operator/forget.cpp
-        lib/operator/forget.h lib/operator/program_if.cpp lib/operator/program_if.h lib/operator/stack_dup.cpp lib/operator/stack_dup.h)
+        lib/operator/forget.h
+        lib/operator/program_if.cpp
+        lib/operator/program_if.h
+        lib/operator/stack_dup.cpp
+        lib/operator/stack_dup.h)
 
 set(INTERFACE_FILES
         ui/main.cpp
@@ -160,6 +164,7 @@ set(TEST_FILES
         lib/tests/operator/eval.cpp
         lib/tests/operator/stack_clear.cpp
         lib/tests/operator/stack_drop.cpp
+        lib/tests/operator/stack_dup.cpp
         lib/tests/operator/numeric_complex_imaginary.cpp
         lib/tests/operator/numeric_complex_build.cpp
         lib/tests/operator/numeric_complex_real.cpp
@@ -178,7 +183,8 @@ set(TEST_FILES
         lib/tests/utcomputer.cpp
         lib/tests/literal_definition/operator_strict_comparison.cpp
         lib/tests/literal_definition/operator_equal_comparison.cpp
-        lib/tests/operator/sto.cpp)
+        lib/tests/operator/sto.cpp
+        lib/tests/operator/program_if.cpp)
 
 add_executable(LO21tests lib/tests/main.cpp ${LIBRARY_FILES} ${TEST_FILES})
 target_link_libraries(LO21tests pthread ${GTEST_LIBRARIES})

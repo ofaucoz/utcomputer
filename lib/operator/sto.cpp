@@ -36,8 +36,14 @@ void StoOperator::apply(LiteralsStack &stack) const {
     if(!secondProgram) {
         variableMap.setAndNotify(expectedAtom, second);
     } else{
-        LiteralVector secondProgramVector = lexer.tokenize(second->toString());
-        programMap.setAndNotify(expectedAtom,secondProgramVector);
+        try {
+            LiteralVector secondProgramVector = lexer.tokenize(second->toString());
+            programMap.setAndNotify(expectedAtom,secondProgramVector);
+        }
+        catch (string except) {
+            cout << " problem is : " <<  except << endl;
+        }
+
     }
     stack.notify();
 }
