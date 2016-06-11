@@ -1,6 +1,7 @@
 #include "main.h"
 #include "../lib/operator/sto.h"
 #include "../lib/operator/forget.h"
+#include "../lib/operator/stack_swap.h"
 
 MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade) :
     Gtk::Window(window), builder(glade), computer(nullptr), literalStack(nullptr) {
@@ -73,6 +74,7 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     operatorsMap.set("DUP",OperatorPointer(new StackDupOperator));
     operatorsMap.set("UNDO",OperatorPointer(new StackUndoOperator));
     operatorsMap.set("REDO",OperatorPointer(new StackRedoOperator));
+    operatorsMap.set("SWAP",OperatorPointer(new StackSwapOperator));
 
     /*
      * Create main window
@@ -357,7 +359,16 @@ bool MainWindow::on_key_press_event(GdkEventKey *key_event) {
     //case ctrl+z is pressed
     if ((key_event->keyval == GDK_KEY_z) &&
         (key_event->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK)) == GDK_CONTROL_MASK) {
-
+        try {
+            computer->execute("UNDO");
+        }
+        catch (const RuntimeException &exception6)
+        {
+            messageTree->update("Can't REDO if there is no UNDO");
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
         //returning true, cancels the propagation of the event
         return true;
     }
@@ -365,7 +376,16 @@ bool MainWindow::on_key_press_event(GdkEventKey *key_event) {
         //case ctrl+y is pressed
     else if ((key_event->keyval == GDK_KEY_y) &&
         (key_event->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK)) == GDK_CONTROL_MASK) {
-
+        try {
+            computer->execute("REDO");
+        }
+        catch (const RuntimeException &exception6)
+        {
+            messageTree->update("Can't REDO if there is no UNDO");
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
         return true;
     }
 
