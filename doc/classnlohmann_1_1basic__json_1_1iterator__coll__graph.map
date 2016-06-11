@@ -1,0 +1,5 @@
+<map id="nlohmann::basic_json&lt; ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType &gt;::iterator" name="nlohmann::basic_json&lt; ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType &gt;::iterator">
+<area shape="rect" id="node2" href="$classnlohmann_1_1basic__json_1_1const__iterator.html" title="a const random access iterator for the basic_json class " alt="" coords="34,564,285,891"/>
+<area shape="rect" id="node4" href="$structnlohmann_1_1basic__json_1_1internal__iterator.html" title="an iterator value " alt="" coords="199,336,450,501"/>
+<area shape="rect" id="node5" href="$classnlohmann_1_1basic__json_1_1primitive__iterator__t.html" title="an iterator for primitive JSON types " alt="" coords="199,5,450,273"/>
+</map>

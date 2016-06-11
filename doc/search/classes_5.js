@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['historytreeview',['historyTreeView',['../classhistoryTreeView.html',1,'']]]
+  ['forgetoperator',['ForgetOperator',['../classForgetOperator.html',1,'']]],
+  ['fraction',['Fraction',['../classFraction.html',1,'']]]
 ];

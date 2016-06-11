@@ -5,6 +5,6 @@
 <area shape="rect" id="node5" href="$structNumericLiteral.html" title="{NumericLiteral\n|&#45; realNumerator\l&#45; realDenominator\l&#45; imaginaryNumerator\l&#45; imaginaryDenominator\l|+ NumericLiteral()\l+ NumericLiteral()\l+ getRealNumerator()\l+ getRealDenominator()\l+ getImaginaryNumerator()\l+ getImaginaryDenominator()\l+ getRealFraction()\l+ getImaginaryFraction()\l+ toString()\l&#45; formatDouble()\l}" alt="" coords="431,145,621,399"/>
 <area shape="rect" id="node6" href="$structOperatorLiteral.html" title="{OperatorLiteral\n|&#45; name\l|+ OperatorLiteral()\l+ getName()\l+ toString()\l}" alt="" coords="645,219,772,325"/>
 <area shape="rect" id="node7" href="$structParenthesisLiteral.html" title="{ParenthesisLiteral\n|&#45; parenthesis\l|+ ParenthesisLiteral()\l+ getParenthesis()\l+ toString()\l}" alt="" coords="797,219,943,325"/>
-<area shape="rect" id="node8" href="$structProgramLiteral.html" title="{ProgramLiteral\n|&#45; name\l|+ ProgramLiteral()\l+ getName()\l+ toString()\l}" alt="" coords="968,219,1095,325"/>
+<area shape="rect" id="node8" href="$structProgramLiteral.html" title="{ProgramLiteral\n|&#45; program\l|+ ProgramLiteral()\l+ getProgram()\l+ toString()\l}" alt="" coords="968,219,1095,325"/>
 <area shape="rect" id="node9" href="$structWhitespaceLiteral.html" title="{WhitespaceLiteral\n||+ toString()\l}" alt="" coords="1119,233,1245,311"/>
 </map>
