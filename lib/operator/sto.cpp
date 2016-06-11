@@ -1,6 +1,7 @@
 #include "sto.h"
 #include "../literal/atom.h"
 #include "../literal_definition/atom.h"
+#include "../literal/program.h"
 
 void StoOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {
@@ -30,6 +31,13 @@ void StoOperator::apply(LiteralsStack &stack) const {
         throw InvalidOperandException(firstExpression->toString());
     }
 
-    variableMap.setAndNotify(expectedAtom,second);
+    ProgramLiteralPointer secondProgram = dynamic_pointer_cast<ProgramLiteral>(second);
+
+    if(!secondProgram) {
+        variableMap.setAndNotify(expectedAtom, second);
+    } else{
+        LiteralVector secondProgramVector = lexer.tokenize(second->toString());
+        programMap.setAndNotify(expectedAtom,secondProgramVector);
+    }
     stack.notify();
 }

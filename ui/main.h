@@ -47,6 +47,7 @@
 #include "messageTreeView.h"
 #include "historyTreeView.h"
 #include "variableWidget.h"
+#include "programWidget.h"
 #include <iostream>
 #include <sys/ioctl.h>
 #include <unistd.h>
@@ -73,7 +74,7 @@ protected:
     messageTreeView *messageTree; //GtkTreeView
     historyTreeView *historyTree; //GtkTreeView
     VariableWidget *variableTree;
-    StackWidget *programTree;
+    ProgramWidget *programTree;
     ToggleButton *variableButton;
     ToggleButton *programButton;
     Entry *nbStack;

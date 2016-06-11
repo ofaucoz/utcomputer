@@ -22,6 +22,7 @@ LiteralVector Resolver::resolve(LiteralVector tokens) const {
                 for (LiteralVector::iterator programIt = program.begin(); programIt != program.end(); ++programIt) {
                     resolved.push_back(*programIt);
                 }
+                resolved.push_back(operatorLiteralDefinition->createInstance("EVAL"));
             } else {
                 throw UndefinedAtomException(atom->getValue());
             }

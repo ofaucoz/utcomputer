@@ -35,6 +35,7 @@ set(LIBRARY_FILES
         lib/literal/atom.h
         lib/literal/whitespace.h
         lib/literal/parenthesis.h
+        lib/literal/hook.h
         lib/literal/comma.h
         lib/literal_definition/interface.h
         lib/literal_definition/atom.h
@@ -47,7 +48,9 @@ set(LIBRARY_FILES
         lib/literal_definition/expression.h
         lib/literal_definition/program.h
         lib/literal_definition/parenthesis.h
+        lib/literal_definition/hook.h
         lib/literal_definition/comma.h
+        lib/operator/forget.h
         lib/operator/interface.h
         lib/operator/addition.cpp
         lib/operator/addition.h
@@ -111,7 +114,7 @@ set(LIBRARY_FILES
         lib/operator/sto.cpp
         lib/operator/sto.h
         lib/operator/forget.cpp
-        lib/operator/forget.h)
+        lib/operator/forget.h lib/operator/program_if.cpp lib/operator/program_if.h)
 
 set(INTERFACE_FILES
         ui/main.cpp
@@ -125,7 +128,9 @@ set(INTERFACE_FILES
         ui/historyTreeView.cpp
         ui/historyTreeView.h
         ui/variableWidget.cpp
-        ui/variableWidget.h)
+        ui/variableWidget.h
+        ui/programWidget.cpp
+        ui/programWidget.h)
 
 configure_file(ui/views/main.glade ui/views/main.glade COPYONLY)
 add_executable(LO21 main.cpp ${LIBRARY_FILES} ${INTERFACE_FILES})
@@ -150,6 +155,7 @@ set(TEST_FILES
         lib/tests/operator/modulo.cpp
         lib/tests/operator/opposite.cpp
         lib/tests/operator/numerator.cpp
+        lib/tests/operator/forget.cpp
         lib/tests/operator/denominator.cpp
         lib/tests/operator/eval.cpp
         lib/tests/operator/stack_clear.cpp

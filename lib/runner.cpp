@@ -3,6 +3,7 @@
 #include "literal/numeric.h"
 #include "literal/operator.h"
 #include "exception/unspported_literal.h"
+#include "literal/program.h"
 
 void Runner::run(LiteralVector tokens) {
     for (LiteralVector::iterator iterator = tokens.begin(); iterator != tokens.end(); ++iterator) {
@@ -19,6 +20,9 @@ void Runner::run(LiteralVector tokens) {
             }
 
             operatorsMap.get(operatorLiteral->getName())->apply(literalStack);
+        }else if (ProgramLiteralPointer programLiteral = dynamic_pointer_cast<ProgramLiteral>(*iterator)) {
+            // For each program, push it into the stack
+            literalStack.pushAndNotify(programLiteral);
         } else {
             throw UnsupportedLiteralException((*iterator)->toString());
         }

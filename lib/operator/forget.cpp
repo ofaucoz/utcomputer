@@ -24,8 +24,8 @@ void ForgetOperator::apply(LiteralsStack &stack) const {
     {
         throw InvalidOperandException(firstExpression->toString());
     }
-    if(variableMap.at(expectedAtom)) {
-        variableMap.removeAndNotify(expectedAtom);
-    }
+    programMap.removeAndNotify(expectedAtom);
+    variableMap.removeAndNotify(expectedAtom);
+
     stack.notify();
 }

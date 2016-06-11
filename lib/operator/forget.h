@@ -14,8 +14,9 @@ using namespace std;
 class ForgetOperator : public OperatorInterface {
 private:
     VariableMap &variableMap;
+    ProgramMap &programMap;
 public:
-    ForgetOperator(VariableMap & variableMap) : variableMap(variableMap) { }
+    ForgetOperator(VariableMap & variableMap, ProgramMap &programMap) : variableMap(variableMap), programMap(programMap) { }
     /**
      * @inheritdoc
      */

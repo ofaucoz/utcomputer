@@ -1,6 +1,7 @@
 #include "main.h"
 #include "../lib/operator/sto.h"
 #include "../lib/operator/forget.h"
+#include "../lib/operator/program_if.h"
 
 MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade) : Gtk::Window(window), builder(glade),
                                                                                     computer(nullptr),
@@ -65,8 +66,10 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
     operatorsMap.set("RE", OperatorPointer(new NumericComplexRealOperator));
     operatorsMap.set("CLEAR", OperatorPointer(new StackClearOperator));
     operatorsMap.set("DROP", OperatorPointer(new StackDropOperator));
-    operatorsMap.set("STO",OperatorPointer(new StoOperator(variablesMap)));
-    operatorsMap.set("FORGET",OperatorPointer(new ForgetOperator(variablesMap)));
+    operatorsMap.set("STO",OperatorPointer(new StoOperator(variablesMap,programsMap,*lexer)));
+    operatorsMap.set("FORGET",OperatorPointer(new ForgetOperator(variablesMap,programsMap)));
+    EvalOperator *evalOperator = new EvalOperator(*computer);
+    operatorsMap.set("IFT",OperatorPointer(new ProgramIfOperator(*evalOperator)));
 
     /*
      * Create main window
@@ -98,6 +101,7 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
 
     stack.attach(literalStack);
     variablesMap.attach(variableTree);
+    programsMap.attach(programTree);
 
     // Make TextView editable
     programEditionTextView->set_editable(true);
@@ -124,6 +128,40 @@ MainWindow::MainWindow(BaseObjectType *window, const RefPtr<Gtk::Builder> &glade
 
 bool MainWindow::on_program_text_view_enter(GdkEventKey *key_event) {
     if (key_event->keyval == 0xFF0D) { //catch enter key
+        try {
+            computer->execute(programEditionTextView->get_buffer()->get_text());
+            programEditionTextView->get_buffer()->set_text("");
+        }
+        catch (const InvalidOperandException &exception1) {
+            messageTree->update(exception1.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const InvalidSyntaxException &exception2) {
+            messageTree->update("Undefined literal :" + exception2.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const UndefinedAtomException &exception3) {
+            messageTree->update("Undefined atom :" + exception3.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const UnsupportedLiteralException &exception4) {
+            messageTree->update("Unsupported literal :" + exception4.getValue());
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
+        catch (const std::out_of_range &exception5) {
+            messageTree->update("Variable not found");
+            if (bip->get_active()) {
+                cout << '\a' << endl;
+            }
+        }
 
     }
     return true;
@@ -260,12 +298,7 @@ void MainWindow::on_entry_command_activated() {
             cout << '\a' << endl;
         }
     }
-    catch (const std::out_of_range &exception5) {
-        messageTree->update("Variable not found");
-        if (bip->get_active()) {
-            cout << '\a' << endl;
-        }
-    }
+
     command->set_text("");
     commandInput="";
 }
