@@ -12,7 +12,7 @@ using namespace std;
 /**
  * Definition of an expression literal.
  */
-class ExpressionLiteralDefinition : public LiteralDefinitionInterface {
+class ExpressionLiteralDefinition: public LiteralDefinitionInterface {
 public:
     /**
      * @inheritdoc

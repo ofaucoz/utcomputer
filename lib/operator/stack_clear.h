@@ -6,7 +6,7 @@
 #include "interface.h"
 #include "../exception/invalid_syntax.h"
 
-class StackClearOperator : public OperatorInterface {
+class StackClearOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc

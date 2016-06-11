@@ -1,9 +1,7 @@
-#ifndef LO21_OPERATOR_EUCLIDIAN_DIVISION_H
-#define LO21_OPERATOR_EUCLIDIAN_DIVISION_H
-
+#ifndef LO21_STO_H
+#define LO21_STO_H
 
 #include "interface.h"
-#include "../math/math.h"
 #include "../literal/numeric.h"
 #include "../literal/expression.h"
 #include "../exception/invalid_operand.h"
@@ -11,8 +9,11 @@
 
 using namespace std;
 
-class EuclidianDivisionOperator: public OperatorInterface {
+class StoOperator: public OperatorInterface {
+private:
+    VariableMap &variableMap;
 public:
+    StoOperator(VariableMap &variableMap) : variableMap(variableMap) { }
     /**
      * @inheritdoc
      */
@@ -26,4 +27,4 @@ public:
     }
 };
 
-#endif // LO21_OPERATOR_EUCLIDIAN_DIVISION_H
+#endif //LO21_STO_H

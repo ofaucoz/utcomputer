@@ -11,7 +11,7 @@ using namespace std;
  * For instance :
  *      [ DUP 0 < NEG ]
  */
-struct ProgramLiteral : public LiteralInterface {
+struct ProgramLiteral: public LiteralInterface {
 private:
     string program;
 

@@ -12,7 +12,7 @@ using namespace std;
 /**
  * Definition of a numeric operator literal.
  */
-class OperatorNumericLiteralDefinition : public LiteralDefinitionInterface {
+class OperatorNumericLiteralDefinition: public LiteralDefinitionInterface {
 public:
     /**
      * @inheritdoc

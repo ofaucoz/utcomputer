@@ -10,6 +10,11 @@
 #include <linux/kd.h>
 #include "keyboard_widget.h"
 #include "repository_widget.h"
+#include "stack_widget.h"
+#include "keyboard_widget.h"
+#include "message_tree_view.h"
+#include "history_tree_view.h"
+#include "variable_widget.h"
 #include "../lib/operator/interface.h"
 #include "../lib/operator/addition.h"
 #include "../lib/operator/substraction.h"
@@ -42,6 +47,7 @@
 #include "../lib/literal_definition/whitespace.h"
 #include "../lib/literal_definition/numeric.h"
 #include "../lib/literal_definition/operator_numeric.h"
+#include "../lib/literal_definition/operator_atom_literal.h"
 #include "../lib/literal_definition/operator_strict_comparison.h"
 #include "../lib/literal_definition/operator_equal_comparison.h"
 #include "../lib/literal_definition/expression.h"
@@ -50,16 +56,18 @@
 #include "../lib/utcomputer.h"
 #include "../lib/resolver.h"
 #include "../lib/runner.h"
-#include "message_tree_view.h"
-#include "history_tree_view.h"
+#include <iostream>
+#include <sys/ioctl.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <linux/kd.h>
 
 using namespace std;
 using namespace Gtk;
 using namespace Glib;
 
-class MainWindow : public Gtk::Window {
+class MainWindow: public Gtk::Window {
 protected:
-    unsigned int iterCommand;
     Glib::RefPtr<Gtk::Builder> builder;
     Window *variableWindow;
     Window *programWindow;
@@ -80,6 +88,8 @@ protected:
     Entry *nbStack;
     Entry *command;
     KeyboardWidget *keyboard; //GtkBox
+    TextView *variableEditionTextView;
+    TextView *programEditionTextView;
     ToggleButton *keyboardSwitch;
     std::string commandInput;
     UTComputer *computer;
@@ -96,6 +106,8 @@ public:
     void on_entry_nbStack_activated();
     void on_button_keyboard_clicked(string label);
     bool on_key_press_event(GdkEventKey *event) override;
+    bool on_program_text_view_enter(GdkEventKey *event);
+    bool on_variable_text_view_enter(GdkEventKey *event);
 
     void on_button_variable_clicked() {
         if (variableButton->get_active()) {

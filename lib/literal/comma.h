@@ -11,7 +11,7 @@ using namespace std;
  * For instance :
  *      ,
  */
-struct CommaLiteral : public LiteralInterface {
+struct CommaLiteral: public LiteralInterface {
 public:
     /**
      * @inheritdoc

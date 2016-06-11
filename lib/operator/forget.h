@@ -1,18 +1,21 @@
-#ifndef LO21_OPERATOR_EUCLIDIAN_DIVISION_H
-#define LO21_OPERATOR_EUCLIDIAN_DIVISION_H
-
+#ifndef LO21_FORGET_H
+#define LO21_FORGET_H
 
 #include "interface.h"
-#include "../math/math.h"
 #include "../literal/numeric.h"
 #include "../literal/expression.h"
 #include "../exception/invalid_operand.h"
 #include "../exception/invalid_syntax.h"
+#include "../literal/atom.h"
+#include "../literal_definition/atom.h"
 
 using namespace std;
 
-class EuclidianDivisionOperator: public OperatorInterface {
+class ForgetOperator: public OperatorInterface {
+private:
+    VariableMap &variableMap;
 public:
+    ForgetOperator(VariableMap &variableMap) : variableMap(variableMap) { }
     /**
      * @inheritdoc
      */
@@ -26,4 +29,4 @@ public:
     }
 };
 
-#endif // LO21_OPERATOR_EUCLIDIAN_DIVISION_H
+#endif //LO21_FORGET_H

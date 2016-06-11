@@ -12,7 +12,7 @@
  * when the data change.
  */
 template<class K, class V>
-class ObservableMap : public std::unordered_map<K, V>, public Repository {
+class ObservableMap: public std::unordered_map<K, V>, public Repository {
 public:
 
     /**
@@ -36,13 +36,13 @@ public:
     }
 
     /**
-     * Set an item at a key.
+     * Set an item at a key and replace it if it already exist.
      *
      * @param key The key to use.
      * @param value The item to store at this key.
      */
     void set(const K &key, const V &value) {
-        this->emplace(key, value);
+        (*this)[key] = value;
     }
 
     /**

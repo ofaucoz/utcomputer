@@ -12,7 +12,7 @@ using namespace std;
 /**
  * Definition of a program literal.
  */
-class ProgramLiteralDefinition : public LiteralDefinitionInterface {
+class ProgramLiteralDefinition: public LiteralDefinitionInterface {
 public:
     /**
      * @inheritdoc

@@ -11,7 +11,7 @@ using namespace std;
  * For instance :
  *      + (native) or DIV (custom)
  */
-struct OperatorLiteral : public LiteralInterface {
+struct OperatorLiteral: public LiteralInterface {
 private:
     string name;
 

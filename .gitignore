@@ -7,6 +7,7 @@ LO21tests
 build
 *.glade~
 .idea
+ui/views/#main.glade#
 
 # Compiled Object files
 *.slo

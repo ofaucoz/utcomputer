@@ -14,7 +14,7 @@ using namespace std;
 /**
  * Definition of a numeric literal.
  */
-class NumericLiteralDefinition : public LiteralDefinitionInterface {
+class NumericLiteralDefinition: public LiteralDefinitionInterface {
 private:
     /**
      * Split the given string into a queue of elements to extract

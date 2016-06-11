@@ -10,6 +10,10 @@ void LogicAndOperator::apply(LiteralsStack &stack) const {
 
     stack.pop();
     stack.pop();
-    stack.pushAndNotify(LiteralPointer(new NumericLiteral(first->toString() == "0" || second->toString() == "0" ? 0 : 1)));
+
+    stack.pushAndNotify(LiteralPointer(new NumericLiteral(
+        first->toString() == "0" || second->toString() == "0" ? 0 : 1
+    )));
+
     stack.save();
 }

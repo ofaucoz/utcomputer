@@ -12,7 +12,7 @@ using namespace std;
 /**
  * Definition of a comma literal.
  */
-class CommaLiteralDefinition : public LiteralDefinitionInterface {
+class CommaLiteralDefinition: public LiteralDefinitionInterface {
 public:
     /**
      * @inheritdoc

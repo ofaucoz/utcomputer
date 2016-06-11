@@ -1,6 +1,5 @@
-#ifndef LO21_LITERAL_DEFINITION_OPERATOR_EQUAL_H
-#define LO21_LITERAL_DEFINITION_OPERATOR_EQUAL_H
-
+#ifndef LO21_OPERATOR_ATOM_LITERAL_H
+#define LO21_OPERATOR_ATOM_LITERAL_H
 
 #include <iostream>
 #include <regex>
@@ -10,14 +9,20 @@
 using namespace std;
 
 /**
- * Definition of an equal comparison operator literal.
+ * Definition of a custom operator literal.
  */
-class OperatorEqualComparisonLiteralDefinition: public LiteralDefinitionInterface {
+class OperatorAtomLiteralDefinition: public LiteralDefinitionInterface {
 public:
+    /**
+     * @inheritdoc
+     */
     const string getPattern() const override {
-        return ">\\=|<\\=";
+        return "[A-Z][A-Z0-9]+";
     }
 
+    /**
+     * @inheritdoc
+     */
     LiteralPointer createInstance(string value) const override {
         return LiteralPointer(new OperatorLiteral(value));
     }
@@ -51,4 +56,4 @@ public:
     }
 };
 
-#endif //LO21_LITERAL_DEFINITION_OPERATOR_EQUAL_H
+#endif //LO21_OPERATOR_ATOM_LITERAL_H

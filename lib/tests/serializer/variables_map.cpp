@@ -32,7 +32,9 @@ TEST(VariablesMapSerializer, Serialize) {
     variableMap["H"] = LiteralPointer(new WhitespaceLiteral());
 
     string serialized = serializer.serialize(variableMap);
-    EXPECT_EQ("{\"A\":\"numeric:1/2$3/4\",\"B\":\"atom:FOO\",\"C\":\"comma\",\"D\":\"expression:'BAR'\",\"E\":\"operator:+\",\"F\":\"parenthesis:(\",\"G\":\"program:[ A B + ]\",\"H\":\"whitespace\"}", serialized);
+    EXPECT_EQ(
+        "{\"A\":\"numeric:1/2$3/4\",\"B\":\"atom:FOO\",\"C\":\"comma\",\"D\":\"expression:'BAR'\",\"E\":\"operator:+\",\"F\":\"parenthesis:(\",\"G\":\"program:[ A B + ]\",\"H\":\"whitespace\"}",
+        serialized);
 
     VariableMap unserialized = serializer.unserialize(serialized);
     EXPECT_EQ(variableMap.size(), unserialized.size());

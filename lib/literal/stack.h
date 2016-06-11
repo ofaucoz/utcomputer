@@ -18,7 +18,7 @@ typedef vector<LiteralPointer> LiteralsStackState;
  *
  * This class is used by the Runner for execution.
  */
-class LiteralsStack : public Repository {
+class LiteralsStack: public Repository {
 private:
     unordered_map<int, LiteralsStackState> savedStates;
     LiteralsStackState currentState;

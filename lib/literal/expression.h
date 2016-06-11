@@ -11,7 +11,7 @@ using namespace std;
  * For instance :
  *      '3*X1+(3+TOTO)/-2'
  */
-struct ExpressionLiteral : public LiteralInterface {
+struct ExpressionLiteral: public LiteralInterface {
 private:
     string value;
 

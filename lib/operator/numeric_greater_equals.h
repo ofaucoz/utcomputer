@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class NumericGreaterEqualsOperator : public OperatorInterface {
+class NumericGreaterEqualsOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc

@@ -24,7 +24,7 @@ using namespace std;
  * complexs, ..., we only create them for the NumericLiteral and then this
  * literal is displayed according to its real type.
  */
-struct NumericLiteral : public LiteralInterface {
+struct NumericLiteral: public LiteralInterface {
 private:
     double realNumerator;
     double realDenominator;

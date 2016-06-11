@@ -7,9 +7,9 @@
 
 using namespace std;
 
-class HistoryTreeView : public Gtk::TreeView {
+class HistoryTreeView: public Gtk::TreeView {
 protected:
-    class ModelColumns : public Gtk::TreeModel::ColumnRecord {
+    class ModelColumns: public Gtk::TreeModel::ColumnRecord {
     public:
         Gtk::TreeModelColumn<Glib::ustring> col_command;
 

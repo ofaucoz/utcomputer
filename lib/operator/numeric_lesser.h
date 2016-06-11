@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class NumericLesserOperator : public OperatorInterface {
+class NumericLesserOperator: public OperatorInterface {
 public:
     /**
      * @inheritdoc

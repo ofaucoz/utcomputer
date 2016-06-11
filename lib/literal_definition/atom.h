@@ -12,7 +12,7 @@ using namespace std;
 /**
  * Definition of an atom literal.
  */
-class AtomLiteralDefinition : public LiteralDefinitionInterface {
+class AtomLiteralDefinition: public LiteralDefinitionInterface {
 public:
     /**
      * @inheritdoc

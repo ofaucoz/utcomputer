@@ -8,6 +8,12 @@ RepositoryWidget::RepositoryWidget(BaseObjectType *treeview, const Glib::RefPtr<
     nbAff = 5;
     this->append_column("ID", columns.col_id);
     this->append_column("value", columns.col_value);
+
+    for (unsigned int i = 0; i < nbAff; i++) {
+        Gtk::TreeModel::Row row = *(refTreeModel->append());
+        row[columns.col_id] = i;
+        row[columns.col_value] = "";
+    }
 }
 
 void RepositoryWidget::update(Repository *repository) {

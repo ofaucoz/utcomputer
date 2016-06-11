@@ -7,10 +7,9 @@
 
 using namespace std;
 
-
-class MessageTreeView : public Gtk::TreeView {
+class MessageTreeView: public Gtk::TreeView {
 protected:
-    class ModelColumns : public Gtk::TreeModel::ColumnRecord {
+    class ModelColumns: public Gtk::TreeModel::ColumnRecord {
     public:
         Gtk::TreeModelColumn<Glib::ustring> col_message;
 

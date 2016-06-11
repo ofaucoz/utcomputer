@@ -11,7 +11,7 @@ using namespace std;
 /**
  * Definition of a strict comparison operator literal.
  */
-class OperatorStrictComparisonLiteralDefinition : public LiteralDefinitionInterface {
+class OperatorStrictComparisonLiteralDefinition: public LiteralDefinitionInterface {
 public:
     const string getPattern() const override {
         return "\\=|!\\=|>|<";
