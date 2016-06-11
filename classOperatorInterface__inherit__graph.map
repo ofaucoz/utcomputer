@@ -4,25 +4,28 @@
 <area shape="rect" id="node4" href="$classDivisionOperator.html" title="{DivisionOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="320,182,439,274"/>
 <area shape="rect" id="node5" href="$classEuclidianDivisionOperator.html" title="{EuclidianDivisionOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="463,182,635,274"/>
 <area shape="rect" id="node6" href="$classEvalOperator.html" title="{EvalOperator\n|&#45; computer\l|+ EvalOperator()\l+ postfix()\l+ apply()\l+ getPriority()\l&#45; findPriority()\l}" alt="" coords="659,160,777,296"/>
-<area shape="rect" id="node7" href="$classLogicAndOperator.html" title="{LogicAndOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="801,182,928,274"/>
-<area shape="rect" id="node8" href="$classLogicDifferentOperator.html" title="{LogicDifferentOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="952,182,1105,274"/>
-<area shape="rect" id="node9" href="$classLogicEqualsOperator.html" title="{LogicEqualsOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="1129,182,1272,274"/>
-<area shape="rect" id="node10" href="$classLogicGreaterEqualsOperator.html" title="{LogicGreaterEqualsOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="1297,182,1483,274"/>
-<area shape="rect" id="node11" href="$classLogicGreaterOperator.html" title="{LogicGreaterOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="1507,182,1654,274"/>
-<area shape="rect" id="node12" href="$classLogicLesserEqualsOperator.html" title="{LogicLesserEqualsOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="1679,182,1861,274"/>
-<area shape="rect" id="node13" href="$classLogicLesserOperator.html" title="{LogicLesserOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="1885,182,2028,274"/>
-<area shape="rect" id="node14" href="$classLogicNotOperator.html" title="{LogicNotOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="2052,182,2176,274"/>
-<area shape="rect" id="node15" href="$classLogicOrOperator.html" title="{LogicOrOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="2199,182,2317,274"/>
-<area shape="rect" id="node16" href="$classModuloOperator.html" title="{ModuloOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="2341,182,2455,274"/>
-<area shape="rect" id="node17" href="$classMultiplicationOperator.html" title="{MultiplicationOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="2480,182,2628,274"/>
-<area shape="rect" id="node18" href="$classNumeratorOperator.html" title="{NumeratorOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="2653,182,2786,274"/>
-<area shape="rect" id="node19" href="$classNumericComplexBuildOperator.html" title="{NumericComplexBuildOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="2810,182,3013,274"/>
-<area shape="rect" id="node20" href="$classNumericComplexImaginaryOperator.html" title="{NumericComplexImaginaryOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3037,182,3268,274"/>
-<area shape="rect" id="node21" href="$classNumericComplexRealOperator.html" title="{NumericComplexRealOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3293,182,3493,274"/>
-<area shape="rect" id="node22" href="$classOppositeOperator.html" title="{OppositeOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3516,182,3640,274"/>
-<area shape="rect" id="node23" href="$classStackClearOperator.html" title="{StackClearOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3664,182,3801,274"/>
-<area shape="rect" id="node24" href="$classStackDropOperator.html" title="{StackDropOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3825,182,3960,274"/>
-<area shape="rect" id="node25" href="$classStackRedoOperator.html" title="{StackRedoOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3984,182,4121,274"/>
-<area shape="rect" id="node26" href="$classStackUndoOperator.html" title="{StackUndoOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4145,182,4283,274"/>
-<area shape="rect" id="node27" href="$classSubstractionOperator.html" title="{SubstractionOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4307,182,4452,274"/>
+<area shape="rect" id="node7" href="$classForgetOperator.html" title="{ForgetOperator\n|&#45; variableMap\l|+ ForgetOperator()\l+ apply()\l+ getPriority()\l}" alt="" coords="801,175,931,281"/>
+<area shape="rect" id="node8" href="$classLogicAndOperator.html" title="{LogicAndOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="955,182,1081,274"/>
+<area shape="rect" id="node9" href="$classLogicDifferentOperator.html" title="{LogicDifferentOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="1105,182,1259,274"/>
+<area shape="rect" id="node10" href="$classLogicEqualsOperator.html" title="{LogicEqualsOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="1283,182,1425,274"/>
+<area shape="rect" id="node11" href="$classLogicNotOperator.html" title="{LogicNotOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="1449,182,1573,274"/>
+<area shape="rect" id="node12" href="$classLogicOrOperator.html" title="{LogicOrOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="1597,182,1714,274"/>
+<area shape="rect" id="node13" href="$classModuloOperator.html" title="{ModuloOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="1738,182,1853,274"/>
+<area shape="rect" id="node14" href="$classMultiplicationOperator.html" title="{MultiplicationOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="1877,182,2025,274"/>
+<area shape="rect" id="node15" href="$classNumeratorOperator.html" title="{NumeratorOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="2050,182,2183,274"/>
+<area shape="rect" id="node16" href="$classNumericComplexBuildOperator.html" title="{NumericComplexBuildOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="2207,182,2410,274"/>
+<area shape="rect" id="node17" href="$classNumericComplexImaginaryOperator.html" title="{NumericComplexImaginaryOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="2435,182,2665,274"/>
+<area shape="rect" id="node18" href="$classNumericComplexRealOperator.html" title="{NumericComplexRealOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="2690,182,2890,274"/>
+<area shape="rect" id="node19" href="$classNumericGreaterEqualsOperator.html" title="{NumericGreaterEqualsOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="2915,182,3119,274"/>
+<area shape="rect" id="node20" href="$classNumericGreaterOperator.html" title="{NumericGreaterOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3143,182,3307,274"/>
+<area shape="rect" id="node21" href="$classNumericLesserEqualsOperator.html" title="{NumericLesserEqualsOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3331,182,3531,274"/>
+<area shape="rect" id="node22" href="$classNumericLesserOperator.html" title="{NumericLesserOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3555,182,3715,274"/>
+<area shape="rect" id="node23" href="$classOppositeOperator.html" title="{OppositeOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3739,182,3863,274"/>
+<area shape="rect" id="node24" href="$classStackClearOperator.html" title="{StackClearOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3887,182,4024,274"/>
+<area shape="rect" id="node25" href="$classStackDropOperator.html" title="{StackDropOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4048,182,4183,274"/>
+<area shape="rect" id="node26" href="$classStackRedoOperator.html" title="{StackRedoOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4207,182,4344,274"/>
+<area shape="rect" id="node27" href="$classStackSwapOperator.html" title="{StackSwapOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4369,182,4507,274"/>
+<area shape="rect" id="node28" href="$classStackUndoOperator.html" title="{StackUndoOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4532,182,4669,274"/>
+<area shape="rect" id="node29" href="$classStoOperator.html" title="{StoOperator\n|&#45; variableMap\l|+ StoOperator()\l+ apply()\l+ getPriority()\l}" alt="" coords="4694,175,4806,281"/>
+<area shape="rect" id="node30" href="$classSubstractionOperator.html" title="{SubstractionOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4831,182,4976,274"/>
 </map>

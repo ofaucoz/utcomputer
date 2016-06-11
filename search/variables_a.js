@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['parenthesis',['parenthesis',['../structParenthesisLiteral.html#ac2a3604d3429bc92a0d2aca9a0c5dcdb',1,'ParenthesisLiteral']]],
-  ['programbutton',['programButton',['../classMainWindow.html#a9dc7baeb055374dcfd15c9034b13b4d7',1,'MainWindow']]],
-  ['programsmap',['programsMap',['../classResolver.html#a08a0b54021c41b38b5c9547211b52267',1,'Resolver::programsMap()'],['../classMainWindow.html#a7af0a0851d5fe473b38a6d58078ad055',1,'MainWindow::programsMap()']]],
-  ['programtree',['programTree',['../classMainWindow.html#a8d44e22f4a07c9ad67e172d3150a77c4',1,'MainWindow']]],
-  ['programwindow',['programWindow',['../classMainWindow.html#a170df5bd4d6b2b3d16cfea9b094c492a',1,'MainWindow']]]
+  ['name',['name',['../structOperatorLiteral.html#a18664e3699ce2ae8c0ed5d0992ad0c73',1,'OperatorLiteral']]],
+  ['nbaff',['nbAff',['../classHistoryTreeView.html#af6638b85aa38f3c620c6e8a38b793f54',1,'HistoryTreeView::nbAff()'],['../classMessageTreeView.html#ae0c7a13f117dd3299f026c4806f31041',1,'MessageTreeView::nbAff()'],['../classRepositoryWidget.html#a191efc3487099b0c2bf6371e3b24ee9f',1,'RepositoryWidget::nbAff()'],['../classStackWidget.html#ac60a0838f01e4da3483e01ed0da3acb9',1,'StackWidget::nbAff()'],['../classVariableWidget.html#a9d4e96bae923d7a5f06695c780e40e11',1,'VariableWidget::nbAff()']]],
+  ['nbstack',['nbStack',['../classMainWindow.html#a32978ad418838dc6735b5978ea42b094',1,'MainWindow']]],
+  ['number_5ffloat',['number_float',['../unionnlohmann_1_1basic__json_1_1json__value.html#acdedc3de7fbc1ae912f5918730658ec0',1,'nlohmann::basic_json::json_value']]],
+  ['number_5finteger',['number_integer',['../unionnlohmann_1_1basic__json_1_1json__value.html#a13022b922a2a10896e4682949f2c7e49',1,'nlohmann::basic_json::json_value']]],
+  ['number_5funsigned',['number_unsigned',['../unionnlohmann_1_1basic__json_1_1json__value.html#ab19d47585930aa4d85c8e539e9402418',1,'nlohmann::basic_json::json_value']]],
+  ['numerator',['numerator',['../classFraction.html#ac36191e7e0a1f931d0b5692712c58eda',1,'Fraction']]]
 ];

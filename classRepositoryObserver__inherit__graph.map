@@ -1,3 +1,5 @@
 <map id="RepositoryObserver" name="RepositoryObserver">
-<area shape="rect" id="node2" href="$classrepositoryWidget.html" title="{repositoryWidget\n|# columns\l# builder\l# refTreeModel\l# nbAff\l|+ repositoryWidget()\l+ setNb()\l+ update()\l+ ~repositoryWidget()\l}" alt="" coords="5,131,153,296"/>
+<area shape="rect" id="node2" href="$classRepositoryWidget.html" title="{RepositoryWidget\n|# columns\l# builder\l# refTreeModel\l# nbAff\l|+ RepositoryWidget()\l+ setNb()\l+ update()\l+ ~RepositoryWidget()\l}" alt="" coords="5,131,160,296"/>
+<area shape="rect" id="node3" href="$classStackWidget.html" title="{StackWidget\n|# columns\l# builder\l# refTreeModel\l# nbAff\l|+ StackWidget()\l+ setNb()\l+ update()\l}" alt="" coords="184,138,301,289"/>
+<area shape="rect" id="node4" href="$classVariableWidget.html" title="{VariableWidget\n|# columns\l# builder\l# refTreeModel\l# nbAff\l|+ VariableWidget()\l+ setNb()\l+ update()\l}" alt="" coords="325,138,456,289"/>
 </map>

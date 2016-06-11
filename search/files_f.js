@@ -1,6 +1,12 @@
 var searchData=
 [
-  ['undefined_5fatom_2eh',['undefined_atom.h',['../undefined__atom_8h.html',1,'']]],
-  ['unspported_5fliteral_2eh',['unspported_literal.h',['../unspported__literal_8h.html',1,'']]],
-  ['utcomputer_2eh',['utcomputer.h',['../utcomputer_8h.html',1,'']]]
+  ['stack_2eh',['stack.h',['../stack_8h.html',1,'']]],
+  ['stack_5fclear_2eh',['stack_clear.h',['../stack__clear_8h.html',1,'']]],
+  ['stack_5fdrop_2eh',['stack_drop.h',['../stack__drop_8h.html',1,'']]],
+  ['stack_5fredo_2eh',['stack_redo.h',['../stack__redo_8h.html',1,'']]],
+  ['stack_5fswap_2eh',['stack_swap.h',['../stack__swap_8h.html',1,'']]],
+  ['stack_5fundo_2eh',['stack_undo.h',['../stack__undo_8h.html',1,'']]],
+  ['stack_5fwidget_2eh',['stack_widget.h',['../stack__widget_8h.html',1,'']]],
+  ['sto_2eh',['sto.h',['../sto_8h.html',1,'']]],
+  ['substraction_2eh',['substraction.h',['../substraction_8h.html',1,'']]]
 ];

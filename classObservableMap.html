@@ -40,6 +40,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -116,9 +118,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a53a8d42cf4d0cc0a048a163a1460e84b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12a8f2ef64ce297e0e5efdbe5cb6a700"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObservableMap.html#a12a8f2ef64ce297e0e5efdbe5cb6a700">has</a> (const K &amp;key) const </td></tr>
 <tr class="separator:a12a8f2ef64ce297e0e5efdbe5cb6a700"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8ace095ee450e78aec25ad61d4359a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObservableMap.html#af8ace095ee450e78aec25ad61d4359a4">set</a> (const K &amp;key, const V &amp;value)</td></tr>
+<tr class="memitem:af8ace095ee450e78aec25ad61d4359a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObservableMap.html#af8ace095ee450e78aec25ad61d4359a4">set</a> (const K &amp;key, const V &amp;<a class="el" href="json_8h.html#a5b4ee4ae6cba6bb75200ba7af1910873">value</a>)</td></tr>
 <tr class="separator:af8ace095ee450e78aec25ad61d4359a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4430e3b0cb305d532e853d5617f8f3ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObservableMap.html#a4430e3b0cb305d532e853d5617f8f3ec">setAndNotify</a> (const K &amp;key, const V &amp;value)</td></tr>
+<tr class="memitem:a4430e3b0cb305d532e853d5617f8f3ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObservableMap.html#a4430e3b0cb305d532e853d5617f8f3ec">setAndNotify</a> (const K &amp;key, const V &amp;<a class="el" href="json_8h.html#a5b4ee4ae6cba6bb75200ba7af1910873">value</a>)</td></tr>
 <tr class="separator:a4430e3b0cb305d532e853d5617f8f3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac391f6455b83738fe4b2faade0bb9c91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObservableMap.html#ac391f6455b83738fe4b2faade0bb9c91">remove</a> (const K &amp;key)</td></tr>
 <tr class="separator:ac391f6455b83738fe4b2faade0bb9c91"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -303,7 +305,7 @@ template&lt;class K, class V&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set an item at a key.</p>
+<p>Set an item at a key and replace it if it already exist.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>The key to use. </td></tr>
