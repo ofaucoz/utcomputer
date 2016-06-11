@@ -112,6 +112,8 @@ set(LIBRARY_FILES
         lib/serializer/literals_stack.h
         lib/serializer/programs_map.cpp
         lib/serializer/programs_map.h
+        lib/serializer/variables_map.cpp
+        lib/serializer/variables_map.h
         lib/lexer.cpp
         lib/lexer.h
         lib/resolver.cpp
@@ -176,6 +178,7 @@ set(TEST_FILES
         lib/tests/repository/map.cpp
         lib/tests/serializer/literals_stack.cpp
         lib/tests/serializer/programs_map.cpp
+        lib/tests/serializer/variables_map.cpp
         lib/tests/lexer.cpp
         lib/tests/resolver.cpp
         lib/tests/runner.cpp
