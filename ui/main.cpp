@@ -329,7 +329,7 @@ void MainWindow::on_entry_command_activated() {
     }
     catch (const RuntimeException &exception6)
     {
-        messageTree->update("Can't REDO if there is no UNDO");
+        messageTree->update("UNDO or REDO badly used");
         if (bip->get_active()) {
             cout << '\a' << endl;
         }
@@ -394,6 +394,7 @@ bool MainWindow::on_key_press_event(GdkEventKey *key_event) {
         hide();
         return true;
     }
-    //if the event has not been handled, call the base class
-    return Gtk::Window::on_key_press_event(key_event);
+        //if the event has not been handled, call the base class
+        return Gtk::Window::on_key_press_event(key_event);
+
 }

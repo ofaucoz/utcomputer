@@ -86,8 +86,8 @@ protected:
     StackWidget *literalStack; //GtkTreeView
     MessageTreeView *messageTree; //GtkTreeView
     HistoryTreeView *historyTree; //GtkTreeView
-    RepositoryWidget *variableTree;
-    RepositoryWidget *programTree;
+    VariableWidget *variableTree;
+    ProgramWidget *programTree;
     ToggleButton *variableButton;
     ToggleButton *programButton;
     Entry *nbStack;

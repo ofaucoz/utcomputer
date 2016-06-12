@@ -31,6 +31,7 @@ LiteralVector Lexer::tokenize(string command) const {
 
                 // We create a literal using the definition
                 tokens.push_back((*iterator)->createInstance(match));
+                cout << (*iterator)->createInstance(match)->toString() << endl;
 
                 // Stop the for here
                 definitionFound = true;

@@ -6,7 +6,12 @@ queue<string> NumericLiteralDefinition::parse(string value) const {
 
     for (int i = 0; i < value.size(); i++) {
         if (value[i] != '$' && value[i] != '/') {
-            input += value[i];
+            if(value[i]=='.') {
+                input += ',';
+            }
+            else{
+                input += value[i];
+            }
 
             if (value[i + 1] == '\0') {
                 parsed.push(input);
@@ -17,9 +22,9 @@ queue<string> NumericLiteralDefinition::parse(string value) const {
             input = "";
             parsed.push("/");
         } else {  // value[i] == '$'
-            parsed.push(input);
-            parsed.push("$");
-            input = "";
+                parsed.push(input);
+                parsed.push("$");
+                input = "";
         }
     }
 
@@ -31,11 +36,14 @@ LiteralPointer NumericLiteralDefinition::createInstance(string value) const {
 
     bool isRational = false;
     bool isComplex = false;
+    bool continueAdd = false;
 
     double realNumerator = 0;
     double realDenominator = 1;
     double imagNumerator = 0;
     double imagDenominator = 1;
+
+    string add="";
 
     unsigned long size = parsedString.size();
 
