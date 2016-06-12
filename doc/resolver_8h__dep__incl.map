@@ -1,5 +1,6 @@
 <map id="lib/resolver.h" name="lib/resolver.h">
-<area shape="rect" id="node2" href="$utcomputer_8h.html" title="lib/utcomputer.h" alt="" coords="67,80,181,107"/>
-<area shape="rect" id="node4" href="$main_8h.html" title="ui/main.h" alt="" coords="131,229,205,256"/>
-<area shape="rect" id="node3" href="$eval_8h.html" title="lib/operator/eval.h" alt="" coords="5,155,131,181"/>
+<area shape="rect" id="node2" href="$utcomputer_8h.html" title="lib/utcomputer.h" alt="" coords="155,80,269,107"/>
+<area shape="rect" id="node5" href="$main_8h.html" title="ui/main.h" alt="" coords="193,304,268,331"/>
+<area shape="rect" id="node3" href="$eval_8h.html" title="lib/operator/eval.h" alt="" coords="93,155,219,181"/>
+<area shape="rect" id="node4" href="$program__if_8h.html" title="lib/operator/program_if.h" alt="" coords="5,229,168,256"/>
 </map>

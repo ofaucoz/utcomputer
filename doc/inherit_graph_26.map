@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classOperatorInterface.html" title="OperatorInterface" alt="" coords="5,715,128,741"/>
+<area shape="rect" id="node1" href="$classOperatorInterface.html" title="OperatorInterface" alt="" coords="5,765,128,792"/>
 <area shape="rect" id="node2" href="$classAdditionOperator.html" title="AdditionOperator" alt="" coords="232,5,351,32"/>
 <area shape="rect" id="node3" href="$classDenominatorOperator.html" title="DenominatorOperator" alt="" coords="218,56,365,83"/>
 <area shape="rect" id="node4" href="$classDivisionOperator.html" title="DivisionOperator" alt="" coords="232,107,351,133"/>
@@ -22,11 +22,13 @@
 <area shape="rect" id="node21" href="$classNumericLesserEqualsOperator.html" title="NumericLesserEqualsOperator" alt="" coords="191,968,391,995"/>
 <area shape="rect" id="node22" href="$classNumericLesserOperator.html" title="NumericLesserOperator" alt="" coords="211,1019,371,1045"/>
 <area shape="rect" id="node23" href="$classOppositeOperator.html" title="OppositeOperator" alt="" coords="229,1069,353,1096"/>
-<area shape="rect" id="node24" href="$classStackClearOperator.html" title="StackClearOperator" alt="" coords="223,1120,360,1147"/>
-<area shape="rect" id="node25" href="$classStackDropOperator.html" title="StackDropOperator" alt="" coords="224,1171,359,1197"/>
-<area shape="rect" id="node26" href="$classStackRedoOperator.html" title="StackRedoOperator" alt="" coords="223,1221,360,1248"/>
-<area shape="rect" id="node27" href="$classStackSwapOperator.html" title="StackSwapOperator" alt="" coords="222,1272,361,1299"/>
-<area shape="rect" id="node28" href="$classStackUndoOperator.html" title="StackUndoOperator" alt="" coords="223,1323,360,1349"/>
-<area shape="rect" id="node29" href="$classStoOperator.html" title="StoOperator" alt="" coords="245,1373,337,1400"/>
-<area shape="rect" id="node30" href="$classSubstractionOperator.html" title="SubstractionOperator" alt="" coords="219,1424,364,1451"/>
+<area shape="rect" id="node24" href="$classProgramIfOperator.html" title="ProgramIfOperator" alt="" coords="227,1120,356,1147"/>
+<area shape="rect" id="node25" href="$classStackClearOperator.html" title="StackClearOperator" alt="" coords="223,1171,360,1197"/>
+<area shape="rect" id="node26" href="$classStackDropOperator.html" title="StackDropOperator" alt="" coords="224,1221,359,1248"/>
+<area shape="rect" id="node27" href="$classStackDupOperator.html" title="StackDupOperator" alt="" coords="226,1272,357,1299"/>
+<area shape="rect" id="node28" href="$classStackRedoOperator.html" title="StackRedoOperator" alt="" coords="223,1323,360,1349"/>
+<area shape="rect" id="node29" href="$classStackSwapOperator.html" title="StackSwapOperator" alt="" coords="222,1373,361,1400"/>
+<area shape="rect" id="node30" href="$classStackUndoOperator.html" title="StackUndoOperator" alt="" coords="223,1424,360,1451"/>
+<area shape="rect" id="node31" href="$classStoOperator.html" title="StoOperator" alt="" coords="245,1475,337,1501"/>
+<area shape="rect" id="node32" href="$classSubstractionOperator.html" title="SubstractionOperator" alt="" coords="219,1525,364,1552"/>
 </map>

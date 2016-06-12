@@ -110,15 +110,16 @@ Collaboration diagram for StoOperator:</div>
 <div class="center"><img src="classStoOperator__coll__graph.png" border="0" usemap="#StoOperator_coll__map" alt="Collaboration graph"/></div>
 <map name="StoOperator_coll__map" id="StoOperator_coll__map">
 <area shape="rect" id="node2" href="classOperatorInterface.html" title="{OperatorInterface\n||+ apply()\l+ getPriority()\l+ ~OperatorInterface()\l}" alt="" coords="5,169,156,275"/>
-<area shape="rect" id="node3" href="classObservableMap.html" title="{ObservableMap\&lt; K, V \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="181,147,343,297"/>
-<area shape="rect" id="node5" href="classRepository.html" title="{Repository\n|&#45; observers\l|+ attach()\l+ notify()\l}" alt="" coords="287,5,373,97"/>
+<area shape="rect" id="node3" href="classLexer.html" title="{Lexer\n|&#45; definitions\l|+ addDefinition()\l+ addDefinition()\l+ getDefinitions()\l+ tokenize()\l}" alt="" coords="181,161,303,283"/>
+<area shape="rect" id="node4" href="classObservableMap.html" title="{ObservableMap\&lt; K, V \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="327,147,490,297"/>
+<area shape="rect" id="node6" href="classRepository.html" title="{Repository\n|&#45; observers\l|+ attach()\l+ notify()\l}" alt="" coords="433,5,520,97"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a696474177bbd2204f1d77c450634dd27"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoOperator.html#a696474177bbd2204f1d77c450634dd27">StoOperator</a> (<a class="el" href="literal_2interface_8h.html#ae2d71f181b5e38d6983afd184f924a8f">VariableMap</a> &amp;<a class="el" href="classStoOperator.html#a20258a4039e6e06309b4d417905a813b">variableMap</a>)</td></tr>
-<tr class="separator:a696474177bbd2204f1d77c450634dd27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee87a4fcad33067b1afb47e39eb2eaa7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoOperator.html#aee87a4fcad33067b1afb47e39eb2eaa7">StoOperator</a> (<a class="el" href="literal_2interface_8h.html#ae2d71f181b5e38d6983afd184f924a8f">VariableMap</a> &amp;<a class="el" href="classStoOperator.html#a20258a4039e6e06309b4d417905a813b">variableMap</a>, <a class="el" href="literal_2interface_8h.html#a42b43e47e05ee98773383929fd3806b7">ProgramMap</a> &amp;<a class="el" href="classStoOperator.html#ad8ac66db6dad3ebcb2f6c5f19904a3ee">programMap</a>, <a class="el" href="classLexer.html">Lexer</a> &amp;<a class="el" href="classStoOperator.html#abce699771f63293e87cb064f5039c261">lexer</a>)</td></tr>
+<tr class="separator:aee87a4fcad33067b1afb47e39eb2eaa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe9eb8a12c81d1258602902abccc4530"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoOperator.html#afe9eb8a12c81d1258602902abccc4530">apply</a> (<a class="el" href="classLiteralsStack.html">LiteralsStack</a> &amp;stack) const override</td></tr>
 <tr class="separator:afe9eb8a12c81d1258602902abccc4530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a785480d246e29ed3ff7f9e78911be80f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoOperator.html#a785480d246e29ed3ff7f9e78911be80f">getPriority</a> () const override</td></tr>
@@ -131,9 +132,13 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a20258a4039e6e06309b4d417905a813b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="literal_2interface_8h.html#ae2d71f181b5e38d6983afd184f924a8f">VariableMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoOperator.html#a20258a4039e6e06309b4d417905a813b">variableMap</a></td></tr>
 <tr class="separator:a20258a4039e6e06309b4d417905a813b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8ac66db6dad3ebcb2f6c5f19904a3ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="literal_2interface_8h.html#a42b43e47e05ee98773383929fd3806b7">ProgramMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoOperator.html#ad8ac66db6dad3ebcb2f6c5f19904a3ee">programMap</a></td></tr>
+<tr class="separator:ad8ac66db6dad3ebcb2f6c5f19904a3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abce699771f63293e87cb064f5039c261"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLexer.html">Lexer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoOperator.html#abce699771f63293e87cb064f5039c261">lexer</a></td></tr>
+<tr class="separator:abce699771f63293e87cb064f5039c261"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a696474177bbd2204f1d77c450634dd27"></a>
+<a class="anchor" id="aee87a4fcad33067b1afb47e39eb2eaa7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -144,8 +149,24 @@ Private Attributes</h2></td></tr>
           <td class="memname">StoOperator::StoOperator </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="literal_2interface_8h.html#ae2d71f181b5e38d6983afd184f924a8f">VariableMap</a> &amp;&#160;</td>
-          <td class="paramname"><em>variableMap</em></td><td>)</td>
+          <td class="paramname"><em>variableMap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="literal_2interface_8h.html#a42b43e47e05ee98773383929fd3806b7">ProgramMap</a> &amp;&#160;</td>
+          <td class="paramname"><em>programMap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classLexer.html">Lexer</a> &amp;&#160;</td>
+          <td class="paramname"><em>lexer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -219,6 +240,46 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="abce699771f63293e87cb064f5039c261"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classLexer.html">Lexer</a>&amp; StoOperator::lexer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad8ac66db6dad3ebcb2f6c5f19904a3ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="literal_2interface_8h.html#a42b43e47e05ee98773383929fd3806b7">ProgramMap</a>&amp; StoOperator::programMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a20258a4039e6e06309b4d417905a813b"></a>
 <div class="memitem">
 <div class="memproto">

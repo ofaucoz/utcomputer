@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['lexer_5fchar_5ft',['lexer_char_t',['../classnlohmann_1_1basic__json_1_1lexer.html#a7858ae971d07f21ad47fa8a0421001db',1,'nlohmann::basic_json::lexer']]],
-  ['literaldefinitionpointer',['LiteralDefinitionPointer',['../literal__definition_2interface_8h.html#a10d87dedc88fa8cb93461d2088ea838b',1,'interface.h']]],
-  ['literaldefinitionvector',['LiteralDefinitionVector',['../literal__definition_2interface_8h.html#ac4d9a34048f6e20d5469b060065bd782',1,'interface.h']]],
-  ['literalpointer',['LiteralPointer',['../literal_2interface_8h.html#abd0eb35b81c253fe959f27bedb4b8c45',1,'interface.h']]],
-  ['literalsstackstate',['LiteralsStackState',['../stack_8h.html#a35fadc89fb64aa8421a6d77f7f215b40',1,'stack.h']]],
-  ['literalvector',['LiteralVector',['../literal_2interface_8h.html#a4bf1140fd50825987e0c451b7fb017bf',1,'interface.h']]]
+  ['json',['json',['../namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474',1,'nlohmann::json()'],['../literals__stack_8h.html#ab701e3ac61a85b337ec5c1abaad6742d',1,'json():&#160;literals_stack.h'],['../programs__map_8h.html#ab701e3ac61a85b337ec5c1abaad6742d',1,'json():&#160;programs_map.h'],['../variables__map_8h.html#ab701e3ac61a85b337ec5c1abaad6742d',1,'json():&#160;variables_map.h']]]
 ];

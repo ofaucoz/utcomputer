@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['json',['json',['../namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474',1,'nlohmann::json()'],['../literals__stack_8h.html#ab701e3ac61a85b337ec5c1abaad6742d',1,'json():&#160;literals_stack.h'],['../programs__map_8h.html#ab701e3ac61a85b337ec5c1abaad6742d',1,'json():&#160;programs_map.h'],['../variables__map_8h.html#ab701e3ac61a85b337ec5c1abaad6742d',1,'json():&#160;variables_map.h']]]
+  ['iterator_5fcategory',['iterator_category',['../classnlohmann_1_1basic__json_1_1const__iterator.html#a821560d64f50525162097f19b1392e7f',1,'nlohmann::basic_json::const_iterator']]]
 ];

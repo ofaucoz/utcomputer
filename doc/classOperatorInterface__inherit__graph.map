@@ -4,7 +4,7 @@
 <area shape="rect" id="node4" href="$classDivisionOperator.html" title="{DivisionOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="320,182,439,274"/>
 <area shape="rect" id="node5" href="$classEuclidianDivisionOperator.html" title="{EuclidianDivisionOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="463,182,635,274"/>
 <area shape="rect" id="node6" href="$classEvalOperator.html" title="{EvalOperator\n|&#45; computer\l|+ EvalOperator()\l+ postfix()\l+ apply()\l+ getPriority()\l&#45; findPriority()\l}" alt="" coords="659,160,777,296"/>
-<area shape="rect" id="node7" href="$classForgetOperator.html" title="{ForgetOperator\n|&#45; variableMap\l|+ ForgetOperator()\l+ apply()\l+ getPriority()\l}" alt="" coords="801,175,931,281"/>
+<area shape="rect" id="node7" href="$classForgetOperator.html" title="{ForgetOperator\n|&#45; variableMap\l&#45; programMap\l|+ ForgetOperator()\l+ apply()\l+ getPriority()\l}" alt="" coords="801,167,931,289"/>
 <area shape="rect" id="node8" href="$classLogicAndOperator.html" title="{LogicAndOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="955,182,1081,274"/>
 <area shape="rect" id="node9" href="$classLogicDifferentOperator.html" title="{LogicDifferentOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="1105,182,1259,274"/>
 <area shape="rect" id="node10" href="$classLogicEqualsOperator.html" title="{LogicEqualsOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="1283,182,1425,274"/>
@@ -21,11 +21,13 @@
 <area shape="rect" id="node21" href="$classNumericLesserEqualsOperator.html" title="{NumericLesserEqualsOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3331,182,3531,274"/>
 <area shape="rect" id="node22" href="$classNumericLesserOperator.html" title="{NumericLesserOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3555,182,3715,274"/>
 <area shape="rect" id="node23" href="$classOppositeOperator.html" title="{OppositeOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3739,182,3863,274"/>
-<area shape="rect" id="node24" href="$classStackClearOperator.html" title="{StackClearOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="3887,182,4024,274"/>
-<area shape="rect" id="node25" href="$classStackDropOperator.html" title="{StackDropOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4048,182,4183,274"/>
-<area shape="rect" id="node26" href="$classStackRedoOperator.html" title="{StackRedoOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4207,182,4344,274"/>
-<area shape="rect" id="node27" href="$classStackSwapOperator.html" title="{StackSwapOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4369,182,4507,274"/>
-<area shape="rect" id="node28" href="$classStackUndoOperator.html" title="{StackUndoOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4532,182,4669,274"/>
-<area shape="rect" id="node29" href="$classStoOperator.html" title="{StoOperator\n|&#45; variableMap\l|+ StoOperator()\l+ apply()\l+ getPriority()\l}" alt="" coords="4694,175,4806,281"/>
-<area shape="rect" id="node30" href="$classSubstractionOperator.html" title="{SubstractionOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4831,182,4976,274"/>
+<area shape="rect" id="node24" href="$classProgramIfOperator.html" title="{ProgramIfOperator\n|&#45; evalOperator\l|+ ProgramIfOperator()\l+ apply()\l+ getPriority()\l}" alt="" coords="3886,175,4035,281"/>
+<area shape="rect" id="node25" href="$classStackClearOperator.html" title="{StackClearOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4060,182,4197,274"/>
+<area shape="rect" id="node26" href="$classStackDropOperator.html" title="{StackDropOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4221,182,4356,274"/>
+<area shape="rect" id="node27" href="$classStackDupOperator.html" title="{StackDupOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4381,182,4511,274"/>
+<area shape="rect" id="node28" href="$classStackRedoOperator.html" title="{StackRedoOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4536,182,4673,274"/>
+<area shape="rect" id="node29" href="$classStackSwapOperator.html" title="{StackSwapOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4698,182,4837,274"/>
+<area shape="rect" id="node30" href="$classStackUndoOperator.html" title="{StackUndoOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="4861,182,4999,274"/>
+<area shape="rect" id="node31" href="$classStoOperator.html" title="{StoOperator\n|&#45; variableMap\l&#45; programMap\l&#45; lexer\l|+ StoOperator()\l+ apply()\l+ getPriority()\l}" alt="" coords="5023,160,5135,296"/>
+<area shape="rect" id="node32" href="$classSubstractionOperator.html" title="{SubstractionOperator\n||+ apply()\l+ getPriority()\l}" alt="" coords="5160,182,5305,274"/>
 </map>

@@ -2,7 +2,7 @@ var searchData=
 [
   ['name',['name',['../structOperatorLiteral.html#a18664e3699ce2ae8c0ed5d0992ad0c73',1,'OperatorLiteral']]],
   ['name_5fseparator',['name_separator',['../classnlohmann_1_1basic__json_1_1lexer.html#a96887d6cd131e3d3a85a9d71fbdbcdf7acc3c64f8ae08c00de1b33f19a4d2913a',1,'nlohmann::basic_json::lexer']]],
-  ['nbaff',['nbAff',['../classHistoryTreeView.html#af6638b85aa38f3c620c6e8a38b793f54',1,'HistoryTreeView::nbAff()'],['../classMessageTreeView.html#ae0c7a13f117dd3299f026c4806f31041',1,'MessageTreeView::nbAff()'],['../classRepositoryWidget.html#a191efc3487099b0c2bf6371e3b24ee9f',1,'RepositoryWidget::nbAff()'],['../classStackWidget.html#ac60a0838f01e4da3483e01ed0da3acb9',1,'StackWidget::nbAff()'],['../classVariableWidget.html#a9d4e96bae923d7a5f06695c780e40e11',1,'VariableWidget::nbAff()']]],
+  ['nbaff',['nbAff',['../classHistoryTreeView.html#af6638b85aa38f3c620c6e8a38b793f54',1,'HistoryTreeView::nbAff()'],['../classMessageTreeView.html#ae0c7a13f117dd3299f026c4806f31041',1,'MessageTreeView::nbAff()'],['../classProgramWidget.html#ac19c1945e2b0ea86f15ad81bf3ba3e1b',1,'ProgramWidget::nbAff()'],['../classRepositoryWidget.html#a191efc3487099b0c2bf6371e3b24ee9f',1,'RepositoryWidget::nbAff()'],['../classStackWidget.html#ac60a0838f01e4da3483e01ed0da3acb9',1,'StackWidget::nbAff()'],['../classVariableWidget.html#a9d4e96bae923d7a5f06695c780e40e11',1,'VariableWidget::nbAff()']]],
   ['nbstack',['nbStack',['../classMainWindow.html#a32978ad418838dc6735b5978ea42b094',1,'MainWindow']]],
   ['nlohmann',['nlohmann',['../namespacenlohmann.html',1,'']]],
   ['notify',['notify',['../classRepository.html#add97ef2d0fe58240fe39654defd7a7c1',1,'Repository']]],

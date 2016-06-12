@@ -1,8 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classRepositoryObserver.html" title="RepositoryObserver" alt="" coords="5,56,144,83"/>
-<area shape="rect" id="node2" href="$classRepositoryWidget.html" title="RepositoryWidget" alt="" coords="194,5,321,32"/>
-<area shape="rect" id="node3" href="$classStackWidget.html" title="StackWidget" alt="" coords="209,56,306,83"/>
-<area shape="rect" id="node4" href="$classVariableWidget.html" title="VariableWidget" alt="" coords="202,107,313,133"/>
-<area shape="rect" id="node6" href="$classHistoryTreeView.html" title="HistoryTreeView" alt="" coords="198,208,317,235"/>
-<area shape="rect" id="node7" href="$classMessageTreeView.html" title="MessageTreeView" alt="" coords="192,157,323,184"/>
+<area shape="rect" id="node1" href="$classRepositoryObserver.html" title="RepositoryObserver" alt="" coords="5,69,144,96"/>
+<area shape="rect" id="node2" href="$classProgramWidget.html" title="ProgramWidget" alt="" coords="201,5,313,32"/>
+<area shape="rect" id="node3" href="$classRepositoryWidget.html" title="RepositoryWidget" alt="" coords="194,56,321,83"/>
+<area shape="rect" id="node4" href="$classStackWidget.html" title="StackWidget" alt="" coords="209,107,306,133"/>
+<area shape="rect" id="node5" href="$classVariableWidget.html" title="VariableWidget" alt="" coords="202,157,313,184"/>
+<area shape="rect" id="node7" href="$classHistoryTreeView.html" title="HistoryTreeView" alt="" coords="198,208,317,235"/>
+<area shape="rect" id="node8" href="$classMessageTreeView.html" title="MessageTreeView" alt="" coords="192,259,323,285"/>
 </map>

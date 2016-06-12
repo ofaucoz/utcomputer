@@ -1,0 +1,11 @@
+<map id="ProgramIfOperator" name="ProgramIfOperator">
+<area shape="rect" id="node2" href="$classOperatorInterface.html" title="{OperatorInterface\n||+ apply()\l+ getPriority()\l+ ~OperatorInterface()\l}" alt="" coords="5,720,156,827"/>
+<area shape="rect" id="node3" href="$classEvalOperator.html" title="{EvalOperator\n||+ EvalOperator()\l+ postfix()\l+ apply()\l+ getPriority()\l&#45; findPriority()\l}" alt="" coords="119,904,237,1040"/>
+<area shape="rect" id="node4" href="$classUTComputer.html" title="{UTComputer\n||+ UTComputer()\l+ getLexer()\l+ getResolver()\l+ execute()\l+ execute()\l}" alt="" coords="181,705,298,841"/>
+<area shape="rect" id="node5" href="$classLexer.html" title="{Lexer\n|&#45; definitions\l|+ addDefinition()\l+ addDefinition()\l+ getDefinitions()\l+ tokenize()\l}" alt="" coords="50,521,173,643"/>
+<area shape="rect" id="node6" href="$classResolver.html" title="{Resolver\n|&#45; operatorLiteralDefinition\l|+ Resolver()\l+ getOperatorsMap()\l+ resolve()\l}" alt="" coords="305,529,472,635"/>
+<area shape="rect" id="node7" href="$classObservableMap.html" title="{ObservableMap\&lt; K, V \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="257,213,419,363"/>
+<area shape="rect" id="node10" href="$classRunner.html" title="{Runner\n||+ Runner()\l+ run()\l}" alt="" coords="197,536,281,628"/>
+<area shape="rect" id="node9" href="$classRepository.html" title="{Repository\n|&#45; observers\l|+ attach()\l+ notify()\l}" alt="" coords="149,5,236,97"/>
+<area shape="rect" id="node11" href="$classLiteralsStack.html" title="{LiteralsStack\n|&#45; savedStates\l&#45; currentState\l&#45; currentStateIndex\l|+ LiteralsStack()\l+ size()\l+ top()\l+ second()\l+ begin()\l+ end()\l+ push()\l+ pushAndNotify()\l+ pop()\l+ popAndNotify()\l+ save()\l+ undo()\l+ redo()\l}" alt="" coords="99,147,233,429"/>
+</map>
