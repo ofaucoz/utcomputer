@@ -1,6 +1,8 @@
 #include "sto.h"
 #include "../literal/atom.h"
 #include "../literal_definition/atom.h"
+#include "../literal/program.h"
+
 
 void StoOperator::apply(LiteralsStack &stack) const {
     if (stack.size() < 2) {
@@ -21,14 +23,29 @@ void StoOperator::apply(LiteralsStack &stack) const {
 
     string expectedAtom = first->toString();
 
-    expectedAtom.erase(remove(expectedAtom.begin(), expectedAtom.end(), '\''), expectedAtom.end());
+    expectedAtom.erase(remove(expectedAtom.begin(),expectedAtom.end(), '\''),expectedAtom.end());
 
     AtomLiteralDefinition definition;
 
-    if (dynamic_pointer_cast<AtomLiteral>(definition.createInstance(expectedAtom)) == nullptr) {
+    if(dynamic_pointer_cast<AtomLiteral>(definition.createInstance(expectedAtom)) == nullptr)
+    {
         throw InvalidOperandException(firstExpression->toString());
     }
 
-    variableMap.setAndNotify(expectedAtom, second);
+    ProgramLiteralPointer secondProgram = dynamic_pointer_cast<ProgramLiteral>(second);
+
+    if(!secondProgram) {
+        variableMap.setAndNotify(expectedAtom, second);
+    } else{
+        try {
+            LiteralVector secondProgramVector = lexer.tokenize(second->toString());
+            programMap.setAndNotify(expectedAtom,secondProgramVector);
+        }
+        catch (string except) {
+            cout << " problem is : " <<  except << endl;
+        }
+
+    }
+
     stack.notify();
 }

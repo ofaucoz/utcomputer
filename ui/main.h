@@ -3,6 +3,7 @@
 
 
 #include <gtkmm.h>
+#include "keyboard_widget.h"
 #include <iostream>
 #include <sys/ioctl.h>
 #include <unistd.h>
@@ -30,6 +31,8 @@
 #include "../lib/operator/logic_and.h"
 #include "../lib/operator/logic_different.h"
 #include "../lib/operator/logic_equals.h"
+#include "../lib/operator/program_if.h"
+#include "../lib/operator/stack_dup.h"
 #include "../lib/operator/numeric_greater.h"
 #include "../lib/operator/numeric_greater_equals.h"
 #include "../lib/operator/numeric_lesser.h"
@@ -56,6 +59,8 @@
 #include "../lib/utcomputer.h"
 #include "../lib/resolver.h"
 #include "../lib/runner.h"
+#include "message_tree_view.h"
+#include "programWidget.h"
 #include <iostream>
 #include <sys/ioctl.h>
 #include <unistd.h>
@@ -78,11 +83,11 @@ protected:
     Lexer *lexer;
     Resolver *resolver;
     Runner *runner;
-    RepositoryWidget *literalStack; //GtkTreeView
+    StackWidget *literalStack; //GtkTreeView
     MessageTreeView *messageTree; //GtkTreeView
     HistoryTreeView *historyTree; //GtkTreeView
-    RepositoryWidget *variableTree;
-    RepositoryWidget *programTree;
+    VariableWidget *variableTree;
+    ProgramWidget *programTree;
     ToggleButton *variableButton;
     ToggleButton *programButton;
     Entry *nbStack;

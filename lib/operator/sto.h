@@ -6,14 +6,18 @@
 #include "../literal/expression.h"
 #include "../exception/invalid_operand.h"
 #include "../exception/invalid_syntax.h"
+#include "../lexer.h"
 
 using namespace std;
 
-class StoOperator: public OperatorInterface {
+class StoOperator : public OperatorInterface {
 private:
     VariableMap &variableMap;
+    ProgramMap &programMap;
+    Lexer &lexer;
 public:
-    StoOperator(VariableMap &variableMap) : variableMap(variableMap) { }
+    StoOperator(VariableMap & variableMap,ProgramMap &programMap,Lexer &lexer) : variableMap(variableMap), programMap(programMap), lexer(lexer) { }
+
     /**
      * @inheritdoc
      */

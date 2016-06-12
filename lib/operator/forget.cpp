@@ -16,15 +16,16 @@ void ForgetOperator::apply(LiteralsStack &stack) const {
 
     string expectedAtom = first->toString();
 
-    expectedAtom.erase(remove(expectedAtom.begin(), expectedAtom.end(), '\''), expectedAtom.end());
+    expectedAtom.erase(remove(expectedAtom.begin(),expectedAtom.end(), '\''),expectedAtom.end());
 
     AtomLiteralDefinition definition;
 
-    if (dynamic_pointer_cast<AtomLiteral>(definition.createInstance(expectedAtom)) == nullptr) {
+    if(dynamic_pointer_cast<AtomLiteral>(definition.createInstance(expectedAtom)) == nullptr)
+    {
         throw InvalidOperandException(firstExpression->toString());
     }
-    if (variableMap.at(expectedAtom)) {
-        variableMap.removeAndNotify(expectedAtom);
-    }
+    programMap.removeAndNotify(expectedAtom);
+    variableMap.removeAndNotify(expectedAtom);
+
     stack.notify();
 }

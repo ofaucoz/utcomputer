@@ -6,6 +6,7 @@
 #include "../literal_definition/operator_strict_comparison.h"
 #include "../literal_definition/operator_equal_comparison.h"
 #include "../literal_definition/expression.h"
+#include "../literal_definition/operator_numeric.h"
 #include "../literal_definition/program.h"
 #include "../literal_definition/atom.h"
 #include "../operator/addition.h"

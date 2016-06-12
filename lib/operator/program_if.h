@@ -1,16 +1,20 @@
-#ifndef LO21_OPERATOR_NUMERIC_COMPLEX_IMAGINARY_H
-#define LO21_OPERATOR_NUMERIC_COMPLEX_IMAGINARY_H
+#ifndef LO21_PROGRAM_IF_H
+#define LO21_PROGRAM_IF_H
 
 
 #include "interface.h"
 #include "../exception/invalid_syntax.h"
 #include "../literal/numeric.h"
 #include "../exception/invalid_operand.h"
+#include "eval.h"
 
 using namespace std;
 
-class NumericComplexImaginaryOperator: public OperatorInterface {
+class ProgramIfOperator : public OperatorInterface {
+private:
+    EvalOperator &evalOperator;
 public:
+    ProgramIfOperator(EvalOperator &evalOperator) : evalOperator(evalOperator) { }
     /**
      * @inheritdoc
      */
@@ -24,4 +28,5 @@ public:
     }
 };
 
-#endif //LO21_OPERATOR_NUMERIC_COMPLEX_IMAGINARY_H
+
+#endif //LO21_PROGRAM_IF_H

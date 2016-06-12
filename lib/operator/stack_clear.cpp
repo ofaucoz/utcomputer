@@ -6,7 +6,7 @@ void StackClearOperator::apply(LiteralsStack &stack) const {
     }
 
     while (stack.size() != 0) {
-        stack.pop();
+        stack.popAndNotify();
     }
 
     stack.notify();

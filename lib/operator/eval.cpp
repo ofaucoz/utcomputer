@@ -8,17 +8,20 @@ void EvalOperator::apply(LiteralsStack &stack) const {
 
     LiteralPointer first = stack.top();
     ExpressionLiteralPointer firstEpression = dynamic_pointer_cast<ExpressionLiteral>(first);
+    ProgramLiteralPointer firstProgram = dynamic_pointer_cast<ProgramLiteral>(first);
 
-    if (!firstEpression) {
+    if (!firstEpression&&!firstProgram) {
         throw InvalidOperandException(first->toString());
     }
 
     stack.pop();
 
-    // Ignore first and last characters (expression quotes) and postfix
-    computer.execute(postfix(firstEpression->getValue().substr(1, firstEpression->getValue().size() - 2)));
-
-    stack.save();
+    // Ignore first and last characters (expression quotes or [] for program) and postfix if it's an expression
+    if(!firstProgram) {
+        computer.execute(postfix(firstEpression->getValue().substr(1, firstEpression->getValue().size() - 2)));
+    } else if(!firstEpression){
+        computer.execute(firstProgram->toString().substr(1, firstProgram->toString().size() - 2));
+    }
 }
 
 int EvalOperator::findPriority(string name) const {

@@ -51,3 +51,4 @@ public:
 };
 
 #endif //LO21_LITERAL_DEFINITION_OPERATOR_STRICT_H
+

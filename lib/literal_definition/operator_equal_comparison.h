@@ -1,7 +1,6 @@
 #ifndef LO21_LITERAL_DEFINITION_OPERATOR_EQUAL_H
 #define LO21_LITERAL_DEFINITION_OPERATOR_EQUAL_H
 
-
 #include <iostream>
 #include <regex>
 #include "interface.h"

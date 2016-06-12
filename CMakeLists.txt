@@ -36,6 +36,7 @@ set(LIBRARY_FILES
         lib/literal/atom.h
         lib/literal/whitespace.h
         lib/literal/parenthesis.h
+        lib/literal/hook.h
         lib/literal/comma.h
         lib/literal/stack.h
         lib/literal_definition/interface.h
@@ -49,7 +50,9 @@ set(LIBRARY_FILES
         lib/literal_definition/expression.h
         lib/literal_definition/program.h
         lib/literal_definition/parenthesis.h
+        lib/literal_definition/hook.h
         lib/literal_definition/comma.h
+        lib/operator/forget.h
         lib/literal_definition/operator_atom_literal.h
         lib/operator/interface.h
         lib/operator/addition.cpp
@@ -125,11 +128,22 @@ set(LIBRARY_FILES
         lib/resolver.h
         lib/runner.cpp
         lib/runner.h
-        lib/utcomputer.h)
+        lib/utcomputer.h
+        lib/literal_definition/operator_atom_literal.h
+        lib/operator/sto.cpp
+        lib/operator/sto.h
+        lib/operator/forget.cpp
+        lib/operator/forget.h
+        lib/operator/program_if.cpp
+        lib/operator/program_if.h
+        lib/operator/stack_dup.cpp
+        lib/operator/stack_dup.h)
 
 set(INTERFACE_FILES
         ui/main.cpp
         ui/main.h
+        ui/programWidget.cpp
+        ui/programWidget.h
         ui/keyboard_widget.cpp
         ui/keyboard_widget.h
         ui/repository_widget.cpp
@@ -142,6 +156,7 @@ set(INTERFACE_FILES
         ui/stack_widget.h
         ui/variable_widget.cpp
         ui/variable_widget.h)
+
 
 configure_file(ui/views/main.glade ui/views/main.glade COPYONLY)
 add_executable(LO21 main.cpp ${LIBRARY_FILES} ${INTERFACE_FILES})
@@ -163,6 +178,8 @@ set(TEST_FILES
         lib/tests/literal_definition/parenthesis.cpp
         lib/tests/literal_definition/operator_strict_comparison.cpp
         lib/tests/literal_definition/operator_equal_comparison.cpp
+        lib/tests/literal_definition/operator_strict_comparison.cpp
+        lib/tests/literal_definition/operator_equal_comparison.cpp
         lib/tests/operator/addition.cpp
         lib/tests/operator/substraction.cpp
         lib/tests/operator/multiplication.cpp
@@ -171,10 +188,12 @@ set(TEST_FILES
         lib/tests/operator/modulo.cpp
         lib/tests/operator/opposite.cpp
         lib/tests/operator/numerator.cpp
+        lib/tests/operator/forget.cpp
         lib/tests/operator/denominator.cpp
         lib/tests/operator/eval.cpp
         lib/tests/operator/stack_clear.cpp
         lib/tests/operator/stack_drop.cpp
+        lib/tests/operator/stack_dup.cpp
         lib/tests/operator/stack_swap.cpp
         lib/tests/operator/numeric_complex_imaginary.cpp
         lib/tests/operator/numeric_complex_build.cpp
@@ -187,6 +206,8 @@ set(TEST_FILES
         lib/tests/operator/logic_or.cpp
         lib/tests/operator/logic_not.cpp
         lib/tests/operator/forget.cpp
+        lib/tests/operator/sto.cpp
+        lib/tests/operator/program_if.cpp
         lib/tests/operator/sto.cpp
         lib/tests/repository/map.cpp
         lib/tests/serializer/literals_stack.cpp

@@ -5,8 +5,8 @@ void MultiplicationOperator::apply(LiteralsStack &stack) const {
         throw InvalidSyntaxException("Multiplication operator requires 2 operands");
     }
 
-    LiteralPointer first = stack.top();
-    LiteralPointer second = stack.second();
+    LiteralPointer first = stack.second();
+    LiteralPointer second = stack.top();
 
     NumericLiteralPointer firstNumeric = dynamic_pointer_cast<NumericLiteral>(first);
     NumericLiteralPointer secondNumeric = dynamic_pointer_cast<NumericLiteral>(second);
@@ -18,23 +18,20 @@ void MultiplicationOperator::apply(LiteralsStack &stack) const {
     if (!secondNumeric) {
         throw InvalidOperandException(second->toString());
     }
+    Fraction firstRealPart(firstNumeric->getRealNumerator()*secondNumeric->getRealNumerator(),firstNumeric->getRealDenominator()*secondNumeric->getRealDenominator());
+    Fraction secondRealPart(firstNumeric->getImaginaryNumerator()*secondNumeric->getImaginaryNumerator(),firstNumeric->getImaginaryDenominator()*secondNumeric->getImaginaryDenominator());
+    Fraction realPart = Math::substract(firstRealPart,secondRealPart);
 
-    Fraction resultR(
-        secondNumeric->getRealNumerator() * firstNumeric->getRealNumerator(),
-        secondNumeric->getRealDenominator() * firstNumeric->getRealDenominator()
-    );
-
-    Fraction resultI(
-        secondNumeric->getImaginaryNumerator() * firstNumeric->getImaginaryNumerator(),
-        secondNumeric->getImaginaryDenominator() * firstNumeric->getImaginaryDenominator()
-    );
+    Fraction firstImaginaryPart(firstNumeric->getRealNumerator()*secondNumeric->getImaginaryNumerator(),firstNumeric->getRealDenominator()*secondNumeric->getImaginaryDenominator());
+    Fraction secondImaginaryPart(firstNumeric->getImaginaryNumerator()*secondNumeric->getRealNumerator(),firstNumeric->getImaginaryDenominator()*secondNumeric->getRealDenominator());
+    Fraction imaginaryPart = Math::add(firstImaginaryPart,secondImaginaryPart);
 
     stack.pop();
     stack.pop();
 
     stack.pushAndNotify(LiteralPointer(new NumericLiteral(
-        Math::simplify(resultR),
-        Math::simplify(resultI)
+        Math::simplify(realPart),
+        Math::simplify(imaginaryPart)
     )));
 
     stack.save();

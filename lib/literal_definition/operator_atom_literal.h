@@ -11,7 +11,9 @@ using namespace std;
 /**
  * Definition of a custom operator literal.
  */
+
 class OperatorAtomLiteralDefinition: public LiteralDefinitionInterface {
+
 public:
     /**
      * @inheritdoc
@@ -54,6 +56,7 @@ public:
     LiteralPointer unserialize(string serialized) const {
         return nullptr; // Handled by the OperatorNumericLiteralDefinition
     }
+
 };
 
 #endif //LO21_OPERATOR_ATOM_LITERAL_H
