@@ -7,7 +7,8 @@ var searchData=
   ['program',['program',['../structProgramLiteral.html#a13f3c894bd4887950b79ba4e2f47a0e4',1,'ProgramLiteral']]],
   ['programbutton',['programButton',['../classMainWindow.html#a9dc7baeb055374dcfd15c9034b13b4d7',1,'MainWindow']]],
   ['programeditiontextview',['programEditionTextView',['../classMainWindow.html#aeb631941c8eac96f443f5139e67636da',1,'MainWindow']]],
+  ['programmap',['programMap',['../classForgetOperator.html#a258c085e8b19a0823d36be4b0ff88f9e',1,'ForgetOperator::programMap()'],['../classStoOperator.html#ad8ac66db6dad3ebcb2f6c5f19904a3ee',1,'StoOperator::programMap()']]],
   ['programsmap',['programsMap',['../classResolver.html#a08a0b54021c41b38b5c9547211b52267',1,'Resolver::programsMap()'],['../classMainWindow.html#a7af0a0851d5fe473b38a6d58078ad055',1,'MainWindow::programsMap()']]],
-  ['programtree',['programTree',['../classMainWindow.html#addbd8db5138d538ccc4655e640b47b3f',1,'MainWindow']]],
+  ['programtree',['programTree',['../classMainWindow.html#a4e8dac5af40e4a5ad3203fd44dfd0526',1,'MainWindow']]],
   ['programwindow',['programWindow',['../classMainWindow.html#a170df5bd4d6b2b3d16cfea9b094c492a',1,'MainWindow']]]
 ];

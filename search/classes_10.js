@@ -2,6 +2,7 @@ var searchData=
 [
   ['stackclearoperator',['StackClearOperator',['../classStackClearOperator.html',1,'']]],
   ['stackdropoperator',['StackDropOperator',['../classStackDropOperator.html',1,'']]],
+  ['stackdupoperator',['StackDupOperator',['../classStackDupOperator.html',1,'']]],
   ['stackredooperator',['StackRedoOperator',['../classStackRedoOperator.html',1,'']]],
   ['stackswapoperator',['StackSwapOperator',['../classStackSwapOperator.html',1,'']]],
   ['stackundooperator',['StackUndoOperator',['../classStackUndoOperator.html',1,'']]],

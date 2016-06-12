@@ -12,7 +12,7 @@ var searchData=
   ['euclidian_5fdivision_2eh',['euclidian_division.h',['../euclidian__division_8h.html',1,'']]],
   ['euclidiandivisionoperator',['EuclidianDivisionOperator',['../classEuclidianDivisionOperator.html',1,'']]],
   ['eval_2eh',['eval.h',['../eval_8h.html',1,'']]],
-  ['evaloperator',['EvalOperator',['../classEvalOperator.html',1,'EvalOperator'],['../classEvalOperator.html#a4107316bc1fec7114b0677aa0606f8ad',1,'EvalOperator::EvalOperator()']]],
+  ['evaloperator',['EvalOperator',['../classEvalOperator.html',1,'EvalOperator'],['../classProgramIfOperator.html#a7c75bb05699f93f96c92ba9ab943db1a',1,'ProgramIfOperator::evalOperator()'],['../classEvalOperator.html#a4107316bc1fec7114b0677aa0606f8ad',1,'EvalOperator::EvalOperator()']]],
   ['execute',['execute',['../classUTComputer.html#ae854d3685bdc4259a8bbd755ea811f1c',1,'UTComputer::execute(string command)'],['../classUTComputer.html#a997aa966e2fcd3e1e1e1261ad3c24cb6',1,'UTComputer::execute(LiteralVector tokens)']]],
   ['exp_5fcap',['exp_cap',['../unionnlohmann_1_1basic__json_1_1type__data__t.html#a7ac9f5166484399b5ce6bdf5ede2f348',1,'nlohmann::basic_json::type_data_t']]],
   ['exp_5fplus',['exp_plus',['../unionnlohmann_1_1basic__json_1_1type__data__t.html#a40e0e31e205ce6d03bc6626bea4b97f5',1,'nlohmann::basic_json::type_data_t']]],

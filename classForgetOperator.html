@@ -117,8 +117,8 @@ Collaboration diagram for ForgetOperator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a057f94a980924f6a1596d774a4f62f28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForgetOperator.html#a057f94a980924f6a1596d774a4f62f28">ForgetOperator</a> (<a class="el" href="literal_2interface_8h.html#ae2d71f181b5e38d6983afd184f924a8f">VariableMap</a> &amp;<a class="el" href="classForgetOperator.html#afb388d110a3077e181483aaab81ee89f">variableMap</a>)</td></tr>
-<tr class="separator:a057f94a980924f6a1596d774a4f62f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51be32159df3aaab337ceba7773f170c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForgetOperator.html#a51be32159df3aaab337ceba7773f170c">ForgetOperator</a> (<a class="el" href="literal_2interface_8h.html#ae2d71f181b5e38d6983afd184f924a8f">VariableMap</a> &amp;<a class="el" href="classForgetOperator.html#afb388d110a3077e181483aaab81ee89f">variableMap</a>, <a class="el" href="literal_2interface_8h.html#a42b43e47e05ee98773383929fd3806b7">ProgramMap</a> &amp;<a class="el" href="classForgetOperator.html#a258c085e8b19a0823d36be4b0ff88f9e">programMap</a>)</td></tr>
+<tr class="separator:a51be32159df3aaab337ceba7773f170c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e72e45a2758f7cb35f978b7689a5b55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForgetOperator.html#a5e72e45a2758f7cb35f978b7689a5b55">apply</a> (<a class="el" href="classLiteralsStack.html">LiteralsStack</a> &amp;stack) const override</td></tr>
 <tr class="separator:a5e72e45a2758f7cb35f978b7689a5b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a975f72cf465aa318302cfb7639a07ff8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForgetOperator.html#a975f72cf465aa318302cfb7639a07ff8">getPriority</a> () const override</td></tr>
@@ -131,9 +131,11 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:afb388d110a3077e181483aaab81ee89f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="literal_2interface_8h.html#ae2d71f181b5e38d6983afd184f924a8f">VariableMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForgetOperator.html#afb388d110a3077e181483aaab81ee89f">variableMap</a></td></tr>
 <tr class="separator:afb388d110a3077e181483aaab81ee89f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a258c085e8b19a0823d36be4b0ff88f9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="literal_2interface_8h.html#a42b43e47e05ee98773383929fd3806b7">ProgramMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classForgetOperator.html#a258c085e8b19a0823d36be4b0ff88f9e">programMap</a></td></tr>
+<tr class="separator:a258c085e8b19a0823d36be4b0ff88f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a057f94a980924f6a1596d774a4f62f28"></a>
+<a class="anchor" id="a51be32159df3aaab337ceba7773f170c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -144,8 +146,18 @@ Private Attributes</h2></td></tr>
           <td class="memname">ForgetOperator::ForgetOperator </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="literal_2interface_8h.html#ae2d71f181b5e38d6983afd184f924a8f">VariableMap</a> &amp;&#160;</td>
-          <td class="paramname"><em>variableMap</em></td><td>)</td>
+          <td class="paramname"><em>variableMap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="literal_2interface_8h.html#a42b43e47e05ee98773383929fd3806b7">ProgramMap</a> &amp;&#160;</td>
+          <td class="paramname"><em>programMap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -219,6 +231,26 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a258c085e8b19a0823d36be4b0ff88f9e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="literal_2interface_8h.html#a42b43e47e05ee98773383929fd3806b7">ProgramMap</a>&amp; ForgetOperator::programMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="afb388d110a3077e181483aaab81ee89f"></a>
 <div class="memitem">
 <div class="memproto">

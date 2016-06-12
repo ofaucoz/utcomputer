@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['iterator_5fcategory',['iterator_category',['../classnlohmann_1_1basic__json_1_1const__iterator.html#a821560d64f50525162097f19b1392e7f',1,'nlohmann::basic_json::const_iterator']]]
+  ['hookliteralpointer',['HookLiteralPointer',['../hook_8h.html#a841e4ae4edc7bca6c1b2281d77d3269c',1,'hook.h']]]
 ];
