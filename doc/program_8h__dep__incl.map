@@ -1,5 +1,6 @@
 <map id="lib/literal/program.h" name="lib/literal/program.h">
-<area shape="rect" id="node2" href="$definition_2program_8h.html" title="lib/literal_definition\l/program.h" alt="" coords="53,80,182,121"/>
-<area shape="rect" id="node3" href="$eval_8h.html" title="lib/operator/eval.h" alt="" coords="5,169,131,196"/>
-<area shape="rect" id="node4" href="$main_8h.html" title="ui/main.h" alt="" coords="80,244,155,271"/>
+<area shape="rect" id="node2" href="$definition_2program_8h.html" title="lib/literal_definition\l/program.h" alt="" coords="103,80,233,121"/>
+<area shape="rect" id="node3" href="$eval_8h.html" title="lib/operator/eval.h" alt="" coords="5,177,131,203"/>
+<area shape="rect" id="node4" href="$main_8h.html" title="ui/main.h" alt="" coords="80,259,155,285"/>
+<area shape="rect" id="node5" href="$programs__map_8h.html" title="lib/serializer/programs\l_map.h" alt="" coords="205,169,355,211"/>
 </map>

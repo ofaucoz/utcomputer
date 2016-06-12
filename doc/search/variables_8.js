@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['name',['name',['../structOperatorLiteral.html#a18664e3699ce2ae8c0ed5d0992ad0c73',1,'OperatorLiteral::name()'],['../structProgramLiteral.html#a63be3f3c3dc565846c0e3b641c971fdb',1,'ProgramLiteral::name()']]],
-  ['nbaff',['nbAff',['../classhistoryTreeView.html#a24ed3348044ab75c7cb0f8114cc5a251',1,'historyTreeView::nbAff()'],['../classmessageTreeView.html#ab4cad34a172e60cac758d78f1b7d561b',1,'messageTreeView::nbAff()'],['../classrepositoryWidget.html#a620ce2c50a7822c773fa116130b8947d',1,'repositoryWidget::nbAff()']]],
-  ['nbstack',['nbStack',['../classMainWindow.html#a32978ad418838dc6735b5978ea42b094',1,'MainWindow']]],
-  ['numerator',['numerator',['../classFraction.html#ac36191e7e0a1f931d0b5692712c58eda',1,'Fraction']]]
+  ['last_5ftoken',['last_token',['../classnlohmann_1_1basic__json_1_1parser.html#adfb1017b95ae14e52c585e1296e8faac',1,'nlohmann::basic_json::parser']]],
+  ['lexer',['lexer',['../classUTComputer.html#ad91e6a04f2212ea703727aba85db25ad',1,'UTComputer::lexer()'],['../classMainWindow.html#a7476d0211838b468ca0318051927b4f8',1,'MainWindow::lexer()']]],
+  ['literalstack',['literalStack',['../classRunner.html#ae9013afbf6125ec56a095784a2ce7b47',1,'Runner::literalStack()'],['../classMainWindow.html#a1d066a517b777e46fa5326c3cb1c7218',1,'MainWindow::literalStack()']]]
 ];

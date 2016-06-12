@@ -40,6 +40,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -99,7 +101,7 @@ Inheritance diagram for NumericLiteralDefinition:</div>
 <div class="dyncontent">
 <div class="center"><img src="classNumericLiteralDefinition__inherit__graph.png" border="0" usemap="#NumericLiteralDefinition_inherit__map" alt="Inheritance graph"/></div>
 <map name="NumericLiteralDefinition_inherit__map" id="NumericLiteralDefinition_inherit__map">
-<area shape="rect" id="node2" href="classLiteralDefinitionInterface.html" title="{LiteralDefinitionInterface\n||+ getPattern()\l+ createInstance()\l+ ~LiteralDefinitionInterface()\l}" alt="" coords="5,5,196,112"/>
+<area shape="rect" id="node2" href="classLiteralDefinitionInterface.html" title="{LiteralDefinitionInterface\n||+ ~LiteralDefinitionInterface()\l+ getPattern()\l+ createInstance()\l+ support()\l+ support()\l+ serialize()\l+ unserialize()\l}" alt="" coords="5,5,196,171"/>
 </map>
 </div>
 <div class="dynheader">
@@ -107,7 +109,7 @@ Collaboration diagram for NumericLiteralDefinition:</div>
 <div class="dyncontent">
 <div class="center"><img src="classNumericLiteralDefinition__coll__graph.png" border="0" usemap="#NumericLiteralDefinition_coll__map" alt="Collaboration graph"/></div>
 <map name="NumericLiteralDefinition_coll__map" id="NumericLiteralDefinition_coll__map">
-<area shape="rect" id="node2" href="classLiteralDefinitionInterface.html" title="{LiteralDefinitionInterface\n||+ getPattern()\l+ createInstance()\l+ ~LiteralDefinitionInterface()\l}" alt="" coords="5,5,196,112"/>
+<area shape="rect" id="node2" href="classLiteralDefinitionInterface.html" title="{LiteralDefinitionInterface\n||+ ~LiteralDefinitionInterface()\l+ getPattern()\l+ createInstance()\l+ support()\l+ support()\l+ serialize()\l+ unserialize()\l}" alt="" coords="5,5,196,171"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -115,15 +117,23 @@ Collaboration diagram for NumericLiteralDefinition:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af8a28ea4ff181dce2abe5f6d009f68de"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumericLiteralDefinition.html#af8a28ea4ff181dce2abe5f6d009f68de">getPattern</a> () const override</td></tr>
 <tr class="separator:af8a28ea4ff181dce2abe5f6d009f68de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2bef70d63bb6b3d2e8b310a4bfcd523"><td class="memItemLeft" align="right" valign="top"><a class="el" href="literal_2interface_8h.html#abd0eb35b81c253fe959f27bedb4b8c45">LiteralPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumericLiteralDefinition.html#af2bef70d63bb6b3d2e8b310a4bfcd523">createInstance</a> (string value) const override</td></tr>
+<tr class="memitem:af2bef70d63bb6b3d2e8b310a4bfcd523"><td class="memItemLeft" align="right" valign="top"><a class="el" href="literal_2interface_8h.html#abd0eb35b81c253fe959f27bedb4b8c45">LiteralPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumericLiteralDefinition.html#af2bef70d63bb6b3d2e8b310a4bfcd523">createInstance</a> (string <a class="el" href="json_8h.html#a5b4ee4ae6cba6bb75200ba7af1910873">value</a>) const override</td></tr>
 <tr class="separator:af2bef70d63bb6b3d2e8b310a4bfcd523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe96d3fe1f93024bd7619e9eff666b43"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumericLiteralDefinition.html#abe96d3fe1f93024bd7619e9eff666b43">support</a> (<a class="el" href="literal_2interface_8h.html#abd0eb35b81c253fe959f27bedb4b8c45">LiteralPointer</a> literal) const override</td></tr>
+<tr class="separator:abe96d3fe1f93024bd7619e9eff666b43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1af622a15a384e779588e20ee6ec2378"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumericLiteralDefinition.html#a1af622a15a384e779588e20ee6ec2378">support</a> (string serialized) const </td></tr>
+<tr class="separator:a1af622a15a384e779588e20ee6ec2378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e1b3307878553bed3380c51e0616ab"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumericLiteralDefinition.html#a73e1b3307878553bed3380c51e0616ab">serialize</a> (<a class="el" href="literal_2interface_8h.html#abd0eb35b81c253fe959f27bedb4b8c45">LiteralPointer</a> literal) const </td></tr>
+<tr class="separator:a73e1b3307878553bed3380c51e0616ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5765ec8302bbd09bdf2977b84e746b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="literal_2interface_8h.html#abd0eb35b81c253fe959f27bedb4b8c45">LiteralPointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumericLiteralDefinition.html#ab5765ec8302bbd09bdf2977b84e746b2">unserialize</a> (string serialized) const </td></tr>
+<tr class="separator:ab5765ec8302bbd09bdf2977b84e746b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classLiteralDefinitionInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classLiteralDefinitionInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classLiteralDefinitionInterface.html">LiteralDefinitionInterface</a></td></tr>
 <tr class="memitem:a47fbe8621551e2fd51138aa8c824197b inherit pub_methods_classLiteralDefinitionInterface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLiteralDefinitionInterface.html#a47fbe8621551e2fd51138aa8c824197b">~LiteralDefinitionInterface</a> ()</td></tr>
 <tr class="separator:a47fbe8621551e2fd51138aa8c824197b inherit pub_methods_classLiteralDefinitionInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a42afb5413973d3b402fe1fea06c2cca9"><td class="memItemLeft" align="right" valign="top">queue&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumericLiteralDefinition.html#a42afb5413973d3b402fe1fea06c2cca9">parse</a> (string value) const </td></tr>
+<tr class="memitem:a42afb5413973d3b402fe1fea06c2cca9"><td class="memItemLeft" align="right" valign="top">queue&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNumericLiteralDefinition.html#a42afb5413973d3b402fe1fea06c2cca9">parse</a> (string <a class="el" href="json_8h.html#a5b4ee4ae6cba6bb75200ba7af1910873">value</a>) const </td></tr>
 <tr class="separator:a42afb5413973d3b402fe1fea06c2cca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -221,6 +231,114 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The queue used in the createInstance method to build the literal. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a73e1b3307878553bed3380c51e0616ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string NumericLiteralDefinition::serialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="literal_2interface_8h.html#abd0eb35b81c253fe959f27bedb4b8c45">LiteralPointer</a>&#160;</td>
+          <td class="paramname"><em>literal</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Serialize the given literal. </p>
+
+<p>Implements <a class="el" href="classLiteralDefinitionInterface.html#a631c1b010a659884c5449f3cbc16c7fe">LiteralDefinitionInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abe96d3fe1f93024bd7619e9eff666b43"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool NumericLiteralDefinition::support </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="literal_2interface_8h.html#abd0eb35b81c253fe959f27bedb4b8c45">LiteralPointer</a>&#160;</td>
+          <td class="paramname"><em>literal</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Check whether this literal definition is able to serialize the given literal. </p>
+
+<p>Implements <a class="el" href="classLiteralDefinitionInterface.html#a59c6c3bbf75cb84b28f6c4d7d1725e71">LiteralDefinitionInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1af622a15a384e779588e20ee6ec2378"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool NumericLiteralDefinition::support </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>serialized</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Check whether this literal definition is able to unserialize the given string. </p>
+
+<p>Implements <a class="el" href="classLiteralDefinitionInterface.html#a805b8b7618e211fcec84830f76ba8b37">LiteralDefinitionInterface</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5765ec8302bbd09bdf2977b84e746b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="literal_2interface_8h.html#abd0eb35b81c253fe959f27bedb4b8c45">LiteralPointer</a> NumericLiteralDefinition::unserialize </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>serialized</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Unserialize the given string. </p>
+
+<p>Implements <a class="el" href="classLiteralDefinitionInterface.html#a8d8b43d8ba14a5f642f0ca9d6bc98245">LiteralDefinitionInterface</a>.</p>
 
 </div>
 </div>

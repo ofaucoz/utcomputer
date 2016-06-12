@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['value',['value',['../structInvalidOperandException.html#ad21868af4f8123d8bdb02355a759674b',1,'InvalidOperandException::value()'],['../structInvalidSyntaxException.html#a285f58d60d054f2827240460df3cff3e',1,'InvalidSyntaxException::value()'],['../structUndefinedAtomException.html#abae7d51969acf6e892908537abf9ff3f',1,'UndefinedAtomException::value()'],['../structUnsupportedLiteralException.html#a299e6b5abe8b087564b3c6e99c7538c2',1,'UnsupportedLiteralException::value()'],['../structAtomLiteral.html#ab9ab233bf5259bac806f5fad1a808f9b',1,'AtomLiteral::value()'],['../structExpressionLiteral.html#a1ce6274f8acfbfbcb41331b8f6b1f3a5',1,'ExpressionLiteral::value()']]],
-  ['variablebutton',['variableButton',['../classMainWindow.html#a730ccc046d64c486cf16dae1da99b59f',1,'MainWindow']]],
-  ['variablesmap',['variablesMap',['../classResolver.html#ad6916731c8e3d907e55257cf8358b838',1,'Resolver::variablesMap()'],['../classMainWindow.html#a89e76bf8158797ef9bb991dc4c35d7e3',1,'MainWindow::variablesMap()']]],
-  ['variabletree',['variableTree',['../classMainWindow.html#ad79c5270a3799cdea41298f1f14fd7c8',1,'MainWindow']]],
-  ['variablewindow',['variableWindow',['../classMainWindow.html#a9dc781a515d831e5735783cf2aa4f40d',1,'MainWindow']]]
+  ['realdenominator',['realDenominator',['../structNumericLiteral.html#ac7efa8106c4263e3244d59418384554e',1,'NumericLiteral']]],
+  ['realnumerator',['realNumerator',['../structNumericLiteral.html#aa5fe99844e103bb632c0dcedf3e70376',1,'NumericLiteral']]],
+  ['reference_5ftokens',['reference_tokens',['../classnlohmann_1_1basic__json_1_1json__pointer.html#a9c89f0314ddb85e5f40b1189bc3f1616',1,'nlohmann::basic_json::json_pointer']]],
+  ['reftreemodel',['refTreeModel',['../classHistoryTreeView.html#a4d631692c847fa398bfa3b2c5770cf35',1,'HistoryTreeView::refTreeModel()'],['../classMessageTreeView.html#ade55677a93b5b169ab2bdded6fcc0903',1,'MessageTreeView::refTreeModel()'],['../classRepositoryWidget.html#a5a8a60a70b4d9b1a91cee0081261f4c7',1,'RepositoryWidget::refTreeModel()'],['../classStackWidget.html#abdcff79f1752671b841cd0ff92a4749b',1,'StackWidget::refTreeModel()'],['../classVariableWidget.html#a8167c7cc34d3bcd4299ecb2db356a2a8',1,'VariableWidget::refTreeModel()']]],
+  ['resolver',['resolver',['../classUTComputer.html#ad3c7dc392f259730f6eea207053f5250',1,'UTComputer::resolver()'],['../classMainWindow.html#a9d93c9b8935e214a975d572c821af74f',1,'MainWindow::resolver()']]],
+  ['runner',['runner',['../classUTComputer.html#a19c2c0178f78445f7e16068847f9b8a5',1,'UTComputer::runner()'],['../classMainWindow.html#a29c1c6779d3bb7df5b29d0156d281b07',1,'MainWindow::runner()']]]
 ];

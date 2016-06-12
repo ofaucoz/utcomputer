@@ -1,0 +1,5 @@
+<map id="StoOperator" name="StoOperator">
+<area shape="rect" id="node2" href="$classOperatorInterface.html" title="{OperatorInterface\n||+ apply()\l+ getPriority()\l+ ~OperatorInterface()\l}" alt="" coords="5,169,156,275"/>
+<area shape="rect" id="node3" href="$classObservableMap.html" title="{ObservableMap\&lt; K, V \&gt;\n||+ get()\l+ has()\l+ set()\l+ setAndNotify()\l+ remove()\l+ removeAndNotify()\l}" alt="" coords="181,147,343,297"/>
+<area shape="rect" id="node5" href="$classRepository.html" title="{Repository\n|&#45; observers\l|+ attach()\l+ notify()\l}" alt="" coords="287,5,373,97"/>
+</map>
