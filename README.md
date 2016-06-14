@@ -1,5 +1,7 @@
 # UTComputer
 
+[![Build Status](https://travis-ci.org/tgalopin/utcomputer.svg?branch=master)](https://travis-ci.org/tgalopin/utcomputer)
+
 The UTComputer project is an implmentation of a full-featured programmable calculator in C++.
 This projet is a work done in the context of the LO21 course, at the University of Technology of Compiègne.
 
